@@ -1,0 +1,473 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     Template for bachelor's and master's theses at the
+%     Department of Mathematics at Linköping University.
+%         version 0.9 (2016-05-11)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% This template was made by Jonas Granholm
+%     (jonas.b.granholm@gmail.com)
+%
+% It is a nearly complete rewrite of the previous
+% template which was compiled by Per Erik Strandberg
+
+
+
+% If you just want to use the liumaiex template, it might be easier
+% to use liumaiex.cls instead of this file, and start with the file
+% exempel.tex (all of these files should be distributed together).
+
+% To use this template, follow the instructions under each headline
+% and compile it with the TeX-engine of your choosing (though note
+% that you must specify in "Options" below which one you use. One
+% of the files liulogo_en.eps and liulogo_sv.eps (depending on which
+% language you use) need to be present in the same directory as this
+% file (these files should be distributed together with this).
+
+
+
+% This template is distributed under the so called MIT license,
+% (see the file liumaiex.cls, which should be distributed together with
+% this file) which means that you can do pretty much anything you want
+% with the code, except for claiming that you wrote it or blaiming me if
+% anything goes wrong.
+%
+% However, if you distribute a modified version of this template
+% it is a good idea to clearly note that it differs from the original,
+% preferably by changing the name of the class. That way it's less likely
+% that people run into problems if they want to use the original template
+% in the future.
+
+
+
+
+
+
+
+%---------------------------------------
+%	Options
+%---------------------------------------
+
+% Here you can select language,
+% tell the template which TeX-engine you are using,
+% and choose if you want A4-paper.
+
+% --- Language ---
+\newif\iflangswe
+%\langswetrue
+% uncomment this to use swedish
+
+\newif\ifxeorlua
+%\xeorluatrue
+% uncomment this if you are using XeLaTeX or LuaLaTeX
+% don't uncomment if you are using pdfLatex or Latex to create dvi
+
+\newif\ifAfourpaper
+%\Afourpapertrue
+% uncomment this if you want A4-paper
+
+
+%---------------------------------------
+%	Technical stuff
+%---------------------------------------
+
+% There is nothing here that needs to be changed,
+% but feel free to do so anyway
+
+% --- Packages ---
+\documentclass{book}
+\ifxeorlua
+	\usepackage{polyglossia}
+	\usepackage{fontspec}
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage[swedish,english]{babel}
+	\usepackage[utf8]{inputenc}
+\fi
+\usepackage{graphics}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+%\providecommand{\url}{\texttt}
+% uncomment this if you for some
+% reason choose to remove hyperref
+% (unless you use the url package
+% or something)
+% but are you sure you're not just
+% looking for the option hidelinks?
+\usepackage{geometry}
+\ifAfourpaper
+	\geometry{textwidth=345pt,textheight=490pt,hcentering}
+\else
+	\geometry{paperwidth=165mm,paperheight=240mm,
+		textwidth=345pt,textheight=490pt,top=3cm,inner=2cm}
+\fi
+
+% --- Info and labels ---
+% these are the fixed strings used in the template, don't change
+\iflangswe
+	\newcommand{\liu}{Linköpings universitet}
+	\newcommand{\mai}{Matematiska institutionen, \liu}
+	\newcommand{\creditslabel}{Högskolepoäng}
+	\newcommand{\levellabel}{Nivå}
+	\newcommand{\supervisorlabel}{Handledare}
+	\newcommand{\multisupervisorlabel}{Handledare}
+	\newcommand{\examinerlabel}{Examinator}
+	\ifxeorlua
+		\setmainlanguage{swedish}
+		\setotherlanguage{english}
+	\else
+		\AtBeginDocument{\selectlanguage{swedish}}
+	\fi
+\else
+	\newcommand{\liu}{Linköping University}
+	\newcommand{\mai}{Department of Mathematics, \liu}
+	\newcommand{\creditslabel}{Credits}
+	\newcommand{\levellabel}{Level}
+	\newcommand{\supervisorlabel}{Supervisor}
+	\newcommand{\multisupervisorlabel}{Supervisors}
+	\newcommand{\examinerlabel}{Examiner}
+	\ifxeorlua
+		\setmainlanguage{english}
+		\setotherlanguage{swedish}
+	\else
+		\AtBeginDocument{\selectlanguage{english}}
+	\fi
+\fi
+\newcommand{\svkeywordslabel}{Nyckelord}
+\newcommand{\enkeywordslabel}{Keywords}
+\newcommand{\svurllabel}{URL för elektronisk version}
+\newcommand{\enurllabel}{URL for electronic version}
+
+% --- Header ---
+\fancypagestyle{normal}{
+	\fancyhf{}
+	\fancyhead[LO]{\nouppercase{\small\rightmark}}
+	\fancyhead[RE]{\nouppercase{\small\leftmark}}
+	\fancyhead[LE,RO]{\small\thepage}
+	\renewcommand{\headrulewidth}{0.2pt}
+	\renewcommand{\footrulewidth}{0pt}}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[RE,LO]{\small\shortauthor,\space\publishyear.}
+	\fancyfoot[LE,RO]{\small\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0.2pt}}
+\fancypagestyle{copyright}{
+	\fancyhf{}
+	\fancyfoot[L]{\copyright\space\publishyear,\space\author}
+	\renewcommand{\headrulewidth}{0pt}}
+\pagestyle{normal}
+
+% --- redefine \cleardoublepage to remove headers between chapters ---
+\makeatletter
+\def\cleardoublepage{%
+	\clearpage
+	\if@twoside
+		\ifodd\c@page
+			% do nothing
+		\else
+			\hbox{}%
+			\thispagestyle{empty}%
+			\newpage
+			\if@twocolumn
+				\hbox{}%
+				\newpage
+			\fi
+		\fi
+	\fi}
+\makeatother
+
+% --- PDF metadata ---
+% \PlaceMetadata is run after the title page
+\newcommand{\PlaceMetadata}{%
+	\ifdefined\hypersetup % i.e. if hyperref is loaded
+		\hypersetup{%
+			pdftitle=\pdftitle,
+			pdfauthor=\pdfauthor,
+			pdfsubject=\pdfsubject,
+			pdfkeywords=\pdfkeywords}
+	\else
+		\ifdefined\pdfinfo % works with pdftex and luatex
+			\pdfinfo{
+				/Title (\pdftitle)
+				/Author (\pdfauthor)
+				/Keywords (\pdfkeywords)
+				/Subject (\pdfsubject)}
+		\fi
+	\fi}
+
+
+%---------------------------------------
+%	Info about the thesis
+%---------------------------------------
+
+% Fill in the last pair of braces
+% Some sensible defaults are already filled in
+
+\renewcommand{\title}{} % The title of the thesis
+\renewcommand{\author}{} % Your full name
+\newcommand{\shortauthor}{} % Your surname
+\newcommand{\publishmonth}{} % The month you publish the thesis
+\newcommand{\publishyear}{} % The year you publish the thesis
+\newcommand{\city}{Linköping} % The city in which you publish the thesis
+\newcommand{\department}{\mai} % The department where you do the thesis
+% tip: \mai expands to the name
+% of MAI in the chosen language
+\newcommand{\level}{} % The level, usually G2 or A
+\newcommand{\credits}{} % The number of hp, usually 16 hp or 30 hp
+\newcommand{\regnumber}{} % The number you get from some administrator
+\newcommand{\svkeywords}{} % Keywords in swedish
+\newcommand{\enkeywords}{} % Keywords in english
+\newcommand{\publishurl}{} % The url to the thesis
+\newcommand{\pdftitle}{\title} % The title in plain text, for metadata
+% tip: \necommand{\pdftitle}{\title} means
+% you only need to typ the title once, but
+% may fail if you use math or something,
+% in that case you can define \pdftitle
+% using only plain text.
+\newcommand{\pdfauthor}{\author} % The author in plain text, for metadata
+\newcommand{\pdfkeywords}{} % The keywords in plain text, for metadata
+\newcommand{\pdfsubject}{} % The subject in plain text, for metadata
+\newcommand{\examiner}{} % The name of the examiner
+\newcommand{\examinerdepartment}{\mai} % The department of the examiner
+\newcommand{\supervisor}{} % The name of the supervisor
+\newcommand{\supervisordepartment}{\mai} % The department of the supervisor
+%\newcommand{\secondsupervisor}{}
+%\newcommand{\secondsupervisordepartment}{}
+%\renewcommand{\supervisorlabel}{\multisupervisorlabel}
+% etc.
+% If you have multiple supervisors, uncomment this to add information
+% about the second one and change the label on the title page to plural
+% You also need to uncomment the second supervisor on the title page
+
+
+%---------------------------------------
+%	Your preamble
+%---------------------------------------
+
+% This is a great place to put your own definitions
+% and load any packages that have not been loaded earlier
+
+
+% --- \begin{document} ---
+\begin{document}
+
+\frontmatter
+
+%---------------------------------------
+%	Title page
+%---------------------------------------
+
+% Unless you have more than one supervisor,
+% there is no need to change this
+
+\newcommand*{\supervisorexaminerformat}[2]{\textbf{#1},\\#2}
+\newcommand{\myendline}{\rule[-1em]{0pt}{1em}\\}
+% \myendline is a workaround to get spacing to work
+% after minipages, replace with \rule[-1em]{1pt}{1em}\\
+% to see how it works
+\cleardoublepage
+\thispagestyle{empty}%
+\begin{center}
+	\null
+	\vskip 4cm%
+	{\Large\textbf{\title}\vskip 1em}%
+	\department\vskip 1em%
+	\textbf{\author}\vskip 1em%
+	\regnumber
+\end{center}
+\vfill
+\begin{tabularx}{\textwidth}{@{}r@{\quad}X@{}}
+	\creditslabel:&
+		\textbf{\credits}\myendline
+	\levellabel:&
+		\textbf{\level}\myendline
+	\supervisorlabel:&
+		\begin{minipage}[t]{\linewidth}\raggedright
+			\supervisorexaminerformat
+				{\supervisor}{\supervisordepartment}
+			\myendline
+			%\supervisorexaminerformat
+			%	{\secondsupervisor}{\secondsupervisordepartment}
+			%\myendline
+			% etc.
+			% uncomment this if you have multiple supervisors
+		\end{minipage}\\
+	\examinerlabel:&
+		\begin{minipage}[t]{\linewidth}\raggedright
+			\supervisorexaminerformat
+				{\examiner}{\examinerdepartment}
+			\myendline
+		\end{minipage}\\
+	\city:&
+		\textbf{\publishmonth\space\publishyear}
+\end{tabularx}
+\PlaceMetadata
+\cleardoublepage
+
+%---------------------------------------
+%	Your text
+%---------------------------------------
+
+% The chapter titles below are just suggestions, of course
+% Which ones you use, and the order of them, is up to you
+
+% --- English abstract ---
+\chapter*{Abstract}
+
+% Your abstract in english
+
+% This prints english keywords and url, don't change
+\begin{description}
+	\item[\enkeywordslabel:]\leavevmode\\
+	\enkeywords
+\end{description}
+\begin{description}
+	\item[\enurllabel:]\leavevmode\\
+	\url{\publishurl}
+\end{description}
+
+% --- Swedish abstract ---
+\cleardoublepage
+
+% The otherlanguage* environment is of course only needed
+% if the main language is english; if the main language
+% is swedish you use \begin{otherlanguage*}{english} around
+% the english abstract instead
+\begin{otherlanguage*}{swedish}
+\chapter*{Sammanfattning}
+
+% Your abstract in swedish
+
+% This prints swedish keywords and url, don't change
+\begin{description}
+	\item[\svkeywordslabel:]\leavevmode\\
+	\svkeywords
+\end{description}
+\begin{description}
+	\item[\svurllabel:]\leavevmode\\
+	\url{\publishurl}
+\end{description}
+\end{otherlanguage*}
+
+% --- Acknowledgements ---
+\chapter*{Acknowledgements}
+
+% Here you can thank people who have helped you in
+% various ways, presumably including your supervisor
+
+% --- Nomenclature ---
+\chapter*{Nomenclature}
+
+% If you want to describe the notation you will use
+% in the thesis, this is a good place
+
+% --- Table of contents ---
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+% --- Start of main text ---
+\mainmatter
+
+\chapter{Introduction}
+
+% or whatever your first chapter is...
+
+% To keep things ordered you might want to place the text of each
+% chapter in a separate tex-file, say chapter-introduction.tex,
+% and use \input{chapter-introduction} here.
+
+
+% --- Appendix ---
+%\appendix
+% uncomment if you want an appendix
+
+%\chapter{Tables}
+
+% or whatever the first chapter of the appendix is...
+
+
+% ---Bibliography ---
+
+% Here you put the bibliography
+
+
+
+
+%---------------------------------------
+%	Copyright page
+%---------------------------------------
+
+% Don't change this unless you really need to
+
+% This page is based on the template available from
+% Linköping University Electronic Press,
+% at the time of writing available at
+% http://www.ep.liu.se/copyright/copyright_thesis.rtf
+% (linked from http://www.ep.liu.se/exjobb/index.en.asp)
+%
+% The logo is (at the time of writing) available from
+% http://www.liu.se/insidan/kommunikationsstod/grafiskprofil
+
+% --- The copyright text in swedish ---
+\newcommand{\SwedishCopyrightText}{%
+\begin{otherlanguage*}{swedish}
+\subsection*{Upphovsrätt}
+Detta dokument hålls tillgängligt på Internet – eller dess framtida ersättare – från publiceringsdatum under förutsättning att inga extraordinära omständigheter uppstår.
+
+Tillgång till dokumentet innebär tillstånd för var och en att läsa, ladda ner, skriva ut enstaka kopior för enskilt bruk och att använda det oförändrat för ickekommersiell forskning och för undervisning. Överföring av upphovsrätten vid en senare tidpunkt kan inte upphäva detta tillstånd. All annan användning av dokumentet kräver upphovsmannens medgivande. För att garantera äktheten, säkerheten och tillgängligheten finns lösningar av teknisk och administrativ art.
+
+Upphovsmannens ideella rätt innefattar rätt att bli nämnd som upphovsman i den omfattning som god sed kräver vid användning av dokumentet på ovan beskrivna sätt samt skydd mot att dokumentet ändras eller presenteras i sådan form eller i sådant sammanhang som är kränkande för upphovsmannens litterära eller konstnärliga anseende eller egenart.
+
+För ytterligare information om Linköping University Electronic Press se förlagets hemsida \url{http://www.ep.liu.se/}.
+\end{otherlanguage*}}
+
+% --- The copyright text in english ---
+\newcommand{\EnglishCopyrightText}{%
+\begin{otherlanguage*}{english}
+\subsection*{Copyright}
+The publishers will keep this document online on the Internet – or its possible replacement – from the date of publication barring exceptional circumstances.
+
+The online availability of the document implies permanent permission for anyone to read, to download, or to print out single copies for his/her own use and to use it unchanged for non-commercial research and educational purpose. Subsequent transfers of copyright cannot revoke this permission. All other uses of the document are conditional upon the consent of the copyright owner. The publisher has taken technical and administrative measures to assure authenticity, security and accessibility.
+
+According to intellectual property law the author has the right to be mentioned when his/her work is accessed as described above and to be protected against infringement.
+
+For additional information about the Linköping University Electronic Press and its procedures for publication and for assurance of document integrity, please refer to its www home page: \url{http://www.ep.liu.se/}.
+\end{otherlanguage*}}
+
+% --- The copyright page ---
+\clearpage\null\pagestyle{empty}\cleardoublepage
+\thispagestyle{copyright}
+\noindent
+{\large Linköping University Electronic Press}
+\hfill
+\iflangswe
+	\smash{\raisebox{-9.7pt}{%
+		\resizebox{5cm}{!}{\includegraphics{liulogo_sv}}}}%
+	\hspace{-9.5pt}
+\else
+	\smash{\raisebox{-10.2pt}{%
+		\resizebox{5cm}{!}{\includegraphics{liulogo_en}}}}%
+	\hspace{-10pt}
+\fi
+% The distances above are calibrated for the current logo;
+% if the logo changes, the distances probably should too.
+\par\vfil
+\bigskip
+\iflangswe
+	\SwedishCopyrightText
+	\EnglishCopyrightText
+\else
+	\EnglishCopyrightText
+	\SwedishCopyrightText
+\fi
+
+
+% --- \end{document} ---
+\end{document}
