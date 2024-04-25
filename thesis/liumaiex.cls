@@ -370,19 +370,20 @@
 % This redefines \cleardoublepage to remove headers between chapters
 \def\cleardoublepage{%
 	\clearpage
-	\if@twoside
-		\ifodd\c@page
-			% do nothing
-		\else
-			\hbox{}%
-			\thispagestyle{empty}%
-			\newpage
-			\if@twocolumn
-				\hbox{}%
-				\newpage
-			\fi
-		\fi
-	\fi}
+	% \if@twoside
+	% 	\ifodd\c@page
+	% 		% do nothing
+	% 	\else
+	% 		\hbox{}%
+	% 		\thispagestyle{empty}%
+	% 		\newpage
+	% 		\if@twocolumn
+	% 			\hbox{}%
+	% 			\newpage
+	% 		\fi
+	% 	\fi
+	% \fi
+	}
 
 
 %---------------------------------------
@@ -515,32 +516,32 @@
 % The logo is (at the time of writing) available from
 % http://www.liu.se/insidan/kommunikationsstod/grafiskprofil
 
-\AtEndDocument{%
-\clearpage\null\pagestyle{empty}\cleardoublepage
-\thispagestyle{copyright}
-\noindent
-{\large Linköping University Electronic Press}
-\hfill
-\ifliumaiex@langswe
-	\smash{\raisebox{-9.7pt}{%
-		\resizebox{5cm}{!}{\includegraphics{liulogo_sv}}}}%
-	\hspace{-9.5pt}
-\else
-	\smash{\raisebox{-10.2pt}{%
-		\resizebox{5cm}{!}{\includegraphics{liulogo_en}}}}%
-	\hspace{-10pt}
-\fi
-% The distances above are calibrated for the current logo;
-% if the logo changes, the distances probably should too.
-\par\vfil
-\bigskip
-\ifliumaiex@langswe
-	\liumaiex@swedishcopyrighttext
-	\liumaiex@englishcopyrighttext
-\else
-	\liumaiex@englishcopyrighttext
-	\liumaiex@swedishcopyrighttext
-\fi}
+% \AtEndDocument{%
+% \clearpage\null\pagestyle{empty}\cleardoublepage
+% \thispagestyle{copyright}
+% \noindent
+% {\large Linköping University Electronic Press}
+% \hfill
+% \ifliumaiex@langswe
+% 	\smash{\raisebox{-9.7pt}{%
+% 		\resizebox{5cm}{!}{\includegraphics{liulogo_sv}}}}%
+% 	\hspace{-9.5pt}
+% \else
+% 	\smash{\raisebox{-10.2pt}{%
+% 		\resizebox{5cm}{!}{\includegraphics{liulogo_en}}}}%
+% 	\hspace{-10pt}
+% \fi
+% % The distances above are calibrated for the current logo;
+% % if the logo changes, the distances probably should too.
+% \par\vfil
+% \bigskip
+% \ifliumaiex@langswe
+% 	\liumaiex@swedishcopyrighttext
+% 	\liumaiex@englishcopyrighttext
+% \else
+% 	\liumaiex@englishcopyrighttext
+% 	\liumaiex@swedishcopyrighttext
+% \fi}
 
 \newcommand{\liumaiex@swedishcopyrighttext}{%
 \begin{otherlanguage*}{swedish}

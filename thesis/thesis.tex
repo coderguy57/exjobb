@@ -1,0 +1,686 @@
+\documentclass[english,master]{liumaiex}
+% Options are english, swedish, bachelor and master
+
+
+%=========================================================================%
+%
+% Add optional packages. Some are almost essential. 
+%
+%=========================================================================%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{comment}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{conjecture}[proposition]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{example}[proposition]{Example}
+\newtheorem{remark}[proposition]{Remark}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand{\sgn}{\text{sgn}}
+
+\begin{document}
+
+\frontmatter
+
+
+%=========================================================================%
+%
+% Information to fill-in
+%
+%=========================================================================%
+\title{The title of the thesis}
+\author{Erik Jonasson}
+\shortauthor{Jonasson}
+% If there are several authors, just enter the names separated by comma or 'and'
+\publishmonth{June}
+\publishyear{2024}
+%\city{City} % Has Linköping as default
+%\department{Department name} % Has MAI as default
+\supervisor*{Hans Lundmark}
+% To add another supervisor, just use the command again
+\examiner*{Fredrik Andersson} % use a star to add department automatically
+% \supervisor also accepts the star format
+%\level{G2} % Not needed when bachelor/master is set in options
+%\credits{16 hp} % Not needed when bachelor/master is set in options
+\regnumber{The number your thesis gets from administrators}
+\enkeywords{Keyword 1, keyword 2, etc.}
+\svkeywords{Nyckelord 1, nyckelord 2, etc.}
+\publishurl{The url to the thesis}
+%\pdfauthor{Name} % Needed if name is complex
+%\pdftitle{Title} % Needed if title is complex
+%\pdfkeywords{Keywords} % Needed if keywords are complex
+%\pdfsubject{Subject} % Optional
+
+\maketitle
+
+
+%=========================================================================%
+%
+% Introductory part: Abstract, Acknowledgements, etc 
+%
+%=========================================================================%
+\chapter*{Abstract}
+
+A summary of the thesis, presenting the important results.
+
+\placeenkeywords
+\placeenurl
+
+% \cleardoublepage
+% \begin{otherlanguage*}{swedish}
+% \chapter*{Sammanfattning}
+
+% You can write a swedish abstract in this environment to get
+% correct (swedish) formatting and hyphenation
+
+% \placesvkeywords
+% \placesvurl
+% \end{otherlanguage*}
+
+% \chapter*{Acknowledgements}
+
+% Acknowledgements and thanks to people that have helped you.
+
+% \chapter*{Nomenclature}
+
+% The notation you will use in the thesis
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+
+
+%=========================================================================%
+%
+% Main part of the thesis
+%
+%=========================================================================%
+\mainmatter
+
+\chapter{Theory}
+\todo{This whole chapter is very much a work in progress.}
+
+\section{Introduction}
+The starting point of this paper is the Novikov equation
+\begin{equation} \label{eq:Novikov}
+	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u - u_{xx}.
+\end{equation}
+It was discovered by Vladimir Novikov in a classification of cubically nonlinear PDEs admitting infinitely many symmetries\cite{Novikov_2009}. The Novikov equation has peakon solutions, given by
+\begin{equation} \label{eq:peakon}
+	u(x, t) = \sum_{k = 1}^{N} m_k(t) e^{-|x - x_k(t)|}.
+\end{equation}
+Peakons are a type of soliton wave characterized by a sharp peak.
+The Novikov equation is closely related to the Camassa-Holm equation and the Degasperis-Procesi equation. These equations are all members of the class of integrable partial differential equations known as peakon equations. The Camassa-Holm equation
+\begin{equation} \label{eq:CH}
+	m_t + (um)_x + u_xm = 0,\quad m = u - u_{xx}.
+\end{equation}
+was discovered by Camassa and Holm in 1993\cite{Camassa_1993}, who studied unidirectional flow in shallow water.
+Later the Degasperis-Procesi equation
+\begin{equation} \label{eq:DP}
+	m_t + (um)_x + 2u_xm = 0,\quad m = u - u_{xx}.
+\end{equation}
+was discovered by Degasperis and Procesi in 1999\cite{Degasperis_1999}. These equations share similar properties with the Novikov equation, such as the existence of peakon solutions and the presence of infinitely many symmetries. For a more detailed discussion of the peakon equations and its properties, see the comprehensive overview by Lundmark and Szmigielski\cite{Lundmark_2022}.
+
+The focus of the thesis is on the high-frequency limit of the Novikov equation. The high-frequency limit is obtained by substitution of $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and letting $\epsilon \rightarrow 0$. This limit gives the following equation
+\begin{equation} \label{eq:Novikov_high_freq}
+	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u_{xx}.
+\end{equation}
+which is the same as the Novikov equation, but with $m = u_{xx}$ instead of $m = u - u_{xx}$. Both the CH and DP equations have been studied in the high-frequency limit, and it has been shown that they yield piecewise linear solutions. The high-frequency limit of the Novikov equation is expected to yield similar piecewise linear solutions. The high frequency limit of the Camassa Holm equation yields the Hunter-Saxton equation\cite{HunterSaxton_1991,HunterZheng1994} for nematic liquid crystals. The high frequency limit of the Degasperis-Procesi equation yields the derivative Burgers equation\cite{Kohlenberg_2007, Lundmark_2008}.
+\begin{center}
+  \begin{tabular}{c|c}
+    $m=u-u_{xx}$ & $m=u_{xx}$ \\
+    \hline
+    Camassa--Holm & Hunter--Saxton \\
+    \hline
+    Degasperis--Procesi & Derivative Burgers \\
+    \hline
+    Novikov & HF Novikov \\
+  \end{tabular}
+\end{center}
+
+The CH and DP have had piecewise solutions on the following form
+\begin{equation} \label{eq:linear_peakon}
+	u(x, t) = \sum_{k = 1}^{N} m_k(t) |x - x_k(t)|.
+\end{equation}
+So we will make the assumption that the high frequency limit of the Novikov equation will have a similar piecewise solution.
+\begin{theorem}
+	\label{thm:real-spectrum}
+	The time derivative of $x_k$ and $m_k$ will be governed by the following ODEs:
+	\begin{equation} \label{eq:peakon_odes}
+	\dot{x}_k = u(x_k)^2, \quad
+	\dot{m}_k = -m_ku_x(x_k)u(x_k).
+	\end{equation}
+	Dots denote $\frac{d}{dt}$ as usual.
+\end{theorem}
+\begin{proof}
+	If we plug in the peakon solution \eqref{eq:peakon} into the Novikov equation \eqref{eq:Novikov}:
+	\begin{equation}
+		u_{xxt} = -u^2u_{xxx} - 3uu_xu_{xx},
+	\end{equation}
+	we get:
+	\begin{equation}
+	\begin{aligned}
+		\sum_{k = 1}^{N} \dot{m}_k(t)\delta(x - x_k) 
+		-\sum_{k = 1}^{N}\dot{x}_k m_k\delta_x(x - x_k) =\\
+		-\sum_{k = 1}^{N}u^2m_k\delta_x(x - x_k)
+		-3\sum_{k = 1}^{N}uu_xm_k\delta(x - x_k).
+	\end{aligned}
+	\end{equation}
+	At $x = x_k$ we get:
+	\begin{equation}
+		\dot{m}_k =
+		2m_ku_x(x_k)u(x_k) -3m_ku_x(x_k)u(x_k) =
+		-m_ku_x(x_k)u(x_k)
+	\end{equation}
+	Multiplying by $(x - x_k)$ first and then plugging in $x = x_k$ we get: \todo{This feels a bit iffy, but maybe it's okey to do in a distributional sense? It gives the right result at least. (For $m_k \ne 0$...)}
+	\begin{equation}
+		m_k\dot{x}_k = m_k u(x_k)^2
+	\end{equation}
+\end{proof}
+The time derivatives of $x_k$ and $m_k$ for the original Novikov equation have the same form, but then $u$ is the peakon equation(\ref{eq:peakon}) instead of the linear equation(\ref{eq:linear_peakon}).
+
+\section{Lax Pairs}
+
+Lax Pairs are a mathematical framework used to analyze and solve certain types of nonlinear PDEs. They are the main tool used to solve peakon equations. The concept of Lax Pairs was introduced by Peter Lax in 1968\cite{Lax_1968}. A Lax Pair consists of two operators, $L$ and $A$, that satisfy a specific compatibility condition.
+The existence of a Lax Pair for a nonlinear PDE is a strong indicator of the equation's integrability. It implies the presence of an infinite number of conservation laws and allows for the application of powerful analytical methods, such as the inverse spectral transform (IST), to find exact solutions.
+
+\subsubsection{Definition}
+
+The Lax Pairs is defined by two differential operators $L(t)$ and $A(t)$, which depend on a temporal parameter $t$ and satisfy the Lax equation:
+\begin{equation}
+    \dot{L} = [L,A] \equiv LA - AL,
+\end{equation}
+where $[L, A]$ denotes the commutator of $L$ and $A$. The operator $L$ is associated with a linear eigenvalue problem, and $A$ governs the time evolution of the eigenfunctions, as follows
+\begin{align}
+    L\psi = \lambda\psi, \quad \dot{\psi} = A\psi.
+\end{align}
+%
+In many cases, Lax Pairs are represented in matrix form, enabling a more straightforward application of the IST method. This approach is particularly useful for systems where the operator algebra becomes cumbersome.
+
+\chapter{Solution}
+\section{N = 2 solution to the high frequency limit Novikov}
+The assumption that $x_1 < x_2 < ... < x_N$ can be made without loss of generality. We can also assume that $m_k \neq 0$ since if it were equal to zero it wouldn't affect the equation.
+For $N = 1$, the solution is trivial since $u(x_k) = 0$. For the more interesting case when $N = 2$ we get the following system of ODEs from equation \eqref{eq:peakon_odes}:
+%
+\begin{align}
+	\dot{x}_1 & = m_2^2 (x_2 - x_1)^2, \\
+	\dot{x}_2 & = m_1^2 (x_2 - x_1)^2, \\
+	\dot{m}_1 & = m_1 m_2^2(x_2 - x_1),  \\
+	\dot{m}_2 & = -m_1^2 m_2(x_2 - x_1).
+\end{align}
+%
+To solve this system, we first identify conserved quantities:
+\begin{align}
+	(m_1^2 + m_2^2)_t = 0, \\
+	(m_1m_2(x_2 - x_1))_t = 0.
+\end{align}
+%
+To show why these are conserved, we take the time derivative of the first equation:
+\begin{equation}
+\begin{aligned}
+	(m_1^2 + m_2^2)_t 
+	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
+	&= 2m_1^2m_2^2(x_2 - x_1) - 2m_1^2m_2^2(x_2 - x_1) = 0,
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	(m_1m_2(x_2 - x_1))_t 
+	&= \dot{m}_1m_2(x_2 - x_1) + m_1\dot{m}_2(x_2 - x_1) \\
+	&- m_1m_2\dot{x}_1 + m_1m_2\dot{x}_2 \\
+	&= m_1m_2^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
+	&- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
+	&= 0. \\
+\end{aligned}
+\end{equation}
+%
+Denoting these conserved quantities as $M_1$ and $M_2$ respectively, we can express the conservation laws as:
+\begin{align}
+	m_1^2 + m_2^2 = M_1, \\
+	m_1m_2(x_2 - x_1) = M_2.
+\end{align}
+%
+Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
+\begin{equation}
+\left\{ \begin{aligned}
+	\dot{m}_1 = \phantom{-}m_2M_2, \\
+	\dot{m}_2 = -m_1M_2.
+\end{aligned} \right.
+\end{equation}
+%
+The solutions to these equations take the form:
+\begin{equation}
+\left\{ \begin{aligned}
+	m_1 &= \phantom{-}A \cos(M_2t) + B\sin(M_2t) = \phantom{-}\sqrt{M_1} \cos(M_2t - \phi), \\
+	m_2 &= -A \sin(M_2t) + B\cos(M_2t) = -\sqrt{M_1} \sin(M_2t - \phi), \\
+	\phi &= \text{atan2}(B, A).
+\end{aligned} \right.
+\end{equation}
+Atan2 is a function that returns the angle whose tangent is the quotient of its arguments and is used to determine the correct quadrant of the angle. It is defined as:
+\begin{equation}
+	\text{atan2}(y, x) = \begin{cases}
+		\arctan(y/x) & \text{if } x > 0, \\
+		\arctan(y/x) + \pi & \text{if } x < 0, y \geq 0, \\
+		\arctan(y/x) - \pi & \text{if } x < 0, y < 0, \\
+		\phantom{-}\pi/2 & \text{if } x = 0, y > 0, \\
+		-\pi/2 & \text{if } x = 0, y < 0, \\
+		\text{undefined} & \text{if } x = 0, y = 0.
+	\end{cases}
+\end{equation}
+%
+Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
+\begin{align}
+\left\{ \begin{aligned}
+	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2, \\
+	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2,
+\end{aligned} \right. \\
+\implies \left\{ \begin{aligned}
+	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\cos^2(M_2t - \phi)}, \\
+	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t - \phi)}.
+\end{aligned} \right.
+\end{align}
+%
+Integration yields the positions:
+\begin{equation}
+\left\{ \begin{aligned}
+	x_1 = \phantom{-}\frac{M_2}{M_1}\tan(M_2t - \phi) + C,\\
+	x_2 = -\frac{M_2}{M_1}\cot(M_2t - \phi) - D.
+\end{aligned} \right.
+\end{equation}
+%
+The $M_2$ quantity implies that $D = -C$:
+\begin{align}
+	M_2 = m_1m_2(x_2 - x_1) = M_2 + M_1\cos(M_2t-\phi)\sin(M_2t-\phi)(C + D)).
+\end{align}
+%
+In conclusion the piecewise solution looks like this:
+\begin{align}
+	u(x, t) &= m_1|x - x_1| + m_2|x - x_2|, \\
+	m_1 &= +\sqrt{M_1} \cos(M_2t - \phi), \\
+	m_2 &= -\sqrt{M_1} \sin(M_2t - \phi), \\
+	x_1 &= +\frac{M_2}{M_1}\tan(M_2t - \phi) + C, \\
+	x_2 &= -\frac{M_2}{M_1}\cot(M_2t - \phi) + C.
+\end{align}
+%
+There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since we had four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. The solution is valid only for a finite time, since we made the assumtion that $x_1 < x_2$. The assumption that $x_1 < x_2$ is only valid for finite intervals since $\tan$ and $\cot$ are periodic functions.
+
+\chapter{Constant of motion}
+
+The main achievement of this paper is the discovery of constants of motion for the high-frequency limit of the Novikov equation. Most constants have been found using the method of exhaustion, where we have found all constants up to a certain order. For some constants we have found a pattern that we have used to find the constants of higher order. First we will present the constants of motion for $N = 2$ and $N = 3$.
+
+\section{N = 2}
+
+\begin{align}
+	M_1 &= m_1 m_2 (x_2 - x_1). \\
+	M_2 &= m_1^2\phantom{x_1} + m_2^2\phantom{x_2}, \\
+	M_3 &= m_1^2 x_1 + m_2^2 x_2, \\
+	M_4 &= m_1^2 x_1^2 + m_2^2 x_2^2. \\
+\end{align}
+%
+The system of ODEs for $N = 2$ only have four variables so the system should only have three functionally independent constants of motion. We can see that
+\begin{equation}
+	M_1 = \sqrt{M_2M_4 - M_3^2}.	
+\end{equation}
+
+\section{N = 3}
+
+The first two are
+\begin{align}
+	M_1 &= m_1m_2(x_2 - x_1) + m_1m_3(x_3 - x_1) + m_2m_3(x_3 - x_2), \\
+	M_2 &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_1).
+\end{align}
+If we let
+\begin{align}
+	A & = m_1^2(M_1 + 2m_2m_3(x_3-x_2)), \\
+	B & = m_2^2(M_1 + 2m_1m_3(x_3-x_1)), \\
+	C & = m_3^2(M_1 + 2m_1m_2(x_2-x_1))
+\end{align}
+then we can write the three other conserved quantities as
+\begin{align}
+	M_3 &= A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} \\
+	M_4 &= Ax_1 + Bx_2 + Cx_3 \\
+	M_5 &= Ax_1^2 + Bx_2^2 + Cx_3^2
+\end{align}
+
+\subsection{N = 4}
+
+For $N = 4$ we have only found six conserved quantities. The first two follow the same pattern as for $N = 3$
+\begin{align}
+	M_1 = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
+	M_2 = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
+\end{align}
+For the next three lets define define the expression $W_i$ to be the sum of all the terms in $M_i$ that doesn't contain $m_i$. Now we can define $A, B, C, D$ as
+\begin{align}
+	A &= m_1^2(M_1 + 2W_1), \\
+	B &= m_2^2(M_1 + 2W_2), \\
+	C &= m_3^2(M_1 + 2W_3), \\
+	D &= m_4^2(M_1 + 2W_4).
+\end{align}
+We can then write the next three conserved quantities as
+\begin{align}
+	M_3 =& A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} + D\phantom{x_4} \notag \\
+	&+ 6m_1m_2m_3m_4 (x_1 - x_2 + x_3 - x_4) \\
+	M_4 =& Ax_1 + Bx_2 + Cx_3 + Dx_4 \notag \\
+	&+ 6m_1m_2m_3m_4 (x_1x_3 - x_2x_4) \\
+	M_5 =& Ax_1^2 + Bx_2^2 + Cx_3^2 + Dx_4^2 \notag \\
+	&+ 6m_1m_2m_3m_4 (x_1x_2x_3 - x_1x_2x_4 + x_1x_3x_4 - x_2x_3x_4)
+\end{align}
+%
+Interestingly, it follows very close to the pattern of the $N = 3$ case. The only difference is that we get some extra terms that all contain $m_1m_2m_3m_4$. The last found conserved quantity is
+\begin{equation}
+\begin{aligned}
+	M_6 =
+		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
+		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
+		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
+		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_2) \\
+		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
+		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
+		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
+		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
+\end{aligned}
+\end{equation}
+
+\section{General case}
+
+We have not been able to find a general formula to find all the constants of motion, but we have found a pattern for the first two constants of motion.
+
+\begin{theorem}
+	One constant of motion is the sum of on the following form	
+	\begin{equation}
+		\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Since $x_i < x_j$ for $i < j$ we can write the sum as
+	\begin{equation}
+		\sum_{i,j} m_i m_j (x_i - x_j) \sgn(i - j).
+	\end{equation}
+	We take summation notation to mean that the sum is over all $i$ and $j$ from $1$ to $N$.
+	Taking the time derivative of this sum we get
+	\begin{equation}
+		\sum_{i,j} \sgn(i - j)[
+			\dot{m}_i m_j (x_i - x_j) 
+			+ m_i \dot{m}_j (x_i - x_j)
+			+ m_i m_j (\dot{x}_i - \dot{x}_j)].
+	\end{equation}
+	Plugging in the derivative equations we get
+	\begin{equation}
+	\begin{aligned}
+		\sum_{i,j} & m_i m_j \sgn(i - j) \{ \\
+			& [u(x_i)^2 - (x_i - x_j) u_x(x_i) u(x_i)] \\
+			& [u(x_j)^2 - (x_i - x_j) u_x(x_j) u(x_j)]\}.
+	\end{aligned}
+	\end{equation}
+	The terms $u(x_i)^2$ and $u(x_j)^2$ can be written as
+	\begin{align}
+		u(x_i)^2 &= \sum_{k,l} m_k m_l (x_i - x_k) (x_i - x_l) \sgn(i - k) \sgn(i - l), \\
+		u_x(x_i) u(x_i) &= \sum_{k,l} m_k m_l (x_i - x_l) \sgn(i - k) \sgn(i - l).
+	\end{align}
+	Plugging in these expressions we get
+	\begin{equation}
+	\begin{aligned}
+		\sum_{i,j} &m_i m_j \sgn(i - j) \{\\
+			&[\sum_{k,l} m_k m_l (x_i - x_k) (x_i - x_l) \sgn(i - k) \sgn(i - l)\\
+			&-(x_i - x_j)\sum_{k,l} m_k m_l (x_i - x_l) \sgn(i - k) \sgn(i - l)]\\
+			&[-\sum_{k,l} m_k m_l (x_j - x_k) (x_j - x_l) \sgn(j - k) \sgn(j - l)\\
+			&-(x_i - x_j)\sum_{k,l} m_k m_l (x_j - x_l) \sgn(j - k) \sgn(j - l)]\}\\
+	\end{aligned}
+	\end{equation}
+	If we collect the terms we get
+	\begin{align}
+		&\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l) (x_i - x_l) (x_j - x_k)\\ 
+		+&\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(j - i) \sgn(j - k) \sgn(j - l) (x_j - x_l) (x_i - x_k) 
+	\end{align}
+	Both terms are symmetric in $i$ and $j$ so we only need to consider one of them. We can write the sum as
+	\begin{align}
+		\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l) (x_i x_j - x_i x_k + x_l x_k - x_l x_j).
+	\end{align}
+	Factoring out the $x$ terms we get
+	\begin{align}
+		&x_i x_j (\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l))\\
+		- &x_i x_l (\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l))\\
+		+ &x_k x_l (\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l))\\
+		- &x_k x_j (\sum_{i,j,k,l} m_i m_j m_k m_l \sgn(i - j) \sgn(i - k) \sgn(i - l)).
+	\end{align}
+	If we look at at a fixed $x_{n_1}x_{n_2}$ term we see that the first and second term will cancel out and the third and fourth term will cancel out. This means that the sum will be zero and the constant of motion is conserved.
+\end{proof}
+
+\begin{theorem}
+	Another constant of motion is the product on the following form	
+	\begin{equation}
+		\prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
+	\end{equation}
+	For the sake of breivity we define $x_0 = x_N$.
+\end{theorem}
+\begin{proof}
+	Taking the time derivative of this sum we get
+	\begin{equation}
+	\begin{aligned}
+		\prod_i [m_i^2 (x_i - x_{i-1})]
+		\sum_j & (\frac{\dot{m}_j}{m_j} + \frac{\dot{x}_j - \dot{x}_{j-1}}{x_j - x_{j-1}}).
+	\end{aligned}
+	\end{equation}
+	By dividing by the constant product to left and plugging in the derivative equations we get
+	\begin{equation}
+	\begin{aligned}
+		\sum_j & [-u(u_j)u_x(u_j) + \frac{u(u_j)^2 - u(u_{j-1})^2}{x_j - x_{j-1}}].
+	\end{aligned}
+	\end{equation}
+	The terms $u(x_i)^2$ and $u(x_j)^2$ can be written as
+	\begin{align}
+		u(x_i)^2 &= \sum_{k,l} m_k m_l (x_i - x_k) (x_i - x_l) \sgn(i - k) \sgn(i - l), \\
+		u_x(x_i) u(x_i) &= \sum_{k,l} m_k m_l (x_i - x_l) \sgn(i - k) \sgn(i - l).
+	\end{align}
+	Plugging in these expressions we get
+	\begin{equation}
+	\begin{aligned}
+		\sum_{j} \sum_{k,l} m_k m_l (x_j - x_l) \sgn(j - k) \sgn(j - l)
+		(-1 + \frac{x_j - x_k}{x_j - x_{j-1}} - \frac{x_j - x_k}{x_{j+1} - x_j})
+	\end{aligned}
+	\end{equation}
+	Consider a fixed $m_jm_l$ term and collect all terms with the same denominator. The terms that are interesting are
+	\begin{equation}
+	\begin{aligned}
+		&\sum_{j} (-1 + \frac{x_j - x_k}{x_j - x_{j-1}}) (x_j - x_l) \sgn(x_j - x_k) \sgn(x_j - x_l)\\
+		-&\sum_{j} \frac{x_{j-1} - x_k}{x_j - x_{j-1}} (x_{j-1} - x_l) \sgn(x_{j-1} - x_k) \sgn(x_{j-1} - x_l) 
+	\end{aligned}
+	\end{equation}
+	\todo{This is how far I got so far. It should be possible to show that this is zero with a bit more work.}
+\end{proof}
+
+
+\section{Novikov}
+
+The Lax pair for the Novikov equation\cite{Lundmark_2022} is given by
+
+\begin{subequations}
+  \label{eq:Novikov-lax}
+  \begin{equation}
+    \label{eq:Novikov-lax-x}
+    \frac{\partial}{\partial x}
+    \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix} =
+    \begin{pmatrix}
+      0 & zm & 1 \\
+      0 & 0 & zm \\
+      1 & 0 & 0
+    \end{pmatrix}
+    \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix}
+    ,
+  \end{equation}
+  \begin{equation}
+    \label{eq:Novikov-lax-t}
+    \frac{\partial}{\partial t}
+    \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix} =
+    \begin{pmatrix}
+      -u u_x & \frac{u_x}{z}-u^2 mz & u_x^2 \\
+      \frac{u}{z} & - \frac{1}{z^2} & - \frac{u_x}{z} - u^2 mz \\
+      -u^2 & \frac{u}{z} & uu_x
+    \end{pmatrix}
+    \begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix}
+    ,
+  \end{equation}
+\end{subequations}
+%
+Doing the high frequency substitution $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, results in $m \mapsto \epsilon^{-2} m$ since its the second derivative of $u$ and the substitution gives that $\frac{d}{dx} \mapsto \frac{d}{d (\epsilon x)} = \frac{1}{\epsilon} \frac{d}{dx}$. We are left to find the correct substitution for $z$. We can do this by looking at the spatial derivative of the Lax pair and since we don't know the $x$ and $t$ factors for $\psi_1$, $\psi_2$, and $\psi_3$ we call them $A$, $B$, and $C$ respectively
+\begin{equation}
+\begin{pmatrix} 
+	\epsilon^{-1} A \\
+	\epsilon^{-1} B \\
+	\epsilon^{-1} C \\
+\end{pmatrix} =
+\begin{pmatrix}
+	0 & zm\epsilon^{-2} & 1 \\
+	0 & 0 & zm\epsilon^{-2}  \\
+	1 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix} A \\ B \\ C \end{pmatrix} .
+\end{equation}
+Simplifying this we get
+\begin{equation}
+	A = z^2m^2\epsilon^{-1}A + \epsilon A,
+\end{equation}
+and since we don't want $A$ to go to $0$ or $\infty$ in the limit we get that $z$ should be substituted with $\epsilon^{1/2}$.
+Finally doing the substitutions $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, $m \mapsto \epsilon^{-2} m$ and $z \mapsto \epsilon^{1/2}z$, and letting $\epsilon \rightarrow 0$ we get rid of the 1 in the Lax pair
+\begin{equation}
+\frac{\partial}{\partial x}
+\begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix} =
+\begin{pmatrix}
+	0 & zm & 0 \\
+	0 & 0 & zm \\
+	1 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix} \psi_1 \\ \psi_2 \\ \psi_3 \end{pmatrix}
+\end{equation}
+The time derivative is left unchanged. We can simplify the system even further with the following substitutions
+\begin{equation}
+\left\{ \begin{aligned}
+	&\varphi_1 = &\psi_1, \\
+	&\varphi_2 = &z\psi_2, \\
+	&\varphi_3 = &z^2\psi_3.
+\end{aligned} \right.
+\end{equation}
+By also setting $z^2 = -\lambda$ we get the following Lax pairs
+\begin{subequations}
+\begin{equation}
+\frac{\partial}{\partial x}
+\begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
+\begin{pmatrix}
+	0 & m & 0 \\
+	0 & 0 & m \\
+	-\lambda & 0 & 0
+\end{pmatrix}
+\begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix}
+,
+\end{equation}
+\begin{equation}
+\frac{\partial}{\partial t}
+\begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
+\begin{pmatrix}
+	-u u_x & -\frac{u_x}{\lambda}-u^2 m & -\frac{u_x^2}{\lambda} \\
+	u & \frac{1}{\lambda} & \frac{u_x}{\lambda} - u^2 m \\
+	u^2\lambda & u & uu_x
+\end{pmatrix}
+\begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix}
+.
+\end{equation}
+\end{subequations}
+%
+%
+We know that
+\begin{equation}
+	m = u_{xx} = \sum_{k=1}^n m_k \delta(x - x_k),
+\end{equation}
+This means that $\varphi_3$ will be continous while $\varphi_1$ and $\varphi_2$ will have jumps at $x_k$.
+We will assume that $x_0 < x_1 < ... < x_n$, which will stay true at least for a time if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+\begin{equation}
+\begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
+\begin{pmatrix} A_i \\ B_i \\ -\lambda A_i x + C_i \end{pmatrix} 
+\text{for } x_k < x < x_{k+1}.
+\end{equation}
+We can also see from the Lax pair that $\varphi_3$ is going to be continous, while $\varphi_1$ and $\varphi_2$ is constant in the intervals with jump discontinuities at $x_k$.
+\begin{equation}
+\begin{aligned}
+\begin{pmatrix} A_k \\ B_k \\ C_k \end{pmatrix} &= 
+\begin{pmatrix}
+	1 - 2\lambda x_k m_k^2 & 2m_k & 2m_k^2 \\
+	-2\lambda m_k x_k & 1 & 2m_k \\
+	-2\lambda^2 m_k^2 x_k^2 & 2\lambda m_k x_k & 1 + 2\lambda m_k^2 x_k
+\end{pmatrix}
+\begin{pmatrix} A_{k-1} \\ B_{k-1} \\ C_{k-1} \end{pmatrix} \\
+&=: S_k(\lambda) 
+\begin{pmatrix} A_{k-1} \\ B_{k-1} \\ C_{k-1} \end{pmatrix}
+\end{aligned}
+\end{equation}
+We call the total jump matrix
+\begin{equation}
+	S(\lambda) := S_n(\lambda)S_{n-1}(\lambda)...S_1(\lambda).
+\end{equation}
+If we let combine the elements along the diagonal of the total jump matrix
+\begin{equation}
+	L(\lambda) = S(1,1) - S(2,2) + S(3,3)
+\end{equation}
+we get a polynomial in $\lambda$. Each coefficient of this polynomial is a constant of motion. One way to get $L$ would be to have three different $\varphi^{(j)}$ vectors at $x = x_0$
+\begin{equation}
+\varphi^{(j)} = 
+\begin{pmatrix} A_i^{(j)} \\ B_i^{(j)} \\ -\lambda A_i^{(j)}x + C_i^{(j)} \end{pmatrix} 
+\end{equation}
+and let $A_0^{(1)} = 1, B_0^{(2)} = -1, C_0^{(3)} = 1$, and the rest be zero. This gives us that
+\begin{equation}
+	L(\lambda) = A_n^{(1)} + B_n^{(2)} + C_n^{(3)}
+\end{equation}
+The time evolution of $A_i$, $B_i$, and $C_i$ at $x > x_n$ is given by
+\begin{equation}
+\begin{pmatrix} \dot{A} \\ \dot{B} \\ \dot{C} \end{pmatrix} =
+\begin{pmatrix}
+	M_+ u_x & -\frac{u_x}{\lambda} & -\frac{u_x^2}{\lambda} \\
+	-M_+ & \frac{1}{\lambda} & \frac{u_x}{\lambda} \\
+	M_+^2 \lambda & -M_+ & -u_x M_+
+\end{pmatrix}
+\begin{pmatrix} A \\ B \\ C \end{pmatrix}
+\end{equation}
+where $M_+ = u_x x - u = \sum_{k=1}^n m_k$.
+\\
+\todo{The problem here is that:}\\
+$\dot{L} = \dot{A}_n^{(1)} + \dot{B}_n^{(2)} + \dot{C}_n^{(3)}$. But plugging it in Mathematica gives that $\dot{L} \neq 0$.
+
+%=========================================================================%
+%
+% Bibliography. The References are added to the file
+% references.bib. Use, e.g. \cite{grote:97} to make a reference.
+%
+%=========================================================================%
+\bibliographystyle{plain}
+\bibliography{references.bib}
+
+
+%=========================================================================%
+%
+% The Appendix if any
+%
+%=========================================================================%
+% \appendix
+
+% \chapter{Title of first appendix}
+
+% Text of appendix.
+
+
+
+
+
+
+
+\end{document}
