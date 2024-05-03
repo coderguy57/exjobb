@@ -287,7 +287,7 @@ Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
 	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2,
 \end{aligned} \right. \\
 \implies \left\{ \begin{aligned}
-	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\cos^2(M_2t - \phi)}, \\
+	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\sin^2(M_2t - \phi)}, \\
 	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t - \phi)}.
 \end{aligned} \right.
 \end{align}
@@ -502,10 +502,17 @@ We have not been able to find a general formula to find all the constants of mot
 \end{proof}
 
 
-\section{Novikov}
+\section{Zero curvature representation}
 
-The Lax pair for the Novikov equation\cite{Lundmark_2022} is given by
-
+The zero curvature representation is a generalization of the Lax pair, consisting of a pair of linear equations
+\begin{equation}
+	\partial_x \psi = U, \quad \partial_t \psi = V,
+\end{equation}
+that satisfy the zero curvature condition
+\begin{equation}
+	\partial_t U - \partial_x V + [U, V] = 0.
+\end{equation}
+The condition comes from equating the mixed partials $\partial_t \partial_x \psi = \partial_x \partial_t \psi$. The matrices $U$ and $V$ are called the Lax pair. The zero curvature representation for the Novikov equation\cite{Lundmark_2022} is
 \begin{subequations}
   \label{eq:Novikov-lax}
   \begin{equation}
@@ -534,6 +541,7 @@ The Lax pair for the Novikov equation\cite{Lundmark_2022} is given by
   \end{equation}
 \end{subequations}
 %
+The zero curvature condition only holds when the Novikov equation(\ref{eq:Novikov}) is satisfied.
 Doing the high frequency substitution $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, results in $m \mapsto \epsilon^{-2} m$ since its the second derivative of $u$ and the substitution gives that $\frac{d}{dx} \mapsto \frac{d}{d (\epsilon x)} = \frac{1}{\epsilon} \frac{d}{dx}$. We are left to find the correct substitution for $z$. We can do this by looking at the spatial derivative of the Lax pair and since we don't know the $x$ and $t$ factors for $\psi_1$, $\psi_2$, and $\psi_3$ we call them $A$, $B$, and $C$ respectively
 \begin{equation}
 \begin{pmatrix} 
@@ -601,16 +609,40 @@ By also setting $z^2 = -\lambda$ we get the following Lax pairs
 %
 We know that
 \begin{equation}
-	m = u_{xx} = \sum_{k=1}^n m_k \delta(x - x_k),
+	m = u_{xx} = \sum_{k=1}^n 2 m_k \delta(x - x_k),
 \end{equation}
-This means that $\varphi_3$ will be continous while $\varphi_1$ and $\varphi_2$ will have jumps at $x_k$.
-We will assume that $x_0 < x_1 < ... < x_n$, which will stay true at least for a time if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+This means that $\varphi_3$ will be continuous, while $\varphi_1$ and $\varphi_2$ will have jumps at $x_k$. We will assume that $x_0 < x_1 < ... < x_n$, which will stay true at least for a time if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
 \begin{equation}
 \begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
 \begin{pmatrix} A_i \\ B_i \\ -\lambda A_i x + C_i \end{pmatrix} 
 \text{for } x_k < x < x_{k+1}.
 \end{equation}
-We can also see from the Lax pair that $\varphi_3$ is going to be continous, while $\varphi_1$ and $\varphi_2$ is constant in the intervals with jump discontinuities at $x_k$.
+We can also see from the Lax pair that $\varphi_3$ is going to be continous, while $\varphi_1$ and $\varphi_2$ is constant in the intervals with jump discontinuities at $x_k$. Lets rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$
+\begin{subequations}
+  \begin{equation}
+    \frac{\partial}{\partial x}
+    \begin{pmatrix} A \\ B \\ C \end{pmatrix} =
+    \begin{pmatrix}
+      0 & m & 0 \\
+      -\lambda m x & 0 & m \\
+      0 & \lambda m x & 0
+    \end{pmatrix}
+    \begin{pmatrix} A \\ B \\ C \end{pmatrix}
+    ,
+  \end{equation}
+  \begin{equation}
+    \frac{\partial}{\partial t}
+    \begin{pmatrix} A \\ B \\ C \end{pmatrix} =
+    \begin{pmatrix}
+      u_x M_+ & -\frac{u_x}{\lambda} -u^2 m & -\frac{u_x^2}{\lambda} \\
+      -M_+ + \lambda u^2 m x & \frac{1}{\lambda} & \frac{u_x}{\lambda} - u^2 m \\
+      \lambda M_+^2 & -M_+ - \lambda u^2 m x & -u_x M_+
+    \end{pmatrix}
+    \begin{pmatrix} A \\ B \\ C \end{pmatrix}
+    ,
+  \end{equation}
+\end{subequations}
+where $M_+ = u_x x - u.$. This also fulfills the zero curvature condition. Call $F(x;t)$ the vector of $A, B, C$ and let $T$ be the transition matrix that takes us from $x$ to $y$ as $F(y;t) = T(y,x;t)F(x;t)$. $F$ is mostly constant with jump discontinuities at $x_k$ so we can write the jump matrix $S_k$ at $x_k$ as
 \begin{equation}
 \begin{aligned}
 \begin{pmatrix} A_k \\ B_k \\ C_k \end{pmatrix} &= 
@@ -620,41 +652,56 @@ We can also see from the Lax pair that $\varphi_3$ is going to be continous, whi
 	-2\lambda^2 m_k^2 x_k^2 & 2\lambda m_k x_k & 1 + 2\lambda m_k^2 x_k
 \end{pmatrix}
 \begin{pmatrix} A_{k-1} \\ B_{k-1} \\ C_{k-1} \end{pmatrix} \\
-&=: S_k(\lambda) 
+&=: S_k(t) 
 \begin{pmatrix} A_{k-1} \\ B_{k-1} \\ C_{k-1} \end{pmatrix}
 \end{aligned}
 \end{equation}
-We call the total jump matrix
+Let $T_a(t) = T(a,-a;t)$ then at large enough $a$ we can write $T_a(t) = S_n(t)S_{n-1}(t)...S_1(t)$.
+From the article by Krishnaswami and Vishnu\cite{Krishnaswami_2021}, we know that
 \begin{equation}
-	S(\lambda) := S_n(\lambda)S_{n-1}(\lambda)...S_1(\lambda).
+	\partial_t T_a(t) = V(a;t)T_a(t) - T_a(t)V(-a;t).
 \end{equation}
-If we let combine the elements along the diagonal of the total jump matrix
+In their article they had periodic boundary conditions for $V$, which means that they could write $\partial_t T_a(t) = [V(-a;t), T_a(t)]$. \todo{In their paper they also had period boundary conditions for $U$, which we also have. But that doesn't seem to be used in any proof so I never mentioned it.} The trace of a commutator is zero, which means that the trace of $\partial_t T_a(t)$ is zero. At large enough $a$, we can assume that $m$ will be zero. Our $V$ can be split into one even and one odd part
 \begin{equation}
-	L(\lambda) = S(1,1) - S(2,2) + S(3,3)
-\end{equation}
-we get a polynomial in $\lambda$. Each coefficient of this polynomial is a constant of motion. One way to get $L$ would be to have three different $\varphi^{(j)}$ vectors at $x = x_0$
-\begin{equation}
-\varphi^{(j)} = 
-\begin{pmatrix} A_i^{(j)} \\ B_i^{(j)} \\ -\lambda A_i^{(j)}x + C_i^{(j)} \end{pmatrix} 
-\end{equation}
-and let $A_0^{(1)} = 1, B_0^{(2)} = -1, C_0^{(3)} = 1$, and the rest be zero. This gives us that
-\begin{equation}
-	L(\lambda) = A_n^{(1)} + B_n^{(2)} + C_n^{(3)}
-\end{equation}
-The time evolution of $A_i$, $B_i$, and $C_i$ at $x > x_n$ is given by
-\begin{equation}
-\begin{pmatrix} \dot{A} \\ \dot{B} \\ \dot{C} \end{pmatrix} =
+	V(x;t) =
 \begin{pmatrix}
-	M_+ u_x & -\frac{u_x}{\lambda} & -\frac{u_x^2}{\lambda} \\
-	-M_+ & \frac{1}{\lambda} & \frac{u_x}{\lambda} \\
-	M_+^2 \lambda & -M_+ & -u_x M_+
-\end{pmatrix}
-\begin{pmatrix} A \\ B \\ C \end{pmatrix}
+	u_x M_+ & 0 & -\frac{u_x^2}{\lambda} \\
+	0 & \frac{1}{\lambda} & 0 \\
+	\lambda M_+^2 & 0 & -u_x M_+
+\end{pmatrix} +
+\begin{pmatrix}
+	0  & -\frac{u_x}{\lambda} & 0 \\
+	-M_+ & 0 & \frac{u_x}{\lambda} \\
+	0 & -M_+ & 0
+\end{pmatrix}.
 \end{equation}
-where $M_+ = u_x x - u = \sum_{k=1}^n m_k$.
-\\
-\todo{The problem here is that:}\\
-$\dot{L} = \dot{A}_n^{(1)} + \dot{B}_n^{(2)} + \dot{C}_n^{(3)}$. But plugging it in Mathematica gives that $\dot{L} \neq 0$.
+So we almost have the same situation as Krishnaswami and Vishnu. If we let
+\begin{equation}
+	D = 
+\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & -1 & 0 \\
+	0 & 0 & 1
+\end{pmatrix}.
+\end{equation}
+We can write $V(a) = DV(-a)D$. This means that $\partial_t T_a(t) = DV(-a;t)DT_a(t) - T_a(t)V(-a;t)$. Multiplying by $D$ from the left, we see that is it will be zero.
+\begin{equation}
+\begin{aligned}
+	\partial_t tr(D [T_a(t)])
+	&= tr(D [\partial_t T_a(t)]) \\
+	&= tr(DDV(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
+	&= tr(V(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
+	&= tr([V(-a;t), DT_a(t)]) \\
+	&= 0.
+\end{aligned}
+\end{equation}
+Thus the sum $T_a(t;\lambda)[1,1] - T_a(t;\lambda)[2,2] + T_a(t;\lambda)[3,3]$ forms a polynomial of $\lambda$, where every coefficient is a constant of motion. It seems like we get $N-1$ unique constant of motion for each $N$. Were the coefficient of the lowest and highest term of $\lambda$ respectively yield the following constants of motion
+\begin{equation}
+	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
+\end{equation}
+\begin{equation}
+	\prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
+\end{equation}
 
 %=========================================================================%
 %
