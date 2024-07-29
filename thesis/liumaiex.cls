@@ -186,7 +186,7 @@
 %	Packages
 %---------------------------------------
 
-\LoadClass{book}
+\LoadClass{article}
 
 \RequirePackage{iftex}
 \newif\ifliumaiex@xeorlua
