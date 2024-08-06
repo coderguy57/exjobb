@@ -334,7 +334,7 @@ where $||\cdot||$ is some matricial norm. It can be viewed as the transition mat
 		\partial_x (\partial_t T - VT) = U(\partial_t T - VT).
 	\end{equation}
 	This means that $\partial_t T - VT$ is a solution to equation \eqref{eq:Transition-Matrix}.
-	This implies the existence of a non-singular matrix C, independent of x, such that
+	This implies the existence of a non-singular matrix $C$, independent of $x$, such that
 	\begin{equation}
 		\partial_t T - VT = TC,
 	\end{equation}
@@ -441,13 +441,13 @@ The assumption that $x_1 < \cdots < x_N$ can be made without loss of generality.
 %
 We will also assume that $m_k \neq 0$ since in the case where it is zero it will remain identically zero.
 %
-To solve this system, we first identify conserved quantities:
+To solve this system, we first identify two conserved quantities
 \begin{align}
-	(m_1^2 + m_2^2)_t = 0, \\
-	(m_1m_2(x_2 - x_1))_t = 0.
+	M_1 &= m_1^2 + m_2^2, \\
+	M_2 &= m_1m_2(x_2 - x_1).
 \end{align}
 %
-To show why these are conserved, we compute the time derivative on the LHS of the both equations:
+We show that these quantities are conserved by making sure that their time derivatives are zero
 \begin{equation}
 \begin{aligned}
 	(m_1^2 + m_2^2)_t 
@@ -457,20 +457,14 @@ To show why these are conserved, we compute the time derivative on the LHS of th
 \end{equation}
 \begin{equation}
 \begin{aligned}
-	(m_1m_2(x_2 - x_1))_t 
-	&= \dot{m}_1m_2(x_2 - x_1) + m_1\dot{m}_2(x_2 - x_1) \\
-	&- m_1m_2\dot{x}_1 + m_1m_2\dot{x}_2 \\
-	&= m_1m_2^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
-	&- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
-	&= 0. \\
+	(m_1m_2&(x_2 - x_1))_t \\
+	&= \dot{m}_1m_2(x_2 - x_1) + m_1\dot{m}_2(x_2 - x_1)
+	- m_1m_2\dot{x}_1 + m_1m_2\dot{x}_2 \\
+	&=\phantom{-} m_1m_2^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
+	&\phantom{=}- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
+	&=0. \\
 \end{aligned}
 \end{equation}
-%
-Denoting these conserved quantities as $M_1$ and $M_2$ respectively, the conservation laws can be expressed as:
-\begin{align}
-	m_1^2 + m_2^2 = M_1, \\
-	m_1m_2(x_2 - x_1) = M_2.
-\end{align}
 %
 Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
 \begin{equation}
@@ -531,7 +525,15 @@ In conclusion the piecewise solution looks like this:
 	x_2 &= \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) + C.
 \end{align}
 %
-There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the conserved quantities as will be seen in the next section \ref{sec:Numerical} as well as keep $\dot{u}(x, t)$ continuous everywhere.
+There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
+\begin{equation}
+\begin{aligned}
+	x_2 - x_1 
+	&= \frac{M_2}{M_1}(\tan(M_2t + \phi) + \cot(M_2t + \phi)) \\
+	&= \frac{M_2}{M_1}\frac{2}{\sin(2M_2t + 2\phi)}
+\end{aligned}
+\end{equation}
+The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the constants of motion as well as keep $\dot{u}(x, t)$ continuous.
 
 \begin{center}
 \begin{tikzpicture}[scale=2]
@@ -609,89 +611,99 @@ A Hamiltonian structure for the high-frequency limit of the Novikov equation hav
 \section{Constants of motion}
 
 \todo{Todo: Explain the algorithm further/better}\\
-Most constants have been found using an exhaustive search algorithm. The algorithm is based on the assumption that the constants of motion are polynomials in the variables $m_k$ and $x_k$ of a fixed degree $M$ and $X$ for $m_k$ respectively $x_k$. The algorithm lists all monomials of that fixed degree
+Two methods have been used to find constants of motion for the HF Novikov equation. One of the method will be covered in the next section. The other method is an exhaustive search algorithm. The algorithm is based on the assumption that the constants of motion are polynomials in the variables $m_k$ and $x_k$ of a fixed degree $M$ and $X$ for $m_k$ respectively $x_k$. The algorithm lists all monomials of that fixed degree
 \begin{equation}
 	\prod_{i=1}^{N} m_i^{a_i} x_i^{b_i},
 \end{equation}
 where the sum of $a_i$ is $M$ and the sum of $b_i$ is $X$. The algorithm then takes the time derivative of each monomial and forms a linear combination of them. The constants of motion are then found by finding linear combinations that are zero. The algorithm has been run both symbolically in Mathematica and numerically in C++. The algorithm has been successful up until $N = 4$, where time and numerical precision become limiting factors.
 
-\subsection{Jacobian determinant method}
+\subsection{Jacobian method}
 Two or more constants of motion are said to be independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
 
-To determine if a set of constants of motion are independent, we use the Jacobian determinant. Suppose we have a set of $n$ constants of motion ${M_1,M_2,\dots,M_m}$. These constants are functions of the variables ${x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n}$.
+To determine if a set of constants of motion are independent, the Jacobian matrix is used. Suppose there are a set of $n$ constants of motion $M_1,M_2,\dots,M_m$. These constants are functions of the variables $x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n$.
 
 The Jacobian matrix $J$ of the functions ${M_1,M_2,\dots,M_m}$ with respect to the variables ${x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n}$ is given by:
 
-By computing the determinant of J we can determine if the constants of motion are independent. If the determinant is non-zero, the constants are independent. If the determinant is zero, the constants are dependent.
+\begin{equation}
+	J = 
+	\begin{pmatrix}
+		\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} & \frac{\partial f_1}{\partial m_1} & \frac{\partial f_1}{\partial m_2} & \cdots & \frac{\partial f_1}{\partial m_n} \\
+		\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} & \frac{\partial f_2}{\partial m_1} & \frac{\partial f_2}{\partial m_2} & \cdots & \frac{\partial f_2}{\partial m_n} \\
+		\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
+		\frac{\partial f_n}{\partial x_1} & \frac{\partial f_n}{\partial x_2} & \cdots & \frac{\partial f_n}{\partial x_n} & \frac{\partial f_n}{\partial m_1} & \frac{\partial f_n}{\partial m_2} & \cdots & \frac{\partial f_n}{\partial m_n}
+	\end{pmatrix}
+\end{equation}
 
-\todo{TODO: Give a brief overview of the Jacobian determinant method.}
+Each row of the Jacobian matrix is the gradient of one of the constants of motion. If the gradients are linearly dependent it means that one of the constants of motion can be expressed as a function of the others. Thus the rank of the Jacobian matrix is the number of independent constants of motion.
 
 \subsection*{N = 2}
 
+The notation for all constants of motion will be $M_{ab}$ where $a$ is the degree of $m_k$ and $b$ is the degree of $x_k$.
+
 \begin{align}
-	M_1 &= m_1 m_2 (x_2 - x_1), \\
-	M_2 &= m_1^2\phantom{x_1} + m_2^2\phantom{x_2}, \\
-	M_3 &= m_1^2 x_1 + m_2^2 x_2, \\
-	M_4 &= m_1^2 x_1^2 + m_2^2 x_2^2. \\
+	M_{21A} &= m_1 m_2 (x_2 - x_1), \\
+	M_{20\phantom{A}} &= m_1^2\phantom{x_1} + m_2^2\phantom{x_2}, \\
+	M_{21B} &= m_1^2 x_1 + m_2^2 x_2, \\
+	M_{22\phantom{A}} &= m_1^2 x_1^2 + m_2^2 x_2^2. \\
 \end{align}
 %
 The system of ODEs for $N = 2$ only has four variables so the system should have at most three functionally independent constants of motion. It can be seen that
 \begin{equation}
-	M_1^2 = M_2M_4 - M_3^2.
+	M_{21A}^2 = M_{20}M_{22} - M_{21B}^2.
 \end{equation}
 
 \subsection*{N = 3}
 
 The algorithm has found the following five conserved quantities for $N = 3$.  The first two are
 \begin{align}
-	M_1 &= m_1m_2(x_2 - x_1) + m_1m_3(x_3 - x_1) + m_2m_3(x_3 - x_2), \\
-	M_2 &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_1).
+	M_{21} &= m_1m_2(x_2 - x_1) + m_1m_3(x_3 - x_1) + m_2m_3(x_3 - x_2), \\
+	M_{63} &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_1).
 \end{align}
 Let
 \begin{align}
-	A & = m_1^2(M_1 + 2m_2m_3(x_3-x_2)), \\
-	B & = m_2^2(M_1 + 2m_1m_3(x_3-x_1)), \\
-	C & = m_3^2(M_1 + 2m_1m_2(x_2-x_1))
+	A & = m_1^2(M_{21} + 2m_2m_3(x_3-x_2)), \\
+	B & = m_2^2(M_{21} + 2m_1m_3(x_3-x_1)), \\
+	C & = m_3^2(M_{21} + 2m_1m_2(x_2-x_1))
 \end{align}
 then the three other conserved quantities can be written as
 \begin{align}
-	M_3 &= A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} \\
-	M_4 &= Ax_1 + Bx_2 + Cx_3 \\
-	M_5 &= Ax_1^2 + Bx_2^2 + Cx_3^2
+	M_{41} &= A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} \\
+	M_{42} &= Ax_1 + Bx_2 + Cx_3 \\
+	M_{43} &= Ax_1^2 + Bx_2^2 + Cx_3^2
 \end{align}
-These conserved quantities aren't functionally independent. The Jacobian determinant method shows that there are only four functionally independent conserved quantities. The first constant can be written as
+These conserved quantities aren't functionally independent. The Jacobian method shows that there are only four functionally independent conserved quantities. The first constant can be written as
 \begin{equation}
-	M_1^4 = M_3M_5 - M_4^2 + 2M_1M_2
+	M_{21}^4 = M_{41}M_{43} - M_{42}^2 + 2M_{21}M_{63}.
 \end{equation}
 
 \subsection*{N = 4}
 
 For $N = 4$ six conserved quantities have been found. The first two follow the same pattern as for $N = 3$
 \begin{align}
-	M_1 = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
-	M_2 = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
+	M_{21} = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
+	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
 \end{align}
-For the next three let's define define the expression $W_i$ to be the sum of all the terms in $M_1$ that don't contain $m_i$. Define $A, B, C, D$ as
+For the next three let's define define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as
 \begin{align}
-	A &= m_1^2(M_1 + 2W_1), \\
-	B &= m_2^2(M_1 + 2W_2), \\
-	C &= m_3^2(M_1 + 2W_3), \\
-	D &= m_4^2(M_1 + 2W_4).
+	A &= m_1^2(M_{21} + 2W_1), \\
+	B &= m_2^2(M_{21} + 2W_2), \\
+	C &= m_3^2(M_{21} + 2W_3), \\
+	D &= m_4^2(M_{21} + 2W_4).
 \end{align}
 The next  three conserved quantities can then be written as
 \begin{align}
-	M_3 =& A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} + D\phantom{x_4} \notag \\
+	M_{41} =& A\phantom{x_1} + B\phantom{x_2} + C\phantom{x_3} + D\phantom{x_4} \notag \\
 	&+ 6m_1m_2m_3m_4 (x_1 - x_2 + x_3 - x_4) \\
-	M_4 =& Ax_1 + Bx_2 + Cx_3 + Dx_4 \notag \\
+	M_{42} =& Ax_1 + Bx_2 + Cx_3 + Dx_4 \notag \\
 	&+ 6m_1m_2m_3m_4 (x_1x_3 - x_2x_4) \\
-	M_5 =& Ax_1^2 + Bx_2^2 + Cx_3^2 + Dx_4^2 \notag \\
+	M_{43} =& Ax_1^2 + Bx_2^2 + Cx_3^2 + Dx_4^2 \notag \\
 	&+ 6m_1m_2m_3m_4 (x_1x_2x_3 - x_1x_2x_4 + x_1x_3x_4 - x_2x_3x_4)
 \end{align}
 %
 Interestingly, it follows very close to the pattern of the $N = 3$ case. The only difference is that there is some extra terms that all contain $m_1m_2m_3m_4$. The last found conserved quantity is
 \begin{equation}
 \begin{aligned}
-	M_6 =
+	M_{63} =
 		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
 		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
 		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
@@ -702,9 +714,9 @@ Interestingly, it follows very close to the pattern of the $N = 3$ case. The onl
 		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
 \end{aligned}
 \end{equation}
-Here we also find that all the conserved quantities aren't functionally independent. Using the Jacobian determinant method we find that there are only five functionally independent conserved quantities, but we haven't been able to find a relation between them.
+Here we also find that all the conserved quantities aren't functionally independent. The Jacobian method showed that there are only five functionally independent conserved quantities, but the relation between them is still unknown.
 
-\section{Zero curvature representation}
+\section{Zero curvature representation} \label{sec:ZeroCurvature}
 
 The zero curvature representation for the Novikov equation \cite{Lundmark_2022} is
 \begin{subequations}
@@ -735,8 +747,7 @@ The zero curvature representation for the Novikov equation \cite{Lundmark_2022} 
   \end{equation}
 \end{subequations}
 %
-The zero curvature condition only holds when the Novikov equation(\ref{eq:Novikov}) is satisfied.
-Doing the high frequency substitution $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, results in $m \mapsto \epsilon^{-2} m$ since it's the second derivative of $u$ and the substitution gives that $\frac{d}{dx} \mapsto \frac{d}{d (\epsilon x)} = \frac{1}{\epsilon} \frac{d}{dx}$. We are left to find the correct substitution for $z$. We can do this by looking at the spatial derivative of the Lax pair and since we don't know the $x$ and $t$ factors for $\psi_1$, $\psi_2$, and $\psi_3$ we call them $A$, $B$, and $C$ respectively
+The zero curvature condition only holds when the Novikov equation (\ref{eq:Novikov}) is satisfied. The high frequency limit of the Novikov equation is obtained by substitution $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and $m \mapsto \epsilon^{-2} m$ and letting $\epsilon \rightarrow 0$. We are left to find the correct substitution for $z$. We can do this by looking at the spatial derivative of the Lax pair and since we don't know the $x$ and $t$ factors for $\psi_1$, $\psi_2$, and $\psi_3$ we call them $A$, $B$, and $C$ respectively
 \begin{equation}
 \begin{pmatrix} 
 	\epsilon^{-1} A \\
@@ -801,11 +812,15 @@ By also setting $z^2 = -\lambda$ we get the following Lax pair
 \end{subequations}
 %
 %
-We know that
+With
+\begin{equation}
+	u_x = \sum_{k=1}^n m_k \sgn(x - x_k),
+\end{equation}
+it means that $m$ will be
 \begin{equation}
 	m = u_{xx} = \sum_{k=1}^n 2 m_k \delta(x - x_k),
 \end{equation}
-This means that $\varphi_3$ will be continuous, while $\varphi_1$ and $\varphi_2$ will have jumps at $x_k$. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+since the sign function have a jump discontinuity at $x_k$ of size 2 and the derivative of the sign function is the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
 \begin{equation}
 \begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
 \begin{pmatrix} A_i \\ B_i \\ -\lambda A_i x + C_i \end{pmatrix} 
@@ -860,7 +875,7 @@ Since $U$ is bounded we can now write the monodromy matrix as
 \begin{equation}
 	M(t) = \lim_{a \rightarrow \infty} T_a(t).
 \end{equation}
-From corollary \ref{cor:Monodromy} we know that the time derivative of $M$ is given by $[V_0, M]$ if $V(x;t)$ goes to the same thing at $\pm \infty$. At the limits, we can assume that $m$ will be zero. Our $V$ can then be split into one even and one odd part
+From corollary \ref{cor:Monodromy} we know that the time derivative of $M$ is given by $[V_0, M]$ if $V(x;t)$ goes to the same thing at $\pm \infty$. At the limits, we can know that $m$ will be zero. Our $V$ can then be split into one even and one odd part
 \begin{equation}
 	V(x;t) =
 \begin{pmatrix}
@@ -888,24 +903,82 @@ we can write $V(a) = DV(-a)D$. This means that
 \begin{equation}
 	\partial_t T_a(t) = DV(-a;t)DT_a(t) - T_a(t)V(-a;t).
 \end{equation}
-Multiplying by $D$ from the left, it can be seen that it will be zero.
+Multiplying by $D$ from the left, it can be seen that the transpose of $DT_a(t)$ will be constant in time
 \begin{equation}
 \begin{aligned}
-	\partial_t \tr(D [T_a(t)])
-	&= \tr(D [\partial_t T_a(t)]) \\
+	\partial_t \tr(D T_a(t))
+	&= \tr(D \partial_t T_a(t)) \\
 	&= \tr(DDV(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
 	&= \tr(V(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
 	&= \tr([V(-a;t), DT_a(t)]) \\
 	&= 0.
 \end{aligned}
 \end{equation}
-Thus the sum $M(t;\lambda)[1,1] - M(t;\lambda)[2,2] + M(t;\lambda)[3,3]$ forms a polynomial of $\lambda$, where every coefficient is a constant of motion. It seems like this method will yield $N-1$ independent constant of motion for each $N$. Were the coefficient of the lowest and highest term of $\lambda$ respectively yield the following constants of motion
+Thus the sum $M(t;\lambda)[1,1] - M(t;\lambda)[2,2] + M(t;\lambda)[3,3]$ forms a polynomial in $\lambda$, where every coefficient is a constant of motion. It seems like this method will yield $N-1$ independent constant of motion for each $N$. Were the coefficient of the lowest and highest term of $\lambda$ respectively yield the following constants of motion
 \begin{equation}
 	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
 \end{equation}
 \begin{equation}
 	\prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
 \end{equation}
+
+The transpose of $DT_a$ will be a polynomial in $\lambda$ with the following form
+\begin{equation}
+	C_0 + C_1 \lambda + C_2 \lambda^2 + \cdots + C_{n} \lambda^{n}.
+\end{equation}
+
+The jump matrix can be written as
+\begin{equation}
+	S_k = D + \hat{S_k} = D + 
+	\begin{pmatrix}
+		m_k \\ 1 \\ \lambda m_k x_k		
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2 \lambda m_k x_k & 2 & 2 m_k
+	\end{pmatrix}.
+\end{equation}
+Then the $T_a$ matrix will be
+\begin{equation}
+	T_a = (D + \hat{S}_n)\cdots(D + \hat{S}_2)(D + \hat{S}_1).
+\end{equation}
+The $T_a^{(1,1)}$ and $T_a^{(3,3)}$ elements will always be a polynomial of one higher order than the $T_a^{(2,2)}$ element. $C_0$ is always independent of $x_k$ and $m_k$ and will thus not give any information about the system. $C_n$ is the coefficient of the highest order in $\lambda$. The higest order terms of the $T_a$ matrix comes from multiplying all the $\hat{S}_k$'s together
+\begin{equation}
+\begin{aligned}
+	\hat{S}_{\text{tot}} = \hat{S}_n \cdots \hat{S}_2 \hat{S}_1 &=
+	\prod_{k=1}^{n-1} L_k
+	\begin{pmatrix}
+		m_n \\ 1 \\ \lambda m_n x_n
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_1x_1 & 2 & 2 m_1
+	\end{pmatrix} \\
+	&= \prod_{k=1}^{n-1} L_k
+	\begin{pmatrix}
+		-2\lambda m_n m_1 x_1 & 2m_n & 2m_n m_1 \\
+		-2\lambda m_1 x_1 & 2 & 2m_1 \\
+		-2\lambda^2 m_n m_1 x_n x_1 & 2\lambda m_n x_n & 2\lambda m_n m_1 x_n
+	\end{pmatrix}
+\end{aligned}
+\end{equation}
+where $L_k$ is the dot product that comes from multiplying $S_k$ and $S_{k+1}$. So $L_k$ is
+\begin{equation}
+\begin{aligned}
+	L_k &= 
+	\begin{pmatrix}
+		m_{k+1} \\ 1 \\ \lambda m_{k+1} x_{k+1}
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_kx_k & 2 & 2 m_k
+	\end{pmatrix} \\
+	&= 2\lambda m_k m_{k+1} (x_{k+1} - x_k) + 2.
+\end{aligned}
+\end{equation}
+The $C_n$ coefficient will then be the sum of the first and third diagonal element of $S_{\text{tot}}$
+\begin{equation}
+	2\lambda m_n m_1 (x_n - x_1) \prod_{k=1}^{n-1} L_k
+	= \prod_{i=1}^{N} m_i^2 (x_{i+1} - x_i),
+\end{equation}
+were in this case $x_{n+1} = x_1$.
 
 %=========================================================================%
 %
@@ -926,7 +999,7 @@ The jump and the average of $f$ at $x_k$ will be defined as
 	[f(x_k)] := f(x_k^+) - f(x_k^-) \quad \text{and} \quad \langle f(x_k)\rangle := \frac{f(x_k^+) + f(x_k^-)}{2},
 \end{equation}
 respectively. They satisfy the product rules
-\begin{equation}
+\begin{equation} \label{eq:dirac_product_rules}
 	[fg] = \langle f\rangle[g] + [f]\langle g\rangle, \quad \quad \langle fg\rangle = \langle f\rangle\langle g\rangle + \frac{1}{4}[f][g].
 \end{equation}
 %
@@ -998,6 +1071,68 @@ It can be assumed that $m_k \neq 0$ since $\dot{m}_k = m_k \cdot (something)$ im
 \end{equation}
 
 \section{Verification of the Lax pair for the ansatz}
+
+Generally a function needs to be continuous for the it's multiplication with a Dirac delta function to be well defined. Which creates a problem with the multiplication of $u_x \delta_{x_k}$ since $u_x$ is not continuous at $x_k$. Therefore we will define $u_x \delta_{x_k} := \langle u_x(x_k) \rangle \delta_{x_k}$. The Lax pair formulation is
+\begin{equation}
+	\partial_x \Psi = \hat{U} \Psi, \qquad \partial_t \Psi = \hat{V} \Psi.
+\end{equation}
+In this case $\Psi = (\psi_1, \psi_2, \psi_3)^T$ and $\hat{U}$ and $\hat{V}$ are matrices. Both $\hat{U}$ and $\hat{V}$ can be split up into a regular and a singular part
+%
+\begin{equation}
+\hat{U} = U + zmN, \qquad \hat{V} = V - zu^2mN,
+\end{equation}
+where
+\begin{equation}
+U =
+	\begin{pmatrix}
+	0 & 0 & 0 \\
+	0 & 0 & 0 \\
+	1 & 0 & 0
+	\end{pmatrix},
+V = 
+	\begin{pmatrix}
+	-u u_x & \frac{u_x}{z} & u_x^2 \\
+	\frac{u}{z} & - \frac{1}{z^2} & - \frac{u_x}{z} \\
+	-u^2 & \frac{u}{z} & uu_x
+	\end{pmatrix},
+N =
+	\begin{pmatrix}
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+	0 & 0 & 0
+	\end{pmatrix}.
+\end{equation}
+%
+We also have that
+\begin{equation}
+	u = \sum m_k |x - x_k|, \quad u_x = \sum m_k \sgn(x - x_k), \quad m = u_{xx} = \sum 2 m_k \delta(x - x_k).
+\end{equation}
+Next we do the mixed partials
+\begin{equation}
+\begin{aligned}
+	\partial_t \partial_x \Psi &= \partial_t (U \Psi + zmN \Psi) \\ 
+	&= (\underbrace{U_t}_{=0} + UV) \Psi + (zm N \Psi)_t, \\
+	\partial_x \partial_t \Psi &= \partial_t (V \Psi + zu^2mN \Psi) \\
+	&= (V_x + VU) \Psi + \sum [ V \Psi ] \delta_{x_k} + (zu^2m N \Psi)_x.
+\end{aligned}
+\end{equation}
+The mixed partials should be equal, so for simplify both parts will be put on the same side like so $\partial_t \partial_x \Psi - \partial_x \partial_t \Psi = 0$. The regular of the mixed partials is
+\begin{equation}
+	UV - VU - V_x =
+	\begin{pmatrix}
+		u u_{xx} & -\frac{u_{xx}}{z} & -2 u_x u_{xx} \\
+		0 & 0 & \frac{u_{xx}}{z} \\
+		0 & 0 & -u u_{xx}
+	\end{pmatrix},
+\end{equation}
+which is identically zero, since the regular part of $u_xx$ is zero. The singular part of the mixed partials is
+\begin{equation}
+	(zmN \Psi)_t - \sum [V \Psi] \delta_{x_k} - (zu^2mN \Psi)_x.
+\end{equation}
+Using the produce rule (\ref{eq:dirac_product_rules}) we get that
+\begin{equation}
+	\sum [V \Psi] \delta_{x_k} = \sum \langle V \rangle [\Psi(x_k)] + [V]\langle \Psi(x_k) \rangle.
+\end{equation}
 
 
 %=========================================================================%
