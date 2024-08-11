@@ -18,6 +18,7 @@
 \usepackage{lipsum}
 \usepackage{makecell}
 \usepackage{pgfplots}
+\usepackage{mathtools}
 \pgfplotsset{compat=1.18}
 
 \theoremstyle{plain}
@@ -34,6 +35,8 @@
 \newcommand\todo[1]{\textcolor{red}{#1}}
 \newcommand{\sgn}{\text{sgn}}
 \newcommand{\tr}{\text{tr}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \begin{document}
 
@@ -422,6 +425,122 @@ were the Poisson bracket for the canonical coordinates is defined as
 	\{\{x_i, x_j\}, x_k\} &= \sum_{l=1}^n \Pi^{lk}(x) \frac{\partial}{\partial x_l} \Pi^{ij}(x).
 \end{align}
 
+\section{Periodic N = 2 solution to the high frequency limit Novikov eqn.}
+
+The $u$ and $u_x$ functions have been adjusted to for the periodic boundary conditions
+\begin{equation}
+\begin{aligned}
+	u(x, t) &= \sum_{k = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|, \\
+	u_x(x, t) &= \sum_{k = 1}^{N} m_k(t) \sgn([x - x_k(t) - L]_{2L} - L),
+\end{aligned}
+\end{equation}
+where
+\begin{equation}
+	[x]_{2L} = x - 2L\floor*{\frac{x}{2L}}.
+\end{equation}
+
+This leads to the following ODEs for the peakon positions and momenta
+%
+\begin{align}
+	\dot{x}_1 & = m_2^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+	\dot{x}_2 & = m_1^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+	\dot{m}_1 & = m_1 m_2^2([x_2 - x_1 - L]_{2L} - L),  \\
+	\dot{m}_2 & = -m_1^2 m_2([x_2 - x_1 - L]_{2L} - L).
+\end{align}
+%
+To solve this system, we first identify two conserved quantities
+\begin{align}
+	M_1 &= m_1^2 + m_2^2, \\
+	M_2 &= m_1m_2|[x_2 - x_1 - L]_{2L} - L|.
+\end{align}
+%
+We show that these quantities are conserved by making sure that their time derivatives are zero
+\begin{equation}
+\begin{aligned}
+	(m_1^2 + m_2^2)_t 
+	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
+	&= (2m_1^2m_2^2 - 2m_1^2m_2^2)([x_2 - x_1 - L]_{2L} - L) = 0,
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	(m_1m_2&|[x_2 - x_1 - L]_{2L} - L|)_t \\
+	&= (\dot{m}_1m_2 + m_1\dot{m}_2)|[x_2 - x_1 - L]_{2L} - L| \\
+	&+ m_1m_2(\dot{x}_2 - \dot{x}_1)\sgn([x_2 - x_1 - L]_{2L} - L) \\
+	&=(m_1m_2^3 - m_1^3m_2 + m_1^3m_2 - m_1m_2^3)\\
+	&\phantom{=}|[x_2 - x_1 - L]_{2L} - L|([x_2 - x_1 - L]_{2L} - L) =0. \\
+\end{aligned}
+\end{equation}
+%
+Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
+\begin{equation}
+\left\{ \begin{aligned}
+	\dot{m}_1 = \phantom{-}m_2M_2 \sgn([x_2 - x_1 - L]_{2L} - L), \\
+	\dot{m}_2 = -m_1M_2 \sgn([x_2 - x_1 - L]_{2L} - L).
+\end{aligned} \right.
+\end{equation}
+%
+The solutions to these equations take the form:
+\begin{equation}
+\left\{ \begin{aligned}
+	m_1 &= \sqrt{M_1} \sin(M_2 \sgn([x_2 - x_1 - L]_{2L} - L) t + \phi), \\
+	m_2 &= \sqrt{M_1} \cos(M_2 \sgn([x_2 - x_1 - L]_{2L} - L) t + \phi).
+\end{aligned} \right.
+\end{equation}
+%
+Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
+\begin{align}
+\left\{ \begin{aligned}
+	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2, \\
+	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2,
+\end{aligned} \right. \\
+\implies \left\{ \begin{aligned}
+	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\sin^2(M_2t + \phi)}, \\
+	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t + \phi)}.
+\end{aligned} \right.
+\end{align}
+%
+Integration yields the positions:
+\begin{equation}
+\left\{ \begin{aligned}
+	x_1 = -\frac{M_2}{M_1}\cot(M_2t + \phi) + C,\\
+	x_2 = \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) - D.
+\end{aligned} \right.
+\end{equation}
+%
+The $M_2$ quantity implies that $D = -C$:
+\begin{equation}
+\begin{aligned}
+	M_2 &= m_1m_2(x_2 - x_1) \\
+	&= M_1 \sin(M_2t + \phi) \cos(M_2t + \phi) \\
+	& \qquad \Big( \frac{M_2}{M_1} \Big(\frac{\sin(M_2t + \phi)}{\cos(M_2t + \phi)} +
+	\frac{\cos(M_2t + \phi)}{\sin(M_2t + \phi)}\Big) - D - C \Big) \\
+	&= M_2(\sin^2(M_2t + \phi) + \cos^2(M_2t + \phi)) \\
+	& \qquad - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D) \\
+	&= M_2 - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D).
+\end{aligned}
+\end{equation}
+%
+Since it has to hold for all $t$, we get that $C + D = 0$.
+In conclusion the piecewise solution looks like this:
+\begin{align}
+	u(x, t) &= m_1|x - x_1| + m_2|x - x_2|, \\
+	m_1 &= \phantom{-}\sqrt{M_1} \sin(M_2t + \phi), \\
+	m_2 &= \phantom{-}\sqrt{M_1} \cos(M_2t + \phi), \\
+	x_1 &= -\frac{M_2}{M_1}\cot(M_2t + \phi) + C, \\
+	x_2 &= \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) + C.
+\end{align}
+%
+There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
+\begin{equation}
+\begin{aligned}
+	x_2 - x_1 
+	&= \frac{M_2}{M_1}(\tan(M_2t + \phi) + \cot(M_2t + \phi)) \\
+	&= \frac{M_2}{M_1}\frac{2}{\sin(2M_2t + 2\phi)}
+\end{aligned}
+\end{equation}
+The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the constants of motion as well as keep $\dot{u}(x, t)$ continuous.
+
 \section{N = 2 solution to the high frequency limit Novikov eqn.}
 Here we will solve the system of ODEs for the HF Novikov equation for $N = 2$. The system of ODEs is given by
 \begin{equation}
@@ -617,7 +736,7 @@ Two methods have been used to find constants of motion for the HF Novikov equati
 \end{equation}
 where the sum of $a_i$ is $M$ and the sum of $b_i$ is $X$. The algorithm then takes the time derivative of each monomial and forms a linear combination of them. The constants of motion are then found by finding linear combinations that are zero. The algorithm has been run both symbolically in Mathematica and numerically in C++. The algorithm has been successful up until $N = 4$, where time and numerical precision become limiting factors.
 
-\subsection{Jacobian method}
+\subsection*{Jacobian method}
 Two or more constants of motion are said to be independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
 
 To determine if a set of constants of motion are independent, the Jacobian matrix is used. Suppose there are a set of $n$ constants of motion $M_1,M_2,\dots,M_m$. These constants are functions of the variables $x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n$.
@@ -635,6 +754,85 @@ The Jacobian matrix $J$ of the functions ${M_1,M_2,\dots,M_m}$ with respect to t
 \end{equation}
 
 Each row of the Jacobian matrix is the gradient of one of the constants of motion. If the gradients are linearly dependent it means that one of the constants of motion can be expressed as a function of the others. Thus the rank of the Jacobian matrix is the number of independent constants of motion.
+
+\subsection*{General case}
+
+We have found one form of constants of motion for the HF Novikov equation. Here follows a proof for a more general system of ODEs.
+
+\begin{theorem}
+	For a general system of ODEs
+	\begin{equation}
+		\dot{x}_i = u(x_i)^2,
+		\quad
+		\dot{m}_i = -m_i^2 u_{x_i}(x_i) u(x_i),
+	\end{equation}
+	where $x_i < x_j$ and the function $u$ is of the form
+	\begin{equation}
+		u(x_i) = \sum_{i=1}^{N} m_j g(|x_i - x_j|),
+	\end{equation}
+	there exists a constant of motion of the form
+	\begin{equation}
+		\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j g(|x_i - x_j|)
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	The derivative of $u$ with respect to $x_i$ is
+	\begin{equation}
+		u_{x_i}(x_i) = \sum_j m_j \sgn(i - j) g'(|x_i - x_j|).
+	\end{equation}
+	We will abstain the bounds of the summation for clarity, and all bounds will be understood to be from $1$ to $N$. We introduce the following shorthands
+	\begin{equation}
+	\begin{aligned}
+		g(i,j) &= g(|x_i - x_j|),\\
+		g'(i,j) &= g'(|x_i - x_j|),\\
+		s(i,j) &= \sgn(i - j).
+	\end{aligned}
+	\end{equation}
+	The time derivative of $x_i$ and $m_i$ is thus
+	\begin{equation}
+	\begin{aligned}
+		\dot{x}_i &= \sum_{k,l} m_j^2 g(i,k) g(i,l),\\
+		\dot{m}_i &= -m_i \sum_{k,l} m_k m_l s(i,k) g'(i,k) g(i,l).
+	\end{aligned}
+	\end{equation}
+	Taking the time derivative of the constant of motion we get
+	\begin{equation}
+	\begin{aligned}
+		&\sum_{i,j} m_i m_j g(i,j) \\
+		=& \sum_{i,j} (\dot{m}_i m_j + \dot{m}_j m_i) g(i,j) + m_i m_j s(i,j) g'(i,j) (\dot{x}_i - \dot{x}_j) \\
+		=& - \sum_{i,j,k,l} m_i m_j m_k m_l g(i,j) (s(i,k) g'(i,k) g(i,l) + s(j,k) g'(j,k) g(j,l)) \\
+		&+ \sum_{i,j,k,l} m_i m_j m_k m_l s(i,j) g'(i,j) (g(i,j) g(i,l) - g(j,k) g(j,l)).
+	\end{aligned}
+	\end{equation}
+	Since the bounds on the sum is the same for all terms we are free to change the indices of the sums. Since all terms have $m_i m_j m_k m_l$ we can factor out this term and get
+	\begin{equation}
+	\begin{aligned}
+		-&\sum_{i,j,k,l} g'(i,k)s(i,k)g(i,j)g(i,l) \\
+		-&\sum_{i,j,k,l} g'(j,k)s(j,k)g(i,j)g(j,l) \\
+		+&\sum_{i,j,k,l} g'(i,j)s(i,j)g(i,k)g(i,l) \\
+		-&\sum_{i,j,k,l} g'(i,j)s(i,j)g(j,k)g(j,l)
+	\end{aligned}
+	\end{equation}
+	We can write all on the same form by changing the indices of the sums
+	\begin{equation}
+		\sum_{i,j,k,l} g'(i,k)g(i,j)g(i,l) (- s(i,k) - s(i,k) + s(i,k) - s(k,i)) = 0.
+	\end{equation}
+	All the $s(i,k)$ terms will cancel out and the constant of motion is conserved.
+\end{proof}
+
+This means that when the function $u$ is of the form 
+\begin{equation}
+	u(x_i) = \sum_{i=1}^{N} m_j |x_i - x_j|,
+\end{equation}
+there exists a constant of motion of the form
+\begin{equation}
+	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|.
+\end{equation}
+We see here that the constant of motion is similar to the one you get for the Novikov equation
+\begin{equation}
+	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j e^{-|x_i - x_j|},
+\end{equation}
+where one of the differences is that the Novikov equation gets conserved quantities with terms of $m_i^2$ since the exponential function is equal to one at zero.
 
 \subsection*{N = 2}
 
@@ -675,6 +873,7 @@ These conserved quantities aren't functionally independent. The Jacobian method 
 \begin{equation}
 	M_{21}^4 = M_{41}M_{43} - M_{42}^2 + 2M_{21}M_{63}.
 \end{equation}
+
 
 \subsection*{N = 4}
 
