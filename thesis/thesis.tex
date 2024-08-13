@@ -129,8 +129,6 @@ The objective of this thesis is to study the high-frequency limit of the Novikov
 \end{equation}
 where $u = u(x, t)$. The Novikov equation is a member of the family of peakon equations. The study of high-frequency limits of peakon equations have been done for the Camassa--Holm (CH) equation and the Degasperis--Procesi (DP) equation.
 
-These are integrable systems, which are non-linear differential equations where the solutions can be reduced to a finite number of algebraic operations and integrations. Such systems are rare, as most non-linear differential equations lack explicit solutions.
-
 \subsection{Peakon background}
 
 In 1834 John Scott Russell discovered a solitary wave in a canal. The wave was created by a boat traveling along the canal. The wave was solitary in that it maintained its shape and speed as it traveled along the canal.
@@ -229,134 +227,337 @@ The peakon equations and their respective high-frequency limits share many simil
 \end{center}
 
 
-\section{Preliminaries}
+\section{Periodic N = 2 solution to the high frequency limit Novikov eqn.}
 
-\subsection{Lax pairs}
+\todo{TODO: Decide if this section should be included. If it is included it should be merged with the next section.}
 
-Lax pairs are a mathematical framework used to analyze and solve certain types of integrable systems. They are the main tool used to solve peakon equations. The concept of Lax pairs was introduced by Peter Lax in 1968 \cite{Lax_1968}. A Lax pair consists of two operators, $L$ and $A$, that satisfy a specific compatibility condition. The existence of a Lax pair for a nonlinear PDE is a strong indicator of the equation's integrability. It allows the application of powerful analytical methods to find exact solutions and conservation laws. In many cases, Lax pairs are represented in matrix form, enabling a more straightforward application of the IST method.
-
-\subsubsection*{Zero curvature representation}
-
-The zero curvature representation is a generalization of the Lax pair, consisting of a pair of linear equations
-\begin{equation}
-	\partial_x \psi = U \psi, \quad \partial_t \psi = V \psi,
-\end{equation}
-that satisfy the zero curvature condition
-\begin{equation}
-	\partial_t U - \partial_x V + [U, V] = 0.
-\end{equation}
-The condition comes from equating the mixed partials $\partial_t \partial_x \psi = \partial_x \partial_t \psi$. The matrices $U$ and $V$ are called the Lax pair. The zero curvature condition is only satisfied if the Lax pair is integrable. 
-\begin{example}
-The KdV has the following Lax pair
-\begin{subequations}
-  \begin{equation}
-    \partial x \psi =
-    \begin{pmatrix}
-      0 & 1 \\
-      u - \lambda & 0
-    \end{pmatrix}
-	\psi,
-  \end{equation}
-  \begin{equation}
-    \partial t \psi =
-    \begin{pmatrix}
-      -u_x & 2u + 4\lambda \\
-      2u^2 - u_{xx} + 2u\lambda - 4\lambda^2 & u_x
-    \end{pmatrix}
-    \psi.
-  \end{equation}
-\end{subequations}
-By taking the mixed partials of the Lax pair we get
+The $u$ and $u_x$ functions have been adjusted to for the periodic boundary conditions
 \begin{equation}
 \begin{aligned}
-	& & \partial_t \partial_x \psi &= \partial_x \partial_t \psi \\
-	& \implies & \partial_t U \psi &= \partial_x V \psi \\  
-	& \implies & U_t \psi + U \psi_t &= V_x \psi + V \psi_x \\
-	& \implies & U_t \psi + U V \psi &= V_x \psi + V U \psi \\
-	& \implies & (U_t - V_x + U V - V U) \psi &= 0 \\
+	u(x, t) &= \sum_{k = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|, \\
+	u_x(x, t) &= \sum_{k = 1}^{N} m_k(t) \sgn([x - x_k(t) - L]_{2L} - L),
 \end{aligned}
 \end{equation}
-This has to be true for all $\psi$, which implies that $U_t - V_x + [U, V] = 0$. With
+where
 \begin{equation}
-\partial_t U =
-\begin{pmatrix}
-	0 & 0 \\
-	u_t & 0
-\end{pmatrix}
-\quad \text{and} \quad
-\partial_x V =
-\begin{pmatrix}
-	-u_{xt} & 2u_t \\
-	4uu_t - u_{xxt} + 2u_t\lambda & u_{xt}
-\end{pmatrix},
+	[x]_{2L} = x - 2L\floor*{\frac{x}{2L}}.
 \end{equation}
-the zero curvature condition becomes
+%
+Here is an example of how the function $u$ can look like in black with its two contributing terms in red and blue
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$x$},
+        ylabel={$u$},
+		axis x line=center,
+		axis y line=center,
+        domain=0:2,
+        samples=21,
+		ymin=-1, ymax=2,
+		xmin=0, xmax=2,
+        % grid=both,
+        width=10cm,
+        height=6cm,
+    ]
+		\addplot[thick, red] {2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)};
+        \addplot[thick, blue] {-1 * abs(mod(abs(x - 0.7 - 1), 2) - 1)};
+        \addplot[thick, black] {
+			+2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)
+			-1 * abs(mod(abs(x - 0.7 - 1), 2) - 1)
+		};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+%
+This leads to the following ODEs for the peakon positions and momenta
+%
+\begin{align}
+	\dot{x}_1 & = m_2^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+	\dot{x}_2 & = m_1^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+	\dot{m}_1 & = m_1 m_2^2([x_2 - x_1 - L]_{2L} - L),  \\
+	\dot{m}_2 & = -m_1^2 m_2([x_2 - x_1 - L]_{2L} - L).
+\end{align}
+%
+To solve this system, we first identify two conserved quantities
+\begin{align}
+	M_1 &= m_1^2 + m_2^2, \\
+	M_2 &= m_1m_2|[x_2 - x_1 - L]_{2L} - L|.
+\end{align}
+%
+We show that these quantities are conserved by making sure that their time derivatives are zero
 \begin{equation}
-	\begin{pmatrix}
-	0 & 0\\
-	u_t + u_{xxx} - 6u u_x & 0
-	\end{pmatrix} =
-	\begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\begin{aligned}
+	(m_1^2 + m_2^2)_t 
+	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
+	&= (2m_1^2m_2^2 - 2m_1^2m_2^2)([x_2 - x_1 - L]_{2L} - L) = 0,
+\end{aligned}
 \end{equation}
-Which is only satisfied if the KdV equation is satisfied.
-\end{example}
+\begin{equation}
+\begin{aligned}
+	(m_1m_2&|[x_2 - x_1 - L]_{2L} - L|)_t \\
+	&= (\dot{m}_1m_2 + m_1\dot{m}_2)|[x_2 - x_1 - L]_{2L} - L| \\
+	&+ m_1m_2(\dot{x}_2 - \dot{x}_1)\sgn([x_2 - x_1 - L]_{2L} - L) \\
+	&=(m_1m_2^3 - m_1^3m_2 + m_1^3m_2 - m_1m_2^3)\\
+	&\phantom{=}|[x_2 - x_1 - L]_{2L} - L|([x_2 - x_1 - L]_{2L} - L) =0. \\
+\end{aligned}
+\end{equation}
+%
+Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
+\begin{equation}
+\left\{ \begin{aligned}
+	\dot{m}_1 = \phantom{-}m_2M_2 \sgn([x_2 - x_1 - L]_{2L} - L), \\
+	\dot{m}_2 = -m_1M_2 \sgn([x_2 - x_1 - L]_{2L} - L).
+\end{aligned} \right.
+\end{equation}
+%
+The $\sgn([x_2 - x_1 - L]_{2L} - L)$ function can only take on the values $-1$, $0$, or $1$. We introduce the following helper functions
+\begin{equation}
+\begin{aligned}
+	S_+(t) = \max(0, + &\sgn([x_2 - x_1 - L]_{2L} - L)), \\
+	S_-(t) = \max(0, - &\sgn([x_2 - x_1 - L]_{2L} - L)).
+\end{aligned}
+\end{equation}
+Now we solve the ODEs for the cases where $x_1 \not \equiv x_2 + L \mod 2L$ and then piece them together
+\begin{equation}
+\left\{ \begin{aligned}
+	m_1 &= \sqrt{M_1} (S_+(t)\sin(M_2 t + \phi) + S_-(t)\cos(M_2 t + \theta)), \\
+	m_2 &= \sqrt{M_1} (S_+(t)\cos(M_2 t + \phi) + S_-(t)\sin(M_2 t + \theta)), \\
+	\phi &= \text{atan2}(m_1(0),m_2(0)), \\
+	\theta &= \text{atan2}(m_2(0),m_1(0)),
+\end{aligned} \right.
+\end{equation}
+It's important to note that since we used that the $\sgn$ function is either $1$ or $-1$ here we only got a local solution for $m_1$ and $m_2$. For the case where $x_1 \equiv x_2 + L \mod 2L$ we have that $m_1$ and $m_2$ are constant. Now let's focus on $\dot{x}_1$ and $\dot{x}_2$, they can be written as
+\begin{align}
+\left\{ \begin{aligned}
+	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1)^2 = M_2^2, \\
+	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1)^2 = M_2^2,
+\end{aligned} \right. 
+\implies \left\{ \begin{aligned}
+	\dot{x}_1 = M_2^2/m_1^2, \\
+	\dot{x}_2 = M_2^2/m_2^2.
+\end{aligned} \right.
+\end{align}
+For the case where $x_1 \equiv x_2 + L \mod 2L$ we see that $x_1$ and $x_2$ will have the same time derivative if $m_1 = m_2$. In the case where $m_1$ and $m_2$ are different $x_1 \equiv x_2 + L \mod 2L$ is only going to be true for an instant. Assuming that $x_1 \not \equiv x_2 + L \mod 2L$ and substituting the expressions for $m_1$ and $m_2$ into the ODEs for $x_1$ and $x_2$ we get
+\begin{align}
+\left\{ \begin{aligned}
+	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}
+		{M_1(S_+(t)\sin^2(M_2 t + \phi) + S_-(t)\cos^2(M_2 t + \theta))}, \\
+	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}
+		{M_1(S_+(t)\cos^2(M_2 t + \phi) + S_-(t)\sin^2(M_2 t + \theta))}.
+\end{aligned} \right.
+\end{align}
+Integration yields the positions
+\begin{equation}
+\left\{ \begin{aligned}
+	x_1 = \frac{M_2}{M_1}(-S_+(t)\cot(M_2t + \phi) + S_-(t)\tan(M_2t + \theta)) + C,\\
+	x_2 = \frac{M_2}{M_1}(\phantom{-}S_+(t)\tan(M_2t + \phi) - S_-(t)\cot(M_2t + \theta)) + D.
+\end{aligned} \right.
+\end{equation}
+%
+The constants $C$ and $D$ are determined by the inital conditions
+\begin{equation}
+\begin{aligned}
+	C &= x_1(0) + \frac{M_2}{M_1}(\phantom{-}S_+(t)\frac{m_2(0)}{m_1{0}} - S_-(t)\frac{m_1(0)}{m_2(0)}), \\
+	D &= x_2(0) + \frac{M_2}{M_1}(-S_+(t)\frac{m_1(0)}{m_2{0}} + S_-(t)\frac{m_2(0)}{m_1(0)})
+\end{aligned}
+\end{equation}
+%
+Assuming that $x_1 \not \equiv x_2 + L \mod 2L$ at $t = 0$ we get that $m_1(t) = m_2(t)$ only when
+\begin{equation}
+\begin{aligned}
+	&t = \frac{\pi/4 - \phi + n\pi}{M_2}, \quad \forall n \in \mathbb{Z}, \quad \text{when} \quad S_+(t) = 1, \quad \text{or} \\
+	&t = \frac{\pi/4 - \theta + n\pi}{M_2}, \quad  \forall n \in \mathbb{Z}, \quad \text{when} \quad S_-(t) = 1.
+\end{aligned}
+\end{equation}
+In both theses cases
+\begin{equation}
+\begin{aligned}
+	x_1(t) - x_2(t) =
+	& S_+(t)\frac{M_2}{M_1}(-\cot(\pi/4 + n\pi) + \tan(\pi/4 + n\pi)) \\
+	& S_-(t)\frac{M_2}{M_1}(\phantom{-}\tan(\pi/4 + n\pi) - \cot(\pi/4 + n\pi))
+	= 0. \\
+\end{aligned}
+\end{equation}
+thus $x_1 \not \equiv x_2 + L \mod 2L$ for all $t$. This shows that the stable case where $\dot{m}_1 = \dot{m}_2 = 0$ and $\dot{x}_1 = \dot{x}_2$ is never reached. The only way to be in this state is to start in it.
+%
+In conclusion the piecewise solution looks like this
+\begin{align}
+	m_1 &= \sqrt{M_1} (S_+(t)\sin(M_2 t + \phi) + S_-(t)\cos(M_2 t + \theta)), \\
+	m_2 &= \sqrt{M_1} (S_+(t)\cos(M_2 t + \phi) + S_-(t)\sin(M_2 t + \theta)), \\
+	x_1 &= \frac{M_2}{M_1}(-S_+(t)\cot(M_2t + \phi) + S_-(t)\tan(M_2t + \theta)) + C,\\
+	x_2 &= \frac{M_2}{M_1}(\phantom{-}S_+(t)\tan(M_2t + \phi) - S_-(t)\cot(M_2t + \theta)) + D.
+\end{align}
+%
+Here it's assumed that $x_1 \not \equiv x_2 + L \mod 2L$ at $t = 0$. The solution is only valid only for the finite duration where $\sgn([x_2 - x_1 - L]_{2L} - L)$ doesn't change sign. It's possible to continue the solution by creating a new solution with new values for $C$, $D$, $\phi$, and $\theta$. Both $M_1$ and $M_2$ are will be conserved for the continuation of the solution. The non-periodic solution can be obtained by letting $L \rightarrow \infty$. Doing that will make the solution periodic at infinity.
+
+\section{N = 2 solution to the high frequency limit Novikov eqn.}
+Here we will solve the system of ODEs for the HF Novikov equation for $N = 2$. The system of ODEs is given by
+\begin{equation}
+\begin{aligned}
+	\dot{x}_k &= u(x_k)^2, \\
+	\dot{m}_k &= -m_k u_x(x_k)u(x_k).
+\end{aligned}
+\end{equation}
+The assumption that $x_1 < \cdots < x_N$ can be made without loss of generality. For $N = 1$, the solution is trivial since $u(x_k) = 0$, which appears in both $\dot{x}_k$ and $\dot{m}_k$, so both $\dot{x}_k$ and $\dot{m}_k$ are equal to zero and the solution for is constant. For the more interesting case when $N = 2$ we get the following system of ODEs from equation \eqref{eq:peakon_odes}:
+%
+\begin{align}
+	\dot{x}_1 & = m_2^2 (x_2 - x_1)^2, \\
+	\dot{x}_2 & = m_1^2 (x_2 - x_1)^2, \\
+	\dot{m}_1 & = m_1 m_2^2(x_2 - x_1),  \\
+	\dot{m}_2 & = -m_1^2 m_2(x_2 - x_1).
+\end{align}
+%
+We will also assume that $m_k \neq 0$ since in the case where it is zero it will remain identically zero.
+%
+To solve this system, we first identify two conserved quantities
+\begin{align}
+	M_1 &= m_1^2 + m_2^2, \\
+	M_2 &= m_1m_2(x_2 - x_1).
+\end{align}
+%
+We show that these quantities are conserved by making sure that their time derivatives are zero
+\begin{equation}
+\begin{aligned}
+	(m_1^2 + m_2^2)_t 
+	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
+	&= 2m_1^2m_2^2(x_2 - x_1) - 2m_1^2m_2^2(x_2 - x_1) = 0,
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+	(m_1m_2&(x_2 - x_1))_t \\
+	&= \dot{m}_1m_2(x_2 - x_1) + m_1\dot{m}_2(x_2 - x_1)
+	- m_1m_2\dot{x}_1 + m_1m_2\dot{x}_2 \\
+	&=\phantom{-} m_1m_2^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
+	&\phantom{=}- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
+	&=0. \\
+\end{aligned}
+\end{equation}
+%
+Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
+\begin{equation}
+\left\{ \begin{aligned}
+	\dot{m}_1 = \phantom{-}m_2M_2, \\
+	\dot{m}_2 = -m_1M_2.
+\end{aligned} \right.
+\end{equation}
+%
+The solutions to these equations take the form:
+\begin{equation}
+\left\{ \begin{aligned}
+	m_1 &= \sqrt{M_1} \sin(M_2t + \phi), \\
+	m_2 &= \sqrt{M_1} \cos(M_2t + \phi).
+\end{aligned} \right.
+\end{equation}
+%
+Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
+\begin{align}
+\left\{ \begin{aligned}
+	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1)^2 = M_2^2, \\
+	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1)^2 = M_2^2,
+\end{aligned} \right. \\
+\implies \left\{ \begin{aligned}
+	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\sin^2(M_2t + \phi)}, \\
+	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t + \phi)}.
+\end{aligned} \right.
+\end{align}
+%
+Integration yields the positions:
+\begin{equation}
+\left\{ \begin{aligned}
+	x_1 = -\frac{M_2}{M_1}\cot(M_2t + \phi) + C,\\
+	x_2 = \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) - D.
+\end{aligned} \right.
+\end{equation}
+%
+The $M_2$ quantity implies that $D = -C$:
+\begin{equation}
+\begin{aligned}
+	M_2 &= m_1m_2(x_2 - x_1) \\
+	&= M_1 \sin(M_2t + \phi) \cos(M_2t + \phi) \\
+	& \qquad \Big( \frac{M_2}{M_1} \Big(\frac{\sin(M_2t + \phi)}{\cos(M_2t + \phi)} +
+	\frac{\cos(M_2t + \phi)}{\sin(M_2t + \phi)}\Big) - D - C \Big) \\
+	&= M_2(\sin^2(M_2t + \phi) + \cos^2(M_2t + \phi)) \\
+	& \qquad - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D) \\
+	&= M_2 - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D).
+\end{aligned}
+\end{equation}
+%
+Since it has to hold for all $t$, we get that $C + D = 0$. The constant $C$ is determined by the inital conditions
+\begin{equation}
+	C = \frac{m_2(0)^2 x_2(0) + m_1(0)^2 x_1(0)}{M_1}.
+\end{equation}
+In conclusion the piecewise solution looks like this:
+\begin{align}
+	u(x, t) &= m_1|x - x_1| + m_2|x - x_2|, \\
+	m_1 &= \phantom{-}\sqrt{M_1} \sin(M_2t + \phi), \\
+	m_2 &= \phantom{-}\sqrt{M_1} \cos(M_2t + \phi), \\
+	x_1 &= -\frac{M_2}{M_1}\cot(M_2t + \phi) + C, \\
+	x_2 &= \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) + C.
+\end{align}
+%
+There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
+\begin{equation}
+\begin{aligned}
+	x_2 - x_1 
+	&= \frac{M_2}{M_1}(\tan(M_2t + \phi) + \cot(M_2t + \phi)) \\
+	&= \frac{M_2}{M_1}\frac{2}{\sin(2M_2t + 2\phi)}
+\end{aligned}
+\end{equation}
+The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the constants of motion as well as keep $\dot{u}(x, t)$ continuous.
+\\ \\
+Looking at the asymptotic behavior of the solution we see that $m_1$ always goes to $\pm M_1$ while $m_2$ goes to zero. If one where to continue the solution by making $x_2$ come back at $-\infty$ when it reaches $\infty$ it's arbitrary if $m_2$ should go to $M_1$ or $-M_1$. The choice of what $m_2$ goes to will not affect the solution of the other variables $x_1$, $x_2$ and $m_1$. The asymptoticics can be visualized by looking at how the momenta move on the unit circle
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+    % Draw the coordinate axes
+    \draw[->] (-1.3,0) -- (1.3,0) node[right] {$m_1$};
+    \draw[->] (0,-1.3) -- (0,1.3) node[above] {$m_2$};
+    \draw[line width=2pt] (0.95,0) -- (1.05, 0);
+    \draw[line width=2pt] (-0.95,0) -- (-1.05, 0);
+    
+    % Draw the circle
+    % \draw (0,0) circle (1cm);
+
+    \node[right] at (1, 0.2) {$t=T_{Start}$};
+    \node[right] at (0.1, 1.1) {$t=T_{End}$};
 
 
-\subsection{Monodromy Matrix}
-The Lax pair can be used to construct the monodromy matrix \cite{Avendano2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the solution to the linear system
-\begin{equation}
-	\partial_y T(y,x,t) = U(y,t) T(y,x,t), \quad T(x,x,t) = I,
-\end{equation}
-where U is the matrix occuring in spatial part of the Lax pair. It describes the evolution of the system along the $x$-axis, $\psi(y,t) = T(y,x,t) \psi(x, t)$. The monodromy matrix is then defined as
-\begin{equation}
-	M(t) =
-		\lim_{x \rightarrow -\infty} \lim_{y \rightarrow \infty} T(y,x,t),
-\end{equation}
-which exists under the assumption that
-\begin{equation}
-	\int_{-\infty}^{\infty} ||U(y,t)|| dy < \infty.
-\end{equation}
-where $||\cdot||$ is some matricial norm. It can be viewed as the transition matrix of the system along the $x$-axis. The monodromy matrix is very useful for finding conserved quantities of the system.
-\begin{theorem}
-	\begin{equation} \label{eq:Transition-Matrix}
-		\partial_t T(y,x,t) = V(y,t) T(y,x,t) - T(y,x,t) V(x,t).
-	\end{equation}
-\end{theorem}
-\begin{proof}
-	Expanding the time derivative of $T(y,x,t)$ and plugging in the zero curvature condition we get
-	\begin{equation}
-	\begin{aligned}
-		\partial_x \partial_t T
-			&= \partial_t (U) T + U \partial_t T \\
-			&= \partial_t (V)T + VUT - UVT + U \partial_t T \\
-			&= \partial_x (VT) + U(\partial_t T - VT) \\
-	\end{aligned}
-	\end{equation}
-	which is the same as
-	\begin{equation}
-		\partial_x (\partial_t T - VT) = U(\partial_t T - VT).
-	\end{equation}
-	This means that $\partial_t T - VT$ is a solution to equation \eqref{eq:Transition-Matrix}.
-	This implies the existence of a non-singular matrix $C$, independent of $x$, such that
-	\begin{equation}
-		\partial_t T - VT = TC,
-	\end{equation}
-	letting $x = y$ we get
-	\begin{equation}
-		C(y,t) = -V(y,t),
-	\end{equation}
-	since $T(x,x,t) = I$.
-\end{proof}
-This leads to the following useful corollary
-\begin{corollary} \label{cor:Monodromy}
-	If $\lim_{x \rightarrow \pm \infty} V(x,t) = V_0$, then
-	\begin{equation}
-		\partial_t M = [V_0, M].
-	\end{equation}
-\end{corollary}
-And since the trace of a commutator is zero, the time derivative of the trace of M is zero.
+    % Add arrows along the circle pointing to the top
+    \draw[->, >=latex, line width=1pt] (0:1) arc[start angle=0,end angle=92,radius=1cm];
+    \draw[->, >=latex, line width=1pt] (0:-1) arc[start angle=180,end angle=88,radius=1cm];
+    \draw[->, >=latex, line width=1pt] (0:1) arc[start angle=0,end angle=-92,radius=1cm];
+    \draw[->, >=latex, line width=1pt] (0:-1) arc[start angle=-180,end angle=-88,radius=1cm];
+\end{tikzpicture}
+\end{center}
 
-\subsection{Hamiltonian formalism}
+While the $x_2$ term goes to infinity the $x_1$ term goes to $C$. The $C$ constant is the for the continuation of the solution so the smaller $x_i$ will always go to $C$. Here is a graph of the values of $x_1$ and $x_2$ over time 
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$t$},
+        ylabel={$x_i$},
+        domain=-pi/2:pi/2,
+        samples=100,
+		ymin=-10, ymax=10,
+        % grid=both,
+        width=10cm,
+        height=6cm,
+    ]
+        \addplot[blue, thick] {tan(deg(x + pi/4)) + 1};
+        \addplot[red, thick] {-cot(deg(x + pi/4)) + 1};
+    \end{axis}
+\end{tikzpicture}
+
+\section{Numerical analysis} \label{sec:Numerical}
+
+\todo{Numerical simulations have been done. Just need to decide what's worth mentioning. Maybe confimation of the N=2 solution, confimation of the constants of motion, collisions, periodic?}
+
+\section{Hamiltonian structure}
+
+\todo{This part have been left as is until I'm sure I'll even include it. Probably depends on if I can find a Hamiltonian.}
+
+\subsection{Preliminaries}
 \todo{Todo: Add references}
 
 The Hamiltonian formalism is a fundamental framework in classical mechanics that offers a powerful method for analyzing dynamical systems. It describes the evolution of a system with $n$ degrees of freedom in a $2n$-dimensional phase space. The state of the system is described by a set of canonical coordinates
@@ -425,288 +626,7 @@ were the Poisson bracket for the canonical coordinates is defined as
 	\{\{x_i, x_j\}, x_k\} &= \sum_{l=1}^n \Pi^{lk}(x) \frac{\partial}{\partial x_l} \Pi^{ij}(x).
 \end{align}
 
-\section{Periodic N = 2 solution to the high frequency limit Novikov eqn.}
-
-The $u$ and $u_x$ functions have been adjusted to for the periodic boundary conditions
-\begin{equation}
-\begin{aligned}
-	u(x, t) &= \sum_{k = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|, \\
-	u_x(x, t) &= \sum_{k = 1}^{N} m_k(t) \sgn([x - x_k(t) - L]_{2L} - L),
-\end{aligned}
-\end{equation}
-where
-\begin{equation}
-	[x]_{2L} = x - 2L\floor*{\frac{x}{2L}}.
-\end{equation}
-
-This leads to the following ODEs for the peakon positions and momenta
-%
-\begin{align}
-	\dot{x}_1 & = m_2^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
-	\dot{x}_2 & = m_1^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
-	\dot{m}_1 & = m_1 m_2^2([x_2 - x_1 - L]_{2L} - L),  \\
-	\dot{m}_2 & = -m_1^2 m_2([x_2 - x_1 - L]_{2L} - L).
-\end{align}
-%
-To solve this system, we first identify two conserved quantities
-\begin{align}
-	M_1 &= m_1^2 + m_2^2, \\
-	M_2 &= m_1m_2|[x_2 - x_1 - L]_{2L} - L|.
-\end{align}
-%
-We show that these quantities are conserved by making sure that their time derivatives are zero
-\begin{equation}
-\begin{aligned}
-	(m_1^2 + m_2^2)_t 
-	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
-	&= (2m_1^2m_2^2 - 2m_1^2m_2^2)([x_2 - x_1 - L]_{2L} - L) = 0,
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	(m_1m_2&|[x_2 - x_1 - L]_{2L} - L|)_t \\
-	&= (\dot{m}_1m_2 + m_1\dot{m}_2)|[x_2 - x_1 - L]_{2L} - L| \\
-	&+ m_1m_2(\dot{x}_2 - \dot{x}_1)\sgn([x_2 - x_1 - L]_{2L} - L) \\
-	&=(m_1m_2^3 - m_1^3m_2 + m_1^3m_2 - m_1m_2^3)\\
-	&\phantom{=}|[x_2 - x_1 - L]_{2L} - L|([x_2 - x_1 - L]_{2L} - L) =0. \\
-\end{aligned}
-\end{equation}
-%
-Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
-\begin{equation}
-\left\{ \begin{aligned}
-	\dot{m}_1 = \phantom{-}m_2M_2 \sgn([x_2 - x_1 - L]_{2L} - L), \\
-	\dot{m}_2 = -m_1M_2 \sgn([x_2 - x_1 - L]_{2L} - L).
-\end{aligned} \right.
-\end{equation}
-%
-The solutions to these equations take the form:
-\begin{equation}
-\left\{ \begin{aligned}
-	m_1 &= \sqrt{M_1} \sin(M_2 \sgn([x_2 - x_1 - L]_{2L} - L) t + \phi), \\
-	m_2 &= \sqrt{M_1} \cos(M_2 \sgn([x_2 - x_1 - L]_{2L} - L) t + \phi).
-\end{aligned} \right.
-\end{equation}
-%
-Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
-\begin{align}
-\left\{ \begin{aligned}
-	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2, \\
-	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2,
-\end{aligned} \right. \\
-\implies \left\{ \begin{aligned}
-	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\sin^2(M_2t + \phi)}, \\
-	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t + \phi)}.
-\end{aligned} \right.
-\end{align}
-%
-Integration yields the positions:
-\begin{equation}
-\left\{ \begin{aligned}
-	x_1 = -\frac{M_2}{M_1}\cot(M_2t + \phi) + C,\\
-	x_2 = \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) - D.
-\end{aligned} \right.
-\end{equation}
-%
-The $M_2$ quantity implies that $D = -C$:
-\begin{equation}
-\begin{aligned}
-	M_2 &= m_1m_2(x_2 - x_1) \\
-	&= M_1 \sin(M_2t + \phi) \cos(M_2t + \phi) \\
-	& \qquad \Big( \frac{M_2}{M_1} \Big(\frac{\sin(M_2t + \phi)}{\cos(M_2t + \phi)} +
-	\frac{\cos(M_2t + \phi)}{\sin(M_2t + \phi)}\Big) - D - C \Big) \\
-	&= M_2(\sin^2(M_2t + \phi) + \cos^2(M_2t + \phi)) \\
-	& \qquad - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D) \\
-	&= M_2 - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D).
-\end{aligned}
-\end{equation}
-%
-Since it has to hold for all $t$, we get that $C + D = 0$.
-In conclusion the piecewise solution looks like this:
-\begin{align}
-	u(x, t) &= m_1|x - x_1| + m_2|x - x_2|, \\
-	m_1 &= \phantom{-}\sqrt{M_1} \sin(M_2t + \phi), \\
-	m_2 &= \phantom{-}\sqrt{M_1} \cos(M_2t + \phi), \\
-	x_1 &= -\frac{M_2}{M_1}\cot(M_2t + \phi) + C, \\
-	x_2 &= \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) + C.
-\end{align}
-%
-There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
-\begin{equation}
-\begin{aligned}
-	x_2 - x_1 
-	&= \frac{M_2}{M_1}(\tan(M_2t + \phi) + \cot(M_2t + \phi)) \\
-	&= \frac{M_2}{M_1}\frac{2}{\sin(2M_2t + 2\phi)}
-\end{aligned}
-\end{equation}
-The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the constants of motion as well as keep $\dot{u}(x, t)$ continuous.
-
-\section{N = 2 solution to the high frequency limit Novikov eqn.}
-Here we will solve the system of ODEs for the HF Novikov equation for $N = 2$. The system of ODEs is given by
-\begin{equation}
-\begin{aligned}
-	\dot{x}_k &= u(x_k)^2, \\
-	\dot{m}_k &= -m_k u_x(x_k)u(x_k).
-\end{aligned}
-\end{equation}
-The assumption that $x_1 < \cdots < x_N$ can be made without loss of generality. For $N = 1$, the solution is trivial since $u(x_k) = 0$, which appears in both $\dot{x}_k$ and $\dot{m}_k$, so both $\dot{x}_k$ and $\dot{m}_k$ are equal to zero and the solution for is constant. For the more interesting case when $N = 2$ we get the following system of ODEs from equation \eqref{eq:peakon_odes}:
-%
-\begin{align}
-	\dot{x}_1 & = m_2^2 (x_2 - x_1)^2, \\
-	\dot{x}_2 & = m_1^2 (x_2 - x_1)^2, \\
-	\dot{m}_1 & = m_1 m_2^2(x_2 - x_1),  \\
-	\dot{m}_2 & = -m_1^2 m_2(x_2 - x_1).
-\end{align}
-%
-We will also assume that $m_k \neq 0$ since in the case where it is zero it will remain identically zero.
-%
-To solve this system, we first identify two conserved quantities
-\begin{align}
-	M_1 &= m_1^2 + m_2^2, \\
-	M_2 &= m_1m_2(x_2 - x_1).
-\end{align}
-%
-We show that these quantities are conserved by making sure that their time derivatives are zero
-\begin{equation}
-\begin{aligned}
-	(m_1^2 + m_2^2)_t 
-	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
-	&= 2m_1^2m_2^2(x_2 - x_1) - 2m_1^2m_2^2(x_2 - x_1) = 0,
-\end{aligned}
-\end{equation}
-\begin{equation}
-\begin{aligned}
-	(m_1m_2&(x_2 - x_1))_t \\
-	&= \dot{m}_1m_2(x_2 - x_1) + m_1\dot{m}_2(x_2 - x_1)
-	- m_1m_2\dot{x}_1 + m_1m_2\dot{x}_2 \\
-	&=\phantom{-} m_1m_2^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
-	&\phantom{=}- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
-	&=0. \\
-\end{aligned}
-\end{equation}
-%
-Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
-\begin{equation}
-\left\{ \begin{aligned}
-	\dot{m}_1 = \phantom{-}m_2M_2, \\
-	\dot{m}_2 = -m_1M_2.
-\end{aligned} \right.
-\end{equation}
-%
-The solutions to these equations take the form:
-\begin{equation}
-\left\{ \begin{aligned}
-	m_1 &= \sqrt{M_1} \sin(M_2t + \phi), \\
-	m_2 &= \sqrt{M_1} \cos(M_2t + \phi).
-\end{aligned} \right.
-\end{equation}
-%
-Now we can solve for $\dot{x}_1$ and $\dot{x}_2$:
-\begin{align}
-\left\{ \begin{aligned}
-	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2, \\
-	\dot{x}_2m_2^2 = m_1^2m_2^2(x_2 - x_1) = M_2^2,
-\end{aligned} \right. \\
-\implies \left\{ \begin{aligned}
-	\dot{x}_1 = \frac{M_2^2}{m_1^2} = \frac{M_2^2}{M_1\sin^2(M_2t + \phi)}, \\
-	\dot{x}_2 = \frac{M_2^2}{m_2^2} = \frac{M_2^2}{M_1\cos^2(M_2t + \phi)}.
-\end{aligned} \right.
-\end{align}
-%
-Integration yields the positions:
-\begin{equation}
-\left\{ \begin{aligned}
-	x_1 = -\frac{M_2}{M_1}\cot(M_2t + \phi) + C,\\
-	x_2 = \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) - D.
-\end{aligned} \right.
-\end{equation}
-%
-The $M_2$ quantity implies that $D = -C$:
-\begin{equation}
-\begin{aligned}
-	M_2 &= m_1m_2(x_2 - x_1) \\
-	&= M_1 \sin(M_2t + \phi) \cos(M_2t + \phi) \\
-	& \qquad \Big( \frac{M_2}{M_1} \Big(\frac{\sin(M_2t + \phi)}{\cos(M_2t + \phi)} +
-	\frac{\cos(M_2t + \phi)}{\sin(M_2t + \phi)}\Big) - D - C \Big) \\
-	&= M_2(\sin^2(M_2t + \phi) + \cos^2(M_2t + \phi)) \\
-	& \qquad - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D) \\
-	&= M_2 - M_1 \sin(M_2t + \phi) \cos(M_2t + \phi)(C + D).
-\end{aligned}
-\end{equation}
-%
-Since it has to hold for all $t$, we get that $C + D = 0$.
-In conclusion the piecewise solution looks like this:
-\begin{align}
-	u(x, t) &= m_1|x - x_1| + m_2|x - x_2|, \\
-	m_1 &= \phantom{-}\sqrt{M_1} \sin(M_2t + \phi), \\
-	m_2 &= \phantom{-}\sqrt{M_1} \cos(M_2t + \phi), \\
-	x_1 &= -\frac{M_2}{M_1}\cot(M_2t + \phi) + C, \\
-	x_2 &= \phantom{-}\frac{M_2}{M_1}\tan(M_2t + \phi) + C.
-\end{align}
-%
-There are four constants $M_1$, $M_2$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
-\begin{equation}
-\begin{aligned}
-	x_2 - x_1 
-	&= \frac{M_2}{M_1}(\tan(M_2t + \phi) + \cot(M_2t + \phi)) \\
-	&= \frac{M_2}{M_1}\frac{2}{\sin(2M_2t + 2\phi)}
-\end{aligned}
-\end{equation}
-The solution is valid only for a finite time, since $x_2$ will go to infinity in a finite time. It's possible to continue the solution by making $x_k$ periodic at infinity. This will also conserve the constants of motion as well as keep $\dot{u}(x, t)$ continuous.
-
-\begin{center}
-\begin{tikzpicture}[scale=2]
-    % Draw the coordinate axes
-    \draw[->] (-1.3,0) -- (1.3,0) node[right] {$m_1$};
-    \draw[->] (0,-1.3) -- (0,1.3) node[above] {$m_2$};
-    
-    % Draw the circle
-    % \draw (0,0) circle (1cm);
-
-    \node[right] at (1, 0.2) {$t=T_{Start}$};
-    \node[right] at (0.1, 1.1) {$t=T_{End}$};
-
-
-    % Add arrows along the circle pointing to the top
-    \draw[->, >=latex, line width=1pt] (0:1) arc[start angle=0,end angle=92,radius=1cm];
-    \draw[->, >=latex, line width=1pt] (0:-1) arc[start angle=180,end angle=88,radius=1cm];
-    \draw[->, >=latex, line width=1pt] (0:1) arc[start angle=0,end angle=-92,radius=1cm];
-    \draw[->, >=latex, line width=1pt] (0:-1) arc[start angle=-180,end angle=-88,radius=1cm];
-\end{tikzpicture}
-\end{center}
-
-
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel={$t$},
-        ylabel={$x_i$},
-        domain=-pi/2:pi/2,
-        samples=100,
-		ymin=-10, ymax=10,
-        % grid=both,
-        width=10cm,
-        height=6cm,
-    ]
-        \addplot[blue, thick] {tan(deg(x + pi/4)) + 1};
-        \addplot[red, thick] {-cot(deg(x + pi/4)) + 1};
-    \end{axis}
-\end{tikzpicture}
-
-\section{Numerical analysis} \label{sec:Numerical}
-
-There are a few interesting cases to look at when $N = 2$. One could study the problem with periodic boundary conditions with a minor adjustment to the solution form
-\begin{equation}
-	u(x, t) = \sum_{i = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|.
-\end{equation}
-Where $[x]_{2L}$ is the periodic function $x \mod 2L$. This will conserve the conserved quantities and keep $\dot{u}(x,t)$ solution continuous.
-
-At $N = 3$ there cases with collisions.
-
-
-\section{Hamiltonian structure}
-\todo{Todo: Add references}
-
-\todo{Todo: Write more}
+\subsection{Comparison to other soliton equations}
 
 One Hamiltonian structure of the CH equation is given by the Hamiltonian
 \begin{equation}
@@ -729,7 +649,6 @@ A Hamiltonian structure for the high-frequency limit of the Novikov equation hav
 
 \section{Constants of motion}
 
-\todo{Todo: Explain the algorithm further/better}\\
 Two methods have been used to find constants of motion for the HF Novikov equation. One of the method will be covered in the next section. The other method is an exhaustive search algorithm. The algorithm is based on the assumption that the constants of motion are polynomials in the variables $m_k$ and $x_k$ of a fixed degree $M$ and $X$ for $m_k$ respectively $x_k$. The algorithm lists all monomials of that fixed degree
 \begin{equation}
 	\prod_{i=1}^{N} m_i^{a_i} x_i^{b_i},
@@ -915,9 +834,137 @@ Interestingly, it follows very close to the pattern of the $N = 3$ case. The onl
 \end{equation}
 Here we also find that all the conserved quantities aren't functionally independent. The Jacobian method showed that there are only five functionally independent conserved quantities, but the relation between them is still unknown.
 
-\section{Zero curvature representation} \label{sec:ZeroCurvature}
+\section{\todo{Todo: Come up with a good section name}} \label{sec:ZeroCurvature}
 
-The zero curvature representation for the Novikov equation \cite{Lundmark_2022} is
+\subsection{Preliminaries}
+\subsection*{Lax pairs}
+
+Lax pairs are a mathematical framework used to analyze and solve certain types of integrable systems. They are the main tool used to solve peakon equations. A Lax pair consists of two operators, $U$ and $V$,
+\begin{equation}
+	\partial_x \psi = U \psi, \quad \partial_t \psi = V \psi,
+\end{equation}
+that satisfy the zero curvature condition
+\begin{equation}
+	\partial_t U - \partial_x V + [U, V] = 0,
+\end{equation}
+where $U$ and $V$ are often are square matrices. The condition comes from equating the mixed partials $\partial_t \partial_x \psi = \partial_x \partial_t \psi$. The existence of a Lax pair for a nonlinear PDE is a strong indicator of the equation's integrability. It allows the application of powerful analytical methods to find exact solutions and conservation laws.
+\begin{example}
+The KdV equation
+\begin{equation}
+	u_t + u_{xxx} - 6uu_x = 0,
+\end{equation}
+has the following Lax pair
+\begin{subequations}
+  \begin{equation}
+    \partial x \psi =
+    \begin{pmatrix}
+      0 & 1 \\
+      u - \lambda & 0
+    \end{pmatrix}
+	\psi,
+  \end{equation}
+  \begin{equation}
+    \partial t \psi =
+    \begin{pmatrix}
+      -u_x & 2u + 4\lambda \\
+      2u^2 - u_{xx} + 2u\lambda - 4\lambda^2 & u_x
+    \end{pmatrix}
+    \psi.
+  \end{equation}
+\end{subequations}
+By taking the mixed partials of the Lax pair we get
+\begin{equation}
+\begin{aligned}
+	& & \partial_t \partial_x \psi &= \partial_x \partial_t \psi \\
+	& \implies & \partial_t U \psi &= \partial_x V \psi \\  
+	& \implies & U_t \psi + U \psi_t &= V_x \psi + V \psi_x \\
+	& \implies & U_t \psi + U V \psi &= V_x \psi + V U \psi \\
+	& \implies & (U_t - V_x + U V - V U) \psi &= 0 \\
+\end{aligned}
+\end{equation}
+This has to be true for all $\psi$, which implies that $U_t - V_x + [U, V] = 0$. With
+\begin{equation}
+\partial_t U =
+\begin{pmatrix}
+	0 & 0 \\
+	u_t & 0
+\end{pmatrix}
+\quad \text{and} \quad
+\partial_x V =
+\begin{pmatrix}
+	-u_{xt} & 2u_t \\
+	4uu_t - u_{xxt} + 2u_t\lambda & u_{xt}
+\end{pmatrix},
+\end{equation}
+the zero curvature condition becomes
+\begin{equation}
+	\begin{pmatrix}
+	0 & 0\\
+	u_t + u_{xxx} - 6u u_x & 0
+	\end{pmatrix} =
+	\begin{pmatrix} 0 \\ 0 \end{pmatrix},
+\end{equation}
+which is only satisfied if the KdV equation is satisfied.
+\end{example}
+
+
+\subsection*{Monodromy Matrix}
+The Lax pair can be used to construct the monodromy matrix \cite{Avendano2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the fundamental solution to the linear system
+\begin{equation}
+	\partial_x T(x,a,t) = U(x,t) T(x,a,t), \quad T(a,a,t) = I,
+\end{equation}
+where U is the matrix occuring in spatial part of the Lax pair. It describes the evolution of the system along the $x$-axis, $\psi(x,t) = T(x,a,t) \psi(a, t)$. The monodromy matrix is then defined as
+\begin{equation}
+	M(t) =
+		\lim_{a \rightarrow -\infty} \lim_{x \rightarrow \infty} T(x,a,t),
+\end{equation}
+which exists under the assumption that
+\begin{equation}
+	\int_{-\infty}^{\infty} ||U(x,t)|| dx < \infty.
+\end{equation}
+where $||\cdot||$ is some matricial norm. It can be viewed as the transition matrix of the system along the $x$-axis. The monodromy matrix is very useful for finding conserved quantities of the system.
+\begin{theorem}
+	\begin{equation} \label{eq:Transition-Matrix}
+		\partial_t T(x,a,t) = V(x,t) T(x,a,t) - T(x,a,t) V(a,t).
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Expanding the time derivative of $T(x,a,t)$ and plugging in the zero curvature condition we get
+	\begin{equation}
+	\begin{aligned}
+		\partial_x \partial_t T
+			&= \partial_t (U) T + U \partial_t T \\
+			&= \partial_t (V)T + VUT - UVT + U \partial_t T \\
+			&= \partial_a (VT) + U(\partial_t T - VT) \\
+	\end{aligned}
+	\end{equation}
+	which is the same as
+	\begin{equation}
+		\partial_a (\partial_t T - VT) = U(\partial_t T - VT).
+	\end{equation}
+	This means that $\partial_t T - VT$ is a solution to equation \eqref{eq:Transition-Matrix}.
+	This implies the existence of a non-singular matrix $C$, independent of $a$, such that
+	\begin{equation}
+		\partial_t T - VT = TC,
+	\end{equation}
+	letting $a = x$ we get
+	\begin{equation}
+		C(x,t) = -V(x,t),
+	\end{equation}
+	since $T(a,a,t) = I$.
+\end{proof}
+This leads to the following useful corollary
+\begin{corollary} \label{cor:Monodromy}
+	If $\lim_{a \rightarrow \pm \infty} V(a,t) = V_0$, then
+	\begin{equation}
+		\partial_t M = [V_0, M].
+	\end{equation}
+\end{corollary}
+And since the trace of a commutator is zero, the time derivative of the trace of M is zero.
+
+\subsection{Constants of motion}
+
+The Lax pair for the Novikov equation \cite{Lundmark_2022} is
 \begin{subequations}
   \label{eq:Novikov-lax}
   \begin{equation}
@@ -1189,6 +1236,8 @@ were in this case $x_{n+1} = x_1$.
 
 \section{Derivation of the ODE system} \label{sec:DerivationODE}
 
+\todo{Todo: Mention the periodic boundary conditions.}
+
 This section provides proof of that the ODE-system \eqref{eq:peakon_odes} is obtained from the PDE by plugging in the ansatz $u = \sum m_k |x - x_k|$.
 
 \subsubsection*{Preliminaries}
@@ -1271,6 +1320,9 @@ It can be assumed that $m_k \neq 0$ since $\dot{m}_k = m_k \cdot (something)$ im
 
 \section{Verification of the Lax pair for the ansatz}
 
+\todo{Mostly just a copy from the Novikov paper. Is it enough to reference that paper or it good to include again here too?} \\
+\todo{Todo: Need to double check that it's correct.}
+
 Generally a function needs to be continuous for the it's multiplication with a Dirac delta function to be well defined. Which creates a problem with the multiplication of $u_x \delta_{x_k}$ since $u_x$ is not continuous at $x_k$. Therefore we will define $u_x \delta_{x_k} := \langle u_x(x_k) \rangle \delta_{x_k}$. The Lax pair formulation is
 \begin{equation}
 	\partial_x \Psi = \hat{U} \Psi, \qquad \partial_t \Psi = \hat{V} \Psi.
@@ -1310,12 +1362,13 @@ Next we do the mixed partials
 \begin{equation}
 \begin{aligned}
 	\partial_t \partial_x \Psi &= \partial_t (U \Psi + zmN \Psi) \\ 
-	&= (\underbrace{U_t}_{=0} + UV) \Psi + (zm N \Psi)_t, \\
+	&= (\underbrace{U_t}_{=0} + U\hat{V}) \Psi + (zm N \Psi)_t \\
+	&= UV \Psi - 2zu^2mUN\Psi + 2zN\sum ((m_k \Psi(x_k))_t - m_k \dot{x}_k\Psi(x_k)\dot{x}_k\delta'_{x_k}), \\
 	\partial_x \partial_t \Psi &= \partial_t (V \Psi + zu^2mN \Psi) \\
-	&= (V_x + VU) \Psi + \sum [ V \Psi ] \delta_{x_k} + (zu^2m N \Psi)_x.
+	&= (V_x + VU) \Psi + \sum [ V \Psi ] \delta_{x_k} + 2zN \sum(u(x_k)^2 m_k \Psi(x_k) \delta'_{x_k}).
 \end{aligned}
 \end{equation}
-The mixed partials should be equal, so for simplify both parts will be put on the same side like so $\partial_t \partial_x \Psi - \partial_x \partial_t \Psi = 0$. The regular of the mixed partials is
+The mixed partials should be equal. The terms involving $\delta'_{x_k}$ are equal since $\dot{x}_k = u(x_k)^2$. The regular of the mixed partials is
 \begin{equation}
 	UV - VU - V_x =
 	\begin{pmatrix}
@@ -1324,15 +1377,85 @@ The mixed partials should be equal, so for simplify both parts will be put on th
 		0 & 0 & -u u_{xx}
 	\end{pmatrix},
 \end{equation}
-which is identically zero, since the regular part of $u_xx$ is zero. The singular part of the mixed partials is
-\begin{equation}
-	(zmN \Psi)_t - \sum [V \Psi] \delta_{x_k} - (zu^2mN \Psi)_x.
+which is identically zero, since the regular part of $u_{xx}$ is zero. Thus the compatibility condition reduces to an equality between the coefficients of $\delta_{x_k}$,
+\begin{equation} \label{eq:singular_mixed_partials}
+	-2zm_ku(x_k)^2UN\Psi(x_k) + (zmN \Psi(x_k))_t - \sum [V \Psi(x_k)] = 0.
 \end{equation}
-Using the produce rule (\ref{eq:dirac_product_rules}) we get that
+Using the produce rule (\ref{eq:dirac_product_rules}) and that $[\Psi(x_k)] = 2zm_kN\Psi(x_k)$ we get that
 \begin{equation}
-	\sum [V \Psi] \delta_{x_k} = \sum \langle V \rangle [\Psi(x_k)] + [V]\langle \Psi(x_k) \rangle.
+\begin{aligned}
+	&\sum [V \Psi(x_k)] \delta_{x_k} 
+	= \sum \langle V(x_k) \rangle 2zmN\Psi(x_k) + [V(x_k)]\langle \Psi(x_k) \rangle \\
+	&= 2zm_k
+	\begin{psmallmatrix}
+		0 & -u\langle u_x \rangle & \langle u_x \rangle/z \\
+		0 & u/z & -1/z^2 \\
+		0 & -u^2 & u/z \\
+	\end{psmallmatrix}_{x_k} \Psi(x_k)
+	+2m_k
+	\begin{psmallmatrix}
+		u & -1/z & -2\langle u_x \rangle \\
+		0 & 0 & 1/z \\
+		0 & 0 & -u \\
+	\end{psmallmatrix}_{x_k} \langle \Psi(x_k) \rangle.
+\end{aligned}
 \end{equation}
-
+The $(3,2)$ element $u^2$ in the first term above is going to cancel out the first term in (\ref{eq:singular_mixed_partials}) since $UN$'s only non zero element is the $(3,2)$ element which is one. What's then left of the compatibility condition is
+\begin{equation}
+\begin{aligned}
+	&\dot{m}_k N \Psi(x_k) + m_k N \partial_t \Psi(x_k) \\
+	&= m_k
+	\begin{psmallmatrix}
+		0 & -u\langle u_x \rangle & \langle u_x \rangle/z \\
+		0 & u/z & -1/z^2 \\
+		0 & 0 & u/z \\
+	\end{psmallmatrix}_{x_k} \Psi(x_k)
+	+m_k
+	\begin{psmallmatrix}
+		u & -1/z^2 & -2\langle u_x \rangle/z \\
+		0 & 0 & 1/z^2 \\
+		0 & 0 & -u/z \\
+	\end{psmallmatrix}_{x_k} \langle \Psi(x_k) \rangle.
+\end{aligned}
+\end{equation}
+%
+Next let's compute $N \partial_t \langle \Psi(x_k) \rangle$
+\begin{equation}
+\begin{aligned}
+	N \partial_t \langle \Psi(x_k) \rangle 
+	&= N (\langle U \Psi(x_k) \rangle \dot{x}_k + \langle V \Psi(x_k) \rangle)\\
+	&= N (U u(x_k)^2 \langle A(x_k) \rangle) \langle \Psi(x_k) \rangle + N\frac{1}{4}[A(x_k)][\Psi(x_k)] \\
+	&= 
+	\begin{psmallmatrix}
+		u/z & -1/z^2 & -\langle u_x \rangle/z \\
+		0 & u/z & u \langle u_x \rangle \\
+		0 & 0 & 0 \\
+	\end{psmallmatrix}_{x_k} \langle \Psi(x_k) \rangle
+	+\frac{1}{4} \underbrace{N [A(x_k)] N}_{=0} 2z m_k \Psi(x_k).
+\end{aligned}
+\end{equation}
+After a bit of manipulation and using that $\langle \psi_3 \rangle (x_k) = \psi_3(x_k)$, we can show that the compatibility condition can be written as
+\begin{equation}
+\begin{aligned}
+	m_k N \partial_t (\Psi(x_k) - \langle \Psi(x_k) \rangle) + (\dot{m}_k + m_k u(x_k) \langle u_x(x_k) \rangle) N \Psi(x_k) \\
+	= m_k \begin{psmallmatrix}
+		0 & 0 & 0 \\
+		0 & u/z & 0 \\
+		0 & 0 & 0
+	\end{psmallmatrix}_{x_k} (\Psi(x_k) - \langle \Psi(x_k) \rangle).
+\end{aligned}
+\end{equation}
+The third row is zero and the first two rows says that
+\begin{equation}
+\begin{aligned}
+	(\dot{m}_k + m_ku(x_k) \langle u_x(x_k) \rangle) \psi_2(x_k) &= -m_k \partial_t (\psi_2(x_k) - \langle \psi_2(x_k) \rangle), \\
+	(\dot{m}_k + m_ku(x_k) \langle u_x(x_k) \rangle) \psi_3(x_k) &= \frac{1}{z}m_k u(x_k) (\psi_2(x_k) - \langle \psi_2(x_k) \rangle).
+\end{aligned}
+\end{equation}
+If we choose to assign $\psi_2(x_k) = \langle \psi_2(x_k) \rangle$ then it's clear that the compatibility condition is satisfied only if
+\begin{equation}
+	\dot{m}_k = -m_k u(x_k) \langle u_x(x_k) \rangle.
+\end{equation}
 
 %=========================================================================%
 %
