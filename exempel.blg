@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: exempel.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--I didn't find a database entry for "Camassa_1993"
+Warning--I didn't find a database entry for "Degasperis_1999"
+Warning--I didn't find a database entry for "Lundmark_2022"
+Warning--I didn't find a database entry for "HunterSaxton_1991"
+Warning--I didn't find a database entry for "HunterZheng1994"
+Warning--I didn't find a database entry for "KohlenbergLundmarkSzmigielski_2007"
+Warning--I didn't find a database entry for "LundmarkSzmigielski_2008"
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            521 strings with 4416 characters,
+and the built_in function-call counts, 297 in all, are:
+= -- 27
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 24
+:= -- 56
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 4
+chr.to.int$ -- 0
+cite$ -- 1
+duplicate$ -- 11
+empty$ -- 27
+format.name$ -- 2
+if$ -- 58
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 2
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 7
+stack$ -- 0
+substring$ -- 23
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 3
+width$ -- 2
+write$ -- 13
+(There were 7 warnings)

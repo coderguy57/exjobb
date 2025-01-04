@@ -1,0 +1,1017 @@
+\begin{thebibliography}{336}
+\providecommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{{\tt #1}}
+\providecommand{\href}[2]{#2}
+\setlength{\itemsep}{0pt}
+
+
+\bibitem[1]{alber-camassa-holm-marsden:1994:geometry-peakons-billiard-solutions}
+Mark S. Alber, Roberto Camassa, Darryl D. Holm and Jerrold E. Marsden. \href{http://dx.doi.org/10.1007/BF00739423}{The geometry of peaked solitons and billiard solutions of a class of integrable {PDE's}}. \textit{Lett. Math. Phys.}, \textbf{32}\kern.5pt (2)\kern.25pt :\kern.25pt 137--151, 1994. \href{http://www.ams.org/mathscinet-getitem?mr=1296383}{MR1296383}.
+
+\bibitem[2]{alber-miller:2001:CH-twopeakon}
+M. S. Alber and C. Miller. \href{http://dx.doi.org/10.1016/S0893-9659(00)00118-X}{Peakon solutions of the shallow water equation}. \textit{Appl. Math. Lett.}, \textbf{14}\kern.5pt (1)\kern.25pt :\kern.25pt 93--98, 2001. \href{http://arxiv.org/abs/nlin/0001004}{arXiv:nlin/0001004 [nlin.PS]}. \href{http://www.ams.org/mathscinet-getitem?mr=1793709}{MR1793709}.
+
+\bibitem[3]{anco-chang-szmigielski:2018:conservative-peakons-U1-invariant-NLS-Hirota}
+Stephen C. Anco, Xiangke Chang and Jacek Szmigielski. \href{http://dx.doi.org/10.1111/sapm.12241}{The dynamics of conservative peakons in a family of {$U(1)$}-invariant integrable equations of {NLS}--{Hirota} type}. \textit{Stud. Appl. Math.}, \textbf{141}\kern.5pt (4)\kern.25pt :\kern.25pt 680--713, 2018. \href{http://arxiv.org/abs/1711.01429}{arXiv:1711.01429 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3879972}{MR3879972}.
+
+\bibitem[4]{anco-dasilva-freire:2015:wavebreaking-equations-generalizing-CH-and-novikov}
+Stephen C. Anco, Priscila Leal da Silva and Igor Leite Freire. \href{http://dx.doi.org/10.1063/1.4929661}{A family of wave-breaking equations generalizing the {Camassa}--{Holm} and {Novikov} equations}. \textit{J. Math. Phys.}, \textbf{56}\kern.5pt (9)\kern.25pt :\kern.25pt 091506 (21 pages), 2015. \href{http://arxiv.org/abs/1412.4415}{arXiv:1412.4415 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3395277}{MR3395277}.
+
+\bibitem[5]{anco-kraus:2018:hamiltonian-peakons-weak-solution-mCH}
+Stephen Anco and Daniel Kraus. \href{http://dx.doi.org/10.3934/dcds.2018194}{Hamiltonian structure of peakons as weak solutions for the modified {Camassa}--{Holm} equation}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{38}\kern.5pt (9)\kern.25pt :\kern.25pt 4449--4465, 2018. \href{http://arxiv.org/abs/1708.02520}{arXiv:1708.02520 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3824710}{MR3824710}.
+
+\bibitem[6]{anco-mobasheramini:2017:integrable-U1-invariant-peakon-equations-NLS}
+Stephen C. Anco and Fatane Mobasheramini. \href{http://dx.doi.org/10.1016/j.physd.2017.06.006}{Integrable {$U(1)$}-invariant peakon equations from the {NLS} hierarchy}. \textit{Physica D}, \textbf{355}\kern.25pt :\kern.25pt 1--23, 2017. \href{http://arxiv.org/abs/1701.00522}{arXiv:1701.00522 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3683118}{MR3683118}.
+
+\bibitem[7]{anco-recio:2019:accelerating-dynamical-peakons}
+Stephen C. Anco and Elena Recio. \href{http://dx.doi.org/10.3934/dcds.2019267}{Accelerating dynamical peakons and their behaviour}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{39}\kern.5pt (10)\kern.25pt :\kern.25pt 6131--6148, 2019. \href{http://arxiv.org/abs/1902.05171}{arXiv:1902.05171 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=4027026}{MR4027026}.
+
+\bibitem[8]{anco-recio-gandarias-bruzon:2015:nonlinear-generalization-of-CH-with-peakons}
+Stephen C. Anco, Elena Recio, María L. Gandarias and María S. Bruzón. \href{http://dx.doi.org/10.3934/proc.2015.0029}{A nonlinear generalization of the {Camassa}--{Holm} equation with peakon solutions}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{2015}\kern.5pt (Suppl.)\kern.25pt :\kern.25pt 29--37, 2015. Proceedings of the 10th AIMS Conference on Dynamical Systems, Differential Equations and Applications (Madrid, Spain, July 07--11, 2014). \href{http://arxiv.org/abs/1609.02473}{arXiv:1609.02473 [nlin.PS]}. \href{http://www.ams.org/mathscinet-getitem?mr=3462432}{MR3462432}.
+
+\bibitem[9]{baker-gravesmorris:1996:pade-approximants}
+George A. Baker, Jr. and Peter Graves-Morris. \href{http://dx.doi.org/10.1017/CBO9780511530074}{\textit{Padé Approximants}}, Second~Edition. ISBN 0-521-45007-1. Cambridge University Press, Cambridge, United Kingdom, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1383091}{MR1383091}.
+
+\bibitem[10]{barostichi-himonas-petronilho:2016:ovsyannikov-theorem}
+Rafael F. Barostichi, A. Alexandrou Himonas and Gerson Petronilho. \href{http://dx.doi.org/10.1016/j.jfa.2015.06.008}{Autonomous {Ovsyannikov} theorem and applications to nonlocal evolution equations and systems}. \textit{J. Funct. Anal.}, \textbf{270}\kern.5pt (1)\kern.25pt :\kern.25pt 330--358, 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3419764}{MR3419764}.
+
+\bibitem[11]{beals-sattinger-szmigielski:1998:acoustic-scattering-KdV-hierarchy}
+R. Beals, D. H. Sattinger and J. Szmigielski. \href{http://dx.doi.org/10.1006/aima.1998.1768}{Acoustic scattering and the extended {Korteweg}--de {Vries} hierarchy}. \textit{Adv. Math.}, \textbf{140}\kern.5pt (2)\kern.25pt :\kern.25pt 190--206, 1998. \href{http://arxiv.org/abs/solv-int/9901007}{arXiv:solv-int/9901007}. \href{http://www.ams.org/mathscinet-getitem?mr=1658522}{MR1658522}.
+
+\bibitem[12]{beals-sattinger-szmigielski:1999:stieltjes}
+R. Beals, D. H. Sattinger and J. Szmigielski. \href{http://dx.doi.org/10.1088/0266-5611/15/1/001}{Multi-peakons and a theorem of {Stieltjes}}. \textit{Inverse Probl.}, \textbf{15}\kern.5pt (1)\kern.25pt :\kern.25pt L1--L4, 1999. \href{http://arxiv.org/abs/solv-int/9903011}{arXiv:solv-int/9903011}. \href{http://www.ams.org/mathscinet-getitem?mr=1675325}{MR1675325}.
+
+\bibitem[13]{beals-sattinger-szmigielski:2000:moment}
+Richard Beals, David H. Sattinger and Jacek Szmigielski. \href{http://dx.doi.org/10.1006/aima.1999.1883}{Multipeakons and the classical moment problem}. \textit{Adv. Math.}, \textbf{154}\kern.5pt (2)\kern.25pt :\kern.25pt 229--257, 2000. \href{http://arxiv.org/abs/solv-int/9906001}{arXiv:solv-int/9906001}. \href{http://www.ams.org/mathscinet-getitem?mr=1784675}{MR1784675 (2001h:37151)}.
+
+\bibitem[14]{beals-sattinger-szmigielski:2001:peakon-antipeakon-NEEDS99}
+R. Beals, D. H. Sattinger and J. Szmigielski. \href{http://dx.doi.org/10.2991/jnmp.2001.8.s.5}{Peakon--antipeakon interaction}. \textit{J. Nonlinear Math. Phys.}, \textbf{8}\kern.5pt (suppl.)\kern.25pt :\kern.25pt 23--27, 2001. Proceedings of the 13th Workshop NEEDS'99: Nonlinear Evolution Equations and Dynamical Systems. \href{http://www.ams.org/mathscinet-getitem?mr=1821503}{MR1821503}.
+
+\bibitem[15]{beals-sattinger-szmigielski:2001:peakons-strings-finite-Toda}
+Richard Beals, David H. Sattinger and Jacek Szmigielski. \href{http://dx.doi.org/10.1002/1097-0312(200101)54:1<91::AID-CPA4>3.3.CO;2-F}{Peakons, strings, and the finite {Toda} lattice}. \textit{Commun. Pure Appl. Math.}, \textbf{54}\kern.5pt (1)\kern.25pt :\kern.25pt 91--106, 2001. \href{http://www.ams.org/mathscinet-getitem?mr=1787108}{MR1787108}.
+
+\bibitem[16]{beals-sattinger-szmigielski:2002:CF-flows-periodic-peakons-2-peakon-2002}
+R. Beals, D. H. Sattinger and J. Szmigielski. \href{http://dx.doi.org/10.1023/A:1021358107495}{Calogero--{Françoise} flows and periodic peakons}. \textit{Theor. Math. Phys.}, \textbf{133}\kern.5pt (3)\kern.25pt :\kern.25pt 1631--1646, 2002. \href{http://www.ams.org/mathscinet-getitem?mr=2001548}{MR2001548}.
+
+\bibitem[17]{beals-sattinger-szmigielski:2005:CF-flows-periodic-peakons-N-peakon-2005}
+R. Beals, D. H. Sattinger and J. Szmigielski. \href{http://dx.doi.org/10.1017/S1474748005000010}{Periodic peakons and {Calogero}--{Françoise} flows}. \textit{J. Inst. Math. Jussieu}, \textbf{4}\kern.5pt (1)\kern.25pt :\kern.25pt 1--27, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2115069}{MR2115069}.
+
+\bibitem[18]{beals-szmigielski:2021p:2CH-euler-bernoulli-beam-noncommutative-continued-fractions}
+Richard Beals and Jacek Szmigielski. A 2-component {Camassa}--{Holm} equation, {Euler}--{Bernoulli} beam problem and non-commutative continued fractions. 2021. \href{http://arxiv.org/abs/2011.05964}{arXiv:2011.05964 [nlin.SI]}. Preprint. To appear in \textit{Commun. Pure Appl. Math.}
+
+\bibitem[19]{bertola-gekhtman-szmigielski:2009:cubicstring}
+Marco Bertola, Michael Gekhtman and Jacek Szmigielski. \href{http://dx.doi.org/10.1088/1751-8113/42/45/454006}{Cubic string boundary value problems and {Cauchy} biorthogonal polynomials}. \textit{J. Phys. A: Math. Theor.}, \textbf{42}\kern.5pt (45)\kern.25pt :\kern.25pt 454006 (13 pages), 2009. \href{http://arxiv.org/abs/0904.2188}{arXiv:0904.2188 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2556648}{MR2556648 (2011a:35434)}.
+
+\bibitem[20]{bertola-gekhtman-szmigielski:2009:twomatrix}
+M. Bertola, M. Gekhtman and J. Szmigielski. \href{http://dx.doi.org/10.1007/s00220-009-0739-y}{The {Cauchy} two-matrix model}. \textit{Commun. Math. Phys.}, \textbf{287}\kern.5pt (3)\kern.25pt :\kern.25pt 983--1014, 2009. \href{http://arxiv.org/abs/0804.0873}{arXiv:0804.0873 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2486670}{MR2486670 (2010a:42090)}.
+
+\bibitem[21]{bertola-gekhtman-szmigielski:2010:cauchy}
+M. Bertola, M. Gekhtman and J. Szmigielski. \href{http://dx.doi.org/10.1016/j.jat.2009.09.008}{Cauchy biorthogonal polynomials}. \textit{J. Approx. Theory}, \textbf{162}\kern.5pt (4)\kern.25pt :\kern.25pt 832--867, 2010. \href{http://arxiv.org/abs/0904.2602}{arXiv:0904.2602 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2606648}{MR2606648 (2011d:42064)}.
+
+\bibitem[22]{bertola-gekhtman-szmigielski:2013:strong-asymptotics}
+M. Bertola, M. Gekhtman and J. Szmigielski. \href{http://dx.doi.org/10.1063/1.4802455}{Strong asymptotics for {Cauchy} biorthogonal polynomials with application to the {Cauchy} two-matrix model}. \textit{J. Math. Phys.}, \textbf{54}\kern.5pt (4)\kern.25pt :\kern.25pt 043517 (25 pages), 2013. \href{http://arxiv.org/abs/1206.3199}{arXiv:1206.3199 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3088819}{MR3088819}.
+
+\bibitem[23]{bertola-gekhtman-szmigielski:2014:cauchy-laguerre-twomatrix-meijerG}
+M. Bertola, M. Gekhtman and J. Szmigielski. \href{http://dx.doi.org/10.1007/s00220-013-1833-8}{Cauchy--{Laguerre} two-matrix model and the {Meijer}-{G} random point field}. \textit{Commun. Math. Phys.}, \textbf{326}\kern.5pt (1)\kern.25pt :\kern.25pt 111--144, 2014. \href{http://arxiv.org/abs/1211.5369}{arXiv:1211.5369 [math.PR]}. \href{http://www.ams.org/mathscinet-getitem?mr=3162486}{MR3162486}.
+
+\bibitem[24]{bies-gorka-reyes:2012:mCH-geometry-and-local-analysis}
+Piotr Michał Bies, Przemysław Górka and Enrique G. Reyes. \href{http://dx.doi.org/10.1063/1.4736845}{The dual modified {Korteweg}--de {Vries}--{Fokas}--{Qiao} equation: Geometry and local analysis}. \textit{J. Math. Phys.}, \textbf{53}\kern.5pt (7)\kern.25pt :\kern.25pt 073710 (19 pages), 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2985269}{MR2985269}.
+
+\bibitem[25]{boutetdemonvel-karpenko-shepelsky:2020:mCH-nonzero-boundary-conditions-riemann-hilbert-approach}
+Anne Boutet de Monvel, Iryna Karpenko and Dmitry Shepelsky. \href{http://dx.doi.org/10.1063/1.5139519}{A {Riemann}--{Hilbert} approach to the modified {Camassa}--{Holm} equation with nonzero boundary conditions}. \textit{J. Math. Phys.}, \textbf{61}\kern.5pt (3)\kern.25pt :\kern.25pt 031504 (24 pages), 2020. \href{http://arxiv.org/abs/1911.07263}{arXiv:1911.07263 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=4079627}{MR4079627}.
+
+\bibitem[26]{boutetdemonvel-shepelsky:2005:CH-half-line}
+Anne Boutet de Monvel and Dmitry Shepelsky. \href{http://dx.doi.org/10.1016/j.crma.2005.09.035}{The {Camassa}--{Holm} equation on the half-line}. \textit{C. R. Acad. Sci. Paris, Ser.~I}, \textbf{341}\kern.5pt (10)\kern.25pt :\kern.25pt 611--616, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2179800}{MR2179800}.
+
+\bibitem[27]{boutetdemonvel-shepelsky:2006:CH-riemann-hilbert-line}
+Anne Boutet de Monvel and Dmitry Shepelsky. \href{http://dx.doi.org/10.1016/j.crma.2006.10.014}{Riemann--{Hilbert} approach for the {Camassa}--{Holm} equation on the line}. \textit{C. R. Acad. Sci. Paris, Ser.~I}, \textbf{343}\kern.5pt (10)\kern.25pt :\kern.25pt 627--632, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2271736}{MR2271736}.
+
+\bibitem[28]{boutetdemonvel-shepelsky:2008:CH-riemann-hilbert-half-line}
+Anne Boutet de Monvel and Dmitry Shepelsky. \href{http://dx.doi.org/10.1007/s12220-008-9014-2}{The {Camassa}--{Holm} equation on the half-line: A {Riemann}--{Hilbert} approach}. \textit{J. Geom. Anal.}, \textbf{18}\kern.5pt (2)\kern.25pt :\kern.25pt 285--323, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2393262}{MR2393262}.
+
+\bibitem[29]{boutetdemonvel-shepelsky:2013:DP-riemann-hilbert-approach}
+Anne Boutet de Monvel and Dmitry Shepelsky. \href{http://dx.doi.org/10.1088/0951-7715/26/7/2081}{A {Riemann}--{Hilbert} approach for the {Degasperis}--{Procesi} equation}. \textit{Nonlinearity}, \textbf{26}\kern.5pt (7)\kern.25pt :\kern.25pt 2081--2107, 2013. \href{http://arxiv.org/abs/1107.5995}{arXiv:1107.5995 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3078108}{MR3078108}.
+
+\bibitem[30]{boutetdemonvel-shepelsky-zielinski:2016:novikov-riemann-hilbert-approach}
+Anne Boutet de Monvel, Dmitry Shepelsky and Lech Zielinski. \href{http://dx.doi.org/10.3842/SIGMA.2016.095}{A {Riemann}--{Hilbert} approach for the {Novikov} equation}. \textit{SIGMA}, \textbf{12}\kern.25pt :\kern.25pt 095 (22 pages), 2016. Special Issue on Asymptotics and Universality in Random Matrices, Random Growth Processes, Integrable Systems and Statistical Physics in honor of Percy Deift and Craig Tracy. \href{http://arxiv.org/abs/1603.08842}{arXiv:1603.08842 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3550396}{MR3550396}.
+
+\bibitem[31]{bozhkov-freire-ibragimov:2014:novikov-group-analysis}
+Yuri Bozhkov, Igor Leite Freire and Nail H. Ibragimov. \href{http://dx.doi.org/10.1007/s40314-013-0055-1}{Group analysis of the {Novikov} equation}. \textit{Comput. Appl. Math.}, \textbf{33}\kern.5pt (1)\kern.25pt :\kern.25pt 193--202, 2014. \href{http://arxiv.org/abs/1202.3954}{arXiv:1202.3954 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3187981}{MR3187981}.
+
+\bibitem[32]{brandolese:2016:DP-liouville-theorem}
+Lorenzo Brandolese. \href{http://dx.doi.org/10.2422/2036-2145.201410_014}{A {Liouville} theorem for the {Degasperis}--{Procesi} equation}. \textit{Ann. Sc. Norm. Super. Pisa Cl. Sci. (5)}, \textbf{16}\kern.5pt (3)\kern.25pt :\kern.25pt 759--765, 2016. \href{http://arxiv.org/abs/1405.6675}{arXiv:1405.6675 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3618075}{MR3618075}.
+
+\bibitem[33]{bressan-constantin:2007:global-conservative-CH}
+Alberto Bressan and Adrian Constantin. \href{http://dx.doi.org/10.1007/s00205-006-0010-z}{Global conservative solutions of the {Camassa}--{Holm} equation}. \textit{Arch. Ration. Mech. Anal.}, \textbf{183}\kern.5pt (2)\kern.25pt :\kern.25pt 215--239, 2007. \href{https://www.math.ntnu.no/conservation/2005/016.html}{Conservation Laws Preprint Server: 2005-016}. \href{http://www.ams.org/mathscinet-getitem?mr=2278406}{MR2278406}.
+
+\bibitem[34]{bressan-constantin:2007:global-dissipative-CH}
+Alberto Bressan and Adrian Constantin. \href{http://dx.doi.org/10.1142/S0219530507000857}{Global dissipative solutions of the {Camassa}--{Holm} equation}. \textit{Anal. Appl. (Singap.)}, \textbf{5}\kern.5pt (1)\kern.25pt :\kern.25pt 1--27, 2007. \href{https://www.math.ntnu.no/conservation/2006/023.html}{Conservation Laws Preprint Server: 2006-023}. \href{http://www.ams.org/mathscinet-getitem?mr=2288533}{MR2288533}.
+
+\bibitem[35]{cai-chen-chen-shen:2018:novikov-lipschitz-metric}
+Hong Cai, Geng Chen, Robin Ming Chen and Yannan Shen. \href{http://dx.doi.org/10.1007/s00205-018-1234-4}{Lipschitz metric for the {Novikov} equation}. \textit{Arch. Ration. Mech. Anal.}, \textbf{229}\kern.5pt (3)\kern.25pt :\kern.25pt 1091--1137, 2018. \href{http://arxiv.org/abs/1611.08277}{arXiv:1611.08277 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3814597}{MR3814597}.
+
+\bibitem[36]{calogero-francoise:1996:cf-integrable}
+F. Calogero and J.-P. Françoise. \href{http://dx.doi.org/10.1063/1.531536}{A completely integrable {Hamiltonian} system}. \textit{J. Math. Phys.}, \textbf{37}\kern.5pt (6)\kern.25pt :\kern.25pt 2863--2871, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1390240}{MR1390240}.
+
+\bibitem[37]{camassa:2000:CH-characteristic-variables}
+Roberto Camassa. \href{http://dx.doi.org/10.1142/9789812817587_0009}{Characteristic variables for a completely integrable shallow water equation}. In M. Boiti, L. Martina, F. Pempinelli, B. Prinari and G. Soliani\ (eds.), \textit{Proceedings of the Workshop on Nonlinearity, Integrability and All That: Twenty Years after {NEEDS} '79 ({Lecce}, {Italy}, 1--10 {July} 1999)}, pp.~65--74. ISBN 978-981-02-4147-6. World Scientific Publishing, River Edge, NJ, 2000. \href{http://www.ams.org/mathscinet-getitem?mr=1772161}{MR1772161}.
+
+\bibitem[38]{camassa:2003:CH-characteristics-initial-value-problem}
+Roberto Camassa. \href{http://dx.doi.org/10.3934/dcdsb.2003.3.115}{Characteristics and the initial value problem of a completely integrable shallow water equation}. \textit{Discrete Contin. Dyn. Syst. Ser. B}, \textbf{3}\kern.5pt (1)\kern.25pt :\kern.25pt 115--139, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1952132}{MR1952132}.
+
+\bibitem[39]{camassa-holm:1993:CH-orginal-paper}
+Roberto Camassa and Darryl D. Holm. \href{http://dx.doi.org/10.1103/PhysRevLett.71.1661}{An integrable shallow water equation with peaked solitons}. \textit{Phys. Rev. Lett.}, \textbf{71}\kern.5pt (11)\kern.25pt :\kern.25pt 1661--1664, 1993. \href{http://arxiv.org/abs/patt-sol/9305002}{arXiv:patt-sol/9305002}. \href{http://www.ams.org/mathscinet-getitem?mr=1234453}{MR1234453}.
+
+\bibitem[40]{camassa-holm-hyman:1994:CH-new-integrable}
+Roberto Camassa, Darryl D. Holm and James M. Hyman. \href{http://dx.doi.org/10.1016/S0065-2156(08)70254-0}{A new integrable shallow water equation}. \textit{Adv. Appl. Mech.}, \textbf{31}\kern.25pt :\kern.25pt 1--33, 1994.
+
+\bibitem[41]{chang:2022:hermite-pade-pfaffian-structures-novikov-and-integrable-lattices}
+Xiang-Ke Chang. \href{http://dx.doi.org/10.1016/j.aim.2022.108338}{{Hermite}--{Padé} approximations with {Pfaffian} structures: {Novikov} peakon equation and integrable lattices}. \textit{Adv. Math.}, \textbf{402}\kern.25pt :\kern.25pt 108338 (45 pages), 2022. \href{http://arxiv.org/abs/2112.12601}{arXiv:2112.12601 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=4396507}{MR4396507}.
+
+\bibitem[42]{chang-chen-hu:2014:generalized-nonisospectral-CH-peakons}
+Xiangke Chang, Xiaomin Chen and Xingbiao Hu. \href{http://dx.doi.org/10.1016/j.aim.2014.06.016}{A generalized nonisospectral {Camassa}--{Holm} equation and its multipeakon solutions}. \textit{Adv. Math.}, \textbf{263}\kern.25pt :\kern.25pt 154--177, 2014. \href{http://arxiv.org/abs/1411.4217}{arXiv:1411.4217 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3239137}{MR3239137}.
+
+\bibitem[43]{chang-he-hu-li:2018:partial-skew-orthogonal-polynomials-integrable-lattices-Pfaffian}
+Xiang-Ke Chang, Yi He, Xing-Biao Hu and Shi-Hao Li. \href{http://dx.doi.org/10.1007/s00220-018-3273-y}{Partial-skew-orthogonal polynomials and related integrable lattices with {Pfaffian} tau-functions}. \textit{Commun. Math. Phys.}, \textbf{364}\kern.5pt (3)\kern.25pt :\kern.25pt 1069--1119, 2018. \href{http://arxiv.org/abs/1712.06382}{arXiv:1712.06382 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3875823}{MR3875823}.
+
+\bibitem[44]{chang-hu-li:2018:DP-peakons-Toda-lattice-CKP}
+Xiang-Ke Chang, Xing-Biao Hu and Shi-Hao Li. \href{http://dx.doi.org/10.1088/1361-6544/aad52c}{Degasperis--{Procesi} peakon dynamical system and finite {Toda} lattice of {CKP} type}. \textit{Nonlinearity}, \textbf{31}\kern.5pt (10)\kern.25pt :\kern.25pt 4746--4775, 2018. \href{http://arxiv.org/abs/1712.08306}{arXiv:1712.08306 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3856118}{MR3856118}.
+
+\bibitem[45]{chang-hu-li:2018:moment-modification-multipeakons}
+Xiang-Ke Chang, Xing-Biao Hu and Shi-Hao Li. \href{http://dx.doi.org/10.1016/j.jde.2018.05.020}{Moment modification, multipeakons, and nonisospectral generalizations}. \textit{J. Differ. Equ.}, \textbf{265}\kern.5pt (9)\kern.25pt :\kern.25pt 3858--3887, 2018. \href{http://www.ams.org/mathscinet-getitem?mr=3843286}{MR3843286}.
+
+\bibitem[46]{chang-hu-li-zhao:2018:novikov-peakons-pfaffians-Toda-lattice-BKP}
+Xiang-Ke Chang, Xing-Biao Hu, Shi-Hao Li and Jun-Xiao Zhao. \href{http://dx.doi.org/10.1016/j.aim.2018.09.023}{An application of {Pfaffians} to multipeakons of the {Novikov} equation and the finite {Toda} lattice of {BKP} type}. \textit{Adv. Math.}, \textbf{338}\kern.25pt :\kern.25pt 1077--1118, 2018. \href{http://arxiv.org/abs/1712.00965}{arXiv:1712.00965 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3861723}{MR3861723}.
+
+\bibitem[47]{chang-hu-szmigielski:2016:two-component-mCH-Kac-vanMoerbeke}
+Xiang-Ke Chang, Xing-Biao Hu and Jacek Szmigielski. \href{http://dx.doi.org/10.1016/j.aim.2016.05.004}{Multipeakons of a two-component modified {Camassa}--{Holm} equation and the relation with the finite {Kac}--van {Moerbeke} lattice}. \textit{Adv. Math.}, \textbf{299}\kern.25pt :\kern.25pt 1--35, 2016. \href{http://arxiv.org/abs/1512.08300}{arXiv:1512.08300 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3519462}{MR3519462}.
+
+\bibitem[48]{chang-hu-szmigielski-zhedanov:2020:isospectral-frobenius-stickelberger-thiele-polynomials}
+Xiang-Ke Chang, Xing-Biao Hu, Jacek Szmigielski and Alexei Zhedanov. \href{http://dx.doi.org/10.1007/s00220-019-03616-z}{Isospectral flows related to {Frobenius}--{Stickelberger}--{Thiele} polynomials}. \textit{Commun. Math. Phys.}, \textbf{377}\kern.5pt (1)\kern.25pt :\kern.25pt 387--419, 2020. \href{http://arxiv.org/abs/1912.12019}{arXiv:1912.12019 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=4107933}{MR4107933}.
+
+\bibitem[49]{chang-szmigielski:2016:mCH-concept-of-peakons}
+Xiangke Chang and Jacek Szmigielski. \href{http://dx.doi.org/10.1080/14029251.2016.1248156}{Lax integrability of the modified {Camassa--Holm} equation and the concept of peakons}. \textit{J. Nonlinear Math. Phys.}, \textbf{23}\kern.5pt (4)\kern.25pt :\kern.25pt 563--572, 2016. \href{http://arxiv.org/abs/1610.06537}{arXiv:1610.06537 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3557556}{MR3557556}.
+
+\bibitem[50]{chang-szmigielski:2017:mCH-liouville-integrability-conservative-peakons}
+Xiangke Chang and Jacek Szmigielski. \href{http://dx.doi.org/10.1080/14029251.2017.1375693}{Liouville integrability of conservative peakons for a modified {CH} equation}. \textit{J. Nonlinear Math. Phys.}, \textbf{24}\kern.5pt (4)\kern.25pt :\kern.25pt 584--595, 2017. \href{http://arxiv.org/abs/1707.04989}{arXiv:1707.04989 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3698655}{MR3698655}.
+
+\bibitem[51]{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}
+Xiangke Chang and Jacek Szmigielski. \href{http://dx.doi.org/10.1007/s00220-017-3076-6}{Lax integrability and the peakon problem for the modified {Camassa}--{Holm} equation}. \textit{Commun. Math. Phys.}, \textbf{358}\kern.5pt (1)\kern.25pt :\kern.25pt 295--341, 2018. \href{http://arxiv.org/abs/1705.06451}{arXiv:1705.06451 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3772039}{MR3772039}.
+
+\bibitem[52]{chang-szmigielski:2020:2mCH-overlapping-peakons-elastic-bar-isospectral}
+X. K. Chang and J. Szmigielski. \href{http://dx.doi.org/10.1201/9780429263743}{Vibrations of an elastic bar, isospectral deformations, and modified {Camassa}--{Holm} equations}. In Norbert Euler and Maria Clara Nucci\ (eds.), \textit{Nonlinear Systems and Their Remarkable Mathematical Structures}, Vol.~2, pp.~459--497. ISBN 978-0-367-20847-9. CRC Press, Boca Raton, FL, 2020. \href{http://arxiv.org/abs/1905.11400}{arXiv:1905.11400 [nlin.SI]}.
+
+\bibitem[53]{chen-tang:2006:DP-new-type-of-bounded-waves}
+Can Chen and Minying Tang. \href{http://dx.doi.org/10.1016/j.chaos.2005.04.040}{A new type of bounded waves for {Degasperis}--{Procesi} equation}. \textit{Chaos Solitons Fractals}, \textbf{27}\kern.5pt (3)\kern.25pt :\kern.25pt 698--704, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2166417}{MR2166417}.
+
+\bibitem[54]{chen-chen-liu:2018:novikov-global-conservative-weak-existence-uniqueness}
+Geng Chen, Robin Ming Chen and Yue Liu. \href{http://dx.doi.org/10.1512/iumj.2018.67.7510}{Existence and uniqueness of the global conservative weak solutions for the integrable {Novikov} equation}. \textit{Indiana Univ. Math. J.}, \textbf{67}\kern.5pt (6)\kern.25pt :\kern.25pt 2393--2433, 2018. \href{http://arxiv.org/abs/1509.08569}{arXiv:1509.08569 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3900373}{MR3900373}.
+
+\bibitem[55]{chen-guo:2015:DP-asymptotic-profile}
+Huiping Chen and Zhengguang Guo. \href{http://dx.doi.org/10.1007/s40840-014-0023-y}{Asymptotic profile of solutions to the {Degasperis}--{Procesi} equation}. \textit{Bull. Malays. Math. Sci. Soc.}, \textbf{38}\kern.5pt (1)\kern.25pt :\kern.25pt 333--344, 2015. \href{http://www.ams.org/mathscinet-getitem?mr=3394057}{MR3394057}.
+
+\bibitem[56]{chen-guo-liu-qu:2016:DP-novikov-mCH-blowup}
+Robin Ming Chen, Fei Guo, Yue Liu and Changzheng Qu. \href{http://dx.doi.org/10.1016/j.jfa.2016.01.017}{Analysis on the blow-up of solutions to a class of integrable peakon equations}. \textit{J. Funct. Anal.}, \textbf{270}\kern.5pt (6)\kern.25pt :\kern.25pt 2343--2374, 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3460243}{MR3460243}.
+
+\bibitem[57]{chen-lian-wang-xu:2021:novikov-rigidity-property-asymptotic-stability-of-peakons}
+Robin Ming Chen, Wei Lian, Dehua Wang and Runzhang Xu. \href{http://dx.doi.org/10.1007/s00205-021-01658-z}{A rigidity property for the {Novikov} equation and the asymptotic stability of peakons}. \textit{Arch. Ration. Mech. Anal.}, \textbf{241}\kern.5pt (1)\kern.25pt :\kern.25pt 497--533, 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4271965}{MR4271965}.
+
+\bibitem[58]{chen-pelinovsky:2021:novikov-W-1-infty-instability}
+Robin Ming Chen and Dmitry E. Pelinovsky. \href{http://dx.doi.org/10.4310/DPDE.2021.v18.n3.a1}{{$W^{1,\infty}$} instability of {$H^1$}-stable peakons in the {Novikov} equation}. \textit{Dyn. Partial Differ. Equ.}, \textbf{18}\kern.5pt (3)\kern.25pt :\kern.25pt 173--197, 2021. \href{http://arxiv.org/abs/1911.08440}{arXiv:1911.08440 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4291309}{MR4291309}.
+
+\bibitem[59]{chen-qiao-zhou:2019:GX-persistence-properties-wavebreaking-criteria}
+Rong Chen, Zhijun Qiao and Shouming Zhou. \href{http://dx.doi.org/10.1002/mma.5805}{Persistence properties and wave-breaking criteria for the {Geng}--{Xue} system}. \textit{Math. Methods Appl. Sci.}, \textbf{42}\kern.5pt (18)\kern.25pt :\kern.25pt 6999--7010, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=4037948}{MR4037948}.
+
+\bibitem[60]{chen-yang-li-zhu:2017:novikov-conservative-finite-difference-scheme}
+Wenxia Chen, Ping Yang, Zhao Li and Qianqian Zhu. \href{http://www.internonlinearscience.org/upload/papers/IJNS\%20Vol\%2024\%20\%20No2\%20\%20Paper\%207\%20\%20On\%20the\%20cons.pdf}{On the conservative finite difference scheme for the {Novikov} equation}. \textit{Int. J. Nonlinear Sci.}, \textbf{24}\kern.5pt (2)\kern.25pt :\kern.25pt 112--119, 2017. \href{http://www.ams.org/mathscinet-getitem?mr=3708691}{MR3708691}.
+
+\bibitem[61]{chen-zhu-yang:2017:generalized-novikov-conservative-finite-difference-scheme}
+Wenxia Chen, Qianqian Zhu and Ping Yang. \href{http://dx.doi.org/10.4236/jamp.2017.59150}{On the conservative finite difference scheme for the generalized {Novikov} equation}. \textit{J. Appl. Math. Phys.}, \textbf{5}\kern.5pt (9)\kern.25pt :\kern.25pt 1776--1790, 2017.
+
+\bibitem[62]{chen:2011:on-solutions-to-DP}
+Wenying Chen. \href{http://dx.doi.org/10.1016/j.jmaa.2011.01.019}{On solutions to the {Degasperis}--{Procesi} equation}. \textit{J. Math. Anal. Appl.}, \textbf{379}\kern.5pt (1)\kern.25pt :\kern.25pt 351--359, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2776477}{MR2776477}.
+
+\bibitem[63]{christov-hakkaev:2009:periodic-b-family-cauchy-problem-and-DP-nonuniform-continuity}
+Ognyan Christov and Sevdzhan Hakkaev. \href{http://dx.doi.org/10.1016/j.jmaa.2009.06.035}{On the {Cauchy} problem for the periodic {$b$}-family of equations and of the non-uniform continuity of {Degasperis}--{Procesi} equation}. \textit{J. Math. Anal. Appl.}, \textbf{360}\kern.5pt (1)\kern.25pt :\kern.25pt 47--56, 2009. \href{http://www.ams.org/mathscinet-getitem?mr=2548366}{MR2548366}.
+
+\bibitem[64]{cieslak-gaczkowski-kubkowski-malogrosz:2017:CH-multipeakons-as-geodesics}
+Tomasz Cieślak, Michał Gaczkowski, Mariusz Kubkowski and Marcin Małogrosz. \href{http://dx.doi.org/10.4064/ba8119-6-2017}{Multipeakons viewed as geodesics}. \textit{Bulletin Polish Acad. Sci. Math.}, \textbf{65}\kern.5pt (2)\kern.25pt :\kern.25pt 153--164, 2017. \href{http://www.ams.org/mathscinet-getitem?mr=3731020}{MR3731020}.
+
+\bibitem[65]{cieslak-krynski:2021:CH-geometric-aspects-of-two-and-threepeakons}
+Tomasz Cieślak and Wojciech Kryński. \href{http://dx.doi.org/10.1088/1361-6544/ac149e}{Geometric aspects of two- and threepeakons}. \textit{Nonlinearity}, \textbf{34}\kern.5pt (9)\kern.25pt :\kern.25pt 6685--6704, 2021. \href{http://arxiv.org/abs/2010.02713}{arXiv:2010.02713 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4304494}{MR4304494}.
+
+\bibitem[66]{coclite-diruvo:2019:note-on-convergence-novikov}
+Giuseppe Maria Coclite and Lorenzo di Ruvo. \href{http://dx.doi.org/10.3934/dcdsb.2018290}{A note on the convergence of the solution of the {Novikov} equation}. \textit{Discrete Contin. Dyn. Syst. Ser. B}, \textbf{24}\kern.5pt (6)\kern.25pt :\kern.25pt 2865--2899, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3960607}{MR3960607}.
+
+\bibitem[67]{coclite-karlsen:2006:DP-semigroup-of-solutions}
+G. M. Coclite and K. H. Karlsen. \href{http://dx.doi.org/10.1142/9789812773616\_0019}{A semigroup of solutions for the {Degasperis}--{Procesi} equation}. In Roberto Monaco, Giuseppe Mulone, Salvatore Rionero and Tommaso Ruggeri\ (eds.), \textit{Waves and Stability in Continuous Media}, pp.~128--133. ISBN 978-981-256-804-5. World Scientific Publishing, Hackensack, NJ, 2006. Proceedings of ``{WASCOM} 2005'' 13th Conference on Waves and Stability in Continuous Media. \href{http://www.ams.org/mathscinet-getitem?mr=2172828}{MR2172828}.
+
+\bibitem[68]{coclite-karlsen:2006:DPwellposedness}
+Giuseppe M. Coclite and Kenneth H. Karlsen. \href{http://dx.doi.org/10.1016/j.jfa.2005.07.008}{On the well-posedness of the {Degasperis}--{Procesi} equation}. \textit{J. Funct. Anal.}, \textbf{233}\kern.5pt (1)\kern.25pt :\kern.25pt 60--91, 2006. \href{http://www.math.ntnu.no/conservation/2005/028.html}{Conservation Laws Preprint Server: 2005-028}. \href{http://www.ams.org/mathscinet-getitem?mr=2204675}{MR2204675 (2007d:35231)}.
+
+\bibitem[69]{coclite-karlsen:2007:DPuniqueness}
+Giuseppe M. Coclite and Kenneth H. Karlsen. \href{http://dx.doi.org/10.1016/j.jde.2006.11.008}{On the uniqueness of discontinuous solutions to the {Degasperis}--{Procesi} equation}. \textit{J. Differ. Equ.}, \textbf{234}\kern.5pt (1)\kern.25pt :\kern.25pt 142--160, 2007. \href{http://www.math.ntnu.no/conservation/2006/004.html}{Conservation Laws Preprint Server: 2006-004}. \href{http://www.ams.org/mathscinet-getitem?mr=2298968}{MR2298968 (2007k:35400)}.
+
+\bibitem[70]{coclite-karlsen:2008:DP-bounded-solutions}
+Giuseppe Maria Coclite and Kenneth H. Karlsen. \href{http://www.bdim.eu/item?id=BUMI_2008_9_1_2_439_0}{Bounded solutions for the {Degasperis}--{Procesi} equation}. \textit{Bollettino U.M.I. (9)}, \textbf{1}\kern.5pt (2)\kern.25pt :\kern.25pt 439--453, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2424303}{MR2424303}.
+
+\bibitem[71]{coclite-karlsen:2015:periodic-DP-wellposedness-and-asymptotics}
+Giuseppe M. Coclite and Kenneth H. Karlsen. \href{http://dx.doi.org/10.1016/j.jfa.2014.11.008}{Periodic solutions of the {Degasperis}--{Procesi} equation: Well-posedness and asymptotics}. \textit{J. Funct. Anal.}, \textbf{268}\kern.5pt (5)\kern.25pt :\kern.25pt 1053--1077, 2015. \href{http://www.ams.org/mathscinet-getitem?mr=3304593}{MR3304593}.
+
+\bibitem[72]{coclite-karlsen-kwon:2009:IBVP-conservation-laws-with-source-terms-and-application-to-DP}
+G. M. Coclite, K. H. Karlsen and Y.-S. Kwon. \href{http://dx.doi.org/10.1016/j.jfa.2009.09.022}{Initial--boundary value problems for conservation laws with source terms and the {Degasperis}--{Procesi} equation}. \textit{J. Funct. Anal.}, \textbf{257}\kern.5pt (12)\kern.25pt :\kern.25pt 3823--3857, 2009. \href{http://arxiv.org/abs/0811.0549}{arXiv:0811.0549 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2557726}{MR2557726}.
+
+\bibitem[73]{coclite-karlsen-risebro:2008:DP-numerical-schemes-discontinuous-solutions}
+G. M. Coclite, K. H. Karlsen and N. H. Risebro. \href{http://dx.doi.org/10.1093/imanum/drm003}{Numerical schemes for computing discontinuous solutions of the {Degasperis}--{Procesi} equation}. \textit{IMA J. Numer. Anal.}, \textbf{28}\kern.5pt (1)\kern.25pt :\kern.25pt 80--105, 2008. \href{https://www.math.ntnu.no/conservation/2006/013.html}{Conservation Laws Preprint Server: 2006-013}. \href{http://www.ams.org/mathscinet-getitem?mr=2387906}{MR2387906}.
+
+\bibitem[74]{colville-gomez-szmigielski:2016:isospectral-deformations-string}
+Kale Colville, Daniel Gomez and Jacek Szmigielski. \href{http://dx.doi.org/10.1007/s00220-016-2711-y}{On isospectral deformations of an inhomogeneous string}. \textit{Commun. Math. Phys.}, \textbf{348}\kern.5pt (3)\kern.25pt :\kern.25pt 771--802, 2016. \href{http://arxiv.org/abs/1606.00924}{arXiv:1606.00924 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3555354}{MR3555354}.
+
+\bibitem[75]{constantin:1997:CH-periodic-cauchy-problem}
+Adrian Constantin. \href{http://dx.doi.org/10.1006/jdeq.1997.3333}{On the {Cauchy} problem for the periodic {Camassa}--{Holm} equation}. \textit{J. Differ. Equ.}, \textbf{141}\kern.5pt (2)\kern.25pt :\kern.25pt 218--235, 1997. \href{http://www.ams.org/mathscinet-getitem?mr=1488351}{MR1488351}.
+
+\bibitem[76]{constantin:1997:CH-periodic-spectral-problem}
+Adrian Constantin. \href{http://dx.doi.org/10.1006/jmaa.1997.5393}{On the spectral problem for the periodic {Camassa}--{Holm} equation}. \textit{J. Math. Anal. Appl.}, \textbf{210}\kern.5pt (1)\kern.25pt :\kern.25pt 215--230, 1997. \href{http://www.ams.org/mathscinet-getitem?mr=1449518}{MR1449518}.
+
+\bibitem[77]{constantin:1997:CH-soliton-interactions:Expositiones}
+Adrian Constantin. Soliton interactions for the {Camassa}--{Holm} equation. \textit{Exposition. Math.}, \textbf{15}\kern.5pt (3)\kern.25pt :\kern.25pt 251--264, 1997. \href{http://www.ams.org/mathscinet-getitem?mr=1458768}{MR1458768}.
+
+\bibitem[78]{constantin:1997:CH-hamiltonian-structure:Expositiones}
+Adrian Constantin. The {Hamiltonian} structure of the {Camassa}--{Holm} equation. \textit{Exposition. Math.}, \textbf{15}\kern.5pt (1)\kern.25pt :\kern.25pt 53--85, 1997. \href{http://www.ams.org/mathscinet-getitem?mr=1438436}{MR1438436}.
+
+\bibitem[79]{constantin:1998:CH-inverse-spectral-problem}
+Adrian Constantin. \href{http://dx.doi.org/10.1006/jfan.1997.3231}{On the inverse spectral problem for the {Camassa}--{Holm} equation}. \textit{J. Funct. Anal.}, \textbf{155}\kern.5pt (2)\kern.25pt :\kern.25pt 352--363, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1624553}{MR1624553}.
+
+\bibitem[80]{constantin:1998:CH-periodic-finite-gap-solutions-quasiperiodicity}
+Adrian Constantin. \href{http://dx.doi.org/10.1016/S0007-4497(99)80001-3}{Quasi-periodicity with respect to time of spatially periodic finite-gap solutions of the {Camassa}--{Holm} equation}. \textit{Bull. Sci. Math.}, \textbf{122}\kern.5pt (7)\kern.25pt :\kern.25pt 487--494, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1653462}{MR1653462}.
+
+\bibitem[81]{constantin:2000:CH-geometric-approach}
+Adrian Constantin. \href{http://www.numdam.org/item?id=AIF_2000__50_2_321_0}{Existence of permanent and breaking waves for a shallow water equation: A geometric approach}. \textit{Ann. Inst. Fourier (Grenoble)}, \textbf{50}\kern.5pt (2)\kern.25pt :\kern.25pt 321--362, 2000. \href{http://www.ams.org/mathscinet-getitem?mr=1775353}{MR1775353}.
+
+\bibitem[82]{constantin-escher:1998:CH-global-existence-blowup}
+Adrian Constantin and Joachim Escher. \href{http://www.numdam.org/item?id=ASNSP_1998_4_26_2_303_0}{Global existence and blow-up for a shallow water equation}. \textit{Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4)}, \textbf{26}\kern.5pt (2)\kern.25pt :\kern.25pt 303--328, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1631589}{MR1631589}.
+
+\bibitem[83]{constantin-escher:1998:CH-global-weak}
+Adrian Constantin and Joachim Escher. \href{http://dx.doi.org/10.1512/iumj.1998.47.1466}{Global weak solutions for a shallow water equation}. \textit{Indiana Univ. Math. J.}, \textbf{47}\kern.5pt (4)\kern.25pt :\kern.25pt 1527--1545, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1687106}{MR1687106}.
+
+\bibitem[84]{constantin-escher:1998:wave-breaking-for-nonlinear-nonlocal-shallow-water-equations}
+Adrian Constantin and Joachim Escher. \href{http://dx.doi.org/10.1007/BF02392586}{Wave breaking for nonlinear nonlocal shallow water equations}. \textit{Acta Math.}, \textbf{181}\kern.5pt (2)\kern.25pt :\kern.25pt 229--243, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1668586}{MR1668586}.
+
+\bibitem[85]{constantin-ivanov:2017:DP-dressing-method}
+Adrian Constantin and Rossen Ivanov. \href{http://dx.doi.org/10.1111/sapm.12149}{Dressing method for the {Degasperis}--{Procesi} equation}. \textit{Stud. Appl. Math.}, \textbf{138}\kern.5pt (2)\kern.25pt :\kern.25pt 205--226, 2017. \href{http://arxiv.org/abs/1608.02120}{arXiv:1608.02120 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3610669}{MR3610669}.
+
+\bibitem[86]{constantin-ivanov-lenells:2010:DP-inverse-scattering-transform}
+Adrian Constantin, Rossen I. Ivanov and Jonatan Lenells. \href{http://dx.doi.org/10.1088/0951-7715/23/10/012}{Inverse scattering transform for the {Degasperis}--{Procesi} equation}. \textit{Nonlinearity}, \textbf{23}\kern.5pt (10)\kern.25pt :\kern.25pt 2559--2575, 2010. \href{http://arxiv.org/abs/1205.4754}{arXiv:1205.4754 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2683782}{MR2683782}.
+
+\bibitem[87]{constantin-lannes:2009:hydrodynamical-CH-DP}
+Adrian Constantin and David Lannes. \href{http://dx.doi.org/10.1007/s00205-008-0128-2}{The hydrodynamical relevance of the {Camassa}--{Holm} and {Degasperis}--{Procesi} equations}. \textit{Arch. Ration. Mech. Anal.}, \textbf{192}\kern.5pt (1)\kern.25pt :\kern.25pt 165--186, 2009. \href{http://arxiv.org/abs/0709.0905}{arXiv:0709.0905 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2481064}{MR2481064}.
+
+\bibitem[88]{constantin-lenells:2003:CH-inverse-scattering-approach:PhysLettA}
+Adrian Constantin and Jonatan Lenells. \href{http://dx.doi.org/10.1016/S0375-9601(03)00109-9}{On the inverse scattering approach for an integrable shallow water wave equation}. \textit{Phys. Lett. A}, \textbf{308}\kern.5pt (5--6)\kern.25pt :\kern.25pt 432--436, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1977363}{MR1977363}.
+
+\bibitem[89]{constantin-lenells:2003:CH-inverse-scattering-approach:JNMP}
+Adrian Constantin and Jonatan Lenells. \href{http://dx.doi.org/10.2991/jnmp.2003.10.3.1}{On the inverse scattering approach to the {Camassa}--{Holm} equation}. \textit{J. Nonlinear Math. Phys.}, \textbf{10}\kern.5pt (3)\kern.25pt :\kern.25pt 252--255, 2003. \href{http://arxiv.org/abs/math-ph/0403039}{arXiv:math-ph/0403039}. \href{http://www.ams.org/mathscinet-getitem?mr=1990677}{MR1990677}.
+
+\bibitem[90]{constantin-mckean:1999:CH-shallow-water-equation-on-the-circle}
+A. Constantin and H. P. McKean. \href{http://dx.doi.org/10.1002/(SICI)1097-0312(199908)52:8<949::AID-CPA3>3.0.CO;2-D}{A shallow water equation on the circle}. \textit{Commun. Pure Appl. Math.}, \textbf{52}\kern.5pt (8)\kern.25pt :\kern.25pt 949--982, 1999. \href{http://www.ams.org/mathscinet-getitem?mr=1686969}{MR1686969}.
+
+\bibitem[91]{constantin-strauss:2000:CH-stability-peakons}
+Adrian Constantin and Walter A. Strauss. \href{http://dx.doi.org/10.1002/(SICI)1097-0312(200005)53:5<603::AID-CPA3>3.3.CO;2-C}{Stability of peakons}. \textit{Commun. Pure Appl. Math.}, \textbf{53}\kern.5pt (5)\kern.25pt :\kern.25pt 603--610, 2000. \href{http://www.ams.org/mathscinet-getitem?mr=1737505}{MR1737505}.
+
+\bibitem[92]{constantin-strauss:2002:CH-stability-solitons}
+A. Constantin and W. A. Strauss. \href{http://dx.doi.org/10.1007/s00332-002-0517-x}{Stability of the {Camassa}--{Holm} solitons}. \textit{J. Nonlinear Sci.}, \textbf{12}\kern.5pt (4)\kern.25pt :\kern.25pt 415--422, 2002. \href{http://www.ams.org/mathscinet-getitem?mr=1915943}{MR1915943}.
+
+\bibitem[93]{degasperis-holm-hone:2002:new-integrable-equation-DP}
+A. Degasperis, D. D. Holm and A. N. W. Hone. \href{http://dx.doi.org/10.1023/A:1021186408422}{A new integrable equation with peakon solutions}. \textit{Theor. Math. Phys.}, \textbf{133}\kern.5pt (2)\kern.25pt :\kern.25pt 1463--1474, 2002. Proceedings of NEEDS 2001 (Cambridge, UK, July 24--31, 2001). \href{http://arxiv.org/abs/nlin/0205023}{arXiv:nlin/0205023 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2001531}{MR2001531}.
+
+\bibitem[94]{degasperis-holm-hone:2003:integrable-and-nonintegrable-peakons}
+A. Degasperis, D. D. Holm and A. N. W. Hone. \href{http://dx.doi.org/10.1142/9789812704467_0005}{Integrable and non-integrable equations with peakons}. In M. J. Ablowitz, M. Boiti, F. Pempinelli and B. Prinari\ (eds.), \textit{Nonlinear Physics: Theory and Experiment. {II}}, pp.~37--43. ISBN 978-981-238-270-2. World Scientific Publishing, River Edge, NJ, 2003. Proceedings of the workshop Nonlinear Physics: Theory and Experiment II, 27 June -- 6 July 2002, Gallipoli, Italy. \href{http://arxiv.org/abs/nlin/0209008}{arXiv:nlin/0209008 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2028761}{MR2028761}.
+
+\bibitem[95]{degasperis-procesi:1999:asymptotic-integrability}
+Antonio Degasperis and Michela Procesi. \href{http://dx.doi.org/10.1142/4299}{Asymptotic integrability}. In A. Degasperis and G. Gaeta\ (eds.), \textit{Symmetry and Perturbation Theory}, pp.~23--37. ISBN 978-981-4543-16-3. World Scientific Publishing, River Edge, NJ, 1999. International workshop on Symmetry and Perturbation Theory (SPT 98), Rome, 16--22 December 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1844104}{MR1844104}.
+
+\bibitem[96]{dullin-gottwald-holm:2001:integrable-shallow-water-linear-nonlinear-dispersion}
+Holger R. Dullin, Georg A. Gottwald and Darryl D. Holm. \href{http://dx.doi.org/10.1103/PhysRevLett.87.194501}{An integrable shallow water equation with linear and nonlinear dispersion}. \textit{Phys. Rev. Lett.}, \textbf{87}\kern.5pt (19)\kern.25pt :\kern.25pt 194501 (4 pages), 2001. \href{http://arxiv.org/abs/nlin/0104004}{arXiv:nlin/0104004 [nlin.CD]}.
+
+\bibitem[97]{dullin-gottwald-holm:2003:CH-KdV5-other-asymptotically-equivalent-shallow-water}
+Holger R. Dullin, Georg A. Gottwald and Darryl D. Holm. \href{http://dx.doi.org/10.1016/S0169-5983(03)00046-7}{Camassa--{Holm}, {Korteweg}--de {Vries}-5 and other asymptotically equivalent equations for shallow water waves}. \textit{Fluid Dyn. Res.}, \textbf{33}\kern.5pt (1--2)\kern.25pt :\kern.25pt 73--95, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1995028}{MR1995028}.
+
+\bibitem[98]{dullin-gottwald-holm:2004:asymptotically-equivalent-shallow-water}
+H. R. Dullin, G. A. Gottwald and D. D. Holm. \href{http://dx.doi.org/10.1016/j.physd.2003.11.004}{On asymptotically equivalent shallow water wave equations}. \textit{Physica D}, \textbf{190}\kern.5pt (1--2)\kern.25pt :\kern.25pt 1--14, 2004. \href{http://arxiv.org/abs/nlin/0307011}{arXiv:nlin/0307011 [nlin.PS]}. \href{http://www.ams.org/mathscinet-getitem?mr=2043789}{MR2043789}.
+
+\bibitem[99]{dym-mckean:1976:gaussian-processes}
+H. Dym and H. P. McKean. \textit{Gaussian Processes, Function Theory, and the Inverse Spectral Problem}. ISBN 978-0-486-46279-0. Academic Press, New York, 1976. \href{http://www.ams.org/mathscinet-getitem?mr=0448523}{MR0448523 (56 \#6829)}.
+
+\bibitem[100]{eckhardt:2017:IST-for-conservative-CH-flow-with-decaying-initial-data}
+Jonathan Eckhardt. \href{http://dx.doi.org/10.1007/s00205-016-1066-z}{The inverse spectral transform for the conservative {Camassa}--{Holm} flow with decaying initial data}. \textit{Arch. Ration. Mech. Anal.}, \textbf{224}\kern.5pt (1)\kern.25pt :\kern.25pt 21--52, 2017. \href{http://arxiv.org/abs/1510.04916}{arXiv:1510.04916 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3609244}{MR3609244}.
+
+\bibitem[101]{eckhardt:2022:continued-fraction-expansions-herglotz-nevanlinna-functions-generalized-indefinite-strings-stieltjes-type}
+Jonathan Eckhardt. \href{http://dx.doi.org/10.1112/blms.12598}{Continued fraction expansions of {Herglotz}--{Nevanlinna} functions and generalized indefinite strings of {Stieltjes} type}. \textit{Bull. London Math. Soc.}, \textbf{54}\kern.5pt (2)\kern.25pt :\kern.25pt 737--759, 2022. \href{http://arxiv.org/abs/2003.11653}{arXiv:2003.11653 [math.SP]}.
+
+\bibitem[102]{eckhardt-kostenko:2014:CH-isospectral-problem-global-conservative-multipeakons}
+Jonathan Eckhardt and Aleksey Kostenko. \href{http://dx.doi.org/10.1007/s00220-014-1905-4}{An isospectral problem for global conservative multi-peakon solutions of the {Camassa}--{Holm} equation}. \textit{Commun. Math. Phys.}, \textbf{329}\kern.5pt (3)\kern.25pt :\kern.25pt 893--918, 2014. \href{http://arxiv.org/abs/1406.3702}{arXiv:1406.3702 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3212873}{MR3212873}.
+
+\bibitem[103]{eckhardt-kostenko:2016:inverse-spectral-problem-indefinite-strings}
+Jonathan Eckhardt and Aleksey Kostenko. \href{http://dx.doi.org/10.1007/s00222-015-0629-1}{The inverse spectral problem for indefinite strings}. \textit{Invent. Math.}, \textbf{204}\kern.5pt (3)\kern.25pt :\kern.25pt 939--977, 2016. \href{http://arxiv.org/abs/1409.0139}{arXiv:1409.0139 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3502069}{MR3502069}.
+
+\bibitem[104]{eckhardt-kostenko:2018:classical-moment-problem-generalized-indefinite-strings}
+Jonathan Eckhardt and Aleksey Kostenko. \href{http://dx.doi.org/10.1007/s00020-018-2446-6}{The classical moment problem and generalized indefinite strings}. \textit{Integr. Equ. Oper. Theory}, \textbf{90}\kern.5pt (2)\kern.25pt :\kern.25pt 23 (30 pages), 2018. \href{http://arxiv.org/abs/1707.08394}{arXiv:1707.08394 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3784529}{MR3784529}.
+
+\bibitem[105]{eckhardt-kostenko:2020:inverse-spectral-problem-periodic-conservative-CH-multipeakons}
+Jonathan Eckhardt and Aleksey Kostenko. \href{http://dx.doi.org/10.1093/imrn/rny176}{The inverse spectral problem for periodic conservative multi-peakon solutions of the {Camassa}--{Holm} equation}. \textit{Int. Math. Res. Not.}, \textbf{2020}\kern.5pt (16)\kern.25pt :\kern.25pt 5126--5151, 2020. \href{http://arxiv.org/abs/1801.04612}{arXiv:1801.04612 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4139033}{MR4139033}.
+
+\bibitem[106]{eckhardt-kostenko-nicolussi:2020:trace-formulas-continuous-dependence-spectra-periodic-conservative-CH-flow}
+Jonathan Eckhardt, Aleksey Kostenko and Noema Nicolussi. \href{http://dx.doi.org/10.1016/j.jde.2019.09.048}{Trace formulas and continuous dependence of spectra for the periodic conservative {Camassa}--{Holm} flow}. \textit{J. Differ. Equ.}, \textbf{268}\kern.5pt (6)\kern.25pt :\kern.25pt 3016--3034, 2020. \href{http://arxiv.org/abs/1907.01911}{arXiv:1907.01911 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4047974}{MR4047974}.
+
+\bibitem[107]{eckhardt-teschl:2013:isospectral-problem-dispersionless-CH}
+Jonathan Eckhardt and Gerald Teschl. \href{http://dx.doi.org/10.1016/j.aim.2012.12.006}{On the isospectral problem of the dispersionless {Camassa}--{Holm} equation}. \textit{Adv. Math.}, \textbf{235}\kern.25pt :\kern.25pt 469--495, 2013. \href{http://arxiv.org/abs/1205.5831}{arXiv:1205.5831 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3010066}{MR3010066}.
+
+\bibitem[108]{eldika-molinet:2009:CH-stability-multi-peakon-antipeakon}
+Khaled El Dika and Luc Molinet. \href{http://dx.doi.org/10.3934/dcdsb.2009.12.561}{Stability of multi antipeakon--peakons profile}. \textit{Discrete Contin. Dyn. Syst. Ser. B}, \textbf{12}\kern.5pt (3)\kern.25pt :\kern.25pt 561--577, 2009. \href{http://arxiv.org/abs/0910.2972}{arXiv:0910.2972 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2525156}{MR2525156}.
+
+\bibitem[109]{eldika-molinet:2009:CH-stability-multipeakon}
+Khaled El Dika and Luc Molinet. \href{http://dx.doi.org/10.1016/j.anihpc.2009.02.002}{Stability of multipeakons}. \textit{Ann. I. H. Poincaré -- AN}, \textbf{26}\kern.5pt (4)\kern.25pt :\kern.25pt 1517--1532, 2009. \href{http://arxiv.org/abs/0803.0261}{arXiv:0803.0261 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2542735}{MR2542735}.
+
+\bibitem[110]{escher-kolev:2011:DP-as-a-nonmetric-euler-equation}
+Joachim Escher and Boris Kolev. \href{http://dx.doi.org/10.1007/s00209-010-0778-2}{The {Degasperis}--{Procesi} equation as a non-metric {Euler} equation}. \textit{Math. Z.}, \textbf{269}\kern.5pt (3--4)\kern.25pt :\kern.25pt 1137--1153, 2011. \href{http://arxiv.org/abs/0908.0508}{arXiv:0908.0508 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2860280}{MR2860280}.
+
+\bibitem[111]{escher-liu-yin:2007:periodic-DP-shock-waves-blowup-phenomena}
+Joachim Escher, Yue Liu and Zhaoyang Yin. \href{http://dx.doi.org/10.1512/iumj.2007.56.3040}{Shock waves and blow-up phenomena for the periodic {Degasperis}--{Procesi} equation}. \textit{Indiana Univ. Math. J.}, \textbf{56}\kern.5pt (1)\kern.25pt :\kern.25pt 87--117, 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2305931}{MR2305931}.
+
+\bibitem[112]{escher-yin:2007:DP-IVBP}
+Joachim Escher and Zhaoyang Yin. \href{http://dx.doi.org/10.1016/j.physleta.2007.03.073}{On the initial boundary value problems for the {Degasperis}--{Procesi} equation}. \textit{Phys. Lett. A}, \textbf{368}\kern.5pt (1--2)\kern.25pt :\kern.25pt 69--76, 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2328777}{MR2328777}.
+
+\bibitem[113]{escher-yin:2008:DP-IBVP:Banach}
+Joachim Escher and Zhaoyang Yin. \href{http://dx.doi.org/10.4064/bc81-0-10}{Initial boundary value problems of the {Degasperis}--{Procesi} equation}. In Joanna Rencławowicz and Wojciech M. Zajączkowski\ (eds.), \textit{Parabolic and {Navier}--{Stokes} equations. {Part} 1}, Banach Center Publications, No.~81, pp.~157--174. Polish Acad. Sci. Inst. Math., Warsaw, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2549329}{MR2549329}.
+
+\bibitem[114]{faybusovich-gekhtman:2001:inverse-moment-problem-elementary-coadjoint-orbits}
+Leonid Faybusovich and Michael Gekhtman. \href{http://dx.doi.org/10.1088/0266-5611/17/5/304}{Inverse moment problem for elementary co-adjoint orbits}. \textit{Inverse Probl.}, \textbf{17}\kern.5pt (5)\kern.25pt :\kern.25pt 1295--1306, 2001. \href{http://www.ams.org/mathscinet-getitem?mr=1862191}{MR1862191}.
+
+\bibitem[115]{feng-maruno-ohta:2013:DP-tau-functions}
+Bao-Feng Feng, Ken-ichi Maruno and Yasuhiro Ohta. \href{http://dx.doi.org/10.1088/1751-8113/46/4/045205}{On the {$\tau$}-functions of the {Degasperis}--{Procesi} equation}. \textit{J. Phys. A: Math. Theor.}, \textbf{46}\kern.5pt (4)\kern.25pt :\kern.25pt 045205 (25 pages), 2013. \href{http://arxiv.org/abs/1207.5347}{arXiv:1207.5347 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3029861}{MR3029861}.
+
+\bibitem[116]{feola-giuliani-pasquali:2019:integrability-DP-control-of-sobolev-norms-birkhoff-resonances}
+Roberto Feola, Filippo Giuliani and Stefano Pasquali. \href{http://dx.doi.org/10.1016/j.jde.2018.09.003}{On the integrability of {Degasperis}--{Procesi} equation: Control of the {Sobolev} norms and {Birkhoff} resonances}. \textit{J. Differ. Equ.}, \textbf{266}\kern.5pt (6)\kern.25pt :\kern.25pt 3390--3437, 2019. \href{http://arxiv.org/abs/1802.00035}{arXiv:1802.00035 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3912687}{MR3912687}.
+
+\bibitem[117]{fidalgo-lopezlagomasino-medinaperalta:2020:asymptotics-cauchy-biorthogonal-polynomials}
+U. Fidalgo, G. Lopez Lagomasino and S. Medina Peralta. \href{http://dx.doi.org/10.1007/s00009-019-1455-2}{Asymptotic of {Cauchy} biorthogonal polynomials}. \textit{Mediterr. J. Math.}, \textbf{17}\kern.5pt (1)\kern.25pt :\kern.25pt 22 (30 pages), 2020. \href{http://arxiv.org/abs/1904.00126}{arXiv:1904.00126 [math.CA]}. \href{http://www.ams.org/mathscinet-getitem?mr=4042967}{MR4042967}.
+
+\bibitem[118]{fisher-schiff:1999:CH-conserved-quantities-initial-value-problem}
+Michael Fisher and Jeremy Schiff. \href{http://dx.doi.org/10.1016/S0375-9601(99)00466-1}{The {Camassa} {Holm} equation: Conserved quantities and the initial value problem}. \textit{Phys. Lett. A}, \textbf{259}\kern.5pt (5)\kern.25pt :\kern.25pt 371--376, 1999. \href{http://www.ams.org/mathscinet-getitem?mr=1709686}{MR1709686}.
+
+\bibitem[119]{fokas:1995:a-class-of-physically-important-integrable-equations}
+A. S. Fokas. \href{http://dx.doi.org/10.1016/0167-2789(95)00133-O}{On a class of physically important integrable equations}. \textit{Physica D}, \textbf{87}\kern.5pt (1--4)\kern.25pt :\kern.25pt 145--150, 1995. Proceedings of the Conference on The Nonlinear Schrodinger Equation (Chernogolovka, Russia, July 25 -- August 3, 1994). \href{http://www.ams.org/mathscinet-getitem?mr=1361680}{MR1361680}.
+
+\bibitem[120]{fokas:1995:KdV-and-beyond}
+A. S. Fokas. \href{http://dx.doi.org/10.1007/BF00994638}{The {Korteweg}--de {Vries} equation and beyond}. \textit{Acta Appl. Math.}, \textbf{39}\kern.5pt (1)\kern.25pt :\kern.25pt 295--305, 1995. Proceedings of KdV '95 (Amsterdam, The Netherlands, April 23--26, 1995). \href{http://www.ams.org/mathscinet-getitem?mr=1329566}{MR1329566}.
+
+\bibitem[121]{fokas-liu:1996:asymptotic-integrability-of-water-waves}
+A. S. Fokas and Q. M. Liu. \href{http://dx.doi.org/10.1103/PhysRevLett.77.2347}{Asymptotic integrability of water waves}. \textit{Phys. Rev. Lett.}, \textbf{77}\kern.5pt (12)\kern.25pt :\kern.25pt 2347--2351, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1406987}{MR1406987}.
+
+\bibitem[122]{frobenius:1881:relationen-zwischen-naherungsbruchen}
+G. Frobenius. \href{http://dx.doi.org/10.1515/crll.1881.90.1}{Ueber {Relationen} zwischen den {Näherungsbrüchen} von {Potenzreihen}}. \textit{J. reine angew. Math.}, \textbf{90}\kern.25pt :\kern.25pt 1--17, 1881. \href{http://www.ams.org/mathscinet-getitem?mr=1579853}{MR1579853}.
+
+\bibitem[123]{frobenius-stickelberger:1880:addition-multiplication-elliptischen-funktionen}
+ Frobenius and  Stickelberger. \href{http://dx.doi.org/10.1515/crll.1880.88.146}{Ueber die {Addition} und {Multiplication} der elliptischen {Funktionen}}. \textit{J. reine angew. Math.}, \textbf{88}\kern.25pt :\kern.25pt 146--184, 1880.
+
+\bibitem[124]{fu-liu:2011:periodic-DP-nonuniform-dependence-on-initial-data}
+Yanggeng Fu and Zhengrong Liu. \href{http://dx.doi.org/10.1016/j.jmaa.2011.05.059}{Non-uniform dependence on initial data for the periodic {Degasperis}--{Procesi} equation}. \textit{J. Math. Anal. Appl.}, \textbf{384}\kern.5pt (2)\kern.25pt :\kern.25pt 293--302, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2825183}{MR2825183}.
+
+\bibitem[125]{fuchssteiner:1981:lie-algebra-structure-nonlinear-evolution-equations-infinite-dimensional-abelian-symmetry-groups}
+Benno Fuchssteiner. \href{http://dx.doi.org/10.1143/PTP.65.861}{The {Lie} algebra structure of nonlinear evolution equations admitting infinite-dimensional abelian symmetry groups}. \textit{Progr. Theoret. Phys.}, \textbf{65}\kern.5pt (3)\kern.25pt :\kern.25pt 861--876, 1981. \href{http://www.ams.org/mathscinet-getitem?mr=617703}{MR617703}.
+
+\bibitem[126]{fuchssteiner:1996:symmetry-toolbox-tricks-generalizations-of-CH}
+Benno Fuchssteiner. \href{http://dx.doi.org/10.1016/0167-2789(96)00048-6}{Some tricks from the symmetry-toolbox for nonlinear equations: Generalizations of the {Camassa}--{Holm} equation}. \textit{Physica D}, \textbf{95}\kern.5pt (3--4)\kern.25pt :\kern.25pt 229--243, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1406283}{MR1406283}.
+
+\bibitem[127]{fuchssteiner-fokas:1981:symplectic-structures-backlund-transformations-hereditary-symmetries}
+B. Fuchssteiner and A. S. Fokas. \href{http://dx.doi.org/10.1016/0167-2789(81)90004-X}{Symplectic structures, their {Bäcklund} transformations and hereditary symmetries}. \textit{Physica D}, \textbf{4}\kern.5pt (1)\kern.25pt :\kern.25pt 47--66, 1981. \href{http://www.ams.org/mathscinet-getitem?mr=636470}{MR636470}.
+
+\bibitem[128]{galtung-grunert:2021:CH-numerical-study-of-variational-discretizations}
+Sondre Tesdal Galtung and Katrin Grunert. \href{http://dx.doi.org/10.1007/s10543-021-00856-1}{A numerical study of variational discretizations of the {Camassa}--{Holm} equation}. \textit{BIT}, \textbf{61}\kern.5pt (4)\kern.25pt :\kern.25pt 1271--1309, 2021. \href{http://arxiv.org/abs/2006.15562}{arXiv:2006.15562 [math.NA]}. \href{http://www.ams.org/mathscinet-getitem?mr=4332137}{MR4332137}.
+
+\bibitem[129]{gantmacher-krein:2002:oscillation-matrices}
+F. R. Gantmacher and M. G. Krein. \href{http://dx.doi.org/10.1090/chel/345}{\textit{Oscillation Matrices and Kernels and Small Vibrations of Mechanical Systems}}, Revised~Edition. ISBN 978-0-8218-3171-7. AMS Chelsea Publishing, Providence, RI, 2002. Translation based on the 1941 Russian original, edited and with a preface by Alex Eremenko. \href{http://www.ams.org/mathscinet-getitem?mr=2003f:34161}{MR2003f:34161}.
+
+\bibitem[130]{gao-zhang-zhang:2019:DP-adaptive-moving-knots-meshless-method}
+Qinjiao Gao, Shenggang Zhang and Jihong Zhang. \href{http://dx.doi.org/10.1016/j.apnum.2019.02.007}{Adaptive moving knots meshless method for {Degasperis}--{Procesi} equation with conservation laws}. \textit{Appl. Numer. Math.}, \textbf{142}\kern.25pt :\kern.25pt 90--101, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3958336}{MR3958336}.
+
+\bibitem[131]{geng-xue:2009:GX-peakon-equation-cubic-nonlinearity}
+Xianguo Geng and Bo Xue. \href{http://dx.doi.org/10.1088/0951-7715/22/8/004}{An extension of integrable peakon equations with cubic nonlinearity}. \textit{Nonlinearity}, \textbf{22}\kern.5pt (8)\kern.25pt :\kern.25pt 1847--1856, 2009. \href{http://www.ams.org/mathscinet-getitem?mr=2525813}{MR2525813 (2010i:37160)}.
+
+\bibitem[132]{gesztesy-holden:2003:CH-hierarchy-alggeo-solutions}
+Fritz Gesztesy and Helge Holden. \href{http://projecteuclid.org/euclid.rmi/1049123081}{Algebro-geometric solutions of the {Camassa}--{Holm} hierarchy}. \textit{Rev. Mat. Iberoamericana}, \textbf{19}\kern.5pt (1)\kern.25pt :\kern.25pt 73--142, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1993416}{MR1993416}.
+
+\bibitem[133]{geyer-villadelprat:2015:CH-wavelength-of-smooth-periodic-traveling-waves}
+A. Geyer and J. Villadelprat. \href{http://dx.doi.org/10.1016/j.jde.2015.03.027}{On the wave length of smooth periodic traveling waves of the {Camassa}--{Holm} equation}. \textit{J. Differ. Equ.}, \textbf{259}\kern.5pt (6)\kern.25pt :\kern.25pt 2317--2332, 2015. \href{http://arxiv.org/abs/1503.02425}{arXiv:1503.02425 [math.DS]}. \href{http://www.ams.org/mathscinet-getitem?mr=3353646}{MR3353646}.
+
+\bibitem[134]{gilson-pickering:1995:factorization-painleve-analysis-nonlinear-thirdorder-PDE-including-CH}
+Claire Gilson and Andrew Pickering. \href{http://dx.doi.org/10.1088/0305-4470/28/10/017}{Factorization and {Painlevé} analysis of a class of nonlinear third-order partial differential equations}. \textit{J. Phys. A: Math. Gen.}, \textbf{28}\kern.5pt (10)\kern.25pt :\kern.25pt 2871--2888, 1995. \href{http://www.ams.org/mathscinet-getitem?mr=1343881}{MR1343881}.
+
+\bibitem[135]{gomez-lundmark-szmigielski:2013:CDT}
+Daniel Gomez, Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.37236/2449}{The {Canada} {Day} {Theorem}}. \textit{Electron. J. Combin.}, \textbf{20}\kern.5pt (1)\kern.25pt :\kern.25pt \#P20 (16 pages), 2013. \href{http://arxiv.org/abs/1206.4138}{arXiv:1206.4138 [math.CO]}. \href{http://www.ams.org/mathscinet-getitem?mr=3035030}{MR3035030}.
+
+\bibitem[136]{gorka-reyes:2011:modified-CH-but-not-FORQ}
+Przemysław Górka and Enrique G. Reyes. \href{http://dx.doi.org/10.1093/imrn/rnq163}{The modified {Camassa}--{Holm} equation}. \textit{Int. Math. Res. Not.}, \textbf{2011}\kern.5pt (12)\kern.25pt :\kern.25pt 2617--2649, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2806591}{MR2806591}.
+
+\bibitem[137]{gorski-szmigielski:2018:isospectral-flows-inhomogeneous-string}
+Andrzej Z. Górski and Jacek Szmigielski. \href{http://dx.doi.org/10.1007/s00332-018-9451-4}{Isospectral flows for the inhomogeneous string density problem}. \textit{J. Nonlinear Sci.}, \textbf{28}\kern.5pt (4)\kern.25pt :\kern.25pt 1361--1377, 2018. \href{http://arxiv.org/abs/1710.01149}{arXiv:1710.01149 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3817784}{MR3817784}.
+
+\bibitem[138]{grayshan:2013:novikov-data-to-solution-map}
+Katelyn Grayshan. \href{http://dx.doi.org/10.1016/j.jmaa.2012.08.006}{Peakon solutions of the {Novikov} equation and properties of the data-to-solution map}. \textit{J. Math. Anal. Appl.}, \textbf{397}\kern.5pt (2)\kern.25pt :\kern.25pt 515--521, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=2979590}{MR2979590}.
+
+\bibitem[139]{grunert-holden:2016:CH-peakon-antipeakon-alpha-dissipative}
+Katrin Grunert and Helge Holden. \href{http://dx.doi.org/10.1142/S0219891616500119}{The general peakon--antipeakon solution for the {Camassa}--{Holm} equation}. \textit{J. Hyperbolic Differ. Equ.}, \textbf{13}\kern.5pt (2)\kern.25pt :\kern.25pt 353--380, 2016. \href{http://arxiv.org/abs/1502.07686}{arXiv:1502.07686 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3518775}{MR3518775}.
+
+\bibitem[140]{grunert-holden-raynaud:2015:alpha-dissipative-2CH}
+Katrin Grunert, Helge Holden and Xavier Raynaud. \href{http://dx.doi.org/10.1017/fms.2014.29}{A continuous interpolation between conservative and dissipative solutions for the two-component {Camassa}--{Holm} system}. \textit{Forum Math. Sigma}, \textbf{3}\kern.25pt :\kern.25pt e1 (73 pages), 2015. \href{http://arxiv.org/abs/1402.1060}{arXiv:1402.1060 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3295963}{MR3295963}.
+
+\bibitem[141]{gui-liu:2011:DP-cauchy-problem}
+Guilong Gui and Yue Liu. \href{http://dx.doi.org/10.1090/S0033-569X-2011-01216-5}{On the {Cauchy} problem for the {Degasperis}--{Procesi} equation}. \textit{Quart. Appl. Math.}, \textbf{69}\kern.5pt (3)\kern.25pt :\kern.25pt 445--464, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2850740}{MR2850740}.
+
+\bibitem[142]{gui-liu-olver-qu:2013:mCH-wavebreaking-peakons}
+Guilong Gui, Yue Liu, Peter J. Olver and Changzheng Qu. \href{http://dx.doi.org/10.1007/s00220-012-1566-0}{Wave-breaking and peakons for a modified {Camassa}--{Holm} equation}. \textit{Commun. Math. Phys.}, \textbf{319}\kern.5pt (3)\kern.25pt :\kern.25pt 731--759, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3040374}{MR3040374}.
+
+\bibitem[143]{guo:2012:DP-wavebreaking-phenomena-decay-properties-limit-behaviour}
+Fei Guo. \href{http://dx.doi.org/10.1017/S0308210511000321}{Wave-breaking phenomena, decay properties and limit behaviour of solutions of the {Degasperis}--{Procesi} equation}. \textit{Proc. Roy. Soc. Edinburgh Sect. A}, \textbf{142}\kern.5pt (4)\kern.25pt :\kern.25pt 805--824, 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2966114}{MR2966114}.
+
+\bibitem[144]{guo-yang-zhang-wang-song:2019:splitting-method-DP-optimized-WENO-scheme-fourier-pseudospectral-method}
+Yunrui Guo, Wenjing Yang, Hong Zhang, Ji Wang and Songhe Song. \href{http://dx.doi.org/10.4208/aamm.OA-2018-0054}{A splitting method for the {Degasperis}--{Procesi} equation using an optimized {WENO} scheme and the {Fourier} pseudospectral method}. \textit{Adv. Appl. Math. Mech.}, \textbf{11}\kern.5pt (1)\kern.25pt :\kern.25pt 53--71, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3903476}{MR3903476}.
+
+\bibitem[145]{guo-zhang-yang-wang-song:2019:DP-high-order-operator-splitting-method}
+Yunrui Guo, Hong Zhang, Wenjing Yang, Ji Wang and Songhe Song. \href{http://dx.doi.org/10.4208/nmtma.OA-2018-0048}{A high order operator splitting method for the {Degasperis}--{Procesi} equation}. \textit{Numer. Math. Theor. Meth. Appl.}, \textbf{12}\kern.5pt (3)\kern.25pt :\kern.25pt 884--905, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3951304}{MR3951304}.
+
+\bibitem[146]{guo:2017:novikov-asymptotic-profile-momentum-support}
+Zhengguang Guo. \href{http://dx.doi.org/10.1016/j.nonrwa.2016.09.002}{On an integrable {Camassa}--{Holm} type equation with cubic nonlinearity}. \textit{Nonlinear Anal. Real World Appl.}, \textbf{34}\kern.25pt :\kern.25pt 225--232, 2017. \href{http://www.ams.org/mathscinet-getitem?mr=3567959}{MR3567959}.
+
+\bibitem[147]{guo-jin:2013:DP-persistence-momentum-support}
+Zhengguang Guo and Liangbing Jin. \href{http://dx.doi.org/10.1155/2013/390132}{Persistence property and estimate on momentum support for the integrable {Degasperis}--{Procesi} equation}. \textit{Abstr. Appl. Anal.}, \textbf{2013}\kern.25pt :\kern.25pt 390132 (7 pages), 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3126754}{MR3126754}.
+
+\bibitem[148]{henry:2008:DP-persistence-properties}
+David Henry. \href{http://dx.doi.org/10.1142/S0219891608001404}{Persistence properties for the {Degasperis}--{Procesi} equation}. \textit{J. Hyperbolic Differ. Equ.}, \textbf{5}\kern.5pt (1)\kern.25pt :\kern.25pt 99--111, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2405853}{MR2405853}.
+
+\bibitem[149]{himonas-holliman:2011:DP-wellposedness}
+A. Alexandrou Himonas and Curtis Holliman. \href{http://dx.doi.org/10.3934/dcds.2011.31.469}{On well-posedness of the {Degasperis}--{Procesi} equation}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{31}\kern.5pt (2)\kern.25pt :\kern.25pt 469--488, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2805816}{MR2805816}.
+
+\bibitem[150]{himonas-holliman:2012:novikov-cauchy-problem}
+A. Alexandrou Himonas and Curtis Holliman. \href{http://dx.doi.org/10.1088/0951-7715/25/2/449}{The {Cauchy} problem for the {Novikov} equation}. \textit{Nonlinearity}, \textbf{25}\kern.5pt (2)\kern.25pt :\kern.25pt 449--479, 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2876876}{MR2876876 (2012k:35469)}.
+
+\bibitem[151]{himonas-holliman-grayshan:2014:DP-norm-inflation-illposedness}
+A. Alexandrou Himonas, Curtis Holliman and Katelyn Grayshan. \href{http://dx.doi.org/10.1080/03605302.2014.942737}{Norm inflation and ill-posedness for the {Degasperis}--{Procesi} equation}. \textit{Commun. Partial Differ. Equ.}, \textbf{39}\kern.5pt (12)\kern.25pt :\kern.25pt 2198--2215, 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3259553}{MR3259553}.
+
+\bibitem[152]{himonas-holliman-kenig:2018:novikov-2-peakon-illposedness}
+A. Alexandrou Himonas, Curtis Holliman and Carlos Kenig. \href{http://dx.doi.org/10.1137/17M1151201}{Construction of 2-peakon solutions and ill-posedness for the {Novikov} equation}. \textit{SIAM J. Math. Anal.}, \textbf{50}\kern.5pt (3)\kern.25pt :\kern.25pt 2968--3006, 2018. \href{http://arxiv.org/abs/1708.05759}{arXiv:1708.05759 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3813234}{MR3813234}.
+
+\bibitem[153]{himonas-holmes:2013:novikov-holder-continuity}
+A. Alexandrou Himonas and John Holmes. \href{http://dx.doi.org/10.1063/1.4807729}{Hölder continuity of the solution map for the {Novikov} equation}. \textit{J. Math. Phys.}, \textbf{54}\kern.5pt (6)\kern.25pt :\kern.25pt 061501 (11 pages), 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3112520}{MR3112520}.
+
+\bibitem[154]{himonas-mantzavinos:2016:GX-initial-value-problem}
+A. Alexandrou Himonas and Dionyssios Mantzavinos. \href{http://dx.doi.org/10.1063/1.4959774}{The initial value problem for a {Novikov} system}. \textit{J. Math. Phys.}, \textbf{57}\kern.5pt (7)\kern.25pt :\kern.25pt 071503 (21 pages), 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3529006}{MR3529006}.
+
+\bibitem[155]{hoel:2007:DP-numerical-scheme-multishockpeakons}
+Håkon A. Hoel. \href{http://ejde.math.txstate.edu/Volumes/2007/100/abstr.html}{A numerical scheme using multi-shockpeakons to compute solutions of the {Degasperis}--{Procesi} equation}. \textit{Electron. J. Differ. Equ.}, \textbf{2007}\kern.5pt (100)\kern.25pt :\kern.25pt 1--22, 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2328701}{MR2328701}.
+
+\bibitem[156]{holden-raynaud:2007:CH-global-conservative-multipeakon}
+Helge Holden and Xavier Raynaud. \href{http://dx.doi.org/10.1142/S0219891607001045}{Global conservative multipeakon solutions of the {Camassa}--{Holm} equation}. \textit{J. Hyperbolic Differ. Equ.}, \textbf{4}\kern.5pt (1)\kern.25pt :\kern.25pt 39--64, 2007. \href{https://www.math.ntnu.no/conservation/2006/011.html}{Conservation Laws Preprint Server: 2006-011}. \href{http://www.ams.org/mathscinet-getitem?mr=2303475}{MR2303475}.
+
+\bibitem[157]{holden-raynaud:2007:CH-global-conservative-Lagrangian}
+Helge Holden and Xavier Raynaud. \href{http://dx.doi.org/10.1080/03605300601088674}{Global conservative solutions of the {Camassa}--{Holm} equation -- a {Lagrangian} point of view}. \textit{Commun. Partial Differ. Equ.}, \textbf{32}\kern.5pt (10)\kern.25pt :\kern.25pt 1511--1549, 2007. \href{https://www.math.ntnu.no/conservation/2006/001.html}{Conservation Laws Preprint Server: 2006-001}. \href{http://www.ams.org/mathscinet-getitem?mr=2372478}{MR2372478}.
+
+\bibitem[158]{holden-raynaud:2008:CH-global-dissipative-multipeakon}
+H. Holden and X. Raynaud. \href{http://dx.doi.org/10.1080/03605300802501715}{Global dissipative multipeakon solutions of the {Camassa}--{Holm} equation}. \textit{Commun. Partial Differ. Equ.}, \textbf{33}\kern.5pt (11)\kern.25pt :\kern.25pt 2040--2063, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2475329}{MR2475329}.
+
+\bibitem[159]{holden-raynaud:2008:CH-periodic-conservative}
+Helge Holden and Xavier Raynaud. \href{http://dx.doi.org/10.5802/aif.2375}{Periodic conservative solutions of the {Camassa}--{Holm} equation}. \textit{Ann. Inst. Fourier (Grenoble)}, \textbf{58}\kern.5pt (3)\kern.25pt :\kern.25pt 945--988, 2008. \href{https://www.math.ntnu.no/conservation/2006/035.html}{Conservation Laws Preprint Server: 2006-035}. \href{http://www.ams.org/mathscinet-getitem?mr=2427516}{MR2427516}.
+
+\bibitem[160]{holden-raynaud:2009:CH-dissipative-solutions}
+Helge Holden and Xavier Raynaud. \href{http://dx.doi.org/10.3934/dcds.2009.24.1047}{Dissipative solutions for the {Camassa}--{Holm} equation}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{24}\kern.5pt (4)\kern.25pt :\kern.25pt 1047--1112, 2009. \href{https://www.math.ntnu.no/conservation/2008/012.html}{Conservation Laws Preprint Server: 2008-012}. \href{http://www.ams.org/mathscinet-getitem?mr=2505693}{MR2505693}.
+
+\bibitem[161]{holm:2006:peakons-review}
+D. D. Holm. Peakons. In Jean-Pierre Françoise, Gregory L. Naber and Tsou Sheung Tsun\ (eds.), \textit{Encyclopedia of Mathematical Physics}, Vol.~4, pp.~12--20. ISBN 978-0-12-512666-3. Academic Press/Elsevier, Oxford, 2006. \href{http://arxiv.org/abs/0908.4351}{arXiv:0908.4351 [nlin.SI]}.
+
+\bibitem[162]{holm-ivanov:2010:CH-smooth-and-peaked-solitons}
+Darryl D. Holm and Rossen I. Ivanov. \href{http://dx.doi.org/10.1088/1751-8113/43/43/434003}{Smooth and peaked solitons of the {CH} equation}. \textit{J. Phys. A: Math. Theor.}, \textbf{43}\kern.5pt (43)\kern.25pt :\kern.25pt 434003 (18 pages), 2010. \href{http://arxiv.org/abs/1003.1338}{arXiv:1003.1338 [nlin.CD]}. \href{http://www.ams.org/mathscinet-getitem?mr=2727777}{MR2727777}.
+
+\bibitem[163]{holm-ivanov:2011:CH-smooth-peaked-solitons-applications}
+Darryl Holm and Rossen Ivanov. \href{http://dx.doi.org/10.7546/jgsp-22-2011-13-49}{Smooth and peaked solitons of the {Camassa}--{Holm} equation and applications}. \textit{J. Geom. Symmetry Phys.}, \textbf{22}\kern.25pt :\kern.25pt 13--49, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2850375}{MR2850375}.
+
+\bibitem[164]{holm-staley:2003:nonlinear-balance-exchange-of-stability-solitons-ramps-cliffs-leftons}
+Darryl D. Holm and Martin F. Staley. \href{http://dx.doi.org/10.1016/S0375-9601(03)00114-2}{Nonlinear balance and exchange of stability of dynamics of solitons, peakons, ramps/cliffs and leftons in a {$1+1$} nonlinear evolutionary {PDE}}. \textit{Phys. Lett. A}, \textbf{308}\kern.5pt (5--6)\kern.25pt :\kern.25pt 437--444, 2003. \href{http://arxiv.org/abs/nlin/0203007}{arXiv:nlin/0203007}. \href{http://www.ams.org/mathscinet-getitem?mr=1977364}{MR1977364}.
+
+\bibitem[165]{holm-staley:2003:wave-structure-nonlinear-balances-family-of-evolutionary-PDEs}
+Darryl D. Holm and Martin F. Staley. \href{http://dx.doi.org/10.1137/S1111111102410943}{Wave structure and nonlinear balances in a family of evolutionary {PDEs}}. \textit{SIAM J. Appl. Dyn. Syst.}, \textbf{2}\kern.5pt (3)\kern.25pt :\kern.25pt 323--380, 2003. \href{http://arxiv.org/abs/nlin/0202059}{arXiv:nlin/0202059}. \href{http://www.ams.org/mathscinet-getitem?mr=2031278}{MR2031278}.
+
+\bibitem[166]{hone-lundmark-szmigielski:2009:novikov}
+Andrew N. W. Hone, Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.4310/DPDE.2009.v6.n3.a3}{Explicit multipeakon solutions of {Novikov's} cubically nonlinear integrable {Camassa}--{Holm} type equation}. \textit{Dyn. Partial Differ. Equ.}, \textbf{6}\kern.5pt (3)\kern.25pt :\kern.25pt 253--289, 2009. \href{http://arxiv.org/abs/0903.3663}{arXiv:0903.3663 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2569508}{MR2569508 (2010i:37172)}.
+
+\bibitem[167]{hone-wang:2003:prolongation-algebras}
+Andrew N. W. Hone and Jing Ping Wang. \href{http://dx.doi.org/10.1088/0266-5611/19/1/307}{Prolongation algebras and {Hamiltonian} operators for peakon equations}. \textit{Inverse Probl.}, \textbf{19}\kern.5pt (1)\kern.25pt :\kern.25pt 129--145, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1964254}{MR1964254 (2004a:37090)}.
+
+\bibitem[168]{hone-wang:2008:cubic-nonlinearity}
+Andrew N. W. Hone and Jing Ping Wang. \href{http://dx.doi.org/10.1088/1751-8113/41/37/372002}{Integrable peakon equations with cubic nonlinearity}. \textit{J. Phys. A: Math. Theor.}, \textbf{41}\kern.5pt (37)\kern.25pt :\kern.25pt 372002 (10 pages), 2008. \href{http://arxiv.org/abs/0805.4310}{arXiv:0805.4310 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2430566}{MR2430566 (2009i:35311)}.
+
+\bibitem[169]{hou-zhao-fan-qiao:2013:DP-hierarchy-alggeo-solutions}
+Yu Hou, Peng Zhao, Engui Fan and Zhijun Qiao. \href{http://dx.doi.org/10.1137/12089689X}{Algebro-geometric solutions for the {Degasperis}--{Procesi} hierarchy}. \textit{SIAM J. Math. Anal.}, \textbf{45}\kern.5pt (3)\kern.25pt :\kern.25pt 1216--1266, 2013. \href{http://arxiv.org/abs/1204.2140}{arXiv:1204.2140 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3049654}{MR3049654}.
+
+\bibitem[170]{hu-yin-wu:2016:mCH-bilinear-equations-new-multisoliton-solutions}
+Hengchun Hu, Wei Yin and Hongxia Wu. \href{http://dx.doi.org/10.1016/j.aml.2016.03.002}{Bilinear equations and new multi-soliton solution for the modified {Camassa}--{Holm} equation}. \textit{Appl. Math. Lett.}, \textbf{59}\kern.25pt :\kern.25pt 18--23, 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3494299}{MR3494299}.
+
+\bibitem[171]{hu-qiao:2016:multicomponent-peakon-system-arbitrary-polynomial-analyticity-gevrey-regularity-unique-continuation}
+Qiaoyi Hu and Zhijun Qiao. \href{http://dx.doi.org/10.3934/dcds.2016103}{Analyticity, {Gevrey} regularity and unique continuation for an integrable multi-component peakon system with an arbitrary polynomial function}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{36}\kern.5pt (12)\kern.25pt :\kern.25pt 6975--7000, 2016. \href{http://arxiv.org/abs/1511.03315}{arXiv:1511.03315 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3567828}{MR3567828}.
+
+\bibitem[172]{hunter-saxton:1991:dynamics-of-director-fields}
+John K. Hunter and Ralph Saxton. \href{http://dx.doi.org/10.1137/0151075}{Dynamics of director fields}. \textit{SIAM J. Appl. Math.}, \textbf{51}\kern.5pt (6)\kern.25pt :\kern.25pt 1498--1521, 1991. \href{http://www.ams.org/mathscinet-getitem?mr=1135995}{MR1135995}.
+
+\bibitem[173]{hunter-zheng:1994:completely-integrable-hyperbolic-variational-equation}
+John K. Hunter and Yuxi Zheng. \href{http://dx.doi.org/10.1016/0167-2789(94)90093-0}{On a completely integrable nonlinear hyperbolic variational equation}. \textit{Physica D}, \textbf{79}\kern.5pt (2--4)\kern.25pt :\kern.25pt 361--386, 1994. \href{http://www.ams.org/mathscinet-getitem?mr=1306466}{MR1306466}.
+
+\bibitem[174]{ichikawa-konno-wadati:1981:nonlinear-transverse-oscillation-of-elastic-beams-under-tension}
+Yoshi H. Ichikawa, Kimiaki Konno and Miki Wadati. \href{http://dx.doi.org/10.1143/JPSJ.50.1799}{Nonlinear transverse oscillation of elastic beams under tension}. \textit{J. Phys. Soc. Jpn.}, \textbf{50}\kern.5pt (5)\kern.25pt :\kern.25pt 1799--1802, 1981. \href{http://www.ams.org/mathscinet-getitem?mr=667096}{MR667096}.
+
+\bibitem[175]{ichikawa-konno-wadati:1983:new-integrable-nonlinear-evolution-equations-exotic-solitons}
+Yoshi H. Ichikawa, Kimiaki Konno and Miki Wadati. New integrable nonlinear evolution equations leading to exotic solitons. In C. W. Horton, Jr., L. E. Reichl and V. G. Szebehely\ (eds.), \textit{Long-Time Prediction in Dynamics}, Nonequilibrium Problems in the Physical Sciences and Biology, No.~2, pp.~345--365. ISBN 978-0-471-86447-9. John Wiley \& Sons, New York, 1983. \href{http://www.ams.org/mathscinet-getitem?mr=714733}{MR714733}.
+
+\bibitem[176]{ichikawa-konno-wadati-sanuki:1980:spiky-soliton-circular-polarized-alfven-wave}
+Yoshi H. Ichikawa, Kimiaki Konno, Miki Wadati and Heiji Sanuki. \href{http://dx.doi.org/10.1143/JPSJ.48.279}{Spiky soliton in circular polarized {Alfvén} wave}. \textit{J. Phys. Soc. Jpn.}, \textbf{48}\kern.5pt (1)\kern.25pt :\kern.25pt 279--286, 1980.
+
+\bibitem[177]{ionescukruse:2007:variational-derivation-CH-shallow-water-equation}
+Delia Ionescu-Kruse. \href{http://dx.doi.org/10.2991/jnmp.2007.14.3.1}{Variational derivation of the {Camassa}--{Holm} shallow water equation}. \textit{J. Nonlinear Math. Phys.}, \textbf{14}\kern.5pt (3)\kern.25pt :\kern.25pt 311--320, 2007. \href{http://arxiv.org/abs/0711.4692}{arXiv:0711.4692 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2350091}{MR2350091}.
+
+\bibitem[178]{ivanov:2005:integrability-class-nonlinear-dispersive-wave-equations}
+Rossen Ivanov. \href{http://dx.doi.org/10.2991/jnmp.2005.12.4.2}{On the integrability of a class of nonlinear dispersive wave equations}. \textit{J. Nonlinear Math. Phys.}, \textbf{12}\kern.5pt (4)\kern.25pt :\kern.25pt 462--468, 2005. \href{http://arxiv.org/abs/nlin/0606046}{arXiv:nlin/0606046 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2171998}{MR2171998}.
+
+\bibitem[179]{ivanov-lyons:2012:qiao-hierarchy-dark-solitons}
+Rossen I. Ivanov and Tony Lyons. \href{http://dx.doi.org/10.1063/1.4764859}{Dark solitons of the {Qiao's} hierarchy}. \textit{J. Math. Phys.}, \textbf{53}\kern.5pt (12)\kern.25pt :\kern.25pt 123701 (8 pages), 2012. \href{http://arxiv.org/abs/1211.4249}{arXiv:1211.4249 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3405921}{MR3405921}.
+
+\bibitem[180]{ivanov-lyons-orr:2017:CH-solitons-dressing-method}
+R. Ivanov, T. Lyons and N. Orr. \href{http://dx.doi.org/10.1063/1.5007370}{A dressing method for soliton solutions of the {Camassa}--{Holm} equation}. \textit{AIP Conf. Proc.}, \textbf{1895}\kern.5pt (1)\kern.25pt :\kern.25pt 040003 (15 pages), 2017. \href{http://arxiv.org/abs/1702.01128}{arXiv:1702.01128 [nlin.SI]}.
+
+\bibitem[181]{jiang-ni:2012:novikov-blowup}
+Zaihong Jiang and Lidiao Ni. \href{http://dx.doi.org/10.1016/j.jmaa.2011.06.067}{Blow-up phenomenon for the integrable {Novikov} equation}. \textit{J. Math. Anal. Appl.}, \textbf{385}\kern.5pt (1)\kern.25pt :\kern.25pt 551--558, 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2834279}{MR2834279 (2012j:35367)}.
+
+\bibitem[182]{johnson:2002:CH-KdV-water-waves}
+R. S. Johnson. \href{http://dx.doi.org/10.1017/S0022112001007224}{{Camassa}--{Holm}, {Korteweg}--de {Vries} and related models for water waves}. \textit{J. Fluid Mech.}, \textbf{455}\kern.25pt :\kern.25pt 63--82, 2002. \href{http://www.ams.org/mathscinet-getitem?mr=1894796}{MR1894796}.
+
+\bibitem[183]{johnson:2003:classical-water-waves}
+Robin S. Johnson. \href{http://dx.doi.org/10.2991/jnmp.2003.10.s1.6}{The classical problem of water waves: A reservoir of integrable and nearly-integrable equations}. \textit{J. Nonlinear Math. Phys.}, \textbf{10}\kern.5pt (suppl.~1)\kern.25pt :\kern.25pt 72--92, 2003. Proceedings of the Öresund Symposium on Partial Differential Equations (Lund, Sweden, May 23--25, 2002). \href{http://www.ams.org/mathscinet-getitem?mr=2063546}{MR2063546}.
+
+\bibitem[184]{kabakouala:2015:stability-in-energy-space-of-DP-N-peakons}
+André Kabakouala. \href{http://dx.doi.org/10.1016/j.jde.2015.03.014}{Stability in the energy space of the sum of {$N$} peakons for the {Degasperis}--{Procesi} equation}. \textit{J. Differ. Equ.}, \textbf{259}\kern.5pt (5)\kern.25pt :\kern.25pt 1841--1897, 2015. \href{http://arxiv.org/abs/1601.07674}{arXiv:1601.07674 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3349422}{MR3349422}.
+
+\bibitem[185]{kabakouala:2016:remark-on-stability-of-DP-peakons}
+André Kabakouala. \href{http://dx.doi.org/10.1016/j.na.2015.11.018}{A remark on the stability of peakons for the {Degasperis}--{Procesi} equation}. \textit{Nonlinear Anal.}, \textbf{132}\kern.25pt :\kern.25pt 318--326, 2016. \href{http://arxiv.org/abs/1601.06994}{arXiv:1601.06994 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3433968}{MR3433968}.
+
+\bibitem[186]{kac-krein:1974:spectral-functions}
+I. S. Kac and M. G. Krein. \href{http://dx.doi.org/10.1090/trans2/103}{On the spectral functions of the string}. In \textit{Nine Papers in Analysis}, American Mathematical Society Translations, Series 2, No.~103, pp.~19--102. American Mathematical Society, Providence, RI, 1974. \href{http://www.ams.org/mathscinet-getitem?mr=0328627}{MR0328627}.
+
+\bibitem[187]{kalla-klein:2012:CH-construction-alggeo-solutions-numerical-evaluation}
+C. Kalla and C. Klein. \href{http://dx.doi.org/10.1098/rspa.2011.0583}{New construction of algebro-geometric solutions to the {Camassa}--{Holm} equation and their numerical evaluation}. \textit{Proc. R. Soc. A}, \textbf{468}\kern.5pt (2141)\kern.25pt :\kern.25pt 1371--1390, 2012. \href{http://arxiv.org/abs/1109.5301}{arXiv:1109.5301 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2910354}{MR2910354}.
+
+\bibitem[188]{kang-liu-olver-qu:2016:liouville-correspondence-between-mKdV-hierarchy-and-its-dual-mCH-hierarchy}
+Jing Kang, Xiaochuan Liu, Peter J. Olver and Changzheng Qu. \href{http://dx.doi.org/10.1007/s00332-015-9272-7}{Liouville correspondence between the modified {KdV} hierarchy and its dual integrable hierarchy}. \textit{J. Nonlinear Sci.}, \textbf{26}\kern.5pt (1)\kern.25pt :\kern.25pt 141--170, 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3441276}{MR3441276}.
+
+\bibitem[189]{kang-liu-olver-qu:2017:Liouville-correspondences-integrable-hierarchies}
+Jing Kang, Xiaochuan Liu, Peter J. Olver and Changzheng Qu. \href{http://dx.doi.org/10.3842/SIGMA.2017.035}{Liouville correspondences between integrable hierarchies}. \textit{SIGMA}, \textbf{13}\kern.25pt :\kern.25pt 035 (26 pages), 2017. \href{http://arxiv.org/abs/1702.01227}{arXiv:1702.01227 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3655938}{MR3655938}.
+
+\bibitem[190]{kang-liu-olver-qu:2020:Liouville-correspondences-multicomponent-integrable-hierarchies}
+Jing Kang, Xiaochuan Liu, P. J. Olver and Changzheng Qu. \href{http://dx.doi.org/10.1134/S0040577920070028}{Liouville correspondences between multi-component integrable hierarchies}. \textit{Theor. Math. Phys.}, \textbf{204}\kern.5pt (1)\kern.25pt :\kern.25pt 843--874, 2020. \href{http://arxiv.org/abs/1805.01665}{arXiv:1805.01665 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=4133464}{MR4133464}.
+
+\bibitem[191]{kardell:2015:CH-novikov-peakon-creation}
+Marcus Kardell. \href{http://dx.doi.org/10.1080/14029251.2015.996435}{New solutions with peakon creation in the {Camassa}--{Holm} and {Novikov} equations}. \textit{J. Nonlinear Math. Phys.}, \textbf{22}\kern.5pt (1)\kern.25pt :\kern.25pt 1--16, 2015. \href{http://arxiv.org/abs/1310.4927}{arXiv:1310.4927 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3286730}{MR3286730}.
+
+\bibitem[192]{kardell:2016:phdthesis}
+Marcus Kardell. \href{http://dx.doi.org/10.3384/diss.diva-124307}{\textit{New Phenomena in the World of Peaked Solitons}}. Ph.D. thesis, Linköping University, 2016. {Linköping} Studies in Science and Technology. Dissertations No. 1737.
+
+\bibitem[193]{khesin-lenells-misiolek:2008:generalized-HS-circle-diffeomorphisms}
+Boris Khesin, Jonatan Lenells and Gerard Misiołek. \href{http://dx.doi.org/10.1007/s00208-008-0250-3}{Generalized {Hunter}--{Saxton} equation and the geometry of the group of circle diffeomorphisms}. \textit{Math. Ann.}, \textbf{342}\kern.5pt (3)\kern.25pt :\kern.25pt 617--656, 2008. \href{http://arxiv.org/abs/0803.3078}{arXiv:0803.3078 [math.DG]}. \href{http://www.ams.org/mathscinet-getitem?mr=2430993}{MR2430993}.
+
+\bibitem[194]{khorbatly:2022:DP-asymptotic-stability-of-antipeakon-peakon-profile}
+Bashar Khorbatly. \href{http://dx.doi.org/10.1016/j.nonrwa.2021.103428}{Asymptotic stability of the {Degasperis}--{Procesi} antipeakon--peakon profile}. \textit{Nonlinear Anal. Real World Appl.}, \textbf{64}\kern.25pt :\kern.25pt 103428 (41 pages), 2022. \href{http://www.ams.org/mathscinet-getitem?mr=4322339}{MR4322339}.
+
+\bibitem[195]{khorbatly-molinet:2020:DP-orbital-stability-antipeakon-peakon-profile}
+Bashar Khorbatly and Luc Molinet. \href{http://dx.doi.org/10.1016/j.jde.2020.03.045}{On the orbital stability of the {Degasperis}--{Procesi} antipeakon--peakon profile}. \textit{J. Differ. Equ.}, \textbf{269}\kern.5pt (6)\kern.25pt :\kern.25pt 4799--4852, 2020. \href{http://arxiv.org/abs/1912.10895}{arXiv:1912.10895 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4104459}{MR4104459}.
+
+\bibitem[196]{kohlenberg-lundmark-szmigielski:2007:inverse-spectral-discrete-cubic-string}
+Jennifer Kohlenberg, Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.1088/0266-5611/23/1/005}{The inverse spectral problem for the discrete cubic string}. \textit{Inverse Probl.}, \textbf{23}\kern.5pt (1)\kern.25pt :\kern.25pt 99--121, 2007. \href{http://arxiv.org/abs/math/0611745}{arXiv:math/0611745 [nlin.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2302964}{MR2302964 (2008a:34019)}.
+
+\bibitem[197]{kolev:2009:DP-some-geometric-investigations}
+Boris Kolev. \href{http://dx.doi.org/10.1016/j.wavemoti.2009.06.005}{Some geometric investigations on the {Degasperis}--{Procesi} shallow water equation}. \textit{Wave Motion}, \textbf{46}\kern.5pt (6)\kern.25pt :\kern.25pt 412--419, 2009. \href{http://www.ams.org/mathscinet-getitem?mr=2598639}{MR2598639}.
+
+\bibitem[198]{konno-ichikawa-wadati:1981:loop-soliton-propagating-along-stretched-rope}
+Kimiaki Konno, Yoshi-Hiko Ichikawa and Miki Wadati. \href{http://dx.doi.org/10.1143/JPSJ.50.1025}{A loop soliton propagating along a stretched rope}. \textit{J. Phys. Soc. Jpn.}, \textbf{50}\kern.5pt (3)\kern.25pt :\kern.25pt 1025--1026, 1981. \href{http://www.ams.org/mathscinet-getitem?mr=667091}{MR667091}.
+
+\bibitem[199]{krein:1952:inverse-string}
+M. G. Krein. Ob obratnykh zadachakh dlya neodnorodnoy struny [{On} inverse problems for a nonhomogeneous string] ({Russian}). \textit{Doklady Akad. Nauk SSSR (N.S.)}, \textbf{82}\kern.5pt (5)\kern.25pt :\kern.25pt 669--672, 1952. \href{http://www.ams.org/mathscinet-getitem?mr=0052636}{MR0052636 (14,649f)}.
+
+\bibitem[200]{lai:2013:novikov-global-weak-solutions}
+Shaoyong Lai. \href{http://dx.doi.org/10.1016/j.jfa.2013.05.022}{Global weak solutions to the {Novikov} equation}. \textit{J. Funct. Anal.}, \textbf{265}\kern.5pt (4)\kern.25pt :\kern.25pt 520--544, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3062535}{MR3062535}.
+
+\bibitem[201]{lai-li-wu:2013:novikov-global-solutions}
+Shaoyong Lai, Nan Li and Yonghong Wu. \href{http://dx.doi.org/10.1016/j.jmaa.2012.10.048}{The existence of global strong and weak solutions for the {Novikov} equation}. \textit{J. Math. Anal. Appl.}, \textbf{399}\kern.5pt (2)\kern.25pt :\kern.25pt 682--691, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=2996746}{MR2996746}.
+
+\bibitem[202]{lenells:2004:variational-approach-stability-periodic-peakons:JNMP}
+Jonatan Lenells. \href{http://dx.doi.org/10.2991/jnmp.2004.11.2.2}{A variational approach to the stability of periodic peakons}. \textit{J. Nonlinear Math. Phys.}, \textbf{11}\kern.5pt (2)\kern.25pt :\kern.25pt 151--163, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2054462}{MR2054462}.
+
+\bibitem[203]{lenells:2004:stability-periodic-peakons:IMRN}
+Jonatan Lenells. \href{http://dx.doi.org/10.1155/S1073792804132431}{Stability of periodic peakons}. \textit{Int. Math. Res. Not.}, \textbf{2004}\kern.5pt (10)\kern.25pt :\kern.25pt 485--499, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2039134}{MR2039134}.
+
+\bibitem[204]{lenells:2005:CH-conservation-laws}
+Jonatan Lenells. \href{http://dx.doi.org/10.1088/0305-4470/38/4/007}{Conservation laws of the {Camassa}--{Holm} equation}. \textit{J. Phys. A: Math. Gen.}, \textbf{38}\kern.5pt (4)\kern.25pt :\kern.25pt 869--880, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2125239}{MR2125239}.
+
+\bibitem[205]{lenells:2005:CH-traveling-waves}
+Jonatan Lenells. \href{http://dx.doi.org/10.1016/j.jde.2004.09.007}{Traveling wave solutions of the {Camassa}--{Holm} equation}. \textit{J. Differ. Equ.}, \textbf{217}\kern.5pt (2)\kern.25pt :\kern.25pt 393--430, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2168830}{MR2168830}.
+
+\bibitem[206]{lenells:2005:DP-traveling-waves}
+Jonatan Lenells. \href{http://dx.doi.org/10.1016/j.jmaa.2004.11.038}{Traveling wave solutions of the {Degasperis}--{Procesi} equation}. \textit{J. Math. Anal. Appl.}, \textbf{306}\kern.5pt (1)\kern.25pt :\kern.25pt 72--82, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2132889}{MR2132889}.
+
+\bibitem[207]{lenells:2013:DP-half-line}
+Jonatan Lenells. \href{http://dx.doi.org/10.1016/j.na.2012.08.009}{The {Degasperis}--{Procesi} equation on the half-line}. \textit{Nonlinear Anal.}, \textbf{76}\kern.25pt :\kern.25pt 122--139, 2013. \href{http://arxiv.org/abs/1204.5252}{arXiv:1204.5252 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2974255}{MR2974255}.
+
+\bibitem[208]{lenells-misiolek-tiglay:2010:evolution-equations-tensor-densities-peakons}
+Jonatan Lenells, Gerard Misiołek and Feride Tığlay. \href{http://dx.doi.org/10.1007/s00220-010-1069-9}{Integrable evolution equations on spaces of tensor densities and their peakon solutions}. \textit{Commun. Math. Phys.}, \textbf{299}\kern.5pt (1)\kern.25pt :\kern.25pt 129--161, 2010. \href{http://arxiv.org/abs/0903.4134}{arXiv:0903.4134 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2672800}{MR2672800}.
+
+\bibitem[209]{li-wang:2017:GX-new-liouville-transformation}
+Hongmin Li and Wang Chai. \href{http://dx.doi.org/10.1016/j.cnsns.2017.01.027}{A new {Liouville} transformation for the {Geng}--{Xue} system}. \textit{Commun. Nonlinear Sci. Numer. Simul.}, \textbf{49}\kern.25pt :\kern.25pt 93--101, 2017. \href{http://www.ams.org/mathscinet-getitem?mr=3620080}{MR3620080}.
+
+\bibitem[210]{li-liu-wu:2020:DP-spectral-stability-of-smooth-solitary-waves}
+Ji Li, Yue Liu and Qiliang Wu. \href{http://dx.doi.org/10.1016/j.matpur.2020.08.003}{Spectral stability of smooth solitary waves for the {Degasperis}--{Procesi} equation}. \textit{J. Math. Pures Appl. (9)}, \textbf{142}\kern.25pt :\kern.25pt 298--314, 2020. \href{http://arxiv.org/abs/1911.06885}{arXiv:1911.06885 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4149693}{MR4149693}.
+
+\bibitem[211]{li:2014:novikov-exact-cuspon-and-compactons}
+Jibin Li. \href{http://dx.doi.org/10.1142/S0218127414500370}{Exact cuspon and compactons of the {Novikov} equation}. \textit{Int. J. Bifur. Chaos}, \textbf{24}\kern.5pt (3)\kern.25pt :\kern.25pt 1450037 (8 pages), 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3187180}{MR3187180}.
+
+\bibitem[212]{li-li-zhu:2020:novikov-nonuniform-dependence-besov-spaces}
+Jinlu Li, Min Li and Weipeng Zhu. \href{http://dx.doi.org/10.1007/s00021-020-00511-9}{Non-uniform dependence for the {Novikov} equation in {Besov} spaces}. \textit{J. Math. Fluid Mech.}, \textbf{22}\kern.5pt (4)\kern.25pt :\kern.25pt 50 (10 pages), 2020. \href{http://arxiv.org/abs/2002.00321}{arXiv:2002.00321 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4145844}{MR4145844}.
+
+\bibitem[213]{li:2008:CH-factorization-problem-on-hilbert-schmidt-group}
+Luen-Chau Li. \href{http://dx.doi.org/10.1002/cpa.20207}{Factorization problem on the {Hilbert}--{Schmidt} group and the {Camassa}--{Holm} equation}. \textit{Commun. Pure Appl. Math.}, \textbf{61}\kern.5pt (2)\kern.25pt :\kern.25pt 186--209, 2008. \href{http://arxiv.org/abs/math/0601156}{arXiv:math/0601156 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2368373}{MR2368373}.
+
+\bibitem[214]{li:2009:CH-long-time-behaviour-for-class-of-low-regularity-solutions-infinitely-many-peakons}
+Luen-Chau Li. \href{http://dx.doi.org/10.1007/s00220-008-0603-5}{Long time behaviour for a class of low-regularity solutions of the {Camassa}--{Holm} equation}. \textit{Commun. Math. Phys.}, \textbf{285}\kern.5pt (1)\kern.25pt :\kern.25pt 265--291, 2009. \href{http://arxiv.org/abs/0712.3229}{arXiv:0712.3229 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=2453596}{MR2453596}.
+
+\bibitem[215]{li-liu:2013:GX-bihamiltonian}
+Nianhua Li and Q. P. Liu. \href{http://dx.doi.org/10.1016/j.physleta.2012.11.023}{On bi-{Hamiltonian} structure of two-component {Novikov} equation}. \textit{Phys. Lett. A}, \textbf{377}\kern.5pt (3--4)\kern.25pt :\kern.25pt 257--261, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3006205}{MR3006205}.
+
+\bibitem[216]{li-liu:2022p:GX-smooth-multisoliton-solutions}
+Nianhua Li and Q. P. Liu. Smooth multisoliton solutions of the {Geng}--{Xue} equation. 2022. \href{http://arxiv.org/abs/2202.03041}{arXiv:2202.03041 [nlin.SI]}. Preprint.
+
+\bibitem[217]{li-niu:2014:GX-reciprocal}
+Nianhua Li and Xiaoxing Niu. \href{http://dx.doi.org/10.1063/1.4874799}{A reciprocal transformation for the {Geng}--{Xue} equation}. \textit{J. Math. Phys.}, \textbf{55}\kern.5pt (5)\kern.25pt :\kern.25pt 053505 (7 pages), 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3390632}{MR3390632}.
+
+\bibitem[218]{li-wang-kuang:2020:multisolitons-of-DP-and-its-shortwave-limit-darboux-transformation-approach}
+Nianhua Li, Gaihua Wang and Yonghui Kuang. \href{http://dx.doi.org/10.1134/S0040577920050049}{Multisoliton solutions of the {Degasperis}--{Procesi} equation and its shortwave limit: {Darboux} transformation approach}. \textit{Theor. Math. Phys.}, \textbf{203}\kern.5pt (2)\kern.25pt :\kern.25pt 608--620, 2020.
+
+\bibitem[219]{lin-liu:2009:stability-of-DP-peakons}
+Zhiwu Lin and Yue Liu. \href{http://dx.doi.org/10.1002/cpa.20239}{Stability of peakons for the {Degasperis}--{Procesi} equation}. \textit{Commun. Pure Appl. Math.}, \textbf{62}\kern.5pt (1)\kern.25pt :\kern.25pt 125--146, 2009. \href{http://arxiv.org/abs/0712.2007}{arXiv:0712.2007 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2460268}{MR2460268}.
+
+\bibitem[220]{liu-liu-qu:2014:novikov-stability-of-peakons}
+Xiaochuan Liu, Yue Liu and Changzheng Qu. \href{http://dx.doi.org/10.1016/j.matpur.2013.05.007}{Stability of peakons for the {Novikov} equation}. \textit{J. Math. Pures Appl. (9)}, \textbf{101}\kern.5pt (2)\kern.25pt :\kern.25pt 172--187, 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3158700}{MR3158700}.
+
+\bibitem[221]{liu-wang:2006:DP-local-wellposedness-new-integrable-equation}
+Yongqin Liu and Weike Wang. \href{http://dx.doi.org/10.1016/j.na.2005.08.030}{Local well-posedness of a new integrable equation}. \textit{Nonlinear Anal.}, \textbf{64}\kern.5pt (11)\kern.25pt :\kern.25pt 2516--2526, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2215824}{MR2215824}.
+
+\bibitem[222]{liu-yin:2006:DP-global-existence-and-blowup}
+Yue Liu and Zhaoyang Yin. \href{http://dx.doi.org/10.1007/s00220-006-0082-5}{Global existence and blow-up phenomena for the {Degasperis}--{Procesi} equation}. \textit{Commun. Math. Phys.}, \textbf{267}\kern.5pt (3)\kern.25pt :\kern.25pt 801--820, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2249792}{MR2249792}.
+
+\bibitem[223]{liu-yin:2007:DP-blowup-phenomena}
+Yue Liu and Zhaoyang Yin. \href{http://dx.doi.org/10.1093/imrn/rnm117}{On the blow-up phenomena for the {Degasperis}--{Procesi} equation}. \textit{Int. Math. Res. Not.}, \textbf{2007}\kern.25pt :\kern.25pt rnm117 (22 pages), 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2380010}{MR2380010}.
+
+\bibitem[224]{lopezlagomasino-medinaperalta-szmigielski:2019:mixed-type-hermite-pade-approximation-inspired-by-DP}
+G. López Lagomasino, S. Medina Peralta and J. Szmigielski. \href{http://dx.doi.org/10.1016/j.aim.2019.04.024}{Mixed type {Hermite}--{Padé} approximation inspired by the {Degasperis}--{Procesi} equation}. \textit{Adv. Math.}, \textbf{349}\kern.25pt :\kern.25pt 813--838, 2019. \href{http://arxiv.org/abs/1805.02195}{arXiv:1805.02195 [math.CV]}. \href{http://www.ams.org/mathscinet-getitem?mr=3943369}{MR3943369}.
+
+\bibitem[225]{lou-qiao:2017:alice-bob-peakon-systems}
+Sen-Yue Lou and Zhi-Jun Qiao. \href{http://dx.doi.org/10.1088/0256-307X/34/10/100201}{Alice--{Bob} peakon systems}. \textit{Chin. Phys. Lett.}, \textbf{34}\kern.5pt (10)\kern.25pt :\kern.25pt 100201 (4 pages), 2017. \href{http://arxiv.org/abs/1705.07395}{arXiv:1705.07395 [nlin.SI]}.
+
+\bibitem[226]{lundmark:2007:DP-shockpeakons}
+H. Lundmark. \href{http://dx.doi.org/10.1007/s00332-006-0803-3}{Formation and dynamics of shock waves in the {Degasperis}--{Procesi} equation}. \textit{J. Nonlinear Sci.}, \textbf{17}\kern.5pt (3)\kern.25pt :\kern.25pt 169--198, 2007. \href{https://web.archive.org/web/20110930234404/http://www.mittag-leffler.se/preprints/0506f/info.php?id=26}{Institut Mittag-Leffler preprint: Fall 2005, Wave Motion, nr.~26}. \href{http://www.ams.org/mathscinet-getitem?mr=2314847}{MR2314847}.
+
+\bibitem[227]{lundmark-shuaib:2019:ghostpeakons}
+Hans Lundmark and Budor Shuaib. \href{http://dx.doi.org/10.3842/SIGMA.2019.017}{Ghostpeakons and characteristic curves for the {Camassa}--{Holm}, {Degasperis}--{Procesi} and {Novikov} equations}. \textit{SIGMA}, \textbf{15}\kern.25pt :\kern.25pt 017 (51 pages), 2019. \href{http://arxiv.org/abs/1807.01910}{arXiv:1807.01910 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3919721}{MR3919721}.
+
+\bibitem[228]{lundmark-szmigielski:2003:DPshort}
+Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.1088/0266-5611/19/6/001}{Multi-peakon solutions of the {Degasperis}--{Procesi} equation}. \textit{Inverse Probl.}, \textbf{19}\kern.5pt (6)\kern.25pt :\kern.25pt 1241--1245, 2003. \href{http://arxiv.org/abs/nlin/0503033}{arXiv:nlin/0503033 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2036528}{MR2036528 (2004m:35279)}.
+
+\bibitem[229]{lundmark-szmigielski:2005:DPlong}
+Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.1155/IMRP.2005.53}{Degasperis--{Procesi} peakons and the discrete cubic string}. \textit{Int. Math. Res. Pap.}, \textbf{2005}\kern.5pt (2)\kern.25pt :\kern.25pt 53--116, 2005. \href{http://arxiv.org/abs/nlin/0503036}{arXiv:nlin/0503036 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2150256}{MR2150256}.
+
+\bibitem[230]{lundmark-szmigielski:2016:GX-inverse-problem}
+Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.1090/memo/1155}{An inverse spectral problem related to the {Geng}--{Xue} two-component peakon equation}. \textit{Mem. Amer. Math. Soc.}, \textbf{244}\kern.5pt (1155)\kern.25pt :\kern.25pt viii+87 pages, 2016. \href{http://arxiv.org/abs/1304.0854}{arXiv:1304.0854 [math.SP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3545110}{MR3545110}.
+
+\bibitem[231]{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+Hans Lundmark and Jacek Szmigielski. \href{http://dx.doi.org/10.1093/integr/xyw014}{Dynamics of interlacing peakons (and shockpeakons) in the {Geng}--{Xue} equation}. \textit{J. Integrable Syst.}, \textbf{2}\kern.5pt (1)\kern.25pt :\kern.25pt xyw014 (65 pages), 2017. \href{http://arxiv.org/abs/1605.02805}{arXiv:1605.02805 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3682465}{MR3682465}.
+
+\bibitem[232]{luo-qiao-lopez:2014:integrable-generalization-associated-CH}
+Lin Luo, Zhijun Qiao and Juan Lopez. \href{http://dx.doi.org/10.1016/j.physleta.2013.11.029}{Integrable generalization of the associated {Camassa}--{Holm} equation}. \textit{Phys. Lett. A}, \textbf{378}\kern.5pt (9)\kern.25pt :\kern.25pt 677--683, 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3158737}{MR3158737}.
+
+\bibitem[233]{ma-cao-guo:2019:large-time-behavior-momentum-support-novikov-type-equation}
+Caochuan Ma, Yaqiang Cao and Zhengguang Guo. \href{http://dx.doi.org/10.1007/s11040-019-9317-5}{Large time behavior of momentum support for a {Novikov} type equation}. \textit{Math. Phys. Anal. Geom.}, \textbf{22}\kern.5pt (4)\kern.25pt :\kern.25pt 23 (12 pages), 2019. \href{http://www.ams.org/mathscinet-getitem?mr=4023785}{MR4023785}.
+
+\bibitem[234]{mao:2021:novikov-backlund-transformation-and-applications}
+Hui Mao. \href{http://dx.doi.org/10.1134/S0040577921020045}{{Novikov} equation: {Bäcklund} transformation and applications}. \textit{Theor. Math. Phys.}, \textbf{206}\kern.5pt (2)\kern.25pt :\kern.25pt 163--173, 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4224005}{MR4224005}.
+
+\bibitem[235]{mao-kuang:2021:mCH-solitons-via-dressing-method}
+Hui Mao and Yonghui Kuang. \href{http://dx.doi.org/10.1007/s11040-021-09395-1}{Solitons for the modified {Camassa}--{Holm} equation and their interactions via dressing method}. \textit{Math. Phys. Anal. Geom.}, \textbf{24}\kern.5pt (4)\kern.25pt :\kern.25pt 32 (17 pages), 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4318444}{MR4318444}.
+
+\bibitem[236]{mao-wang:2020:DP-backlund-transformations}
+Hui Mao and Gaihua Wang. \href{http://dx.doi.org/10.1134/S0040577920060045}{{Bäcklund} transformations for the {Degasperis}--{Procesi} equation}. \textit{Theor. Math. Phys.}, \textbf{203}\kern.5pt (3)\kern.25pt :\kern.25pt 747--760, 2020.
+
+\bibitem[237]{marinakis:2009:mCH-comment-on-qiao}
+Vangelis Marinakis. \href{http://dx.doi.org/10.1063/1.3085748}{Comment on ``{A} new integrable equation with cuspons and {W}/{M}-shape-peaks solitons'' [{J}. {Math.} {Phys.} 47, 112701 (2006)]}. \textit{J. Math. Phys.}, \textbf{50}\kern.5pt (2)\kern.25pt :\kern.25pt 024101 (2 pages), 2009. \href{http://www.ams.org/mathscinet-getitem?mr=2494857}{MR2494857}.
+
+\bibitem[238]{matsuno:2005:DP-multisolitons-peakon-limit}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1088/0266-5611/21/5/004}{Multisoliton solutions of the {Degasperis}--{Procesi} equation and their peakon limit}. \textit{Inverse Probl.}, \textbf{21}\kern.5pt (5)\kern.25pt :\kern.25pt 1553--1570, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2173410}{MR2173410}.
+
+\bibitem[239]{matsuno:2005:CH-multisolitons-parametric-representation}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1143/JPSJ.74.1983}{Parametric representation for the multisoliton solution of the {Camassa}--{Holm} equation}. \textit{J. Phys. Soc. Jpn.}, \textbf{74}\kern.5pt (7)\kern.25pt :\kern.25pt 1983--1987, 2005. \href{http://arxiv.org/abs/nlin/0504055}{arXiv:nlin/0504055 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2164341}{MR2164341}.
+
+\bibitem[240]{matsuno:2005:DP-N-soliton-solution}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1088/0266-5611/21/6/018}{The {$N$}-soliton solution of the {Degasperis}--{Procesi} equation}. \textit{Inverse Probl.}, \textbf{21}\kern.5pt (6)\kern.25pt :\kern.25pt 2085--2101, 2005. \href{http://arxiv.org/abs/nlin/0511029}{arXiv:nlin/0511029 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2183669}{MR2183669}.
+
+\bibitem[241]{matsuno:2007:CH-multisolitons-peakon-limit}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1143/JPSJ.76.034003}{The peakon limit of the {$N$}-soliton solution of the {Camassa}--{Holm} equation}. \textit{J. Phys. Soc. Jpn.}, \textbf{76}\kern.5pt (3)\kern.25pt :\kern.25pt 034003 (8 pages), 2007. \href{http://arxiv.org/abs/nlin/0701051}{arXiv:nlin/0701051 [nlin.SI]}.
+
+\bibitem[242]{matsuno:2013:modified-cubic-CH-backlund-multisolitons}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1063/1.4807417}{Bäcklund transformation and smooth multisoliton solutions for a modified {Camassa}--{Holm} equation with cubic nonlinearity}. \textit{J. Math. Phys.}, \textbf{54}\kern.5pt (5)\kern.25pt :\kern.25pt 051504 (14 pages), 2013. \href{http://arxiv.org/abs/1302.0107}{arXiv:1302.0107 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3098907}{MR3098907}.
+
+\bibitem[243]{matsuno:2013:novikov-multisolitons-peakon-limit}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1088/1751-8113/46/36/365203}{Smooth multisoliton solutions and their peakon limit of {Novikov's} {Camassa}--{Holm} type equation with cubic nonlinearity}. \textit{J. Phys. A: Math. Theor.}, \textbf{46}\kern.5pt (36)\kern.25pt :\kern.25pt 365203 (27 pages), 2013. \href{http://arxiv.org/abs/1305.6728}{arXiv:1305.6728 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3100605}{MR3100605}.
+
+\bibitem[244]{matsuno:2014:modified-cubic-CH-multisolitons}
+Yoshimasa Matsuno. \href{http://dx.doi.org/10.1088/1751-8113/47/12/125203}{Smooth and singular multisoliton solutions of a modified {Camassa}--{Holm} equation with cubic nonlinearity and linear dispersion}. \textit{J. Phys. A: Math. Theor.}, \textbf{47}\kern.5pt (12)\kern.25pt :\kern.25pt 125203 (25 pages), 2014. \href{http://arxiv.org/abs/1310.4011}{arXiv:1310.4011 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3179721}{MR3179721}.
+
+\bibitem[245]{mckean:1998:CH-breakdown}
+H. P. McKean. \href{http://dx.doi.org/10.4310/AJM.1998.v2.n4.a10}{Breakdown of a shallow water equation}. \textit{Asian J. Math.}, \textbf{2}\kern.5pt (4)\kern.25pt :\kern.25pt 867--874, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1734131}{MR1734131}.
+
+\bibitem[246]{mclachlan-zhang:2009:wellposedness-of-modified-CH-equations}
+Robert McLachlan and Xingyou Zhang. \href{http://dx.doi.org/10.1016/j.jde.2009.01.039}{Well-posedness of modified {Camassa}-{Holm} equations}. \textit{J. Differ. Equ.}, \textbf{246}\kern.5pt (8)\kern.25pt :\kern.25pt 3241--3259, 2009. \href{http://www.ams.org/mathscinet-getitem?mr=2507956}{MR2507956}.
+
+\bibitem[247]{medinaperalta:2021:matrix-cauchy-biorthogonal-polynomials}
+S. Medina Peralta. \href{http://dx.doi.org/10.1080/10652469.2020.1768379}{On matrix {Cauchy} biorthogonal polynomials}. \textit{Integral Transforms Spec. Funct.}, \textbf{32}\kern.5pt (5--8)\kern.25pt :\kern.25pt 588--603, 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4280702}{MR4280702}.
+
+\bibitem[248]{mi-mu-tao:2013:GX-cauchy-problem}
+Yongsheng Mi, Chunlai Mu and Weian Tao. \href{http://dx.doi.org/10.1155/2013/810725}{On the {Cauchy} problem for the two-component {Novikov} equation}. \textit{Adv. Math. Phys.}, \textbf{2013}\kern.25pt :\kern.25pt 810725 (11 pages), 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3066576}{MR3066576}.
+
+\bibitem[249]{mikhailov-novikov:2002:perturbative}
+A. V. Mikhailov and V. S. Novikov. \href{http://dx.doi.org/10.1088/0305-4470/35/22/309}{Perturbative symmetry approach}. \textit{J. Phys. A: Math. Gen.}, \textbf{35}\kern.5pt (22)\kern.25pt :\kern.25pt 4775--4790, 2002. \href{http://arxiv.org/abs/nlin/0203055}{arXiv:nlin/0203055 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=1908645}{MR1908645 (2004d:35012)}.
+
+\bibitem[250]{misiolek:1998:CH-as-geodesic-flow-on-Bott-Virasoro-group}
+Gerard Misiołek. \href{http://dx.doi.org/10.1016/S0393-0440(97)00010-7}{A shallow water equation as a geodesic flow on the {Bott}--{Virasoro} group}. \textit{J. Geom. Phys.}, \textbf{24}\kern.5pt (3)\kern.25pt :\kern.25pt 203--208, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1491553}{MR1491553}.
+
+\bibitem[251]{misiolek:2002:CH-periodic-classical-solutions}
+G. Misiołek. \href{http://dx.doi.org/10.1007/PL00012648}{Classical solutions of the periodic {Camassa}--{Holm} equation}. \textit{Geom. Funct. Anal.}, \textbf{12}\kern.5pt (5)\kern.25pt :\kern.25pt 1080--1104, 2002. \href{http://www.ams.org/mathscinet-getitem?mr=1937835}{MR1937835}.
+
+\bibitem[252]{mohajer:2017:DP-peakon-inverse-problem}
+Keivan Mohajer. \href{http://dx.doi.org/10.1515/jiip-2014-0059}{On the peakon inverse problem for the {Degasperis}--{Procesi} equation}. \textit{J. Inverse Ill-Posed Probl.}, \textbf{25}\kern.5pt (2)\kern.25pt :\kern.25pt 149--156, 2017. \href{http://arxiv.org/abs/1408.2193}{arXiv:1408.2193 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3630128}{MR3630128}.
+
+\bibitem[253]{mohajer-szmigielski:2011:CH-on-real-axis}
+Keivan Mohajer and Jacek Szmigielski. Inverse problems associated with integrable equations of {Camassa}--{Holm} type; explicit formulas on the real axis, {I}. \textit{Pac. J. Appl. Math.}, \textbf{3}\kern.5pt (1--2)\kern.25pt :\kern.25pt 11--21, 2011. \href{http://arxiv.org/abs/1107.1329}{arXiv:1107.1329 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2918552}{MR2918552}.
+
+\bibitem[254]{mohajer-szmigielski:2012:novikov-on-real-axis}
+Keivan Mohajer and Jacek Szmigielski. \href{http://dx.doi.org/10.1088/0266-5611/28/1/015002}{On an inverse problem associated with an integrable equation of {Camassa}--{Holm} type: Explicit formulas on the real axis}. \textit{Inverse Probl.}, \textbf{28}\kern.5pt (1)\kern.25pt :\kern.25pt 015002 (13 pages), 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2864501}{MR2864501}.
+
+\bibitem[255]{molinet:2004:CH-wellposedness-survey}
+Luc Molinet. \href{http://dx.doi.org/10.2991/jnmp.2004.11.4.8}{On well-posedness results for {Camassa}--{Holm} equation on the line: A survey}. \textit{J. Nonlinear Math. Phys.}, \textbf{11}\kern.5pt (4)\kern.25pt :\kern.25pt 521--533, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2097662}{MR2097662}.
+
+\bibitem[256]{molinet:2019:rigidity-result-for-holm-staley-b-family-with-application-to-asymptotic-stability-of-DP-peakon}
+Luc Molinet. \href{http://dx.doi.org/10.1016/j.nonrwa.2019.06.004}{A rigidity result for the {Holm}--{Staley} {$b$}-family of equations with application to the asymptotic stability of the {Degasperis}--{Procesi} peakon}. \textit{Nonlinear Anal. Real World Appl.}, \textbf{50}\kern.25pt :\kern.25pt 675--705, 2019. \href{http://arxiv.org/abs/1810.01775}{arXiv:1810.01775 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=3975820}{MR3975820}.
+
+\bibitem[257]{moser:1975:finitely-many-point-masses-on-the-line}
+Jürgen Moser. Finitely many mass points on the line under the influence of an exponential potential -- an integrable system. In Jürgen Moser\ (ed.), \textit{Dynamical Systems, Theory and Applications. {Battelle} {Rencontres}, {Seattle}, 1974}, Lecture Notes in Physics, No.~38, pp.~467--497. ISBN 3-540-07171-7. Springer-Verlag, Berlin, 1975. \href{http://www.ams.org/mathscinet-getitem?mr=0455038}{MR0455038}.
+
+\bibitem[258]{moser:1975:three-integrable}
+Jürgen Moser. \href{http://dx.doi.org/10.1016/0001-8708(75)90151-6}{Three integrable {Hamiltonian} systems connected with isospectral deformations}. \textit{Advances in Math.}, \textbf{16}\kern.5pt (2)\kern.25pt :\kern.25pt 197--220, 1975. \href{http://www.ams.org/mathscinet-getitem?mr=0375869}{MR0375869 (51 \#12058)}.
+
+\bibitem[259]{natali-pelinovsky:2020:CH-instability-of-H1-stable-peakons}
+Fábio Natali and Dmitry E. Pelinovsky. \href{http://dx.doi.org/10.1016/j.jde.2019.11.059}{Instability of {$H^1$}-stable peakons in the {Camassa}--{Holm} equation}. \textit{J. Differ. Equ.}, \textbf{268}\kern.5pt (12)\kern.25pt :\kern.25pt 7342--7363, 2020. \href{http://arxiv.org/abs/1903.02636}{arXiv:1903.02636 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4079004}{MR4079004}.
+
+\bibitem[260]{ni-zhou:2011:novikov-wellposedness-and-persistence-properties}
+Lidiao Ni and Yong Zhou. \href{http://dx.doi.org/10.1016/j.jde.2011.01.030}{Well-posedness and persistence properties for the {Novikov} equation}. \textit{J. Differ. Equ.}, \textbf{250}\kern.5pt (7)\kern.25pt :\kern.25pt 3002--3021, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2771253}{MR2771253}.
+
+\bibitem[261]{novikov:2009:generalizations-of-CH}
+Vladimir Novikov. \href{http://dx.doi.org/10.1088/1751-8113/42/34/342002}{Generalizations of the {Camassa}--{Holm} equation}. \textit{J. Phys. A: Math. Theor.}, \textbf{42}\kern.5pt (34)\kern.25pt :\kern.25pt 342002 (14 pages), 2009. \href{http://arxiv.org/abs/0905.2219}{arXiv:0905.2219 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=2530232}{MR2530232 (2011b:35466)}.
+
+\bibitem[262]{olver-rosenau:1996:trihamiltonian-duality-solitons-compact-support}
+Peter J. Olver and Philip Rosenau. \href{http://dx.doi.org/10.1103/PhysRevE.53.1900}{Tri-{Hamiltonian} duality between solitons and solitary-wave solutions having compact support}. \textit{Phys. Rev. E}, \textbf{53}\kern.5pt (2)\kern.25pt :\kern.25pt 1900--1906, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1401317}{MR1401317}.
+
+\bibitem[263]{ovsienko-khesin:1987:KdV-to-Euler}
+V. Yu. Ovsienko and B. A. Khesin. \href{http://dx.doi.org/10.1007/BF01077813}{{Korteweg}--de {Vries} superequation as an {Euler} equation}. \textit{Funct. Anal. Appl.}, \textbf{21}\kern.5pt (4)\kern.25pt :\kern.25pt 329--331, 1987. Translation of Funktsional$'$nyi Analiz i Ego Prilozheniya, Vol. 21, No. 4, pp. 81--82, October--December, 1987. \href{http://www.ams.org/mathscinet-getitem?mr=925082}{MR925082}.
+
+\bibitem[264]{palacios:2020:novikov-peakons-asymptotic-stability}
+José Manuel Palacios. \href{http://dx.doi.org/10.1016/j.jde.2020.05.039}{Asymptotic stability of peakons for the {Novikov} equation}. \textit{J. Differ. Equ.}, \textbf{269}\kern.5pt (10)\kern.25pt :\kern.25pt 7750--7791, 2020. \href{http://arxiv.org/abs/2001.01611}{arXiv:2001.01611 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4113187}{MR4113187}.
+
+\bibitem[265]{palacios:2021:novikov-train-of-peakons-orbital-and-asymptotic-stability}
+José Manuel Palacios. \href{http://dx.doi.org/10.3934/dcds.2020372}{Orbital and asymptotic stability of a train of peakons for the {Novikov} equation}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{41}\kern.5pt (5)\kern.25pt :\kern.25pt 2475--2518, 2021. \href{http://arxiv.org/abs/2004.03599}{arXiv:2004.03599 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4225921}{MR4225921}.
+
+\bibitem[266]{pan-li:2016:novikov-further-results-on-smooth-and-nonsmooth-solitons}
+Chaohong Pan and Shaoyong Li. \href{http://dx.doi.org/10.1007/s11071-016-2921-z}{Further results on the smooth and nonsmooth solitons of the {Novikov} equation}. \textit{Nonlinear Dyn.}, \textbf{86}\kern.5pt (2)\kern.25pt :\kern.25pt 779--788, 2016.
+
+\bibitem[267]{pan-yi:2015:novikov-soliton-solutions}
+Chaohong Pan and Yating Yi. \href{http://dx.doi.org/10.1080/14029251.2015.1033243}{Some extensions on the soliton solutions for the {Novikov} equation with cubic nonlinearity}. \textit{J. Nonlinear Math. Phys.}, \textbf{22}\kern.5pt (2)\kern.25pt :\kern.25pt 308--320, 2015. \href{http://www.ams.org/mathscinet-getitem?mr=3325872}{MR3325872}.
+
+\bibitem[268]{parker:2004:CH-direct-method-1}
+Allen Parker. \href{http://dx.doi.org/10.1098/rspa.2004.1301}{On the {Camassa}--{Holm} equation and a direct method of solution. {I.} {Bilinear} form and solitary waves}. \textit{Proc. R. Soc. Lond. A}, \textbf{460}\kern.5pt (2050)\kern.25pt :\kern.25pt 2929--2957, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2097280}{MR2097280}.
+
+\bibitem[269]{parker:2005:CH-direct-method-2}
+Allen Parker. \href{http://dx.doi.org/10.1098/rspa.2005.1536}{On the {Camassa}--{Holm} equation and a direct method of solution. {II.} {Soliton} solutions}. \textit{Proc. R. Soc. A}, \textbf{461}\kern.5pt (2063)\kern.25pt :\kern.25pt 3611--3632, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2171280}{MR2171280}.
+
+\bibitem[270]{parker:2005:CH-direct-method-3}
+Allen Parker. \href{http://dx.doi.org/10.1098/rspa.2005.1537}{On the {Camassa}--{Holm} equation and a direct method of solution. {III.} {$N$}-soliton solutions}. \textit{Proc. R. Soc. A}, \textbf{461}\kern.5pt (2064)\kern.25pt :\kern.25pt 3893--3911, 2005. \href{http://www.ams.org/mathscinet-getitem?mr=2186011}{MR2186011}.
+
+\bibitem[271]{parker:2008:CH-peakons-dynamics}
+A. Parker. \href{http://dx.doi.org/10.1016/j.chaos.2007.07.049}{Wave dynamics for peaked solitons of the {Camassa}--{Holm} equation}. \textit{Chaos Solitons Fractals}, \textbf{35}\kern.5pt (2)\kern.25pt :\kern.25pt 220--237, 2008. \href{http://www.ams.org/mathscinet-getitem?mr=2356999}{MR2356999}.
+
+\bibitem[272]{parker-matsuno:2006:CH-solitons-peakon-limit}
+Allen Parker and Yoshimasa Matsuno. \href{http://dx.doi.org/10.1143/JPSJ.75.124001}{The peakon limits of soliton solutions of the {Camassa}--{Holm} equation}. \textit{J. Phys. Soc. Jpn.}, \textbf{75}\kern.5pt (12)\kern.25pt :\kern.25pt 124001 (9 pages), 2006.
+
+\bibitem[273]{pei:2020:DP-exponential-decay-symmetry-solitary-waves}
+Long Pei. \href{http://dx.doi.org/10.1016/j.jde.2020.05.047}{Exponential decay and symmetry of solitary waves to {Degasperis}--{Procesi} equation}. \textit{J. Differ. Equ.}, \textbf{269}\kern.5pt (10)\kern.25pt :\kern.25pt 7730--7749, 2020. \href{http://arxiv.org/abs/1901.06718}{arXiv:1901.06718 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=4113186}{MR4113186}.
+
+\bibitem[274]{qiao:2003:CH-hierarchy-alggeo-symplectic-submanifold}
+Zhijun Qiao. \href{http://dx.doi.org/10.1007/s00220-003-0880-y}{The {Camassa}--{Holm} hierarchy, {$N$}-dimensional integrable systems, and algebro-geometric solution on a symplectic submanifold}. \textit{Commun. Math. Phys.}, \textbf{239}\kern.5pt (1--2)\kern.25pt :\kern.25pt 309--341, 2003. \href{http://arxiv.org/abs/nlin/0202009}{arXiv:nlin/0202009 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=1997444}{MR1997444}.
+
+\bibitem[275]{qiao:2004:integrable-hierarchy-3x3-constrained-systems-parametric-solutions}
+Zhijun Qiao. \href{http://dx.doi.org/10.1023/B:ACAP.0000038872.88367.dd}{Integrable hierarchy, {$3\times3$} constrained systems, and parametric solutions}. \textit{Acta Appl. Math.}, \textbf{83}\kern.5pt (3)\kern.25pt :\kern.25pt 199--220, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2092400}{MR2092400}.
+
+\bibitem[276]{qiao:2006:mCH-new-integrable-cuspons-WMpeakons}
+Zhijun Qiao. \href{http://dx.doi.org/10.1063/1.2365758}{A new integrable equation with cuspons and {W}/{M}-shape-peaks solitons}. \textit{J. Math. Phys.}, \textbf{47}\kern.5pt (11)\kern.25pt :\kern.25pt 112701 (9 pages), 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2278659}{MR2278659}.
+
+\bibitem[277]{qiao:2007:mCH-new-integrable-hierarchy-parametric-cuspons-peakons-MWpeakons}
+Zhijun Qiao. \href{http://dx.doi.org/10.1063/1.2759830}{New integrable hierarchy, its parametric solutions, cuspons, one-peak solitons, and {M}/{W}-shape peak solitons}. \textit{J. Math. Phys.}, \textbf{48}\kern.5pt (8)\kern.25pt :\kern.25pt 082701 (20 pages), 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2349404}{MR2349404}.
+
+\bibitem[278]{qiao-xia:2013:integrable-peakon-systems-with-kink-peakon}
+Zhijun Qiao and Baoqiang Xia. \href{http://dx.doi.org/10.1007/s11464-013-0314-x}{Integrable peakon systems with weak kink and kink-peakon interactional solutions}. \textit{Front. Math. China}, \textbf{8}\kern.5pt (5)\kern.25pt :\kern.25pt 1185--1196, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3091133}{MR3091133}.
+
+\bibitem[279]{ragnisco-bruschi:1996:peakons-toda}
+O. Ragnisco and M. Bruschi. \href{http://dx.doi.org/10.1016/0378-4371(95)00438-6}{Peakons, {$r$}-matrix and {Toda} lattice}. \textit{Physica A}, \textbf{228}\kern.5pt (1--4)\kern.25pt :\kern.25pt 150--159, 1996. \href{http://arxiv.org/abs/solv-int/9509012}{arXiv:solv-int/9509012}. \href{http://www.ams.org/mathscinet-getitem?mr=1399285}{MR1399285}.
+
+\bibitem[280]{rasin-schiff:2019:simple-looking-relative-of-novikov-hirotasatsuma-sawadakotera}
+Alexander G. Rasin and Jeremy Schiff. \href{http://dx.doi.org/10.1080/14029251.2019.1640465}{A simple-looking relative of the {Novikov}, {Hirota}--{Satsuma} and {Sawada}--{Kotera} equations}. \textit{J. Nonlinear Math. Phys.}, \textbf{26}\kern.5pt (4)\kern.25pt :\kern.25pt 555--568, 2019. \href{http://arxiv.org/abs/1905.02179}{arXiv:1905.02179 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3978635}{MR3978635}.
+
+\bibitem[281]{rayan-stanley-szmigielski:2020:CF-higgs-fields}
+Steven Rayan, Thomas Stanley and Jacek Szmigielski. \href{http://dx.doi.org/10.1017/9781108773287}{The {Calogero}--{Françoise} integrable system: Algebraic geometry, {Higgs} fields, and the inverse problem}. In Ron Donagi and Tony Shaska\ (eds.), \textit{Integrable Systems and Algebraic Geometry. {A} Celebration of {Emma} {Previato}’s 65th Birthday}, Vol.~1, London Mathematical Society Lecture Note Series, No.~458, pp.~356--382. ISBN 978-1-108-77328-7. Cambridge University Press, Cambridge, United Kingdom, 2020. \href{http://arxiv.org/abs/1809.06513}{arXiv:1809.06513 [math-ph]}.
+
+\bibitem[282]{sabatier:1980:needs}
+Pierre C. Sabatier. \href{http://dx.doi.org/10.1007/3-540-09971-9_51}{Around the classical string problem}. In M. Boiti, F. Pempinelli and G. Soliani\ (eds.), \textit{Nonlinear Evolution Equations and Dynamical Systems}, Lecture Notes in Physics, No.~120, pp.~85--102. ISBN 3-540-09971-9. Springer, Berlin, 1980. Proceedings of the meeting held at the University of Lecce, June 20--23, 1979. \href{http://www.ams.org/mathscinet-getitem?mr=581893}{MR581893 (81h:70013)}.
+
+\bibitem[283]{schiff:1996:CH-dual-hierarchies-zero-curvature-formulations}
+Jeremy Schiff. \href{http://dx.doi.org/10.1063/1.531486}{Zero curvature formulations of dual hierarchies}. \textit{J. Math. Phys.}, \textbf{37}\kern.5pt (4)\kern.25pt :\kern.25pt 1928--1938, 1996. \href{http://www.ams.org/mathscinet-getitem?mr=1380881}{MR1380881}.
+
+\bibitem[284]{schiff:1998:CH-loop-group-approach}
+Jeremy Schiff. \href{http://dx.doi.org/10.1016/S0167-2789(98)00099-2}{The {Camassa}--{Holm} equation: A loop group approach}. \textit{Physica D}, \textbf{121}\kern.5pt (1--2)\kern.25pt :\kern.25pt 24--43, 1998. \href{http://www.ams.org/mathscinet-getitem?mr=1644386}{MR1644386}.
+
+\bibitem[285]{shen:2019:novikov-weak-solution-optimal-control}
+Chunyu Shen. \href{http://dx.doi.org/10.1016/j.ejcon.2019.06.004}{Weak solution of the {Novikov} equation and optimal control}. \textit{Eur. J. Control}, \textbf{50}\kern.25pt :\kern.25pt 1--10, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=4029112}{MR4029112}.
+
+\bibitem[286]{shuaib-lundmark:2019:GX-noninterlacing}
+Budor Shuaib and Hans Lundmark. \href{http://dx.doi.org/10.1093/integr/xyz007}{Non-interlacing peakon solutions of the {Geng}--{Xue} equation}. \textit{J. Integrable Syst.}, \textbf{4}\kern.5pt (1)\kern.25pt :\kern.25pt xyz007 (115 pages), 2019. \href{http://arxiv.org/abs/1812.09173}{arXiv:1812.09173 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3995723}{MR3995723}.
+
+\bibitem[287]{song-qu-qiao:2011:2mCH-new-integrable-twocomponent-cubic-nonlinearity}
+Junfeng Song, Changzheng Qu and Zhijun Qiao. \href{http://dx.doi.org/10.1063/1.3530865}{A new integrable two-component system with cubic nonlinearity}. \textit{J. Math. Phys.}, \textbf{52}\kern.5pt (1)\kern.25pt :\kern.25pt 013503 (9 pages), 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2791125}{MR2791125}.
+
+\bibitem[288]{stalin-senthilvelan:2011:novikov-prolongation-structure}
+S. Stalin and M. Senthilvelan. \href{http://dx.doi.org/10.1016/j.physleta.2011.08.057}{A note on the prolongation structure of the cubically nonlinear integrable {Camassa}--{Holm} type equation}. \textit{Phys. Lett. A}, \textbf{375}\kern.5pt (43)\kern.25pt :\kern.25pt 3786--3788, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2843590}{MR2843590}.
+
+\bibitem[289]{stalin-senthilvelan:2012:DP-multiloop-solitons}
+S. Stalin and M. Senthilvelan. \href{http://dx.doi.org/10.1088/0031-8949/86/01/015006}{Multi-loop soliton solutions and their interaction in the {Degasperis}--{Procesi} equation}. \textit{Phys. Scr.}, \textbf{86}\kern.5pt (1)\kern.25pt :\kern.25pt 015006 (7 pages), 2012. \href{http://arxiv.org/abs/1207.4634}{arXiv:1207.4634 [math-ph]}.
+
+\bibitem[290]{stieltjes:1894:recherches-fractions-continues-1}
+T.-J. Stieltjes. \href{http://www.numdam.org/item?id=AFST_1894_1_8_4_J1_0}{Recherches sur les fractions continues}. \textit{Ann. Fac. Sci. Toulouse}, \textbf{8}\kern.5pt (4)\kern.25pt :\kern.25pt J.1--J.122, 1894. Reprinted in \textit{Œuvres Complètes de Thomas Jan Stieltjes}, Vol. II, pp. 402--523. \href{http://www.ams.org/mathscinet-getitem?mr=1508159}{MR1508159}.
+
+\bibitem[291]{stieltjes:1895:recherches-fractions-continues-2}
+T.-J. Stieltjes. \href{http://www.numdam.org/item?id=AFST_1895_1_9_1_A5_0}{Recherches sur les fractions continues [{Suite} et fin]}. \textit{Ann. Fac. Sci. Toulouse}, \textbf{9}\kern.5pt (1)\kern.25pt :\kern.25pt A.5--A.47, 1895. Reprinted in \textit{Œuvres Complètes de Thomas Jan Stieltjes}, Vol. II, pp. 524--566. \href{http://www.ams.org/mathscinet-getitem?mr=1508160}{MR1508160}.
+
+\bibitem[292]{stieltjes:1918:complete-works-2}
+Thomas Jan Stieltjes. \href{https://archive.org/details/oeuvresthomasja02stierich}{\textit{Œuvres Complètes de Thomas Jan Stieltjes}}, Vol.~II. P. Noordhoff, Groningen, 1918. Publiées par les soins de la Société Mathématique d'Amsterdam.
+
+\bibitem[293]{szmigielski-zhou:2013:DP-colliding-peakons-shock-formation}
+Jacek Szmigielski and Lingjun Zhou. \href{http://dx.doi.org/10.1098/rspa.2013.0379}{Colliding peakons and the formation of shocks in the {Degasperis}--{Procesi} equation}. \textit{Proc. R. Soc. A}, \textbf{469}\kern.5pt (2158)\kern.25pt :\kern.25pt 20130379 (19 pages), 2013. \href{http://arxiv.org/abs/1302.1377}{arXiv:1302.1377 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3105013}{MR3105013}.
+
+\bibitem[294]{szmigielski-zhou:2013:DP-peakon-antipeakon}
+Jacek Szmigielski and Lingjun Zhou. \href{http://dx.doi.org/10.1090/conm/593/11873}{Peakon--antipeakon interactions in the {Degasperis}--{Procesi} equation}. In Anton Dzhamay, Kenichi Maruno and Virgil U. Pierce\ (eds.), \textit{Algebraic and Geometric Aspects of Integrable Systems and Random Matrices}, Contemp. Math., No.~593, pp.~83--107. ISBN 978-0-8218-8747-9. American Mathematical Society, Providence, RI, 2013. \href{http://arxiv.org/abs/1301.0171}{arXiv:1301.0171 [math-ph]}. \href{http://www.ams.org/mathscinet-getitem?mr=3087951}{MR3087951}.
+
+\bibitem[295]{tang-liu:2015:GX-cauchy-problem}
+Hao Tang and Zhengrong Liu. \href{http://dx.doi.org/10.1016/j.jmaa.2014.09.032}{The {Cauchy} problem for a two-component {Novikov} equation in the critical {Besov} space}. \textit{J. Math. Anal. Appl.}, \textbf{423}\kern.5pt (1)\kern.25pt :\kern.25pt 120--135, 2015. \href{http://www.ams.org/mathscinet-getitem?mr=3273171}{MR3273171}.
+
+\bibitem[296]{tian-chen-liu-gao:2011:low-regularity-solutions-of-periodic-general-DP}
+Lixin Tian, Yuexia Chen, Yue Liu and Ying Gao. \href{http://dx.doi.org/10.1016/j.na.2011.01.001}{Low-regularity solutions of the periodic general {Degasperis}--{Procesi} equation}. \textit{Nonlinear Anal.}, \textbf{74}\kern.5pt (8)\kern.25pt :\kern.25pt 2802--2812, 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2776528}{MR2776528}.
+
+\bibitem[297]{tiglay:2011:novikov-periodic-cauchy-problem}
+F. Tığlay. \href{http://dx.doi.org/10.1093/imrn/rnq267}{The periodic {Cauchy} problem for {Novikov's} equation}. \textit{Int. Math. Res. Not.}, \textbf{2011}\kern.5pt (20)\kern.25pt :\kern.25pt 4633--4648, 2011. \href{http://arxiv.org/abs/1009.1820}{arXiv:1009.1820 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2844933}{MR2844933}.
+
+\bibitem[298]{tiglay-vizman:2011:generalized-euler-poincare-equations-on-lie-groups}
+Feride Tığlay and Cornelia Vizman. \href{http://dx.doi.org/10.1007/s11005-011-0464-2}{Generalized {Euler}--{Poincaré} equations on {Lie} groups and homogeneous spaces, orbit invariants and applications}. \textit{Lett. Math. Phys.}, \textbf{97}\kern.5pt (1)\kern.25pt :\kern.25pt 45--60, 2011. \href{http://arxiv.org/abs/1008.4377}{arXiv:1008.4377 [math.AP]}. \href{http://www.ams.org/mathscinet-getitem?mr=2802316}{MR2802316}.
+
+\bibitem[299]{vakhnenko-parkes:2004:DP-periodic-and-solitarywave-solutions}
+V. O. Vakhnenko and E. J. Parkes. \href{http://dx.doi.org/10.1016/j.chaos.2003.09.043}{Periodic and solitary-wave solutions of the {Degasperis}--{Procesi} equation}. \textit{Chaos Solitons Fractals}, \textbf{20}\kern.5pt (5)\kern.25pt :\kern.25pt 1059--1073, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2029379}{MR2029379}.
+
+\bibitem[300]{vakhnenko-parkes:2004:connection-DP-vakhnenko}
+Vyacheslav O. Vakhnenko and John Parkes. \href{https://www.slac.stanford.edu/econf/C0306234/part1.html}{The connection of the {Degasperis}--{Procesi} equation with the {Vakhnenko} equation}. In A. G. Nikitin, V. M. Boyko, Popovych R. O. and Yehorchenko I. A.\ (eds.), \textit{Proceedings of the Fifth International Conference Symmetry in Nonlinear Mathematical Physics, Kyiv, Ukraine, 23--29 June 2003}, Vol.~1, Proc. Inst. Math. NAS Ukraine, No.~50, pp.~493--497. ISBN 966-02-3225-X. Institute of Mathematics of NAS of Ukraine, Kyiv, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2077911}{MR2077911}.
+
+\bibitem[301]{vakhnenko-parkes:2006:generalized-DP-solutions}
+V. O. Vakhnenko and E. J. Parkes. The solutions of a generalized {Degasperis}--{Procesi} equation. \textit{Dopov. Nats. akad. nauk Ukr. [Rep. NAS Ukraine]}, \textbf{2006}\kern.5pt (8)\kern.25pt :\kern.25pt 88--94, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2312520}{MR2312520}.
+
+\bibitem[302]{wadati-ichikawa-shimizu:1980:cusp-soliton-new-integrable-nonlinear-evolution-equation}
+Miki Wadati, Yoshi H. Ichikawa and Toru Shimizu. \href{http://dx.doi.org/10.1143/PTP.64.1959}{Cusp soliton of a new integrable nonlinear evolution equation}. \textit{Progr. Theoret. Phys.}, \textbf{64}\kern.5pt (6)\kern.25pt :\kern.25pt 1959--1967, 1980. \href{http://www.ams.org/mathscinet-getitem?mr=603067}{MR603067}.
+
+\bibitem[303]{wahlen:2006:CH-peakon-antipeakon-interaction}
+Erik Wahlén. \href{http://online.watsci.org/contents2006/v13n3-4a.html}{The interaction of peakons and antipeakons}. \textit{Dyn. Contin. Discrete Impuls. Syst. A: Math. Anal.}, \textbf{13}\kern.5pt (3--4)\kern.25pt :\kern.25pt 465--472, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2220848}{MR2220848}.
+
+\bibitem[304]{wang-liu-mao:2020:mcH-backlund-transformation-and-nonlinear-superposition-formula}
+Gaihua Wang, Q. P. Liu and Hui Mao. \href{http://dx.doi.org/10.1088/1751-8121/ab7136}{The modified {Camassa}--{Holm} equation: {Bäcklund} transformation and nonlinear superposition formula}. \textit{J. Phys. A: Math. Theor.}, \textbf{53}\kern.5pt (29)\kern.25pt :\kern.25pt 294003 (15 pages), 2020. \href{http://www.ams.org/mathscinet-getitem?mr=4137495}{MR4137495}.
+
+\bibitem[305]{wang-chong-wu:2021:GX-cauchy-problem}
+Haiquan Wang, Gezi Chong and Lili Wu. \href{http://dx.doi.org/10.1007/s00028-020-00657-z}{A note on the {Cauchy} problem for the two-component {Novikov} system}. \textit{J. Evol. Equ.}, \textbf{21}\kern.5pt (2)\kern.25pt :\kern.25pt 1809--1843, 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4278414}{MR4278414}.
+
+\bibitem[306]{wang-tian:2018p:novikov-stability-periodic-peakons}
+Yun Wang and Lixin Tian. Stability of periodic peakons for the {Novikov} equation. 2018. \href{http://arxiv.org/abs/1811.05835}{arXiv:1811.05835 [math.AP]}. Preprint.
+
+\bibitem[307]{wazwaz:2006:modified-CH-DP-b-family-solitary-waves}
+Abdul-Majid Wazwaz. \href{http://dx.doi.org/10.1016/j.physleta.2005.12.036}{Solitary wave solutions for modified forms of {Degasperis}--{Procesi} and {Camassa}--{Holm} equations}. \textit{Phys. Lett. A}, \textbf{352}\kern.5pt (6)\kern.25pt :\kern.25pt 500--504, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2210160}{MR2210160}.
+
+\bibitem[308]{wu-li-li:2019:novikov-solitons-negative-flow}
+Lihua Wu, Chao Li and Nianhua Li. \href{http://dx.doi.org/10.1016/j.aml.2018.07.036}{Soliton solutions to the {Novikov} equation and a negative flow of the {Novikov} hierarchy}. \textit{Appl. Math. Lett.}, \textbf{87}\kern.25pt :\kern.25pt 134--140, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3848356}{MR3848356}.
+
+\bibitem[309]{wu:2018:novikov-global-analytic-solutions-and-traveling-wave-solutions}
+Xinglong Wu. \href{http://dx.doi.org/10.1090/proc/12981}{Global analytic solutions and traveling wave solutions of the {Cauchy} problem for the {Novikov} equation}. \textit{Proc. Amer. Math. Soc.}, \textbf{146}\kern.5pt (4)\kern.25pt :\kern.25pt 1537--1550, 2018. \href{http://www.ams.org/mathscinet-getitem?mr=3754340}{MR3754340}.
+
+\bibitem[310]{wu:2018:finite-time-singularities-for-class-of-DP-equations}
+Xinglong Wu. \href{http://dx.doi.org/10.1016/j.nonrwa.2018.04.005}{On the finite time singularities for a class of {Degasperis}--{Procesi} equations}. \textit{Nonlinear Anal. Real World Appl.}, \textbf{44}\kern.25pt :\kern.25pt 1--17, 2018. \href{http://www.ams.org/mathscinet-getitem?mr=3825150}{MR3825150}.
+
+\bibitem[311]{wu-guo:2016:periodic-novikov-global-wellposedness}
+Xinglong Wu and Boling Guo. \href{http://dx.doi.org/10.1080/00036811.2015.1005611}{Global well-posedness for the periodic {Novikov} equation with cubic nonlinearity}. \textit{Appl. Anal.}, \textbf{95}\kern.5pt (2)\kern.25pt :\kern.25pt 405--425, 2016. \href{http://www.ams.org/mathscinet-getitem?mr=3439429}{MR3439429}.
+
+\bibitem[312]{wu-yin:2011:novikov-global-weak-solutions}
+Xinglong Wu and Zhaoyang Yin. \href{http://dx.doi.org/10.1088/1751-8113/44/5/055202}{Global weak solutions for the {Novikov} equation}. \textit{J. Phys. A: Math. Theor.}, \textbf{44}\kern.5pt (5)\kern.25pt :\kern.25pt 055202 (17 pages), 2011. \href{http://www.ams.org/mathscinet-getitem?mr=2763454}{MR2763454 (2012e:35231)}.
+
+\bibitem[313]{wu-yin:2012:novikov-wellposedness-global-existence}
+Xinglong Wu and Zhaoyang Yin. \href{http://www.numdam.org/item/ASNSP_2012_5_11_3_707_0/}{Well-posedness and global existence for the {Novikov} equation}. \textit{Ann. Sc. Norm. Super. Pisa Cl. Sci. (5)}, \textbf{11}\kern.5pt (3)\kern.25pt :\kern.25pt 707--727, 2012. \href{http://www.ams.org/mathscinet-getitem?mr=3059842}{MR3059842}.
+
+\bibitem[314]{wu-yin:2013:novikov-note-on-cauchy-problem}
+Xinglong Wu and Zhaoyang Yin. \href{http://dx.doi.org/10.1080/00036811.2011.649735}{A note on the {Cauchy} problem of the {Novikov} equation}. \textit{Appl. Anal.}, \textbf{92}\kern.5pt (6)\kern.25pt :\kern.25pt 1116--1137, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3197924}{MR3197924}.
+
+\bibitem[315]{xia-qiao:2015:two-component-CH-with-peakons}
+Baoqiang Xia and Zhijun Qiao. \href{http://dx.doi.org/10.1098/rspa.2014.0750}{A new two-component integrable system with peakon solutions}. \textit{Proc. R. Soc. A.}, \textbf{471}\kern.5pt (2175)\kern.25pt :\kern.25pt 20140750 (20 pages), 2015. \href{http://arxiv.org/abs/1211.5727}{arXiv:1211.5727 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3326340}{MR3326340}.
+
+\bibitem[316]{xia-qiao:2016:multicomponent-generalization-CH}
+Baoqiang Xia and Zhijun Qiao. \href{http://dx.doi.org/10.1016/j.geomphys.2016.04.020}{Multi-component generalization of the {Camassa}--{Holm} equation}. \textit{J. Geom. Phys.}, \textbf{107}\kern.25pt :\kern.25pt 35--44, 2016. \href{http://arxiv.org/abs/1310.0268}{arXiv:1310.0268 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3521465}{MR3521465}.
+
+\bibitem[317]{xia-qiao-zhou:2015:synthetical-twocomponent-model-peakons}
+Baoqiang Xia, Zhijun Qiao and Ruguang Zhou. \href{http://dx.doi.org/10.1111/sapm.12085}{A synthetical two-component model with peakon solutions}. \textit{Stud. Appl. Math.}, \textbf{135}\kern.5pt (3)\kern.25pt :\kern.25pt 248--276, 2015. \href{http://arxiv.org/abs/1301.3216}{arXiv:1301.3216 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3393182}{MR3393182}.
+
+\bibitem[318]{xia-zhou-qiao:2015:cubic-3CH-peakons}
+Baoqiang Xia, Ruguang Zhou and Zhijun Qiao. \href{http://dx.doi.org/10.1080/14029251.2015.996446}{A three-component {Camassa}--{Holm} system with cubic nonlinearity and peakons}. \textit{J. Nonlinear Math. Phys.}, \textbf{22}\kern.5pt (1)\kern.25pt :\kern.25pt 155--169, 2015. \href{http://arxiv.org/abs/1308.4759}{arXiv:1308.4759 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3286739}{MR3286739}.
+
+\bibitem[319]{xia-zhou-qiao:2016:CH-mCH-darboux-transformations-multisolitons}
+Baoqiang Xia, Ruguang Zhou and Zhijun Qiao. \href{http://dx.doi.org/10.1063/1.4964256}{Darboux transformation and multi-soliton solutions of the {Camassa}--{Holm} equation and modified {Camassa}--{Holm} equation}. \textit{J. Math. Phys.}, \textbf{57}\kern.5pt (10)\kern.25pt :\kern.25pt 103502 (12 pages), 2016. \href{http://arxiv.org/abs/1506.08639}{arXiv:1506.08639 [nlin.SI]}. \href{http://www.ams.org/mathscinet-getitem?mr=3554697}{MR3554697}.
+
+\bibitem[320]{xia:2014:DP-fourier-spectral-methods-discontinuous-solutions}
+Yinhua Xia. \href{http://dx.doi.org/10.1007/s10915-014-9839-8}{{Fourier} spectral methods for {Degasperis}--{Procesi} equation with discontinuous solutions}. \textit{J. Sci. Comput.}, \textbf{61}\kern.5pt (3)\kern.25pt :\kern.25pt 584--603, 2014. \href{http://www.ams.org/mathscinet-getitem?mr=3268661}{MR3268661}.
+
+\bibitem[321]{yan-qiao-zhang:2018:new-twocomponent-b-family-cubic}
+Kai Yan, Zhijun Qiao and Yufeng Zhang. \href{http://dx.doi.org/10.3934/dcds.2018239}{On a new two-component {$b$}-family peakon system with cubic nonlinearity}. \textit{Discrete Contin. Dyn. Syst.}, \textbf{38}\kern.5pt (11)\kern.25pt :\kern.25pt 5415--5442, 2018. \href{http://www.ams.org/mathscinet-getitem?mr=3917775}{MR3917775}.
+
+\bibitem[322]{yan-li-zhang:2012:novikov-cauchy-problem:JDiffEqu}
+Wei Yan, Yongsheng Li and Yimin Zhang. \href{http://dx.doi.org/10.1016/j.jde.2012.03.015}{The {Cauchy} problem for the integrable {Novikov} equation}. \textit{J. Differ. Equ.}, \textbf{253}\kern.5pt (1)\kern.25pt :\kern.25pt 298--318, 2012. \href{http://www.ams.org/mathscinet-getitem?mr=2917410}{MR2917410}.
+
+\bibitem[323]{yan-li-zhang:2013:novikov-cauchy-problem:NoDEA}
+Wei Yan, Yongsheng Li and Yimin Zhang. \href{http://dx.doi.org/10.1007/s00030-012-0202-1}{The {Cauchy} problem for the {Novikov} equation}. \textit{Nonlinear Differ. Equ. Appl.}, \textbf{20}\kern.5pt (3)\kern.25pt :\kern.25pt 1157--1169, 2013. \href{http://www.ams.org/mathscinet-getitem?mr=3057170}{MR3057170}.
+
+\bibitem[324]{yin-tian-fan:2010:DP-limiting-behavior-of-smooth-periodic-waves}
+Jiuli Yin, Lixin Tian and Xinghua Fan. \href{http://dx.doi.org/10.1016/j.physleta.2010.10.040}{The limiting behavior of smooth periodic waves for the {Degasperis}--{Procesi} equation}. \textit{Phys. Lett. A}, \textbf{375}\kern.5pt (1)\kern.25pt :\kern.25pt 36--38, 2010. \href{http://www.ams.org/mathscinet-getitem?mr=2736133}{MR2736133}.
+
+\bibitem[325]{yin:2003:DP-global-existence-for-new-periodic-integrable-equation}
+Zhaoyang Yin. \href{http://dx.doi.org/10.1016/S0022-247X(03)00250-6}{Global existence for a new periodic integrable equation}. \textit{J. Math. Anal. Appl.}, \textbf{283}\kern.5pt (1)\kern.25pt :\kern.25pt 129--139, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=1994177}{MR1994177}.
+
+\bibitem[326]{yin:2003:DP-cauchy-problem:Illinois}
+Zhaoyang Yin. \href{http://projecteuclid.org/euclid.ijm/1258138186}{On the {Cauchy} problem for an integrable equation with peakon solutions}. \textit{Illinois J. Math.}, \textbf{47}\kern.5pt (3)\kern.25pt :\kern.25pt 649--666, 2003. \href{http://www.ams.org/mathscinet-getitem?mr=2007229}{MR2007229}.
+
+\bibitem[327]{yin:2004:DP-global-solutions:Indiana}
+Zhaoyang Yin. \href{http://dx.doi.org/10.1512/iumj.2004.53.2479}{Global solutions to a new integrable equation with peakons}. \textit{Indiana Univ. Math. J.}, \textbf{53}\kern.5pt (4)\kern.25pt :\kern.25pt 1189--1209, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2095454}{MR2095454}.
+
+\bibitem[328]{yin:2004:DP-global-weak-solutions-for-new-periodic-integrable-equation-with-peakons}
+Zhaoyang Yin. \href{http://dx.doi.org/10.1016/j.jfa.2003.07.010}{Global weak solutions for a new periodic integrable equation with peakon solutions}. \textit{J. Funct. Anal.}, \textbf{212}\kern.5pt (1)\kern.25pt :\kern.25pt 182--194, 2004. \href{http://www.ams.org/mathscinet-getitem?mr=2065241}{MR2065241}.
+
+\bibitem[329]{yu-tian-wang:2006:DP-bifurcation-and-peakon}
+Liqin Yu, Lixin Tian and Xuedi Wang. \href{http://dx.doi.org/10.1016/j.chaos.2005.08.152}{The bifurcation and peakon for {Degasperis}--{Procesi} equation}. \textit{Chaos Solitons Fractals}, \textbf{30}\kern.5pt (4)\kern.25pt :\kern.25pt 956--966, 2006. \href{http://www.ams.org/mathscinet-getitem?mr=2250266}{MR2250266}.
+
+\bibitem[330]{zhang-qiao:2007:DP-cuspons-smooth-solitons-under-inhomogeneous-boundary-condition}
+Guoping Zhang and Zhijun Qiao. \href{http://dx.doi.org/10.1007/s11040-007-9027-2}{Cuspons and smooth solitons of the {Degasperis}--{Procesi} equation under inhomogeneous boundary condition}. \textit{Math. Phys. Anal. Geom.}, \textbf{10}\kern.5pt (3)\kern.25pt :\kern.25pt 205--225, 2007. \href{http://www.ams.org/mathscinet-getitem?mr=2368959}{MR2368959}.
+
+\bibitem[331]{zhang-qiao:2010:DP-cusp-solitons}
+Guoping Zhang and Zhijun Qiao. \href{http://nonlinearstudies.com/index.php/nonlinear/article/view/427}{Cusp solitons of the {Degasperis}--{Procesi} equation}. \textit{Nonlinear Stud.}, \textbf{17}\kern.5pt (4)\kern.25pt :\kern.25pt 339--346, 2010. \href{http://www.ams.org/mathscinet-getitem?mr=2759817}{MR2759817}.
+
+\bibitem[332]{zhang-wang-yang:2019:DP-structure-preserving-methods}
+Yuze Zhang, Yushun Wang and Yanhong Yang. \href{http://dx.doi.org/10.4208/jcm.1805-m2017-0184}{The structure-preserving methods for the {Degasperis}--{Procesi} equation}. \textit{J. Comput. Math.}, \textbf{37}\kern.5pt (4)\kern.25pt :\kern.25pt 475--487, 2019. \href{http://www.ams.org/mathscinet-getitem?mr=3915178}{MR3915178}.
+
+\bibitem[333]{zhao-qu:2021:two-component-novikov-type-system-peakons-H1}
+Min Zhao and Changzheng Qu. \href{http://dx.doi.org/10.3934/cpaa.2020245}{The two-component {Novikov}-type systems with peaked solutions and {$H^1$}-conservation law}. \textit{Commun. Pure Appl. Anal.}, \textbf{20}\kern.5pt (7--8)\kern.25pt :\kern.25pt 2857--2883, 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4312137}{MR4312137}.
+
+\bibitem[334]{zheng-xiao-ouyang:2021:novikov-smooth-soliton-periodic-cuspon}
+Xiaoxiao Zheng, Qizhen Xiao and Zigen Ouyang. \href{http://dx.doi.org/10.1016/j.aml.2020.106786}{A smooth soliton solution and a periodic cuspon solution of the {Novikov} equation}. \textit{Appl. Math. Lett.}, \textbf{112}\kern.25pt :\kern.25pt 106786 (7 pages), 2021. \href{http://www.ams.org/mathscinet-getitem?mr=4154333}{MR4154333}.
+
+\bibitem[335]{zhou-qiao-mu:2020:continuity-generalized-crosscoupled-CH-waltzing-peakons-higher-order-nonlinearities}
+Shouming Zhou, Zhijun Qiao and Chunlai Mu. \href{http://dx.doi.org/10.1016/j.nonrwa.2019.102970}{Continuity for a generalized cross-coupled {Camassa}--{Holm} system with waltzing peakons and higher-order nonlinearities}. \textit{Nonlinear Anal. Real World Appl.}, \textbf{51}\kern.25pt :\kern.25pt 102970 (28 pages), 2020. \href{http://www.ams.org/mathscinet-getitem?mr=3985606}{MR3985606}.
+
+\bibitem[336]{zhou-yang-mu:2018:novikov-global-dissipative-solutions}
+Shouming Zhou, Li Yang and Chunlai Mu. \href{http://dx.doi.org/10.4310/CMS.2018.v16.n6.a6}{Global dissipative solutions of the {Novikov} equation}. \textit{Commun. Math. Sci.}, \textbf{16}\kern.5pt (6)\kern.25pt :\kern.25pt 1615--1633, 2018. \href{http://www.ams.org/mathscinet-getitem?mr=3919606}{MR3919606}.
+
+
+\end{thebibliography}

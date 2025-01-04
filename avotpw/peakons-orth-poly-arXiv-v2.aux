@@ -1,0 +1,1080 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{camassa-holm:1993:CH-orginal-paper}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{eq:intro-CH-kappa-expanded}{{1.1}{1}{Introduction}{equation.1.1}{}}
+\newlabel{eq:intro-CH-expanded}{{1.2}{1}{Introduction}{equation.1.2}{}}
+\newlabel{eq:intro-CH}{{1.3}{2}{Introduction}{equation.1.3}{}}
+\newlabel{eq:intro-CH-b-form}{{1.4}{2}{Introduction}{equation.1.4}{}}
+\newlabel{eq:intro-CH-lax}{{1.5}{2}{Introduction}{equation.1.5}{}}
+\newlabel{eq:intro-CH-lax-x}{{1.5a}{2}{Introduction}{equation.1.5a}{}}
+\newlabel{eq:intro-CH-lax-t}{{1.5b}{2}{Introduction}{equation.1.5b}{}}
+\newlabel{eq:intro-single-peakon}{{1.6}{2}{Introduction}{equation.1.6}{}}
+\newlabel{eq:intro-peakons}{{1.7}{2}{Introduction}{equation.1.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An example of a three-peakon solution of the Camassa--Holm equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:intro-CH}\unskip \@@italiccorr )}}. The graph of $u(x,t) = \DOTSI \sumop \slimits@ _{k=1}^3 m_k(t) \, e^{-\left \lvert x - x_k(t) \right \rvert }$ is plotted for $x \in [-15,15]$ and $t \in [-10,10]$ from the exact solution formulas\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:CH-threepeakon-x-m}\unskip \@@italiccorr )}}. In this example, all amplitudes $m_k$ are positive, so it is a \emph  {pure peakon solution} (i.e., there are no \emph  {antipeakons} with negative\nobreakspace  {}$m_k$). See also Figure\nobreakspace  {}\ref  {fig:CH-3peakon-positions}. \relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:CH-pure3peakon-3d}{{1}{2}{An example of a three-peakon solution of the Camassa--Holm equation \eqref {eq:intro-CH}. The graph of $u(x,t) = \sum _{k=1}^3 m_k(t) \, e^{-\abs {x - x_k(t)}}$ is plotted for $x \in [-15,15]$ and $t \in [-10,10]$ from the exact solution formulas~\eqref {eq:CH-threepeakon-x-m}. In this example, all amplitudes $m_k$ are positive, so it is a \emph {pure peakon solution} (i.e., there are no \emph {antipeakons} with negative~$m_k$). See also Figure~\ref {fig:CH-3peakon-positions}. \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Positions $x = x_k(t)$ of the three individual peakons in the solution from Figure\nobreakspace  {}\ref  {fig:CH-pure3peakon-3d}, with the dashed rectangle indicating the region shown there. Note that the ordering $x_1(t) < x_2(t) < x_3(t)$ is preserved for all\nobreakspace  {}$t$, and that the peakons asymptotically (as $t \to \pm \infty $) move in straight lines in the $(x,t)$-plane, like solitary travelling waves. The asymptotic velocities are $\{ 2, 1, \genfrac  {}{}{}113 \}$ in this example. These numbers, which are also the asymptotic values of the amplitudes $m_k(t)$, are the reciprocals $1/\lambda _k$ of the eigenvalues in a certain spectral problem associated with the CH equation, as described in Section\nobreakspace  {}\ref  {sec:CH}, and these eigenvalues $\lambda _1 = \genfrac  {}{}{}112$, $\lambda _2 = 1$ and $\lambda _3 = 3$ appear as parameters in the solution formulas\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:CH-threepeakon-x-m}\unskip \@@italiccorr )}}. \relax }}{2}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:CH-3peakon-positions}{{2}{2}{Positions $x = x_k(t)$ of the three individual peakons in the solution from Figure~\ref {fig:CH-pure3peakon-3d}, with the dashed rectangle indicating the region shown there. Note that the ordering $x_1(t) < x_2(t) < x_3(t)$ is preserved for all~$t$, and that the peakons asymptotically (as $t \to \pm \infty $) move in straight lines in the $(x,t)$-plane, like solitary travelling waves. The asymptotic velocities are $\{ 2, 1, \tfrac 13 \}$ in this example. These numbers, which are also the asymptotic values of the amplitudes $m_k(t)$, are the reciprocals $1/\lambda _k$ of the eigenvalues in a certain spectral problem associated with the CH equation, as described in Section~\ref {sec:CH}, and these eigenvalues $\lambda _1 = \tfrac 12$, $\lambda _2 = 1$ and $\lambda _3 = 3$ appear as parameters in the solution formulas~\eqref {eq:CH-threepeakon-x-m}. \relax }{figure.caption.2}{}}
+\citation{holm:2006:peakons-review}
+\newlabel{eq:intro-CH-peakon-ode}{{1.8}{3}{Introduction}{equation.1.8}{}}
+\newlabel{eq:intro-CH-hamiltonian}{{1.9}{3}{Introduction}{equation.1.9}{}}
+\newlabel{eq:intro-CH-peakon-ode-explicit}{{1.10}{3}{Introduction}{equation.1.10}{}}
+\newlabel{eq:intro-CH-peakon-ode-shorthand}{{1.12}{3}{Introduction}{equation.1.12}{}}
+\citation{beals-sattinger-szmigielski:1998:acoustic-scattering-KdV-hierarchy}
+\citation{beals-sattinger-szmigielski:1999:stieltjes}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\citation{degasperis-procesi:1999:asymptotic-integrability}
+\citation{mikhailov-novikov:2002:perturbative}
+\citation{hone-wang:2003:prolongation-algebras}
+\citation{ivanov:2005:integrability-class-nonlinear-dispersive-wave-equations}
+\citation{degasperis-holm-hone:2002:new-integrable-equation-DP}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A conservative peakon--antipeakon solution $u(x,t)$ of the Camassa--Holm equation, with two peakons and one antipeakon, plotted for $x \in [-8,8]$ and $t \in [-5,5]$. See explanations in the text, and also Figures\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-positions} and\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-3d-jigsaw}. \relax }}{4}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:CH-2peakons-1antipeakon-3d}{{3}{4}{A conservative peakon--antipeakon solution $u(x,t)$ of the Camassa--Holm equation, with two peakons and one antipeakon, plotted for $x \in [-8,8]$ and $t \in [-5,5]$. See explanations in the text, and also Figures~\ref {fig:CH-2peakons-1antipeakon-positions} and~\ref {fig:CH-2peakons-1antipeakon-3d-jigsaw}. \relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Positions $x = x_k(t)$ of the three individual peakons in the solution shown in Figure\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-3d}. The ordering $x_1(t) < x_2(t) < x_3(t)$ is preserved for all\nobreakspace  {}$t$ except at the instant of the first collision, where $x_1 < x_2 = x_3$, and at the instant of the second collision, where $x_1 = x_2 < x_3$. Before the first collision it is\nobreakspace  {}$m_3$ that is negative, between the collisions it is\nobreakspace  {}$m_2$, and after the second collision it is\nobreakspace  {}$m_1$. At a collision where $x_k = x_{k+1}$, the amplitudes $m_k$ and $m_{k+1}$ interchange their signs by blowing up to $+\infty $ and\nobreakspace  {}$-\infty $ (respectively) as the collision is approached, and then ``coming back'' from $-\infty $ and\nobreakspace  {}$+\infty $ afterwards. As Figure\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-3d} illustrates, the solution $u(x,t)$ extends continuously to the instant of collision, but the derivative $u_{x}(x,t)$ tends to\nobreakspace  {}$-\infty $ for $x_k(t) < x < x_{k+1}(t)$, and then ``comes back'' from $+\infty $ immediately after the collision. The peakons asymptotically travel in straight lines as $t \to \pm \infty $, in this example with the asymptotic velocities $\{ 2, 1, -\genfrac  {}{}{}123 \}$, corresponding to the parameter values $\lambda _1 = \genfrac  {}{}{}112$, $\lambda _2 = 1$ and $\lambda _3 = -\genfrac  {}{}{}132$ in the solution formulas\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:CH-threepeakon-x-m}\unskip \@@italiccorr )}}. \relax }}{4}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:CH-2peakons-1antipeakon-positions}{{4}{4}{Positions $x = x_k(t)$ of the three individual peakons in the solution shown in Figure~\ref {fig:CH-2peakons-1antipeakon-3d}. The ordering $x_1(t) < x_2(t) < x_3(t)$ is preserved for all~$t$ except at the instant of the first collision, where $x_1 < x_2 = x_3$, and at the instant of the second collision, where $x_1 = x_2 < x_3$. Before the first collision it is~$m_3$ that is negative, between the collisions it is~$m_2$, and after the second collision it is~$m_1$. At a collision where $x_k = x_{k+1}$, the amplitudes $m_k$ and $m_{k+1}$ interchange their signs by blowing up to $+\infty $ and~$-\infty $ (respectively) as the collision is approached, and then ``coming back'' from $-\infty $ and~$+\infty $ afterwards. As Figure~\ref {fig:CH-2peakons-1antipeakon-3d} illustrates, the solution $u(x,t)$ extends continuously to the instant of collision, but the derivative $u_{x}(x,t)$ tends to~$-\infty $ for $x_k(t) < x < x_{k+1}(t)$, and then ``comes back'' from $+\infty $ immediately after the collision. The peakons asymptotically travel in straight lines as $t \to \pm \infty $, in this example with the asymptotic velocities $\{ 2, 1, -\tfrac 23 \}$, corresponding to the parameter values $\lambda _1 = \tfrac 12$, $\lambda _2 = 1$ and $\lambda _3 = -\tfrac 32$ in the solution formulas~\eqref {eq:CH-threepeakon-x-m}. \relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A ``jigsaw puzzle'' version of Figure\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-3d}, where the surface has been cut open along the curves $x = x_k(t)$ from Figure\nobreakspace  {}\ref  {fig:CH-2peakons-1antipeakon-positions}, and the pieces pulled apart and shown from a different angle, for better visibility. \relax }}{4}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:CH-2peakons-1antipeakon-3d-jigsaw}{{5}{4}{A ``jigsaw puzzle'' version of Figure~\ref {fig:CH-2peakons-1antipeakon-3d}, where the surface has been cut open along the curves $x = x_k(t)$ from Figure~\ref {fig:CH-2peakons-1antipeakon-positions}, and the pieces pulled apart and shown from a different angle, for better visibility. \relax }{figure.caption.5}{}}
+\newlabel{eq:intro-DP}{{1.13}{4}{Introduction}{equation.1.13}{}}
+\newlabel{eq:intro-DP-b-form}{{1.14}{4}{Introduction}{equation.1.14}{}}
+\newlabel{eq:intro-DP-expanded}{{1.15}{4}{Introduction}{equation.1.15}{}}
+\newlabel{eq:intro-b-family}{{1.16}{4}{Introduction}{equation.1.16}{}}
+\citation{lundmark-szmigielski:2003:DPshort}
+\citation{lundmark-szmigielski:2005:DPlong}
+\citation{bertola-gekhtman-szmigielski:2009:cubicstring}
+\citation{bertola-gekhtman-szmigielski:2010:cauchy}
+\citation{coclite-karlsen:2006:DPwellposedness}
+\citation{coclite-karlsen:2007:DPuniqueness}
+\citation{lundmark:2007:DP-shockpeakons}
+\citation{novikov:2009:generalizations-of-CH}
+\citation{hone-wang:2008:cubic-nonlinearity}
+\citation{hone-lundmark-szmigielski:2009:novikov}
+\citation{geng-xue:2009:GX-peakon-equation-cubic-nonlinearity}
+\citation{lundmark-szmigielski:2016:GX-inverse-problem}
+\citation{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+\citation{shuaib-lundmark:2019:GX-noninterlacing}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The simplest example of shock formation in the Degasperis--Procesi equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:intro-DP}\unskip \@@italiccorr )}}: a peakon and an antipeakon of equal strength collide head-on at $(x,t)=(0,0)$, forming a stationary shockpeakon which stays at $x=0$ and decays to zero as $t \to \infty $. The solution, here plotted for $x \in [-8,8]$ and $t \in [-5,5]$, is given by equation\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:intro-DP-symmetric-collision}\unskip \@@italiccorr )}}. \relax }}{5}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:DP-symmetric-collision}{{6}{5}{The simplest example of shock formation in the Degasperis--Procesi equation \eqref {eq:intro-DP}: a peakon and an antipeakon of equal strength collide head-on at $(x,t)=(0,0)$, forming a stationary shockpeakon which stays at $x=0$ and decays to zero as $t \to \infty $. The solution, here plotted for $x \in [-8,8]$ and $t \in [-5,5]$, is given by equation~\eqref {eq:intro-DP-symmetric-collision}. \relax }{figure.caption.6}{}}
+\newlabel{eq:intro-DP-peakon-ode}{{1.17}{5}{Introduction}{equation.1.17}{}}
+\newlabel{eq:intro-DP-symmetric-collision}{{1.18}{5}{Introduction}{equation.1.18}{}}
+\newlabel{eq:intro-Novikov}{{1.19}{5}{Introduction}{equation.1.19}{}}
+\newlabel{eq:intro-Novikov-peakon-ode}{{1.20}{5}{Introduction}{equation.1.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A solution of the Novikov equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:intro-Novikov}\unskip \@@italiccorr )}} where a single peakon interacts with a ``breather-like'' cluster consisting of two peakons and two antipeakons. The graph of $u(x,t)$ is plotted for $x \in [-18,18]$ and $t \in [-12,15]$ from the exact solution formulas\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:Novikov-n-peakon-solution}\unskip \@@italiccorr )}} with $N=5$. See also Figure\nobreakspace  {}\ref  {fig:novikov-4cluster+single}. \relax }}{5}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:novikov-4cluster+single-3d}{{7}{5}{A solution of the Novikov equation \eqref {eq:intro-Novikov} where a single peakon interacts with a ``breather-like'' cluster consisting of two peakons and two antipeakons. The graph of $u(x,t)$ is plotted for $x \in [-18,18]$ and $t \in [-12,15]$ from the exact solution formulas~\eqref {eq:Novikov-n-peakon-solution} with $N=5$. See also Figure~\ref {fig:novikov-4cluster+single}. \relax }{figure.caption.7}{}}
+\newlabel{eq:intro-GX}{{1.21}{5}{Introduction}{equation.1.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Positions $x = x_k(t)$ of the five individual peakons in the solution from Figure\nobreakspace  {}\ref  {fig:novikov-4cluster+single-3d}, with the dashed rectangle indicating the region shown there. The rightmost peakon (at\nobreakspace  {}$x_5$) travels alone before the interaction, and then joins the cluster, while the leftmost peakon (at\nobreakspace  {}$x_1$) leaves it. Note that the pattern of oscillations within the cluster after the interaction is not the same as it was before. The reciprocal eigenvalues $1/\lambda _k$ in the associated spectral problem are $1 \pm i$ and $1 \pm \genfrac  {}{}{}113 i$ (with the common real part giving the asymptotic velocity of the cluster, and the imaginary parts giving the angular frequencies of the oscillations within it) and $\genfrac  {}{}{}113$ (giving the asymptotic velocity of the lonely peakon). \relax }}{6}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:novikov-4cluster+single}{{8}{6}{Positions $x = x_k(t)$ of the five individual peakons in the solution from Figure~\ref {fig:novikov-4cluster+single-3d}, with the dashed rectangle indicating the region shown there. The rightmost peakon (at~$x_5$) travels alone before the interaction, and then joins the cluster, while the leftmost peakon (at~$x_1$) leaves it. Note that the pattern of oscillations within the cluster after the interaction is not the same as it was before. The reciprocal eigenvalues $1/\lambda _k$ in the associated spectral problem are $1 \pm i$ and $1 \pm \tfrac 13 i$ (with the common real part giving the asymptotic velocity of the cluster, and the imaginary parts giving the angular frequencies of the oscillations within it) and $\tfrac 13$ (giving the asymptotic velocity of the lonely peakon). \relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Positions $x = x_k(t)$, $1 \le k \le 4$, for a solution of the Novikov equation consisting of a cluster of two peakons and two antipeakons displaying quasiperiodic oscillations with two incommensurable frequencies. The reciprocal eigenvalues $1/\lambda _k$ in the associated spectral problem are $1 \pm i$ and $1 \pm \sqrt  5 \, i$.\relax }}{6}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:novikov-4cluster-quasiperiodic}{{9}{6}{Positions $x = x_k(t)$, $1 \le k \le 4$, for a solution of the Novikov equation consisting of a cluster of two peakons and two antipeakons displaying quasiperiodic oscillations with two incommensurable frequencies. The reciprocal eigenvalues $1/\lambda _k$ in the associated spectral problem are $1 \pm i$ and $1 \pm \sqrt 5 \, i$.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Positions $x = x_k(t)$, $1 \le k \le 6$, for a solution of the Novikov equation containing three peakon--antipeakon pairs which separate from each other at a logarithmic rate as $t \to \pm \infty $, although they all have the same asymptotic velocity. This case requires more complicated solution formulas than\nobreakspace  {}\textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:Novikov-n-peakon-solution}\unskip \@@italiccorr )}}, since the eigenvalues in the associated spectral problem are non-simple (there are triple eigenvalues at $1/(1 \pm i)$); see Remark\nobreakspace  {}\ref  {rem:Novikov-peakon-antipeakon}.\relax }}{6}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:novikov-conjugate-triple-roots}{{10}{6}{Positions $x = x_k(t)$, $1 \le k \le 6$, for a solution of the Novikov equation containing three peakon--antipeakon pairs which separate from each other at a logarithmic rate as $t \to \pm \infty $, although they all have the same asymptotic velocity. This case requires more complicated solution formulas than~\eqref {eq:Novikov-n-peakon-solution}, since the eigenvalues in the associated spectral problem are non-simple (there are triple eigenvalues at $1/(1 \pm i)$); see Remark~\ref {rem:Novikov-peakon-antipeakon}.\relax }{figure.caption.10}{}}
+\newlabel{eq:intro-mCH}{{1.22}{6}{Introduction}{equation.1.22}{}}
+\citation{beals-sattinger-szmigielski:1998:acoustic-scattering-KdV-hierarchy}
+\citation{beals-sattinger-szmigielski:1999:stieltjes}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{7}{section.2}\protected@file@percent }
+\newlabel{sec:CH}{{2}{7}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{section.2}{}}
+\newlabel{eq:CH-peakon-m}{{2.1}{7}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.1}{}}
+\newlabel{eq:CH-multiplication-f-times-m}{{2.2}{7}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.2}{}}
+\citation{beals-sattinger-szmigielski:2002:CF-flows-periodic-peakons-2-peakon-2002}
+\citation{beals-sattinger-szmigielski:2005:CF-flows-periodic-peakons-N-peakon-2005}
+\newlabel{eq:CH-eulerian}{{2.4}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.4}{}}
+\newlabel{eq:CH-lax-x-again}{{2.5}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.5}{}}
+\newlabel{eq:CH-liouville-trf}{{2.6}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.6}{}}
+\newlabel{eq:CH-gstring}{{2.7}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.7}{}}
+\newlabel{eq:CH-g-m}{{2.8}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.8}{}}
+\newlabel{eq:CH-dirac-transform-rule}{{2.9}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.9}{}}
+\newlabel{eq:CH-peakon-gk-yk}{{2.10}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.10}{}}
+\newlabel{eq:CH-peakon-g}{{2.10a}{8}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.10a}{}}
+\newlabel{eq:CH-psi-piecewise}{{2.11}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.11}{}}
+\newlabel{eq:CH-jump-relation-psi}{{2.12}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.12}{}}
+\newlabel{eq:CH-phi-piecewise}{{2.13}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.13}{}}
+\newlabel{eq:CH-string-equation-matrix-form}{{2.15}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.15}{}}
+\newlabel{eq:CH-jump-matrix-Lk}{{2.16}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.16}{}}
+\newlabel{eq:CH-lk}{{2.17}{9}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.17}{}}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\newlabel{eq:CH-jump-matrix-Gk}{{2.18}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.18}{}}
+\newlabel{eq:CH-string-right-endpoint-matrix-product}{{2.19}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.19}{}}
+\newlabel{eq:CH-string-right-endpoint-polynomials}{{2.20}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.20}{}}
+\newlabel{eq:CH-weyl-function-def}{{2.22}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.22}{}}
+\newlabel{eq:CH-weyl-function-parfrac}{{2.23}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.23}{}}
+\newlabel{eq:CH-weyl-function-stieltjes-transform}{{2.24}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.24}{}}
+\newlabel{eq:CH-peakon-spectral-measure}{{2.25}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.25}{}}
+\newlabel{eq:CH-ak-proof-0}{{2.26}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.26}{}}
+\newlabel{eq:CH-ak-proof-1}{{2.27}{10}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.27}{}}
+\newlabel{eq:CH-ak-proof-2}{{2.28}{11}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.28}{}}
+\newlabel{ex:CH-string-two-masses}{{2.1}{11}{}{proposition.2.1}{}}
+\newlabel{eq:CH-two-masses-forward-inverse-problem}{{2.30}{11}{}{equation.2.30}{}}
+\newlabel{eq:CH-two-masses-inverse-problem-naively}{{2.31}{11}{}{equation.2.31}{}}
+\newlabel{eq:CH-two-masses-inverse-problem-solution}{{2.32}{11}{}{equation.2.32}{}}
+\newlabel{eq:CH-two-masses-inverse-problem-l1}{{2.33}{12}{}{equation.2.33}{}}
+\newlabel{eq:CH-matrix-product-even}{{2.34}{12}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.34}{}}
+\newlabel{eq:CH-pade-first-Q-highest-coeff}{{2.35}{12}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.35}{}}
+\newlabel{eq:CH-first-pade-approx}{{2.36}{12}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.36}{}}
+\newlabel{eq:CH-W-power-series}{{2.37}{12}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.37}{}}
+\newlabel{eq:CH-def-moments}{{2.38}{12}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.38}{}}
+\newlabel{eq:CH-stieltjes-orthogonality-matrix-form}{{2.40}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.40}{}}
+\newlabel{eq:CH-Qn-even-det}{{2.41}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.41}{}}
+\newlabel{eq:CH-def-Hankel-det}{{2.42}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.42}{}}
+\newlabel{eq:CH-string-inverse-first-determinant-quotient}{{2.44}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.44}{}}
+\newlabel{eq:CH-matrix-product-odd}{{2.45}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.45}{}}
+\newlabel{eq:CH-pade-second-Q-highest-lowest-coeff}{{2.46}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.46}{}}
+\newlabel{eq:CH-second-pade-approx}{{2.47}{13}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.47}{}}
+\newlabel{eq:CH-Qn-odd-det}{{2.49}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.49}{}}
+\newlabel{eq:CH-string-inverse-second-determinant-quotient}{{2.50}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.50}{}}
+\newlabel{eq:CH-string-inverse-third-determinant-quotient}{{2.51}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.51}{}}
+\newlabel{eq:CH-formula-gk-lk-yk}{{2.52}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.52}{}}
+\newlabel{eq:CH-formula-gk}{{2.52a}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.52a}{}}
+\newlabel{eq:CH-formula-lk}{{2.52b}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.52b}{}}
+\newlabel{eq:CH-formula-yk}{{2.52c}{14}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.52c}{}}
+\newlabel{ex:CH-string-two-masses-cont}{{2.2}{14}{}{proposition.2.2}{}}
+\newlabel{eq:CH-string-two-masses-determinants}{{2.55}{14}{}{equation.2.55}{}}
+\citation{stieltjes:1894:recherches-fractions-continues-1}
+\citation{stieltjes:1895:recherches-fractions-continues-2}
+\newlabel{eq:CH-delta-zero-heine}{{2.57}{15}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.57}{}}
+\newlabel{eq:CH-delta-k-heine}{{2.58}{15}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.58}{}}
+\newlabel{rem:CH-range-of-spectral-map}{{2.3}{15}{}{proposition.2.3}{}}
+\newlabel{rem:CH-orthpoly}{{2.4}{15}{}{proposition.2.4}{}}
+\newlabel{eq:CH-stieltjes-orthogonality-integral-form}{{2.59}{15}{}{equation.2.59}{}}
+\newlabel{eq:CH-value-slope-recursion}{{2.60}{15}{}{equation.2.60}{}}
+\citation{stieltjes:1918:complete-works-2}
+\citation{frobenius-stickelberger:1880:addition-multiplication-elliptischen-funktionen}
+\citation{frobenius:1881:relationen-zwischen-naherungsbruchen}
+\newlabel{eq:CH-W-cfrac}{{2.61}{16}{}{equation.2.61}{}}
+\newlabel{eq:CH-Stieltjes-cn-odd-even}{{2.62}{16}{}{equation.2.62}{}}
+\newlabel{eq:CH-Stieltjes-cn-sum}{{2.63}{16}{}{equation.2.63}{}}
+\newlabel{eq:CH-time-dependence-A-B}{{2.64}{16}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.64}{}}
+\citation{lundmark-shuaib:2019:ghostpeakons}
+\citation{grunert-holden:2016:CH-peakon-antipeakon-alpha-dissipative}
+\citation{lundmark:2007:DP-shockpeakons}
+\citation{lundmark-shuaib:2019:ghostpeakons}
+\citation{mohajer-szmigielski:2011:CH-on-real-axis}
+\citation{camassa-holm:1993:CH-orginal-paper}
+\citation{camassa-holm-hyman:1994:CH-new-integrable}
+\citation{constantin:1997:CH-soliton-interactions:Expositiones}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\citation{beals-sattinger-szmigielski:2001:peakon-antipeakon-NEEDS99}
+\citation{alber-miller:2001:CH-twopeakon}
+\citation{wahlen:2006:CH-peakon-antipeakon-interaction}
+\citation{lundmark:2007:DP-shockpeakons}
+\citation{parker:2008:CH-peakons-dynamics}
+\citation{grunert-holden:2016:CH-peakon-antipeakon-alpha-dissipative}
+\citation{lundmark-shuaib:2019:ghostpeakons}
+\citation{cieslak-gaczkowski-kubkowski-malogrosz:2017:CH-multipeakons-as-geodesics}
+\citation{cieslak-krynski:2021:CH-geometric-aspects-of-two-and-threepeakons}
+\newlabel{eq:CH-a-of-t}{{2.65}{17}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.65}{}}
+\newlabel{eq:CH-inverse-liouville-trf}{{2.66}{17}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.66}{}}
+\newlabel{eq:CH-def-other-Hankel-det}{{2.67}{17}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.67}{}}
+\newlabel{eq:CH-xk-mk-solution-formulas}{{2.70}{17}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.70}{}}
+\newlabel{eq:CH-delta-k-heine-again}{{2.71}{17}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.71}{}}
+\newlabel{rem:CH-inverse-problem-on-the-real-line}{{2.8}{17}{}{proposition.2.8}{}}
+\newlabel{ex:CH-two-peakons}{{2.9}{17}{The two-peakon solution}{proposition.2.9}{}}
+\newlabel{eq:CH-twopeakon-ode}{{2.72}{17}{The two-peakon solution}{equation.2.72}{}}
+\newlabel{eq:CH-twopeakon-x-m}{{2.73}{18}{The two-peakon solution}{equation.2.73}{}}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\newlabel{ex:CH-three-peakons}{{2.10}{19}{The three-peakon solution}{proposition.2.10}{}}
+\newlabel{eq:CH-threepeakon-x-m}{{2.79}{19}{The three-peakon solution}{equation.2.79}{}}
+\newlabel{eq:CH-orthopol}{{2.80}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.80}{}}
+\newlabel{eq:CH-Qhat-zero}{{2.81}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.81}{}}
+\newlabel{eq:CH-l-Qhat}{{2.82}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.82}{}}
+\newlabel{eq:CH-orthpoly-recursion}{{2.83}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.83}{}}
+\newlabel{eq:CH-christoffel-darboux-b}{{2.84}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.84}{}}
+\newlabel{eq:CH-limiting-darboux}{{2.85}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.85}{}}
+\newlabel{eq:CH-g-Qhat}{{2.86}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.86}{}}
+\newlabel{eq:CH-g-sum-Qhat}{{2.87}{19}{The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{equation.2.87}{}}
+\citation{lundmark-szmigielski:2003:DPshort}
+\citation{lundmark-szmigielski:2005:DPlong}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The Degasperis--Procesi equation and the cubic string}{20}{section.3}\protected@file@percent }
+\newlabel{sec:DP}{{3}{20}{The Degasperis--Procesi equation and the cubic string}{section.3}{}}
+\newlabel{eq:DP-peakon-ode-again}{{3.1}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.1}{}}
+\newlabel{eq:DP-lax}{{3.2}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.2}{}}
+\newlabel{eq:DP-lax-x}{{3.2a}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.2a}{}}
+\newlabel{eq:DP-lax-t}{{3.2b}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.2b}{}}
+\newlabel{eq:DP-lax-x-again}{{3.3}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.3}{}}
+\newlabel{eq:DP-liouville-trf}{{3.4}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.4}{}}
+\newlabel{eq:DP-cubic-string}{{3.5}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.5}{}}
+\newlabel{eq:DP-gm}{{3.6}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.6}{}}
+\newlabel{eq:DP-peakon-g}{{3.7}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.7}{}}
+\newlabel{eq:DP-psi-piecewise}{{3.8}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.8}{}}
+\newlabel{eq:DP-jump-relation-psi}{{3.9}{20}{The Degasperis--Procesi equation and the cubic string}{equation.3.9}{}}
+\citation{lundmark-szmigielski:2005:DPlong}
+\citation{gantmacher-krein:2002:oscillation-matrices}
+\newlabel{eq:DP-phi-piecewise}{{3.10}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.10}{}}
+\newlabel{eq:DP-cubic-string-boundary-conditions-y}{{3.11}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.11}{}}
+\newlabel{eq:DP-weyl}{{3.12}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.12}{}}
+\newlabel{eq:DP-parfracW}{{3.13}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.13}{}}
+\newlabel{eq:DP-parfracZ}{{3.14}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.14}{}}
+\newlabel{eq:DP-Z-W-symmetry-relation}{{3.16}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.16}{}}
+\newlabel{eq:DP-bk}{{3.17}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.17}{}}
+\newlabel{eq:DP-cauchy-kernel}{{3.18}{21}{The Degasperis--Procesi equation and the cubic string}{equation.3.18}{}}
+\citation{lundmark-szmigielski:2005:DPlong}
+\newlabel{eq:DP-measure-alpha}{{3.19}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.19}{}}
+\newlabel{eq:DP-measure-beta}{{3.20}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.20}{}}
+\newlabel{eq:DP-W-stieltjes-transform}{{3.21}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.21}{}}
+\newlabel{eq:DP-Z-stieltjes-transform}{{3.22}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.22}{}}
+\newlabel{eq:DP-cubic-string-matrix}{{3.23}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.23}{}}
+\newlabel{eq:DP-cubic-string-matrix-ODE}{{3.23a}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.23a}{}}
+\newlabel{eq:DP-cubic-string-matrix-boundary-conditions-y}{{3.23b}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.23b}{}}
+\newlabel{eq:DP-Lk}{{3.24}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.24}{}}
+\newlabel{eq:DP-Gk}{{3.25}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.25}{}}
+\newlabel{eq:DP-cubic-string-right-endpoint-matrix-product}{{3.26}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.26}{}}
+\newlabel{eq:DP-WZ-PQ-approx}{{3.27}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.27}{}}
+\newlabel{eq:DP-WZ-PQ-approx-1}{{3.27a}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.27a}{}}
+\newlabel{eq:DP-WZ-PQ-approx-2}{{3.27b}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.27b}{}}
+\newlabel{eq:DP-WZ-PQ-approx-3}{{3.27c}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.27c}{}}
+\newlabel{eq:DP-WZ-PQ-approx-4}{{3.27d}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.27d}{}}
+\newlabel{eq:DP-bimoment-linear-equations}{{3.28}{22}{The Degasperis--Procesi equation and the cubic string}{equation.3.28}{}}
+\citation{chang-hu-li-zhao:2018:novikov-peakons-pfaffians-Toda-lattice-BKP}
+\citation{chang:2022:hermite-pade-pfaffian-structures-novikov-and-integrable-lattices}
+\citation{bertola-gekhtman-szmigielski:2009:cubicstring}
+\citation{bertola-gekhtman-szmigielski:2010:cauchy}
+\citation{bertola-gekhtman-szmigielski:2009:twomatrix}
+\citation{bertola-gekhtman-szmigielski:2013:strong-asymptotics}
+\citation{bertola-gekhtman-szmigielski:2014:cauchy-laguerre-twomatrix-meijerG}
+\newlabel{rem:DP-CBOP}{{3.2}{23}{}{proposition.3.2}{}}
+\newlabel{rem:DP-CBOP-discrete}{{3.3}{23}{}{proposition.3.3}{}}
+\citation{degasperis-holm-hone:2002:new-integrable-equation-DP}
+\newlabel{eq:DP:a-of-t}{{3.37}{24}{The Degasperis--Procesi equation and the cubic string}{equation.3.37}{}}
+\newlabel{eq:DP-def-Uk}{{3.39}{24}{The Degasperis--Procesi equation and the cubic string}{equation.3.39}{}}
+\newlabel{eq:DP-def-Wk}{{3.40}{24}{The Degasperis--Procesi equation and the cubic string}{equation.3.40}{}}
+\newlabel{eq:DP-n-peakon-solution}{{3.41}{24}{The Degasperis--Procesi equation and the cubic string}{equation.3.41}{}}
+\newlabel{ex:DP-two-peakons}{{3.4}{24}{The two-peakon solution}{proposition.3.4}{}}
+\newlabel{eq:DP-twopeakon-ode}{{3.42}{24}{The two-peakon solution}{equation.3.42}{}}
+\newlabel{eq:DP-twopeakon-solution}{{3.43}{24}{The two-peakon solution}{equation.3.43}{}}
+\citation{mohajer:2017:DP-peakon-inverse-problem}
+\citation{szmigielski-zhou:2013:DP-peakon-antipeakon}
+\citation{szmigielski-zhou:2013:DP-colliding-peakons-shock-formation}
+\citation{lundmark:2007:DP-shockpeakons}
+\citation{szmigielski-zhou:2013:DP-colliding-peakons-shock-formation}
+\newlabel{ex:DP-three-peakons}{{3.5}{25}{The three-peakon solution}{proposition.3.5}{}}
+\newlabel{eq:DP-threepeakon}{{3.48}{25}{The three-peakon solution}{equation.3.48}{}}
+\newlabel{rem:DP-inverse-problem-on-the-real-line}{{3.6}{25}{}{proposition.3.6}{}}
+\newlabel{rem:DP-antipeakons}{{3.7}{25}{}{proposition.3.7}{}}
+\citation{hone-lundmark-szmigielski:2009:novikov}
+\citation{hone-wang:2008:cubic-nonlinearity}
+\@writefile{toc}{\contentsline {section}{\numberline {4}The Novikov equation and the dual cubic string}{26}{section.4}\protected@file@percent }
+\newlabel{sec:Novikov}{{4}{26}{The Novikov equation and the dual cubic string}{section.4}{}}
+\newlabel{eq:Novikov-lax}{{4.1}{26}{The Novikov equation and the dual cubic string}{equation.4.1}{}}
+\newlabel{eq:Novikov-lax-x}{{4.1a}{26}{The Novikov equation and the dual cubic string}{equation.4.1a}{}}
+\newlabel{eq:Novikov-lax-t}{{4.1b}{26}{The Novikov equation and the dual cubic string}{equation.4.1b}{}}
+\newlabel{eq:Novikov-liouville-trf}{{4.2}{26}{The Novikov equation and the dual cubic string}{equation.4.2}{}}
+\newlabel{eq:Novikov-dual-cubic-string}{{4.3}{26}{The Novikov equation and the dual cubic string}{equation.4.3}{}}
+\newlabel{eq:Novikov-dual-cubic-string-ODE}{{4.3a}{26}{The Novikov equation and the dual cubic string}{equation.4.3a}{}}
+\newlabel{eq:Novikov-dual-cubic-string-boundary-conditions-y}{{4.3b}{26}{The Novikov equation and the dual cubic string}{equation.4.3b}{}}
+\newlabel{eq:duality-transformation}{{4.4}{26}{The Novikov equation and the dual cubic string}{equation.4.4}{}}
+\newlabel{eq:Novikov-Gk}{{4.6}{26}{The Novikov equation and the dual cubic string}{equation.4.6}{}}
+\newlabel{eq:Novikov-Lk}{{4.7}{26}{The Novikov equation and the dual cubic string}{equation.4.7}{}}
+\citation{kohlenberg-lundmark-szmigielski:2007:inverse-spectral-discrete-cubic-string}
+\citation{hone-wang:2008:cubic-nonlinearity}
+\citation{mohajer-szmigielski:2012:novikov-on-real-axis}
+\citation{chang:2022:hermite-pade-pfaffian-structures-novikov-and-integrable-lattices}
+\citation{chang-hu-li-zhao:2018:novikov-peakons-pfaffians-Toda-lattice-BKP}
+\citation{kardell:2016:phdthesis}
+\newlabel{eq:Novikov-Z-W-symmetry-relation}{{4.10}{27}{The Novikov equation and the dual cubic string}{equation.4.10}{}}
+\newlabel{eq:Novikov-bk}{{4.11}{27}{The Novikov equation and the dual cubic string}{equation.4.11}{}}
+\newlabel{eq:Novikov-measure-alpha}{{4.12}{27}{The Novikov equation and the dual cubic string}{equation.4.12}{}}
+\newlabel{eq:Novikov-W-stieltjes-transform}{{4.13}{27}{The Novikov equation and the dual cubic string}{equation.4.13}{}}
+\newlabel{eq:Novikov-Z-stieltjes-transform}{{4.14}{27}{The Novikov equation and the dual cubic string}{equation.4.14}{}}
+\newlabel{eq:Novikov-n-peakon-solution}{{4.15}{27}{The Novikov equation and the dual cubic string}{equation.4.15}{}}
+\newlabel{ex:Novikov-twopeakon}{{4.1}{27}{The two-peakon solution}{proposition.4.1}{}}
+\newlabel{eq:Novikov-twopeakon-ode}{{4.16}{27}{The two-peakon solution}{equation.4.16}{}}
+\newlabel{eq:Novikov-twopeakon}{{4.17}{27}{The two-peakon solution}{equation.4.17}{}}
+\newlabel{rem:Novikov-inverse-problem-on-the-real-line}{{4.2}{27}{}{proposition.4.2}{}}
+\newlabel{rem:Novikov-peakon-antipeakon}{{4.3}{27}{}{proposition.4.3}{}}
+\citation{himonas-holliman-kenig:2018:novikov-2-peakon-illposedness}
+\citation{geng-xue:2009:GX-peakon-equation-cubic-nonlinearity}
+\newlabel{rem:Novikov-Himonas-Holliman-Kenig}{{4.4}{28}{}{proposition.4.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}The Geng--Xue equation and its twin Lax pairs}{28}{section.5}\protected@file@percent }
+\newlabel{sec:GX}{{5}{28}{The Geng--Xue equation and its twin Lax pairs}{section.5}{}}
+\newlabel{eq:GX-again}{{5.1}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.1}{}}
+\newlabel{eq:GX-laxI}{{5.2}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.2}{}}
+\newlabel{eq:GX-laxI-x}{{5.2a}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.2a}{}}
+\newlabel{eq:GX-laxI-t}{{5.2b}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.2b}{}}
+\newlabel{eq:GX-laxII}{{5.3}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.3}{}}
+\newlabel{eq:GX-laxII-x}{{5.3a}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.3a}{}}
+\newlabel{eq:GX-laxII-t}{{5.3b}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.3b}{}}
+\newlabel{eq:GX-peakons}{{5.4}{28}{The Geng--Xue equation and its twin Lax pairs}{equation.5.4}{}}
+\citation{lundmark-szmigielski:2016:GX-inverse-problem}
+\citation{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+\newlabel{eq:GX-peakon-ode}{{5.5}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.5}{}}
+\newlabel{eq:GX-liouville-trf}{{5.6}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.6}{}}
+\newlabel{eq:GX-spectral-problem-y}{{5.7}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.7}{}}
+\newlabel{eq:GX-dual-cubic-I}{{5.7a}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.7a}{}}
+\newlabel{eq:GX-dual-cubic-boundary-conditions-y}{{5.7b}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.7b}{}}
+\newlabel{eq:GX-gh}{{5.8}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.8}{}}
+\newlabel{eq:GX-trf-discrete-measures}{{5.9}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.9}{}}
+\newlabel{eq:GX-Gi}{{5.11}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.11}{}}
+\newlabel{eq:GX-Hi}{{5.12}{29}{The Geng--Xue equation and its twin Lax pairs}{equation.5.12}{}}
+\citation{lundmark-szmigielski:2016:GX-inverse-problem}
+\citation{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+\citation{shuaib-lundmark:2019:GX-noninterlacing}
+\newlabel{eq:GX-b-infty-b-infty-star-product}{{5.15}{30}{The Geng--Xue equation and its twin Lax pairs}{equation.5.15}{}}
+\newlabel{eq:spectral-measures}{{5.17}{30}{The Geng--Xue equation and its twin Lax pairs}{equation.5.17}{}}
+\newlabel{eq:GX-asymptotic-velocities}{{5.18}{30}{The Geng--Xue equation and its twin Lax pairs}{equation.5.18}{}}
+\newlabel{eq:asymptotic-amplitude-slopes}{{5.21}{30}{The Geng--Xue equation and its twin Lax pairs}{equation.5.21}{}}
+\citation{shuaib-lundmark:2019:GX-noninterlacing}
+\citation{lundmark-shuaib:2019:ghostpeakons}
+\@writefile{toc}{\contentsline {section}{\numberline {6}The modified Camassa--Holm equation and distributional Lax integrability}{31}{section.6}\protected@file@percent }
+\newlabel{sec:mCH}{{6}{31}{The modified Camassa--Holm equation and distributional Lax integrability}{section.6}{}}
+\citation{chang-szmigielski:2016:mCH-concept-of-peakons}
+\citation{chang-szmigielski:2017:mCH-liouville-integrability-conservative-peakons}
+\citation{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}
+\citation{baker-gravesmorris:1996:pade-approximants}
+\citation{schiff:1996:CH-dual-hierarchies-zero-curvature-formulations}
+\citation{qiao:2006:mCH-new-integrable-cuspons-WMpeakons}
+\citation{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}
+\citation{gui-liu-olver-qu:2013:mCH-wavebreaking-peakons}
+\citation{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}
+\newlabel{eq:mCH-again}{{6.1}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.1}{}}
+\newlabel{eq:mCH-expanded}{{6.2}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.2}{}}
+\newlabel{eq:mCH-Lax}{{6.3}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.3}{}}
+\newlabel{eq:mCH-multPsi}{{6.4}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.4}{}}
+\newlabel{eq:mCH-alpha-beta}{{6.5}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.5}{}}
+\newlabel{eq:mCH-distrcompatibility}{{6.6}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.6}{}}
+\newlabel{eq:mCH-distr}{{6.8}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.8}{}}
+\newlabel{eq:mCH-lax-regularization}{{6.9}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.9}{}}
+\newlabel{eq:mCH-weak-regularization}{{6.10}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.10}{}}
+\newlabel{eq:mCH-twopeakonL}{{6.11}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.11}{}}
+\newlabel{eq:mCH-twopeakonW}{{6.12}{32}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.12}{}}
+\citation{qiao:2006:mCH-new-integrable-cuspons-WMpeakons}
+\citation{anco-kraus:2018:hamiltonian-peakons-weak-solution-mCH}
+\citation{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}
+\newlabel{eq:mCH-xLax}{{6.17}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.17}{}}
+\newlabel{eq:mCH-gk-hk}{{6.18}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.18}{}}
+\newlabel{eq:mCH-xLaxBVP-}{{6.19}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.19}{}}
+\newlabel{eq:mCH-left-regularization}{{6.20}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.20}{}}
+\newlabel{eq:mCH-def-q-p}{{6.21}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.21}{}}
+\newlabel{eq:mCH-transition}{{6.23}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.23}{}}
+\newlabel{eq:mCH-pk-qk-explicit}{{6.24}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.24}{}}
+\newlabel{eq:mCH-pk-explicit}{{6.24a}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.24a}{}}
+\newlabel{eq:mCH-qk-explicit}{{6.24b}{33}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.24b}{}}
+\newlabel{eq:mCH-q-p-evol}{{6.25}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.25}{}}
+\newlabel{eq:mCH-Weyl}{{6.26}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.26}{}}
+\newlabel{eq:mCH-w-even-odd}{{6.27}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.27}{}}
+\newlabel{eq:mCH-w-from-odd-to-even}{{6.28a}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.28a}{}}
+\newlabel{eq:mCH-w-from-even-to-odd}{{6.28b}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.28b}{}}
+\newlabel{eq:mCH-discrete-measure-on-R+}{{6.29}{34}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.29}{}}
+\newlabel{eq:mCH-Papprox1}{{6.34}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.34}{}}
+\newlabel{eq:mCH-matrix-C}{{6.35}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.35}{}}
+\newlabel{eq:mCH-matrix-Shat}{{6.36}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.36}{}}
+\newlabel{eq:mCH-Papprox2}{{6.37}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.37}{}}
+\newlabel{eq:mCH-Papprox}{{6.39}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.39}{}}
+\newlabel{eq:mCH-Papprox-bc}{{6.39a}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.39a}{}}
+\newlabel{eq:mCH-Papprox-de}{{6.39c}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.39c}{}}
+\newlabel{eq:mCH-xLaxBVP+}{{6.40}{36}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.40}{}}
+\newlabel{eq:mCH-right-regularization}{{6.41}{37}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.41}{}}
+\newlabel{eq:mCH-xLax+}{{6.42}{37}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.42}{}}
+\newlabel{eq:mCH-def-qhat-phat}{{6.43b}{37}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.43b}{}}
+\newlabel{eq:mCH-transition-backwards}{{6.45}{37}{The modified Camassa--Holm equation and distributional Lax integrability}{equation.6.45}{}}
+\citation{camassa-holm:1993:CH-orginal-paper}
+\citation{camassa-holm-hyman:1994:CH-new-integrable}
+\citation{fuchssteiner-fokas:1981:symplectic-structures-backlund-transformations-hereditary-symmetries}
+\citation{fuchssteiner:1981:lie-algebra-structure-nonlinear-evolution-equations-infinite-dimensional-abelian-symmetry-groups}
+\citation{fokas:1995:a-class-of-physically-important-integrable-equations}
+\citation{sabatier:1980:needs}
+\citation{colville-gomez-szmigielski:2016:isospectral-deformations-string}
+\citation{gorski-szmigielski:2018:isospectral-flows-inhomogeneous-string}
+\citation{chang-szmigielski:2020:2mCH-overlapping-peakons-elastic-bar-isospectral}
+\citation{beals-szmigielski:2021p:2CH-euler-bernoulli-beam-noncommutative-continued-fractions}
+\citation{camassa-holm-hyman:1994:CH-new-integrable}
+\citation{calogero-francoise:1996:cf-integrable}
+\citation{ragnisco-bruschi:1996:peakons-toda}
+\citation{moser:1975:finitely-many-point-masses-on-the-line}
+\citation{moser:1975:three-integrable}
+\citation{beals-sattinger-szmigielski:1998:acoustic-scattering-KdV-hierarchy}
+\citation{beals-sattinger-szmigielski:1999:stieltjes}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\citation{gantmacher-krein:2002:oscillation-matrices}
+\citation{krein:1952:inverse-string}
+\citation{kac-krein:1974:spectral-functions}
+\citation{dym-mckean:1976:gaussian-processes}
+\citation{beals-sattinger-szmigielski:2001:peakons-strings-finite-Toda}
+\citation{faybusovich-gekhtman:2001:inverse-moment-problem-elementary-coadjoint-orbits}
+\citation{camassa:2000:CH-characteristic-variables}
+\citation{camassa:2003:CH-characteristics-initial-value-problem}
+\citation{li:2009:CH-long-time-behaviour-for-class-of-low-regularity-solutions-infinitely-many-peakons}
+\citation{kardell:2015:CH-novikov-peakon-creation}
+\citation{beals-sattinger-szmigielski:2002:CF-flows-periodic-peakons-2-peakon-2002}
+\citation{beals-sattinger-szmigielski:2005:CF-flows-periodic-peakons-N-peakon-2005}
+\citation{rayan-stanley-szmigielski:2020:CF-higgs-fields}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Additional comments and pointers to the literature}{38}{section.7}\protected@file@percent }
+\newlabel{sec:guide}{{7}{38}{Additional comments and pointers to the literature}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}The Camassa--Holm equation}{38}{subsection.7.1}\protected@file@percent }
+\newlabel{sec:guide-CH}{{7.1}{38}{The Camassa--Holm equation}{subsection.7.1}{}}
+\newlabel{eq:guide-CF-hamiltonian}{{7.1}{38}{The Camassa--Holm equation}{equation.7.1}{}}
+\citation{eckhardt-kostenko:2020:inverse-spectral-problem-periodic-conservative-CH-multipeakons}
+\citation{eckhardt-teschl:2013:isospectral-problem-dispersionless-CH}
+\citation{eckhardt-kostenko:2016:inverse-spectral-problem-indefinite-strings}
+\citation{eckhardt-kostenko:2018:classical-moment-problem-generalized-indefinite-strings}
+\citation{eckhardt-kostenko-nicolussi:2020:trace-formulas-continuous-dependence-spectra-periodic-conservative-CH-flow}
+\citation{eckhardt:2017:IST-for-conservative-CH-flow-with-decaying-initial-data}
+\citation{eckhardt:2022:continued-fraction-expansions-herglotz-nevanlinna-functions-generalized-indefinite-strings-stieltjes-type}
+\citation{eckhardt-kostenko:2014:CH-isospectral-problem-global-conservative-multipeakons}
+\citation{beals-sattinger-szmigielski:2000:moment}
+\citation{bressan-constantin:2007:global-conservative-CH}
+\citation{holden-raynaud:2007:CH-global-conservative-Lagrangian}
+\citation{constantin:1997:CH-periodic-cauchy-problem}
+\citation{constantin-escher:1998:CH-global-existence-blowup}
+\citation{constantin-escher:1998:CH-global-weak}
+\citation{constantin-escher:1998:wave-breaking-for-nonlinear-nonlocal-shallow-water-equations}
+\citation{mckean:1998:CH-breakdown}
+\citation{molinet:2004:CH-wellposedness-survey}
+\citation{bressan-constantin:2007:global-conservative-CH}
+\citation{bressan-constantin:2007:global-dissipative-CH}
+\citation{holden-raynaud:2007:CH-global-conservative-Lagrangian}
+\citation{holden-raynaud:2007:CH-global-conservative-multipeakon}
+\citation{holden-raynaud:2008:CH-periodic-conservative}
+\citation{holden-raynaud:2008:CH-global-dissipative-multipeakon}
+\citation{holden-raynaud:2009:CH-dissipative-solutions}
+\citation{grunert-holden-raynaud:2015:alpha-dissipative-2CH}
+\citation{grunert-holden:2016:CH-peakon-antipeakon-alpha-dissipative}
+\citation{galtung-grunert:2021:CH-numerical-study-of-variational-discretizations}
+\citation{constantin-strauss:2000:CH-stability-peakons}
+\citation{constantin-strauss:2002:CH-stability-solitons}
+\citation{lenells:2004:variational-approach-stability-periodic-peakons:JNMP}
+\citation{lenells:2004:stability-periodic-peakons:IMRN}
+\citation{eldika-molinet:2009:CH-stability-multi-peakon-antipeakon}
+\citation{eldika-molinet:2009:CH-stability-multipeakon}
+\citation{natali-pelinovsky:2020:CH-instability-of-H1-stable-peakons}
+\citation{parker:2004:CH-direct-method-1}
+\citation{parker:2005:CH-direct-method-2}
+\citation{parker:2005:CH-direct-method-3}
+\citation{matsuno:2005:CH-multisolitons-parametric-representation}
+\citation{holm-ivanov:2010:CH-smooth-and-peaked-solitons}
+\citation{holm-ivanov:2011:CH-smooth-peaked-solitons-applications}
+\citation{ivanov-lyons-orr:2017:CH-solitons-dressing-method}
+\citation{parker-matsuno:2006:CH-solitons-peakon-limit}
+\citation{matsuno:2007:CH-multisolitons-peakon-limit}
+\citation{fokas-liu:1996:asymptotic-integrability-of-water-waves}
+\citation{dullin-gottwald-holm:2001:integrable-shallow-water-linear-nonlinear-dispersion}
+\citation{dullin-gottwald-holm:2003:CH-KdV5-other-asymptotically-equivalent-shallow-water}
+\citation{dullin-gottwald-holm:2004:asymptotically-equivalent-shallow-water}
+\citation{johnson:2002:CH-KdV-water-waves}
+\citation{johnson:2003:classical-water-waves}
+\citation{ionescukruse:2007:variational-derivation-CH-shallow-water-equation}
+\citation{constantin-lannes:2009:hydrodynamical-CH-DP}
+\citation{alber-camassa-holm-marsden:1994:geometry-peakons-billiard-solutions}
+\citation{misiolek:1998:CH-as-geodesic-flow-on-Bott-Virasoro-group}
+\citation{constantin:2000:CH-geometric-approach}
+\citation{misiolek:2002:CH-periodic-classical-solutions}
+\citation{lenells:2005:CH-traveling-waves}
+\citation{geyer-villadelprat:2015:CH-wavelength-of-smooth-periodic-traveling-waves}
+\citation{constantin-mckean:1999:CH-shallow-water-equation-on-the-circle}
+\citation{gesztesy-holden:2003:CH-hierarchy-alggeo-solutions}
+\citation{qiao:2003:CH-hierarchy-alggeo-symplectic-submanifold}
+\citation{kalla-klein:2012:CH-construction-alggeo-solutions-numerical-evaluation}
+\citation{gilson-pickering:1995:factorization-painleve-analysis-nonlinear-thirdorder-PDE-including-CH}
+\citation{constantin:1997:CH-hamiltonian-structure:Expositiones}
+\citation{constantin:1997:CH-periodic-spectral-problem}
+\citation{constantin:1998:CH-inverse-spectral-problem}
+\citation{constantin:1998:CH-periodic-finite-gap-solutions-quasiperiodicity}
+\citation{schiff:1998:CH-loop-group-approach}
+\citation{fisher-schiff:1999:CH-conserved-quantities-initial-value-problem}
+\citation{constantin-lenells:2003:CH-inverse-scattering-approach:PhysLettA}
+\citation{constantin-lenells:2003:CH-inverse-scattering-approach:JNMP}
+\citation{lenells:2005:CH-conservation-laws}
+\citation{li:2008:CH-factorization-problem-on-hilbert-schmidt-group}
+\citation{boutetdemonvel-shepelsky:2005:CH-half-line}
+\citation{boutetdemonvel-shepelsky:2006:CH-riemann-hilbert-line}
+\citation{boutetdemonvel-shepelsky:2008:CH-riemann-hilbert-half-line}
+\citation{degasperis-procesi:1999:asymptotic-integrability}
+\citation{johnson:2003:classical-water-waves}
+\citation{dullin-gottwald-holm:2004:asymptotically-equivalent-shallow-water}
+\citation{constantin-lannes:2009:hydrodynamical-CH-DP}
+\citation{degasperis-holm-hone:2002:new-integrable-equation-DP}
+\citation{lundmark-szmigielski:2003:DPshort}
+\citation{lundmark-szmigielski:2005:DPlong}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}The Degasperis--Procesi equation}{39}{subsection.7.2}\protected@file@percent }
+\newlabel{sec:guide-DP}{{7.2}{39}{The Degasperis--Procesi equation}{subsection.7.2}{}}
+\citation{lopezlagomasino-medinaperalta-szmigielski:2019:mixed-type-hermite-pade-approximation-inspired-by-DP}
+\citation{fidalgo-lopezlagomasino-medinaperalta:2020:asymptotics-cauchy-biorthogonal-polynomials}
+\citation{medinaperalta:2021:matrix-cauchy-biorthogonal-polynomials}
+\citation{chang-hu-li:2018:DP-peakons-Toda-lattice-CKP}
+\citation{chang-hu-li:2018:moment-modification-multipeakons}
+\citation{chang-he-hu-li:2018:partial-skew-orthogonal-polynomials-integrable-lattices-Pfaffian}
+\citation{chang-hu-szmigielski:2016:two-component-mCH-Kac-vanMoerbeke}
+\citation{chang-hu-szmigielski-zhedanov:2020:isospectral-frobenius-stickelberger-thiele-polynomials}
+\citation{chang-chen-hu:2014:generalized-nonisospectral-CH-peakons}
+\citation{yin:2003:DP-cauchy-problem:Illinois}
+\citation{yin:2003:DP-global-existence-for-new-periodic-integrable-equation}
+\citation{yin:2004:DP-global-solutions:Indiana}
+\citation{yin:2004:DP-global-weak-solutions-for-new-periodic-integrable-equation-with-peakons}
+\citation{coclite-karlsen:2006:DPwellposedness}
+\citation{coclite-karlsen:2006:DP-semigroup-of-solutions}
+\citation{coclite-karlsen:2007:DPuniqueness}
+\citation{coclite-karlsen:2008:DP-bounded-solutions}
+\citation{coclite-karlsen:2015:periodic-DP-wellposedness-and-asymptotics}
+\citation{lundmark:2007:DP-shockpeakons}
+\citation{liu-wang:2006:DP-local-wellposedness-new-integrable-equation}
+\citation{szmigielski-zhou:2013:DP-peakon-antipeakon}
+\citation{szmigielski-zhou:2013:DP-colliding-peakons-shock-formation}
+\citation{escher-liu-yin:2007:periodic-DP-shock-waves-blowup-phenomena}
+\citation{constantin-ivanov-lenells:2010:DP-inverse-scattering-transform}
+\citation{lenells:2005:DP-traveling-waves}
+\citation{vakhnenko-parkes:2004:DP-periodic-and-solitarywave-solutions}
+\citation{vakhnenko-parkes:2004:connection-DP-vakhnenko}
+\citation{matsuno:2005:DP-N-soliton-solution}
+\citation{matsuno:2005:DP-multisolitons-peakon-limit}
+\citation{chen-tang:2006:DP-new-type-of-bounded-waves}
+\citation{vakhnenko-parkes:2006:generalized-DP-solutions}
+\citation{yu-tian-wang:2006:DP-bifurcation-and-peakon}
+\citation{zhang-qiao:2007:DP-cuspons-smooth-solitons-under-inhomogeneous-boundary-condition}
+\citation{yin-tian-fan:2010:DP-limiting-behavior-of-smooth-periodic-waves}
+\citation{zhang-qiao:2010:DP-cusp-solitons}
+\citation{stalin-senthilvelan:2012:DP-multiloop-solitons}
+\citation{feng-maruno-ohta:2013:DP-tau-functions}
+\citation{hou-zhao-fan-qiao:2013:DP-hierarchy-alggeo-solutions}
+\citation{constantin-ivanov:2017:DP-dressing-method}
+\citation{li-wang-kuang:2020:multisolitons-of-DP-and-its-shortwave-limit-darboux-transformation-approach}
+\citation{mao-wang:2020:DP-backlund-transformations}
+\citation{lin-liu:2009:stability-of-DP-peakons}
+\citation{kabakouala:2015:stability-in-energy-space-of-DP-N-peakons}
+\citation{kabakouala:2016:remark-on-stability-of-DP-peakons}
+\citation{molinet:2019:rigidity-result-for-holm-staley-b-family-with-application-to-asymptotic-stability-of-DP-peakon}
+\citation{khorbatly-molinet:2020:DP-orbital-stability-antipeakon-peakon-profile}
+\citation{khorbatly:2022:DP-asymptotic-stability-of-antipeakon-peakon-profile}
+\citation{mikhailov-novikov:2002:perturbative}
+\citation{hone-wang:2003:prolongation-algebras}
+\citation{qiao:2004:integrable-hierarchy-3x3-constrained-systems-parametric-solutions}
+\citation{ivanov:2005:integrability-class-nonlinear-dispersive-wave-equations}
+\citation{kolev:2009:DP-some-geometric-investigations}
+\citation{escher-kolev:2011:DP-as-a-nonmetric-euler-equation}
+\citation{tiglay-vizman:2011:generalized-euler-poincare-equations-on-lie-groups}
+\citation{kang-liu-olver-qu:2017:Liouville-correspondences-integrable-hierarchies}
+\citation{kang-liu-olver-qu:2020:Liouville-correspondences-multicomponent-integrable-hierarchies}
+\citation{boutetdemonvel-shepelsky:2013:DP-riemann-hilbert-approach}
+\citation{lenells:2013:DP-half-line}
+\citation{hoel:2007:DP-numerical-scheme-multishockpeakons}
+\citation{coclite-karlsen-risebro:2008:DP-numerical-schemes-discontinuous-solutions}
+\citation{xia:2014:DP-fourier-spectral-methods-discontinuous-solutions}
+\citation{gao-zhang-zhang:2019:DP-adaptive-moving-knots-meshless-method}
+\citation{zhang-wang-yang:2019:DP-structure-preserving-methods}
+\citation{guo-yang-zhang-wang-song:2019:splitting-method-DP-optimized-WENO-scheme-fourier-pseudospectral-method}
+\citation{guo-zhang-yang-wang-song:2019:DP-high-order-operator-splitting-method}
+\citation{liu-yin:2006:DP-global-existence-and-blowup}
+\citation{liu-yin:2007:DP-blowup-phenomena}
+\citation{escher-yin:2007:DP-IVBP}
+\citation{escher-yin:2008:DP-IBVP:Banach}
+\citation{henry:2008:DP-persistence-properties}
+\citation{christov-hakkaev:2009:periodic-b-family-cauchy-problem-and-DP-nonuniform-continuity}
+\citation{coclite-karlsen-kwon:2009:IBVP-conservation-laws-with-source-terms-and-application-to-DP}
+\citation{chen:2011:on-solutions-to-DP}
+\citation{fu-liu:2011:periodic-DP-nonuniform-dependence-on-initial-data}
+\citation{gui-liu:2011:DP-cauchy-problem}
+\citation{himonas-holliman:2011:DP-wellposedness}
+\citation{tian-chen-liu-gao:2011:low-regularity-solutions-of-periodic-general-DP}
+\citation{guo:2012:DP-wavebreaking-phenomena-decay-properties-limit-behaviour}
+\citation{guo-jin:2013:DP-persistence-momentum-support}
+\citation{himonas-holliman-grayshan:2014:DP-norm-inflation-illposedness}
+\citation{chen-guo:2015:DP-asymptotic-profile}
+\citation{chen-guo-liu-qu:2016:DP-novikov-mCH-blowup}
+\citation{brandolese:2016:DP-liouville-theorem}
+\citation{wu:2018:finite-time-singularities-for-class-of-DP-equations}
+\citation{feola-giuliani-pasquali:2019:integrability-DP-control-of-sobolev-norms-birkhoff-resonances}
+\citation{li-liu-wu:2020:DP-spectral-stability-of-smooth-solitary-waves}
+\citation{pei:2020:DP-exponential-decay-symmetry-solitary-waves}
+\citation{novikov:2009:generalizations-of-CH}
+\citation{hone-wang:2008:cubic-nonlinearity}
+\citation{hone-wang:2008:cubic-nonlinearity}
+\citation{hone-lundmark-szmigielski:2009:novikov}
+\citation{hone-lundmark-szmigielski:2009:novikov}
+\citation{gomez-lundmark-szmigielski:2013:CDT}
+\newlabel{eq:b-family1}{{7.2}{40}{The Degasperis--Procesi equation}{equation.7.2}{}}
+\newlabel{eq:b-family2}{{7.3}{40}{The Degasperis--Procesi equation}{equation.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}The Novikov equation}{40}{subsection.7.3}\protected@file@percent }
+\newlabel{sec:guide-Novikov}{{7.3}{40}{The Novikov equation}{subsection.7.3}{}}
+\newlabel{eq:guide-matrix-T}{{7.4}{40}{The Novikov equation}{equation.7.4}{}}
+\citation{gantmacher-krein:2002:oscillation-matrices}
+\citation{chen-chen-liu:2018:novikov-global-conservative-weak-existence-uniqueness}
+\citation{ni-zhou:2011:novikov-wellposedness-and-persistence-properties}
+\citation{tiglay:2011:novikov-periodic-cauchy-problem}
+\citation{wu-yin:2011:novikov-global-weak-solutions}
+\citation{jiang-ni:2012:novikov-blowup}
+\citation{himonas-holliman:2012:novikov-cauchy-problem}
+\citation{yan-li-zhang:2012:novikov-cauchy-problem:JDiffEqu}
+\citation{wu-yin:2012:novikov-wellposedness-global-existence}
+\citation{grayshan:2013:novikov-data-to-solution-map}
+\citation{himonas-holmes:2013:novikov-holder-continuity}
+\citation{lai:2013:novikov-global-weak-solutions}
+\citation{yan-li-zhang:2013:novikov-cauchy-problem:NoDEA}
+\citation{lai-li-wu:2013:novikov-global-solutions}
+\citation{wu-yin:2013:novikov-note-on-cauchy-problem}
+\citation{chen-guo-liu-qu:2016:DP-novikov-mCH-blowup}
+\citation{wu-guo:2016:periodic-novikov-global-wellposedness}
+\citation{guo:2017:novikov-asymptotic-profile-momentum-support}
+\citation{cai-chen-chen-shen:2018:novikov-lipschitz-metric}
+\citation{himonas-holliman-kenig:2018:novikov-2-peakon-illposedness}
+\citation{zhou-yang-mu:2018:novikov-global-dissipative-solutions}
+\citation{wu:2018:novikov-global-analytic-solutions-and-traveling-wave-solutions}
+\citation{coclite-diruvo:2019:note-on-convergence-novikov}
+\citation{ma-cao-guo:2019:large-time-behavior-momentum-support-novikov-type-equation}
+\citation{shen:2019:novikov-weak-solution-optimal-control}
+\citation{li-li-zhu:2020:novikov-nonuniform-dependence-besov-spaces}
+\citation{liu-liu-qu:2014:novikov-stability-of-peakons}
+\citation{wang-tian:2018p:novikov-stability-periodic-peakons}
+\citation{palacios:2020:novikov-peakons-asymptotic-stability}
+\citation{palacios:2021:novikov-train-of-peakons-orbital-and-asymptotic-stability}
+\citation{chen-lian-wang-xu:2021:novikov-rigidity-property-asymptotic-stability-of-peakons}
+\citation{chen-pelinovsky:2021:novikov-W-1-infty-instability}
+\citation{matsuno:2013:novikov-multisolitons-peakon-limit}
+\citation{li:2014:novikov-exact-cuspon-and-compactons}
+\citation{pan-yi:2015:novikov-soliton-solutions}
+\citation{pan-li:2016:novikov-further-results-on-smooth-and-nonsmooth-solitons}
+\citation{wu-li-li:2019:novikov-solitons-negative-flow}
+\citation{mao:2021:novikov-backlund-transformation-and-applications}
+\citation{zheng-xiao-ouyang:2021:novikov-smooth-soliton-periodic-cuspon}
+\citation{stalin-senthilvelan:2011:novikov-prolongation-structure}
+\citation{bozhkov-freire-ibragimov:2014:novikov-group-analysis}
+\citation{kardell:2015:CH-novikov-peakon-creation}
+\citation{boutetdemonvel-shepelsky-zielinski:2016:novikov-riemann-hilbert-approach}
+\citation{rasin-schiff:2019:simple-looking-relative-of-novikov-hirotasatsuma-sawadakotera}
+\citation{chen-yang-li-zhu:2017:novikov-conservative-finite-difference-scheme}
+\citation{chen-zhu-yang:2017:generalized-novikov-conservative-finite-difference-scheme}
+\citation{geng-xue:2009:GX-peakon-equation-cubic-nonlinearity}
+\citation{lundmark-szmigielski:2016:GX-inverse-problem}
+\citation{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+\citation{shuaib-lundmark:2019:GX-noninterlacing}
+\newlabel{eq:guide-Novikov-weak}{{7.6}{41}{The Novikov equation}{equation.7.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}The Geng--Xue equation}{41}{subsection.7.4}\protected@file@percent }
+\newlabel{sec:guide-GX}{{7.4}{41}{The Geng--Xue equation}{subsection.7.4}{}}
+\citation{lundmark-szmigielski:2017:GX-dynamics-interlacing}
+\citation{himonas-mantzavinos:2016:GX-initial-value-problem}
+\citation{mi-mu-tao:2013:GX-cauchy-problem}
+\citation{tang-liu:2015:GX-cauchy-problem}
+\citation{himonas-mantzavinos:2016:GX-initial-value-problem}
+\citation{barostichi-himonas-petronilho:2016:ovsyannikov-theorem}
+\citation{chen-qiao-zhou:2019:GX-persistence-properties-wavebreaking-criteria}
+\citation{wang-chong-wu:2021:GX-cauchy-problem}
+\citation{li-liu:2013:GX-bihamiltonian}
+\citation{li-niu:2014:GX-reciprocal}
+\citation{li-wang:2017:GX-new-liouville-transformation}
+\citation{li-liu:2022p:GX-smooth-multisoliton-solutions}
+\citation{zhao-qu:2021:two-component-novikov-type-system-peakons-H1}
+\citation{fuchssteiner-fokas:1981:symplectic-structures-backlund-transformations-hereditary-symmetries}
+\citation{marinakis:2009:mCH-comment-on-qiao}
+\citation{fokas:1995:KdV-and-beyond}
+\citation{fokas:1995:a-class-of-physically-important-integrable-equations}
+\citation{fuchssteiner:1996:symmetry-toolbox-tricks-generalizations-of-CH}
+\citation{olver-rosenau:1996:trihamiltonian-duality-solitons-compact-support}
+\citation{schiff:1996:CH-dual-hierarchies-zero-curvature-formulations}
+\citation{qiao:2006:mCH-new-integrable-cuspons-WMpeakons}
+\citation{qiao:2007:mCH-new-integrable-hierarchy-parametric-cuspons-peakons-MWpeakons}
+\citation{novikov:2009:generalizations-of-CH}
+\citation{ivanov-lyons:2012:qiao-hierarchy-dark-solitons}
+\citation{matsuno:2013:modified-cubic-CH-backlund-multisolitons}
+\citation{matsuno:2014:modified-cubic-CH-multisolitons}
+\citation{bies-gorka-reyes:2012:mCH-geometry-and-local-analysis}
+\citation{xia-zhou-qiao:2016:CH-mCH-darboux-transformations-multisolitons}
+\citation{hu-yin-wu:2016:mCH-bilinear-equations-new-multisoliton-solutions}
+\citation{boutetdemonvel-karpenko-shepelsky:2020:mCH-nonzero-boundary-conditions-riemann-hilbert-approach}
+\citation{wang-liu-mao:2020:mcH-backlund-transformation-and-nonlinear-superposition-formula}
+\citation{mao-kuang:2021:mCH-solitons-via-dressing-method}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}The modified Camassa--Holm equation}{42}{subsection.7.5}\protected@file@percent }
+\newlabel{sec:guide-mCH}{{7.5}{42}{The modified Camassa--Holm equation}{subsection.7.5}{}}
+\newlabel{eq:guide-mCH-fokas-version}{{7.11}{42}{The modified Camassa--Holm equation}{equation.7.11}{}}
+\citation{wazwaz:2006:modified-CH-DP-b-family-solitary-waves}
+\citation{mclachlan-zhang:2009:wellposedness-of-modified-CH-equations}
+\citation{gorka-reyes:2011:modified-CH-but-not-FORQ}
+\citation{kang-liu-olver-qu:2016:liouville-correspondence-between-mKdV-hierarchy-and-its-dual-mCH-hierarchy}
+\citation{ichikawa-konno-wadati-sanuki:1980:spiky-soliton-circular-polarized-alfven-wave}
+\citation{wadati-ichikawa-shimizu:1980:cusp-soliton-new-integrable-nonlinear-evolution-equation}
+\citation{konno-ichikawa-wadati:1981:loop-soliton-propagating-along-stretched-rope}
+\citation{ichikawa-konno-wadati:1981:nonlinear-transverse-oscillation-of-elastic-beams-under-tension}
+\citation{ichikawa-konno-wadati:1983:new-integrable-nonlinear-evolution-equations-exotic-solitons}
+\citation{ichikawa-konno-wadati:1981:nonlinear-transverse-oscillation-of-elastic-beams-under-tension}
+\citation{ichikawa-konno-wadati:1981:nonlinear-transverse-oscillation-of-elastic-beams-under-tension}
+\citation{wadati-ichikawa-shimizu:1980:cusp-soliton-new-integrable-nonlinear-evolution-equation}
+\citation{olver-rosenau:1996:trihamiltonian-duality-solitons-compact-support}
+\citation{song-qu-qiao:2011:2mCH-new-integrable-twocomponent-cubic-nonlinearity}
+\citation{qiao-xia:2013:integrable-peakon-systems-with-kink-peakon}
+\citation{xia-qiao:2015:two-component-CH-with-peakons}
+\citation{xia-qiao-zhou:2015:synthetical-twocomponent-model-peakons}
+\citation{xia-zhou-qiao:2015:cubic-3CH-peakons}
+\citation{xia-qiao:2016:multicomponent-generalization-CH}
+\citation{luo-qiao-lopez:2014:integrable-generalization-associated-CH}
+\citation{hu-qiao:2016:multicomponent-peakon-system-arbitrary-polynomial-analyticity-gevrey-regularity-unique-continuation}
+\citation{lou-qiao:2017:alice-bob-peakon-systems}
+\citation{yan-qiao-zhang:2018:new-twocomponent-b-family-cubic}
+\citation{zhou-qiao-mu:2020:continuity-generalized-crosscoupled-CH-waltzing-peakons-higher-order-nonlinearities}
+\citation{holm-staley:2003:wave-structure-nonlinear-balances-family-of-evolutionary-PDEs}
+\citation{holm-staley:2003:nonlinear-balance-exchange-of-stability-solitons-ramps-cliffs-leftons}
+\citation{degasperis-holm-hone:2003:integrable-and-nonintegrable-peakons}
+\citation{lenells-misiolek-tiglay:2010:evolution-equations-tensor-densities-peakons}
+\citation{misiolek:1998:CH-as-geodesic-flow-on-Bott-Virasoro-group}
+\citation{ovsienko-khesin:1987:KdV-to-Euler}
+\citation{misiolek:1998:CH-as-geodesic-flow-on-Bott-Virasoro-group}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Other equations with peakon (or peakon-like) solutions}{43}{subsection.7.6}\protected@file@percent }
+\newlabel{sec:guide-other}{{7.6}{43}{Other equations with peakon (or peakon-like) solutions}{subsection.7.6}{}}
+\citation{khesin-lenells-misiolek:2008:generalized-HS-circle-diffeomorphisms}
+\citation{hunter-saxton:1991:dynamics-of-director-fields}
+\citation{hunter-zheng:1994:completely-integrable-hyperbolic-variational-equation}
+\citation{lenells-misiolek-tiglay:2010:evolution-equations-tensor-densities-peakons}
+\citation{anco-dasilva-freire:2015:wavebreaking-equations-generalizing-CH-and-novikov}
+\citation{anco-recio-gandarias-bruzon:2015:nonlinear-generalization-of-CH-with-peakons}
+\citation{anco-recio:2019:accelerating-dynamical-peakons}
+\citation{anco-mobasheramini:2017:integrable-U1-invariant-peakon-equations-NLS}
+\citation{xia-qiao:2015:two-component-CH-with-peakons}
+\citation{xia-qiao-zhou:2015:synthetical-twocomponent-model-peakons}
+\citation{anco-chang-szmigielski:2018:conservative-peakons-U1-invariant-NLS-Hirota}
+\newlabel{eq:guide-coadjoint-action}{{7.17}{44}{Other equations with peakon (or peakon-like) solutions}{equation.7.17}{}}
+\newlabel{eq:ACH}{{7.18}{44}{Other equations with peakon (or peakon-like) solutions}{equation.7.18}{}}
+\newlabel{eq:guide-mu-HS}{{7.19}{44}{Other equations with peakon (or peakon-like) solutions}{equation.7.19}{}}
+\bibstyle{arxiv-bibulous}
+\bibdata{peakons-orth-poly-arXiv-v2}
+\bibcite{alber-camassa-holm-marsden:1994:geometry-peakons-billiard-solutions}{1}
+\bibcite{alber-miller:2001:CH-twopeakon}{2}
+\bibcite{anco-chang-szmigielski:2018:conservative-peakons-U1-invariant-NLS-Hirota}{3}
+\bibcite{anco-dasilva-freire:2015:wavebreaking-equations-generalizing-CH-and-novikov}{4}
+\bibcite{anco-kraus:2018:hamiltonian-peakons-weak-solution-mCH}{5}
+\bibcite{anco-mobasheramini:2017:integrable-U1-invariant-peakon-equations-NLS}{6}
+\bibcite{anco-recio:2019:accelerating-dynamical-peakons}{7}
+\bibcite{anco-recio-gandarias-bruzon:2015:nonlinear-generalization-of-CH-with-peakons}{8}
+\bibcite{baker-gravesmorris:1996:pade-approximants}{9}
+\bibcite{barostichi-himonas-petronilho:2016:ovsyannikov-theorem}{10}
+\bibcite{beals-sattinger-szmigielski:1998:acoustic-scattering-KdV-hierarchy}{11}
+\bibcite{beals-sattinger-szmigielski:1999:stieltjes}{12}
+\bibcite{beals-sattinger-szmigielski:2000:moment}{13}
+\bibcite{beals-sattinger-szmigielski:2001:peakon-antipeakon-NEEDS99}{14}
+\bibcite{beals-sattinger-szmigielski:2001:peakons-strings-finite-Toda}{15}
+\bibcite{beals-sattinger-szmigielski:2002:CF-flows-periodic-peakons-2-peakon-2002}{16}
+\bibcite{beals-sattinger-szmigielski:2005:CF-flows-periodic-peakons-N-peakon-2005}{17}
+\bibcite{beals-szmigielski:2021p:2CH-euler-bernoulli-beam-noncommutative-continued-fractions}{18}
+\bibcite{bertola-gekhtman-szmigielski:2009:cubicstring}{19}
+\bibcite{bertola-gekhtman-szmigielski:2009:twomatrix}{20}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Acknowledgements}{45}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{45}{section.8}\protected@file@percent }
+\bibcite{bertola-gekhtman-szmigielski:2010:cauchy}{21}
+\bibcite{bertola-gekhtman-szmigielski:2013:strong-asymptotics}{22}
+\bibcite{bertola-gekhtman-szmigielski:2014:cauchy-laguerre-twomatrix-meijerG}{23}
+\bibcite{bies-gorka-reyes:2012:mCH-geometry-and-local-analysis}{24}
+\bibcite{boutetdemonvel-karpenko-shepelsky:2020:mCH-nonzero-boundary-conditions-riemann-hilbert-approach}{25}
+\bibcite{boutetdemonvel-shepelsky:2005:CH-half-line}{26}
+\bibcite{boutetdemonvel-shepelsky:2006:CH-riemann-hilbert-line}{27}
+\bibcite{boutetdemonvel-shepelsky:2008:CH-riemann-hilbert-half-line}{28}
+\bibcite{boutetdemonvel-shepelsky:2013:DP-riemann-hilbert-approach}{29}
+\bibcite{boutetdemonvel-shepelsky-zielinski:2016:novikov-riemann-hilbert-approach}{30}
+\bibcite{bozhkov-freire-ibragimov:2014:novikov-group-analysis}{31}
+\bibcite{brandolese:2016:DP-liouville-theorem}{32}
+\bibcite{bressan-constantin:2007:global-conservative-CH}{33}
+\bibcite{bressan-constantin:2007:global-dissipative-CH}{34}
+\bibcite{cai-chen-chen-shen:2018:novikov-lipschitz-metric}{35}
+\bibcite{calogero-francoise:1996:cf-integrable}{36}
+\bibcite{camassa:2000:CH-characteristic-variables}{37}
+\bibcite{camassa:2003:CH-characteristics-initial-value-problem}{38}
+\bibcite{camassa-holm:1993:CH-orginal-paper}{39}
+\bibcite{camassa-holm-hyman:1994:CH-new-integrable}{40}
+\bibcite{chang:2022:hermite-pade-pfaffian-structures-novikov-and-integrable-lattices}{41}
+\bibcite{chang-chen-hu:2014:generalized-nonisospectral-CH-peakons}{42}
+\bibcite{chang-he-hu-li:2018:partial-skew-orthogonal-polynomials-integrable-lattices-Pfaffian}{43}
+\bibcite{chang-hu-li:2018:DP-peakons-Toda-lattice-CKP}{44}
+\bibcite{chang-hu-li:2018:moment-modification-multipeakons}{45}
+\bibcite{chang-hu-li-zhao:2018:novikov-peakons-pfaffians-Toda-lattice-BKP}{46}
+\bibcite{chang-hu-szmigielski:2016:two-component-mCH-Kac-vanMoerbeke}{47}
+\bibcite{chang-hu-szmigielski-zhedanov:2020:isospectral-frobenius-stickelberger-thiele-polynomials}{48}
+\bibcite{chang-szmigielski:2016:mCH-concept-of-peakons}{49}
+\bibcite{chang-szmigielski:2017:mCH-liouville-integrability-conservative-peakons}{50}
+\bibcite{chang-szmigielski:2018:mCH-Lax-integrability-peakon-problem}{51}
+\bibcite{chang-szmigielski:2020:2mCH-overlapping-peakons-elastic-bar-isospectral}{52}
+\bibcite{chen-tang:2006:DP-new-type-of-bounded-waves}{53}
+\bibcite{chen-chen-liu:2018:novikov-global-conservative-weak-existence-uniqueness}{54}
+\bibcite{chen-guo:2015:DP-asymptotic-profile}{55}
+\bibcite{chen-guo-liu-qu:2016:DP-novikov-mCH-blowup}{56}
+\bibcite{chen-lian-wang-xu:2021:novikov-rigidity-property-asymptotic-stability-of-peakons}{57}
+\bibcite{chen-pelinovsky:2021:novikov-W-1-infty-instability}{58}
+\bibcite{chen-qiao-zhou:2019:GX-persistence-properties-wavebreaking-criteria}{59}
+\bibcite{chen-yang-li-zhu:2017:novikov-conservative-finite-difference-scheme}{60}
+\bibcite{chen-zhu-yang:2017:generalized-novikov-conservative-finite-difference-scheme}{61}
+\bibcite{chen:2011:on-solutions-to-DP}{62}
+\bibcite{christov-hakkaev:2009:periodic-b-family-cauchy-problem-and-DP-nonuniform-continuity}{63}
+\bibcite{cieslak-gaczkowski-kubkowski-malogrosz:2017:CH-multipeakons-as-geodesics}{64}
+\bibcite{cieslak-krynski:2021:CH-geometric-aspects-of-two-and-threepeakons}{65}
+\bibcite{coclite-diruvo:2019:note-on-convergence-novikov}{66}
+\bibcite{coclite-karlsen:2006:DP-semigroup-of-solutions}{67}
+\bibcite{coclite-karlsen:2006:DPwellposedness}{68}
+\bibcite{coclite-karlsen:2007:DPuniqueness}{69}
+\bibcite{coclite-karlsen:2008:DP-bounded-solutions}{70}
+\bibcite{coclite-karlsen:2015:periodic-DP-wellposedness-and-asymptotics}{71}
+\bibcite{coclite-karlsen-kwon:2009:IBVP-conservation-laws-with-source-terms-and-application-to-DP}{72}
+\bibcite{coclite-karlsen-risebro:2008:DP-numerical-schemes-discontinuous-solutions}{73}
+\bibcite{colville-gomez-szmigielski:2016:isospectral-deformations-string}{74}
+\bibcite{constantin:1997:CH-periodic-cauchy-problem}{75}
+\bibcite{constantin:1997:CH-periodic-spectral-problem}{76}
+\bibcite{constantin:1997:CH-soliton-interactions:Expositiones}{77}
+\bibcite{constantin:1997:CH-hamiltonian-structure:Expositiones}{78}
+\bibcite{constantin:1998:CH-inverse-spectral-problem}{79}
+\bibcite{constantin:1998:CH-periodic-finite-gap-solutions-quasiperiodicity}{80}
+\bibcite{constantin:2000:CH-geometric-approach}{81}
+\bibcite{constantin-escher:1998:CH-global-existence-blowup}{82}
+\bibcite{constantin-escher:1998:CH-global-weak}{83}
+\bibcite{constantin-escher:1998:wave-breaking-for-nonlinear-nonlocal-shallow-water-equations}{84}
+\bibcite{constantin-ivanov:2017:DP-dressing-method}{85}
+\bibcite{constantin-ivanov-lenells:2010:DP-inverse-scattering-transform}{86}
+\bibcite{constantin-lannes:2009:hydrodynamical-CH-DP}{87}
+\bibcite{constantin-lenells:2003:CH-inverse-scattering-approach:PhysLettA}{88}
+\bibcite{constantin-lenells:2003:CH-inverse-scattering-approach:JNMP}{89}
+\bibcite{constantin-mckean:1999:CH-shallow-water-equation-on-the-circle}{90}
+\bibcite{constantin-strauss:2000:CH-stability-peakons}{91}
+\bibcite{constantin-strauss:2002:CH-stability-solitons}{92}
+\bibcite{degasperis-holm-hone:2002:new-integrable-equation-DP}{93}
+\bibcite{degasperis-holm-hone:2003:integrable-and-nonintegrable-peakons}{94}
+\bibcite{degasperis-procesi:1999:asymptotic-integrability}{95}
+\bibcite{dullin-gottwald-holm:2001:integrable-shallow-water-linear-nonlinear-dispersion}{96}
+\bibcite{dullin-gottwald-holm:2003:CH-KdV5-other-asymptotically-equivalent-shallow-water}{97}
+\bibcite{dullin-gottwald-holm:2004:asymptotically-equivalent-shallow-water}{98}
+\bibcite{dym-mckean:1976:gaussian-processes}{99}
+\bibcite{eckhardt:2017:IST-for-conservative-CH-flow-with-decaying-initial-data}{100}
+\bibcite{eckhardt:2022:continued-fraction-expansions-herglotz-nevanlinna-functions-generalized-indefinite-strings-stieltjes-type}{101}
+\bibcite{eckhardt-kostenko:2014:CH-isospectral-problem-global-conservative-multipeakons}{102}
+\bibcite{eckhardt-kostenko:2016:inverse-spectral-problem-indefinite-strings}{103}
+\bibcite{eckhardt-kostenko:2018:classical-moment-problem-generalized-indefinite-strings}{104}
+\bibcite{eckhardt-kostenko:2020:inverse-spectral-problem-periodic-conservative-CH-multipeakons}{105}
+\bibcite{eckhardt-kostenko-nicolussi:2020:trace-formulas-continuous-dependence-spectra-periodic-conservative-CH-flow}{106}
+\bibcite{eckhardt-teschl:2013:isospectral-problem-dispersionless-CH}{107}
+\bibcite{eldika-molinet:2009:CH-stability-multi-peakon-antipeakon}{108}
+\bibcite{eldika-molinet:2009:CH-stability-multipeakon}{109}
+\bibcite{escher-kolev:2011:DP-as-a-nonmetric-euler-equation}{110}
+\bibcite{escher-liu-yin:2007:periodic-DP-shock-waves-blowup-phenomena}{111}
+\bibcite{escher-yin:2007:DP-IVBP}{112}
+\bibcite{escher-yin:2008:DP-IBVP:Banach}{113}
+\bibcite{faybusovich-gekhtman:2001:inverse-moment-problem-elementary-coadjoint-orbits}{114}
+\bibcite{feng-maruno-ohta:2013:DP-tau-functions}{115}
+\bibcite{feola-giuliani-pasquali:2019:integrability-DP-control-of-sobolev-norms-birkhoff-resonances}{116}
+\bibcite{fidalgo-lopezlagomasino-medinaperalta:2020:asymptotics-cauchy-biorthogonal-polynomials}{117}
+\bibcite{fisher-schiff:1999:CH-conserved-quantities-initial-value-problem}{118}
+\bibcite{fokas:1995:a-class-of-physically-important-integrable-equations}{119}
+\bibcite{fokas:1995:KdV-and-beyond}{120}
+\bibcite{fokas-liu:1996:asymptotic-integrability-of-water-waves}{121}
+\bibcite{frobenius:1881:relationen-zwischen-naherungsbruchen}{122}
+\bibcite{frobenius-stickelberger:1880:addition-multiplication-elliptischen-funktionen}{123}
+\bibcite{fu-liu:2011:periodic-DP-nonuniform-dependence-on-initial-data}{124}
+\bibcite{fuchssteiner:1981:lie-algebra-structure-nonlinear-evolution-equations-infinite-dimensional-abelian-symmetry-groups}{125}
+\bibcite{fuchssteiner:1996:symmetry-toolbox-tricks-generalizations-of-CH}{126}
+\bibcite{fuchssteiner-fokas:1981:symplectic-structures-backlund-transformations-hereditary-symmetries}{127}
+\bibcite{galtung-grunert:2021:CH-numerical-study-of-variational-discretizations}{128}
+\bibcite{gantmacher-krein:2002:oscillation-matrices}{129}
+\bibcite{gao-zhang-zhang:2019:DP-adaptive-moving-knots-meshless-method}{130}
+\bibcite{geng-xue:2009:GX-peakon-equation-cubic-nonlinearity}{131}
+\bibcite{gesztesy-holden:2003:CH-hierarchy-alggeo-solutions}{132}
+\bibcite{geyer-villadelprat:2015:CH-wavelength-of-smooth-periodic-traveling-waves}{133}
+\bibcite{gilson-pickering:1995:factorization-painleve-analysis-nonlinear-thirdorder-PDE-including-CH}{134}
+\bibcite{gomez-lundmark-szmigielski:2013:CDT}{135}
+\bibcite{gorka-reyes:2011:modified-CH-but-not-FORQ}{136}
+\bibcite{gorski-szmigielski:2018:isospectral-flows-inhomogeneous-string}{137}
+\bibcite{grayshan:2013:novikov-data-to-solution-map}{138}
+\bibcite{grunert-holden:2016:CH-peakon-antipeakon-alpha-dissipative}{139}
+\bibcite{grunert-holden-raynaud:2015:alpha-dissipative-2CH}{140}
+\bibcite{gui-liu:2011:DP-cauchy-problem}{141}
+\bibcite{gui-liu-olver-qu:2013:mCH-wavebreaking-peakons}{142}
+\bibcite{guo:2012:DP-wavebreaking-phenomena-decay-properties-limit-behaviour}{143}
+\bibcite{guo-yang-zhang-wang-song:2019:splitting-method-DP-optimized-WENO-scheme-fourier-pseudospectral-method}{144}
+\bibcite{guo-zhang-yang-wang-song:2019:DP-high-order-operator-splitting-method}{145}
+\bibcite{guo:2017:novikov-asymptotic-profile-momentum-support}{146}
+\bibcite{guo-jin:2013:DP-persistence-momentum-support}{147}
+\bibcite{henry:2008:DP-persistence-properties}{148}
+\bibcite{himonas-holliman:2011:DP-wellposedness}{149}
+\bibcite{himonas-holliman:2012:novikov-cauchy-problem}{150}
+\bibcite{himonas-holliman-grayshan:2014:DP-norm-inflation-illposedness}{151}
+\bibcite{himonas-holliman-kenig:2018:novikov-2-peakon-illposedness}{152}
+\bibcite{himonas-holmes:2013:novikov-holder-continuity}{153}
+\bibcite{himonas-mantzavinos:2016:GX-initial-value-problem}{154}
+\bibcite{hoel:2007:DP-numerical-scheme-multishockpeakons}{155}
+\bibcite{holden-raynaud:2007:CH-global-conservative-multipeakon}{156}
+\bibcite{holden-raynaud:2007:CH-global-conservative-Lagrangian}{157}
+\bibcite{holden-raynaud:2008:CH-global-dissipative-multipeakon}{158}
+\bibcite{holden-raynaud:2008:CH-periodic-conservative}{159}
+\bibcite{holden-raynaud:2009:CH-dissipative-solutions}{160}
+\bibcite{holm:2006:peakons-review}{161}
+\bibcite{holm-ivanov:2010:CH-smooth-and-peaked-solitons}{162}
+\bibcite{holm-ivanov:2011:CH-smooth-peaked-solitons-applications}{163}
+\bibcite{holm-staley:2003:nonlinear-balance-exchange-of-stability-solitons-ramps-cliffs-leftons}{164}
+\bibcite{holm-staley:2003:wave-structure-nonlinear-balances-family-of-evolutionary-PDEs}{165}
+\bibcite{hone-lundmark-szmigielski:2009:novikov}{166}
+\bibcite{hone-wang:2003:prolongation-algebras}{167}
+\bibcite{hone-wang:2008:cubic-nonlinearity}{168}
+\bibcite{hou-zhao-fan-qiao:2013:DP-hierarchy-alggeo-solutions}{169}
+\bibcite{hu-yin-wu:2016:mCH-bilinear-equations-new-multisoliton-solutions}{170}
+\bibcite{hu-qiao:2016:multicomponent-peakon-system-arbitrary-polynomial-analyticity-gevrey-regularity-unique-continuation}{171}
+\bibcite{hunter-saxton:1991:dynamics-of-director-fields}{172}
+\bibcite{hunter-zheng:1994:completely-integrable-hyperbolic-variational-equation}{173}
+\bibcite{ichikawa-konno-wadati:1981:nonlinear-transverse-oscillation-of-elastic-beams-under-tension}{174}
+\bibcite{ichikawa-konno-wadati:1983:new-integrable-nonlinear-evolution-equations-exotic-solitons}{175}
+\bibcite{ichikawa-konno-wadati-sanuki:1980:spiky-soliton-circular-polarized-alfven-wave}{176}
+\bibcite{ionescukruse:2007:variational-derivation-CH-shallow-water-equation}{177}
+\bibcite{ivanov:2005:integrability-class-nonlinear-dispersive-wave-equations}{178}
+\bibcite{ivanov-lyons:2012:qiao-hierarchy-dark-solitons}{179}
+\bibcite{ivanov-lyons-orr:2017:CH-solitons-dressing-method}{180}
+\bibcite{jiang-ni:2012:novikov-blowup}{181}
+\bibcite{johnson:2002:CH-KdV-water-waves}{182}
+\bibcite{johnson:2003:classical-water-waves}{183}
+\bibcite{kabakouala:2015:stability-in-energy-space-of-DP-N-peakons}{184}
+\bibcite{kabakouala:2016:remark-on-stability-of-DP-peakons}{185}
+\bibcite{kac-krein:1974:spectral-functions}{186}
+\bibcite{kalla-klein:2012:CH-construction-alggeo-solutions-numerical-evaluation}{187}
+\bibcite{kang-liu-olver-qu:2016:liouville-correspondence-between-mKdV-hierarchy-and-its-dual-mCH-hierarchy}{188}
+\bibcite{kang-liu-olver-qu:2017:Liouville-correspondences-integrable-hierarchies}{189}
+\bibcite{kang-liu-olver-qu:2020:Liouville-correspondences-multicomponent-integrable-hierarchies}{190}
+\bibcite{kardell:2015:CH-novikov-peakon-creation}{191}
+\bibcite{kardell:2016:phdthesis}{192}
+\bibcite{khesin-lenells-misiolek:2008:generalized-HS-circle-diffeomorphisms}{193}
+\bibcite{khorbatly:2022:DP-asymptotic-stability-of-antipeakon-peakon-profile}{194}
+\bibcite{khorbatly-molinet:2020:DP-orbital-stability-antipeakon-peakon-profile}{195}
+\bibcite{kohlenberg-lundmark-szmigielski:2007:inverse-spectral-discrete-cubic-string}{196}
+\bibcite{kolev:2009:DP-some-geometric-investigations}{197}
+\bibcite{konno-ichikawa-wadati:1981:loop-soliton-propagating-along-stretched-rope}{198}
+\bibcite{krein:1952:inverse-string}{199}
+\bibcite{lai:2013:novikov-global-weak-solutions}{200}
+\bibcite{lai-li-wu:2013:novikov-global-solutions}{201}
+\bibcite{lenells:2004:variational-approach-stability-periodic-peakons:JNMP}{202}
+\bibcite{lenells:2004:stability-periodic-peakons:IMRN}{203}
+\bibcite{lenells:2005:CH-conservation-laws}{204}
+\bibcite{lenells:2005:CH-traveling-waves}{205}
+\bibcite{lenells:2005:DP-traveling-waves}{206}
+\bibcite{lenells:2013:DP-half-line}{207}
+\bibcite{lenells-misiolek-tiglay:2010:evolution-equations-tensor-densities-peakons}{208}
+\bibcite{li-wang:2017:GX-new-liouville-transformation}{209}
+\bibcite{li-liu-wu:2020:DP-spectral-stability-of-smooth-solitary-waves}{210}
+\bibcite{li:2014:novikov-exact-cuspon-and-compactons}{211}
+\bibcite{li-li-zhu:2020:novikov-nonuniform-dependence-besov-spaces}{212}
+\bibcite{li:2008:CH-factorization-problem-on-hilbert-schmidt-group}{213}
+\bibcite{li:2009:CH-long-time-behaviour-for-class-of-low-regularity-solutions-infinitely-many-peakons}{214}
+\bibcite{li-liu:2013:GX-bihamiltonian}{215}
+\bibcite{li-liu:2022p:GX-smooth-multisoliton-solutions}{216}
+\bibcite{li-niu:2014:GX-reciprocal}{217}
+\bibcite{li-wang-kuang:2020:multisolitons-of-DP-and-its-shortwave-limit-darboux-transformation-approach}{218}
+\bibcite{lin-liu:2009:stability-of-DP-peakons}{219}
+\bibcite{liu-liu-qu:2014:novikov-stability-of-peakons}{220}
+\bibcite{liu-wang:2006:DP-local-wellposedness-new-integrable-equation}{221}
+\bibcite{liu-yin:2006:DP-global-existence-and-blowup}{222}
+\bibcite{liu-yin:2007:DP-blowup-phenomena}{223}
+\bibcite{lopezlagomasino-medinaperalta-szmigielski:2019:mixed-type-hermite-pade-approximation-inspired-by-DP}{224}
+\bibcite{lou-qiao:2017:alice-bob-peakon-systems}{225}
+\bibcite{lundmark:2007:DP-shockpeakons}{226}
+\bibcite{lundmark-shuaib:2019:ghostpeakons}{227}
+\bibcite{lundmark-szmigielski:2003:DPshort}{228}
+\bibcite{lundmark-szmigielski:2005:DPlong}{229}
+\bibcite{lundmark-szmigielski:2016:GX-inverse-problem}{230}
+\bibcite{lundmark-szmigielski:2017:GX-dynamics-interlacing}{231}
+\bibcite{luo-qiao-lopez:2014:integrable-generalization-associated-CH}{232}
+\bibcite{ma-cao-guo:2019:large-time-behavior-momentum-support-novikov-type-equation}{233}
+\bibcite{mao:2021:novikov-backlund-transformation-and-applications}{234}
+\bibcite{mao-kuang:2021:mCH-solitons-via-dressing-method}{235}
+\bibcite{mao-wang:2020:DP-backlund-transformations}{236}
+\bibcite{marinakis:2009:mCH-comment-on-qiao}{237}
+\bibcite{matsuno:2005:DP-multisolitons-peakon-limit}{238}
+\bibcite{matsuno:2005:CH-multisolitons-parametric-representation}{239}
+\bibcite{matsuno:2005:DP-N-soliton-solution}{240}
+\bibcite{matsuno:2007:CH-multisolitons-peakon-limit}{241}
+\bibcite{matsuno:2013:modified-cubic-CH-backlund-multisolitons}{242}
+\bibcite{matsuno:2013:novikov-multisolitons-peakon-limit}{243}
+\bibcite{matsuno:2014:modified-cubic-CH-multisolitons}{244}
+\bibcite{mckean:1998:CH-breakdown}{245}
+\bibcite{mclachlan-zhang:2009:wellposedness-of-modified-CH-equations}{246}
+\bibcite{medinaperalta:2021:matrix-cauchy-biorthogonal-polynomials}{247}
+\bibcite{mi-mu-tao:2013:GX-cauchy-problem}{248}
+\bibcite{mikhailov-novikov:2002:perturbative}{249}
+\bibcite{misiolek:1998:CH-as-geodesic-flow-on-Bott-Virasoro-group}{250}
+\bibcite{misiolek:2002:CH-periodic-classical-solutions}{251}
+\bibcite{mohajer:2017:DP-peakon-inverse-problem}{252}
+\bibcite{mohajer-szmigielski:2011:CH-on-real-axis}{253}
+\bibcite{mohajer-szmigielski:2012:novikov-on-real-axis}{254}
+\bibcite{molinet:2004:CH-wellposedness-survey}{255}
+\bibcite{molinet:2019:rigidity-result-for-holm-staley-b-family-with-application-to-asymptotic-stability-of-DP-peakon}{256}
+\bibcite{moser:1975:finitely-many-point-masses-on-the-line}{257}
+\bibcite{moser:1975:three-integrable}{258}
+\bibcite{natali-pelinovsky:2020:CH-instability-of-H1-stable-peakons}{259}
+\bibcite{ni-zhou:2011:novikov-wellposedness-and-persistence-properties}{260}
+\bibcite{novikov:2009:generalizations-of-CH}{261}
+\bibcite{olver-rosenau:1996:trihamiltonian-duality-solitons-compact-support}{262}
+\bibcite{ovsienko-khesin:1987:KdV-to-Euler}{263}
+\bibcite{palacios:2020:novikov-peakons-asymptotic-stability}{264}
+\bibcite{palacios:2021:novikov-train-of-peakons-orbital-and-asymptotic-stability}{265}
+\bibcite{pan-li:2016:novikov-further-results-on-smooth-and-nonsmooth-solitons}{266}
+\bibcite{pan-yi:2015:novikov-soliton-solutions}{267}
+\bibcite{parker:2004:CH-direct-method-1}{268}
+\bibcite{parker:2005:CH-direct-method-2}{269}
+\bibcite{parker:2005:CH-direct-method-3}{270}
+\bibcite{parker:2008:CH-peakons-dynamics}{271}
+\bibcite{parker-matsuno:2006:CH-solitons-peakon-limit}{272}
+\bibcite{pei:2020:DP-exponential-decay-symmetry-solitary-waves}{273}
+\bibcite{qiao:2003:CH-hierarchy-alggeo-symplectic-submanifold}{274}
+\bibcite{qiao:2004:integrable-hierarchy-3x3-constrained-systems-parametric-solutions}{275}
+\bibcite{qiao:2006:mCH-new-integrable-cuspons-WMpeakons}{276}
+\bibcite{qiao:2007:mCH-new-integrable-hierarchy-parametric-cuspons-peakons-MWpeakons}{277}
+\bibcite{qiao-xia:2013:integrable-peakon-systems-with-kink-peakon}{278}
+\bibcite{ragnisco-bruschi:1996:peakons-toda}{279}
+\bibcite{rasin-schiff:2019:simple-looking-relative-of-novikov-hirotasatsuma-sawadakotera}{280}
+\bibcite{rayan-stanley-szmigielski:2020:CF-higgs-fields}{281}
+\bibcite{sabatier:1980:needs}{282}
+\bibcite{schiff:1996:CH-dual-hierarchies-zero-curvature-formulations}{283}
+\bibcite{schiff:1998:CH-loop-group-approach}{284}
+\bibcite{shen:2019:novikov-weak-solution-optimal-control}{285}
+\bibcite{shuaib-lundmark:2019:GX-noninterlacing}{286}
+\bibcite{song-qu-qiao:2011:2mCH-new-integrable-twocomponent-cubic-nonlinearity}{287}
+\bibcite{stalin-senthilvelan:2011:novikov-prolongation-structure}{288}
+\bibcite{stalin-senthilvelan:2012:DP-multiloop-solitons}{289}
+\bibcite{stieltjes:1894:recherches-fractions-continues-1}{290}
+\bibcite{stieltjes:1895:recherches-fractions-continues-2}{291}
+\bibcite{stieltjes:1918:complete-works-2}{292}
+\bibcite{szmigielski-zhou:2013:DP-colliding-peakons-shock-formation}{293}
+\bibcite{szmigielski-zhou:2013:DP-peakon-antipeakon}{294}
+\bibcite{tang-liu:2015:GX-cauchy-problem}{295}
+\bibcite{tian-chen-liu-gao:2011:low-regularity-solutions-of-periodic-general-DP}{296}
+\bibcite{tiglay:2011:novikov-periodic-cauchy-problem}{297}
+\bibcite{tiglay-vizman:2011:generalized-euler-poincare-equations-on-lie-groups}{298}
+\bibcite{vakhnenko-parkes:2004:DP-periodic-and-solitarywave-solutions}{299}
+\bibcite{vakhnenko-parkes:2004:connection-DP-vakhnenko}{300}
+\bibcite{vakhnenko-parkes:2006:generalized-DP-solutions}{301}
+\bibcite{wadati-ichikawa-shimizu:1980:cusp-soliton-new-integrable-nonlinear-evolution-equation}{302}
+\bibcite{wahlen:2006:CH-peakon-antipeakon-interaction}{303}
+\bibcite{wang-liu-mao:2020:mcH-backlund-transformation-and-nonlinear-superposition-formula}{304}
+\bibcite{wang-chong-wu:2021:GX-cauchy-problem}{305}
+\bibcite{wang-tian:2018p:novikov-stability-periodic-peakons}{306}
+\bibcite{wazwaz:2006:modified-CH-DP-b-family-solitary-waves}{307}
+\bibcite{wu-li-li:2019:novikov-solitons-negative-flow}{308}
+\bibcite{wu:2018:novikov-global-analytic-solutions-and-traveling-wave-solutions}{309}
+\bibcite{wu:2018:finite-time-singularities-for-class-of-DP-equations}{310}
+\bibcite{wu-guo:2016:periodic-novikov-global-wellposedness}{311}
+\bibcite{wu-yin:2011:novikov-global-weak-solutions}{312}
+\bibcite{wu-yin:2012:novikov-wellposedness-global-existence}{313}
+\bibcite{wu-yin:2013:novikov-note-on-cauchy-problem}{314}
+\bibcite{xia-qiao:2015:two-component-CH-with-peakons}{315}
+\bibcite{xia-qiao:2016:multicomponent-generalization-CH}{316}
+\bibcite{xia-qiao-zhou:2015:synthetical-twocomponent-model-peakons}{317}
+\bibcite{xia-zhou-qiao:2015:cubic-3CH-peakons}{318}
+\bibcite{xia-zhou-qiao:2016:CH-mCH-darboux-transformations-multisolitons}{319}
+\bibcite{xia:2014:DP-fourier-spectral-methods-discontinuous-solutions}{320}
+\bibcite{yan-qiao-zhang:2018:new-twocomponent-b-family-cubic}{321}
+\bibcite{yan-li-zhang:2012:novikov-cauchy-problem:JDiffEqu}{322}
+\bibcite{yan-li-zhang:2013:novikov-cauchy-problem:NoDEA}{323}
+\bibcite{yin-tian-fan:2010:DP-limiting-behavior-of-smooth-periodic-waves}{324}
+\bibcite{yin:2003:DP-global-existence-for-new-periodic-integrable-equation}{325}
+\bibcite{yin:2003:DP-cauchy-problem:Illinois}{326}
+\bibcite{yin:2004:DP-global-solutions:Indiana}{327}
+\bibcite{yin:2004:DP-global-weak-solutions-for-new-periodic-integrable-equation-with-peakons}{328}
+\bibcite{yu-tian-wang:2006:DP-bifurcation-and-peakon}{329}
+\bibcite{zhang-qiao:2007:DP-cuspons-smooth-solitons-under-inhomogeneous-boundary-condition}{330}
+\bibcite{zhang-qiao:2010:DP-cusp-solitons}{331}
+\bibcite{zhang-wang-yang:2019:DP-structure-preserving-methods}{332}
+\bibcite{zhao-qu:2021:two-component-novikov-type-system-peakons-H1}{333}
+\bibcite{zheng-xiao-ouyang:2021:novikov-smooth-soliton-periodic-cuspon}{334}
+\bibcite{zhou-qiao-mu:2020:continuity-generalized-crosscoupled-CH-waltzing-peakons-higher-order-nonlinearities}{335}
+\bibcite{zhou-yang-mu:2018:novikov-global-dissipative-solutions}{336}
+\gdef \@abspage@last{58}

@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}The Camassa--Holm equation and the eigenvalue problem for a vibrating string}{7}{section.2}%
+\contentsline {section}{\numberline {3}The Degasperis--Procesi equation and the cubic string}{20}{section.3}%
+\contentsline {section}{\numberline {4}The Novikov equation and the dual cubic string}{26}{section.4}%
+\contentsline {section}{\numberline {5}The Geng--Xue equation and its twin Lax pairs}{28}{section.5}%
+\contentsline {section}{\numberline {6}The modified Camassa--Holm equation and distributional Lax integrability}{31}{section.6}%
+\contentsline {section}{\numberline {7}Additional comments and pointers to the literature}{38}{section.7}%
+\contentsline {subsection}{\numberline {7.1}The Camassa--Holm equation}{38}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}The Degasperis--Procesi equation}{39}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The Novikov equation}{40}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}The Geng--Xue equation}{41}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}The modified Camassa--Holm equation}{42}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Other equations with peakon (or peakon-like) solutions}{43}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Acknowledgements}{45}{section.8}%
+\contentsline {section}{References}{45}{section.8}%

@@ -1,0 +1,18 @@
+\babel@toc {swedish}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Theory}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Lax Pairs}{3}{section.1.2}%
+\contentsline {subsubsection}{Definition}{3}{section*.3}%
+\contentsline {chapter}{\numberline {2}Solution}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}N = 2 solution to the high frequency limit Novikov}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}N = 3 solution to the high frequency limit Novikov}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Constants of motion}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}N = 2}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}N = 3}{9}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}N = 4}{9}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}N = 5}{10}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}N = 6}{10}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Conclusion}{10}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.4}Constants}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Novikov}{13}{section.2.5}%

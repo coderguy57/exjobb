@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/erik/Documents/exjobb/peakon/build",
+  "command": "/usr/local/bin/clang++ -isystem /usr/include/eigen3 -g -std=gnu++20 -o CMakeFiles/NullSpaceExample.dir/main.cpp.o -c /home/erik/Documents/exjobb/peakon/main.cpp",
+  "file": "/home/erik/Documents/exjobb/peakon/main.cpp"
+}
+]
