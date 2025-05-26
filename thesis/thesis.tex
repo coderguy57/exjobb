@@ -23,8 +23,9 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{subcaption}
-\pgfplotsset{compat=1.18}
+\pgfplotsset{compat=1.17}
 \usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
 
 \theoremstyle{plain}
 \newtheorem{proposition}{Proposition}[section]
@@ -47,6 +48,15 @@
 % Define a macro for the position calculation
 \newcommand{\dotposition}[1]{
     ({-360/\n * (#1 - 1) + 90}:\radius)
+}
+\newcommand{\alllines}[1]{
+    \foreach \i in {#1}{
+        \foreach \j in {#1}{
+            \ifnum\i<\j
+            \draw[gray, very thick, loosely dashed] \dotposition{\i} -- \dotposition{\j};
+            \fi
+        }
+    }
 }
 
 \begin{document}
@@ -91,7 +101,7 @@
 \pagenumbering{roman}
 \section*{Abstract}
 
-A summary of the thesis, presenting the important results.
+The Novikov equation is a nonlinear partial differential equation (PDE) that admits peakon solutions. This thesis focuses on the high-frequency limit of the Novikov equation, which results in a new PDE. We derive the corresponding system of ordinary differential equations (ODEs) for piecewise linear solutions and provide a detailed solution for the case when the number of peakons \(N = 2\). We also explore the periodic case for \(N = 2\) and perform numerical simulations for higher values of \(N\). Additionally, we investigate the Hamiltonian structure of the high-frequency Novikov equation and identify several constants of motion using both direct search and Lax pair methods.
 
 \placeenkeywords
 \placeenurl
@@ -138,7 +148,7 @@ The objective of this thesis is to study the following nonlinear partial differe
 \begin{equation}
 	u_{xxt} = -u^2u_{xxx} - 3uu_xu_{xx},
 \end{equation}
-where $u = u(x, t)$. This equation is obtained by taking the high-frequency limit of the Novikov equation which will be explained in this section. It can be written on a more compact form as
+where $u = u(x, t)$. This equation is obtained by taking the high-frequency limit of the Novikov equation, which will be explained in this section. It can be written in a more compact form as
 \begin{equation}
 	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u_{xx}.
 \end{equation}
@@ -146,18 +156,18 @@ We will study solutions to this equation on the form,
 \begin{equation}
 	u(x, t) = \sum_{k = 1}^{N} m_k(t) |x - x_k(t)|.
 \end{equation}
-Solution on this form gives rise to a system of ordinary differential equations (ODEs). The ODEs are given by
+Solutions of this form give rise to a system of ordinary differential equations (ODEs). The ODEs are given by
 \begin{equation}
 	\dot{x}_k = u(x_k)^2, \quad
 	\dot{m}_k = -m_ku_x(x_k)u(x_k).
 \end{equation}
-In the next section a brief historical background will be given and then the high-frequency limit of the Novikov equation and two closely related PDEs will be discussed. After that a brief outline of the thesis will be given.
+In the next section, we provide a brief historical background and then discuss the high-frequency limit of the Novikov equation and two closely related PDEs. After that, we present an outline of the thesis.
 
-\subsection{A short history of solitons}
+\subsection{A brief history of solitons}
 
-In 1834 John Scott Russell observed a solitary wave in a canal. The wave was created by a boat traveling along the canal. The wave was solitary in that it maintained its shape and speed as it traveled along the canal.
+In 1834, John Scott Russell observed a solitary wave in a canal. The wave was created by a boat traveling along the canal. The wave was solitary in that it maintained its shape and speed as it traveled along the canal.
 
-Diederik Johannes Korteweg and Gustav de Vries continued the study of solitary waves and they were the first to derive a partial differential equation (PDE) that describes solitary waves. In 1895 they discovered the now famous Korteweg--de Vries (KdV) equation
+Diederik Johannes Korteweg and Gustav de Vries conducted further studies of solitary waves, and they were the first to derive a partial differential equation (PDE) that describes solitary waves. In 1895, they discovered the now famous Korteweg--de Vries (KdV) equation
 \begin{equation}
 	u_t + u_{xxx} - 6uu_x = 0,
 \end{equation}
@@ -456,37 +466,36 @@ While the $x_2$ term goes to infinity the $x_1$ term goes to $C$. For the contin
 The $u$ and $u_x$ functions have been adjusted to for the periodic boundary conditions
 \begin{equation} \label{eq:periodic_ansatz}
 \begin{aligned}
-	u(x, t) &= \sum_{k = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|, \\
-	u_x(x, t) &= \sum_{k = 1}^{N} m_k(t) \sgn([x - x_k(t) - L]_{2L} - L),
+    u(x, t) &= \sum_{k = 1}^{N} m_k(t) |[x - x_k(t) - L]_{2L} - L|, \\
+    u_x(x, t) &= \sum_{k = 1}^{N} m_k(t) \sgn([x - x_k(t) - L]_{2L} - L),
 \end{aligned}
 \end{equation}
 where
 \begin{equation}
-	[x]_{2L} = x - 2L\floor*{\frac{x}{2L}}.
+    [x]_{2L} = x - 2L\floor*{\frac{x}{2L}}.
 \end{equation}
 %
-Here is an example of how the function $u$ can look like in black with its two contributing terms in red and blue
+Here is an example of the function $u$ (shown in black) with its two contributing terms (shown in red and blue):
 \begin{center}
 \begin{tikzpicture}
     \begin{axis}[
         xlabel={$x$},
         ylabel={$u$},
-		axis x line=center,
-		axis y line=center,
+        axis x line=center,
+        axis y line=center,
         domain=0:2,
         samples=21,
-		ymin=-1, ymax=2,
-		xmin=0, xmax=2,
-        % grid=both,
+        ymin=-1, ymax=2,
+        xmin=0, xmax=2,
         width=10cm,
         height=6cm,
     ]
-		\addplot[thick, red] {2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)};
+        \addplot[thick, red] {2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)};
         \addplot[thick, blue] {-1 * abs(mod(abs(x - 0.7 - 1), 2) - 1)};
         \addplot[thick, black] {
-			+2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)
-			-1 * abs(mod(abs(x - 0.7 - 1), 2) - 1)
-		};
+            +2 * abs(mod(abs(x - 0.3 - 1), 2) - 1)
+            -1 * abs(mod(abs(x - 0.7 - 1), 2) - 1)
+        };
     \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -494,24 +503,24 @@ Here is an example of how the function $u$ can look like in black with its two c
 This leads to the following ODEs for the peakon positions and momenta
 %
 \begin{align}
-	\dot{x}_1 & = m_2^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
-	\dot{x}_2 & = m_1^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
-	\dot{m}_1 & = m_1 m_2^2([x_2 - x_1 - L]_{2L} - L),  \\
-	\dot{m}_2 & = -m_1^2 m_2([x_2 - x_1 - L]_{2L} - L).
+    \dot{x}_1 & = m_2^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+    \dot{x}_2 & = m_1^2 ([x_2 - x_1 - L]_{2L} - L)^2, \\
+    \dot{m}_1 & = m_1 m_2^2([x_2 - x_1 - L]_{2L} - L),  \\
+    \dot{m}_2 & = -m_1^2 m_2([x_2 - x_1 - L]_{2L} - L).
 \end{align}
 %
 To solve this system, we first identify two conserved quantities
 \begin{align}
-	M &= m_1^2 + m_2^2, \\
-	K &= m_1m_2|[x_2 - x_1 - L]_{2L} - L|.
+    M &= m_1^2 + m_2^2, \\
+    K &= m_1m_2|[x_2 - x_1 - L]_{2L} - L|.
 \end{align}
 %
 We show that these quantities are conserved by making sure that their time derivatives are zero
 \begin{equation}
 \begin{aligned}
-	(m_1^2 + m_2^2)_t 
-	&= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
-	&= (2m_1^2m_2^2 - 2m_1^2m_2^2)([x_2 - x_1 - L]_{2L} - L) = 0,
+    (m_1^2 + m_2^2)_t 
+    &= 2m_1\dot{m}_1 + 2m_2\dot{m}_2 \\
+    &= (2m_1^2m_2^2 - 2m_1^2m_2^2)([x_2 - x_1 - L]_{2L} - L) = 0,
 \end{aligned}
 \end{equation}
 \begin{equation}
@@ -524,27 +533,29 @@ We show that these quantities are conserved by making sure that their time deriv
 \end{aligned}
 \end{equation}
 %
-Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$:
+Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and $\dot{m}_2$
 \begin{equation}
 \begin{aligned}
-	\dot{m}_1 = \phantom{-}m_2K \sgn([x_2 - x_1 - L]_{2L} - L), \\
-	\dot{m}_2 = -m_1K \sgn([x_2 - x_1 - L]_{2L} - L).
+    \dot{m}_1 &= \phantom{-}m_2K \sgn([x_2 - x_1 - L]_{2L} - L), \\
+    \dot{m}_2 &= -m_1K \sgn([x_2 - x_1 - L]_{2L} - L).
 \end{aligned}
 \end{equation}
 %
 Let
 \begin{equation}
-	S(t_0) = \sgn([x_2 - x_1 - L]_{2L} - L).
+    S(t_0) = \sgn([x_2 - x_1 - L]_{2L} - L).
 \end{equation}
-The $S(t_0)$ function can only take on the values $-1$, $0$, or $1$. For a momement let's assume that the $S(t_0)$ is equal to $1$. Then we can solve the ODEs for $m_1$ and $m_2$ around $t_0$
+
+The $S(t_0)$ function can only take on the values $-1$, $0$, or $1$. For a moment, let's assume that $S(t_0)$ is equal to $1$. Then we can solve the ODEs for $m_1$ and $m_2$ around $t_0$
 \begin{equation}
 \begin{aligned}
-	m_1 &= \sqrt{M} \sin(K t + \phi), \\
-	m_2 &= \sqrt{M} \cos(K t + \phi), \\
-	\phi &= \text{atan2}(m_1(0),m_2(0)).
+    m_1 &= \sqrt{M} \sin(K t + \phi), \\
+    m_2 &= \sqrt{M} \cos(K t + \phi), \\
+    \phi &= \text{atan2}(m_1(0),m_2(0)).
 \end{aligned}
 \end{equation}
-The solution functions for $m_1$ and $m_2$ are the same as for the non periodic case as long as assumption that $S(t_0) = 1$. The same is true for the $x_1$ and $x_2$ solution functions since
+
+The solution functions for $m_1$ and $m_2$ are the same as for the non-periodic case as long as the assumption that $S(t_0) = 1$ holds. The same is true for the $x_1$ and $x_2$ solution functions since
 \begin{align}
 	\dot{x}_1m_1^2 = m_1^2m_2^2(x_2 - x_1)^2 = K^2 \\
 	\implies
@@ -557,25 +568,26 @@ The solution functions for $m_1$ and $m_2$ are the same as for the non periodic 
 And just as before we can integrate these equations to get the positions
 \begin{equation}
 \begin{aligned}
-	x_1 = -\frac{K}{M}\cot(Kt + \phi) + C,\\
-	x_2 = \phantom{-}\frac{K}{M}\tan(Kt + \phi) - D,
+    x_1 &= -\frac{K}{M}\cot(Kt + \phi) + C,\\
+    x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) - D,
 \end{aligned}
 \end{equation}
 which results in the same solution as for the non periodic case
 \begin{align}
-	m_1 &= \sqrt{M} \sin(K t + \phi), \\
-	m_2 &= \sqrt{M} \cos(K t + \phi), \\
-	x_1 &= -\frac{K}{M}\cot(Kt + \phi) + C,\\
-	x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) + D,
+    m_1 &= \sqrt{M} \sin(K t + \phi), \\
+    m_2 &= \sqrt{M} \cos(K t + \phi), \\
+    x_1 &= -\frac{K}{M}\cot(Kt + \phi) + C,\\
+    x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) + D,
 \end{align}
-with the only difference that $C$ and $D$ doesn't not need to be equal. The constants $C$ and $D$ are determined by the inital conditions
+with the only difference that $C$ and $D$ doesn't need to be equal. The constants $C$ and $D$ are determined by the initial conditions
 \begin{equation}
 \begin{aligned}
-	C &= x_1(0) + \frac{K}{M}\frac{m_2(0)}{m_1{0}}, \\
-	D &= x_2(0) - \frac{K}{M}\frac{m_1(0)}{m_2{0}}.
+    C &= x_1(0) + \frac{K}{M}\frac{m_2(0)}{m_1(0)}, \\
+    D &= x_2(0) - \frac{K}{M}\frac{m_1(0)}{m_2(0)}.
 \end{aligned}
 \end{equation}
-It's important to note that since we used that $S(t_0) = 1$ here we only got a local solution. The $S(t_0)$ function will change sign if the $x_2$ and $x_1$ swap places in the expression for $S(t_0)$
+
+It's important to note that since we used that $S(t_0) = 1$, we only obtained a local solution. The $S(t_0)$ function will change sign if $x_2$ and $x_1$ swap places in the expression for $S(t_0)$
 \begin{equation}
 \begin{aligned}
 	\sgn([x_1 - x_2 - L]_{2L} - L) =& \sgn([x_2 - x_1 - L + 2L]_{2L} - L)  \\
@@ -588,7 +600,7 @@ This tells us that the solution for when $S(t_0) = -1$ can be obtained by swappi
 \\ \\
 For the case where $S(t_0) = 0$ we have that $m_1$ and $m_2$ are constant and from the ODEs for $x_1$ and $x_2$ we see that the time derivative of $x_1$ and $x_2$ will be the same only if $m_1 = m_2$. This means that if $S(t_0) = 0$ and $m_1(t_0) = m_2(t_0)$ is going to be constant and $x_1$ and $x_2$ will both travel with constant speed with a distance of $L$ between them. In the case where $S(t_0)$ and $m_1(t_0) \neq m_2(t_0)$ the solution will be only be valid for $t = t_0$. At any other $t$ close to $t_0$ the $S(t)$ function will be either $-1$ or $1$.
 \\ \\
-As soon as the local solution becomes invalid it's possible to continue the solution by creating a new solution with new values for $C$, $D$, $\phi$. Both $M$ and $K$ are will be conserved for the continuation of the solution. The non-periodic solution can be obtained by letting $L \rightarrow \infty$, since that will make the periodic boundary conditions irrelevant.
+As soon as the local solution becomes invalid, it's possible to continue the solution by creating a new solution with new values for $C$, $D$, and $\phi$. Both $M$ and $K$ will be conserved for the continuation of the solution. The non-periodic solution can be obtained by letting $L \rightarrow \infty$, since that will make the periodic boundary conditions irrelevant.
 
 \section{Numerical analysis} \label{sec:Numerical}
 
@@ -598,7 +610,7 @@ Both in the non periodic and periodic cases the numerical simulations are consis
 
 \subsection{HF Novikov equation}
 
-First we will look at the graph of $x_i$ and $m_i$ for $N = 3$.
+First, we examine the evolution of $x_i$ and $m_i$ for $N = 3$.
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
 		\includegraphics[width=\textwidth]{graphs/3N/x.pdf}
@@ -844,7 +856,7 @@ A finite dimensional Hamiltonian system is integrable if it possesses as many co
 \begin{equation}
 	\{F_i, F_j\} = 0.
 \end{equation}
-%
+
 These conserved quantities allow the system's equations of motion to in principle be solved explicitly. 
 
 \subsection{Comparison to other soliton equations}
@@ -853,23 +865,28 @@ Here we will show the Hamiltonian structure for the CH, DP, and Novikov peakon O
 \begin{alignat}{3}
 	\{&x_i, &x_j\} &= \phantom{-}G(x_i - x_j), \\
 	\{&x_i, &m_j\} &= \phantom{-}G'(x_i - x_j)m_j (b - 1), \\
-	\{&m_i, &m_j\} &=           -G''(x_i - x_j) m_i m_j (b - 1)^2,
-	G(x) = A \sgn(x) (1 - e^{-B|x|}),
+	\{&m_i, &m_j\} &=           -G''(x_i - x_j) m_i m_j (b - 1)^2
 \end{alignat}
 %
 with the paramters and Hamilton function given in the table below:
 \begin{center}
-  \begin{tabular}{l|c|c|c|c}
-    & $A$ & $B$ & $b$ & $H$ \\
+  \begin{tabular}{l|c|c|c}
+    & $b$ & $H$ & $G$ \\
     \hline
     Camassa--Holm
-	& $1$ & $1$ & $2$ & $\sum m_i$ \\
+	& $2$ & $\sum m_i$ & $\sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Degasperis--Procesi
-	& $1/2$ & $1$ & $3$ & $\sum m_i$ \\
+	& $3$ & $\sum m_i$ & $1/2 \sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Novikov
-	& $1$ & $2$ & $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ \\
+	& $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ & $\sgn(x)(1 - e^{-2|x|})$ \\
+    \hline
+	Hunter Saxton
+	& $2$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
+    \hline
+    Derivative Burgers
+	& $3$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
   \end{tabular}
 \end{center}
 %
@@ -890,14 +907,91 @@ We wanted to find a Hamiltonian structure for the HF Novikov peakon ODEs but it 
 
 \section{Constants of motion by direct search}
 
-Two methods have been used to find constants of motion for the HF Novikov equation. One of the methods will be covered in the next section. The other method is an exhaustive search algorithm. The algorithm is based on the assumption that the constants of motion are polynomials in the variables $m_k$ and $x_k$ of a fixed degree $M$ and $X$ for $m_k$ respectively $x_k$. The algorithm lists all monomials of that fixed degree
+Here we will outline the exhaustive search algorithm used to find constants of motion for the HF Novikov equation and the results of the search.
+
+Since the system's time evolution is governed by polynomial expressions of a certain degree, we restrict our search to polynomials functions of a certain degree in the variables $m_k$ and $x_k$. Each polynomial will be a sum of monomials of the form
 \begin{equation}
 	\prod_{i=1}^{N} m_i^{a_i} x_i^{b_i},
+\end{equation} 
+where the sum of $a_i$ is some constant $A$ and the sum of $b_i$ is some constant $B$. The notation for the constants of motion will be $M_{AB}$, where $A$ is the sum of the $m_i$ and $B$ is the sum of the $x_i$.
+
+% Two methods have been used to find constants of motion for the HF Novikov equation. One of the methods will be covered in the next section. The other method is an exhaustive search algorithm.
+
+
+% The algorithm is based on the assumption that the constants of motion are polynomials in the variables $m_k$ and $x_k$ of a fixed degree $M$ and $X$ for $m_k$ respectively $x_k$. The algorithm lists all monomials of that fixed degree
+% \begin{equation}
+% 	\prod_{i=1}^{N} m_i^{a_i} x_i^{b_i},
+% \end{equation}
+% where the sum of $a_i$ is $M$ and the sum of $b_i$ is $X$. The algorithm then takes the time derivative of each monomial and forms a linear combination of them. The constants of motion are then found by finding linear combinations that are zero. The algorithm has been run both symbolically in Mathematica and numerically in C++. The algorithm has been successful up until $N = 4$, where time and numerical precision become limiting factors.
+
+\subsection*{Example for $N = 2$ and $M_{20}$}
+
+To give an example of the algorithm, we will look at the case for $N = 2$. The algorithm will then list all monomials for a given $A$ and $B$, in this case $A = 2$ and $B = 0$. The monomials are then
+\begin{equation}
+	m_1^2, m_2^2, m_1 m_2
 \end{equation}
-where the sum of $a_i$ is $M$ and the sum of $b_i$ is $X$. The algorithm then takes the time derivative of each monomial and forms a linear combination of them. The constants of motion are then found by finding linear combinations that are zero. The algorithm has been run both symbolically in Mathematica and numerically in C++. The algorithm has been successful up until $N = 4$, where time and numerical precision become limiting factors.
+Then we will take the time derivative of the linear combination of the monomials
+\begin{equation}
+\begin{aligned}
+	&\partial_t (\alpha_1 m_1^2 + \alpha_2 m_2^2 + \alpha_3 m_1 m_2) \\
+	&= \alpha_1 (2m_1^2 m_2^2 x_2 - 2m_1^2 m_2^2 x_1) \\
+	&+ \alpha_2 (-2m_1^2 m_2^2 x_1 + 2m_1^2 m_2^2 x_2) \\
+	&+ \alpha_3 (m_1 m_2^3 x_2 - m_1 m_2^3 x_1 + m_1^3 m_2 x_2 - m_1^3 m_2 x_1).
+\end{aligned}
+\end{equation}
+The monomials are then indexed resulting in the following expression:
+\begin{equation}
+\begin{aligned}
+	\alpha_1 (2w_1 - 2w_2)
+	+ \alpha_2 (-2w_1 + 2w_2)
+	+ \alpha_3 (w_3 - w_4 + w_5 - w_6)
+\end{aligned}
+\end{equation}
+Writing the linear combination of the monomials as a matrix, we get that the constants of motion are then the null space of the matrix
+\begin{equation}
+\begin{pmatrix}
+	2 & -2 & 0 \\
+	-2 & 2 & 0 \\
+	0 & 0 & 1 \\
+	0 & 0 & -1 \\
+	0 & 0 & 1 \\
+	0 & 0 & -1
+\end{pmatrix}
+\end{equation}
+Which is this case is $\alpha_1 = \alpha_2, \alpha_3 = 0$, which is the same as the known constant of motion $m_1^2 + m_2^2$.
+
+This is done repeatedly for growing $A$ and $B$. For multiple of known constants of motion the algorithm will need to take into account that the same constants of motion will be found again. For example, at $A = 4$ and $B = 0$ the algorithm will find $(m_1^2 + m_2^2)^2$.
+
+The solving of the null space have been done both symbolically in Mathematica and numerically in C++ using LU decomposition method from the Eigen library. The numerical methods broke down at $N > 4$ due to numerical precision. The symbolic method was able to find the constants of motion for $N = 5$ but took a long time.
+
+% We actual values of the monomials doesn't matter since we are only interested in the coefficients. The monomials are then indexed 
+% \begin{equation}
+% \begin{aligned}
+% 	\alpha_1 (2w_1 - 2w_2)
+% 	+ \alpha_2 (-2w_1 + 2w_2)
+% 	+ \alpha_3 (w_3 - w_4 + w_5 - w_6) = 0
+% \end{aligned}
+% \end{equation}
+
+% One quick optimization utilized is repeatedly removing columns which have a monomial which doesn't appear in any of the other columns. For example a matrix like this 
+% \begin{equation}
+% \begin{pmatrix}
+% 	2 & -2 & 0 & 0 \\
+% 	-2 & 2 & 1 & 1 \\
+% 	0 & 0 & 0 & 1 \\
+% 	0 & 0 & 1 & 1 \\
+% \end{pmatrix}
+% \end{equation}
+% would be reduced to this
+% \begin{equation}
+% \begin{pmatrix}
+% 	2 & -2 \\
+% 	-2 & 2 \\
+% \end{pmatrix}
+% \end{equation}
 
 \subsection*{Jacobian method}
-Two or more constants of motion are said to be functionally independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
+The methods described above have been been successful in finding constants of motion for the HF Novikov equation. However, it is not guaranteed that the constants of motion are independent. Two or more constants of motion are said to be functionally independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
 
 To determine if a set of constants of motion are independent, the Jacobian matrix is used. Suppose there are a set of $n$ constants of motion $M_1,M_2,\dots,M_m$. These constants are functions of the variables $x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n$.
 
@@ -906,10 +1000,10 @@ The Jacobian matrix $J$ of the functions ${M_1,M_2,\dots,M_m}$ with respect to t
 \begin{equation}
 	j = 
 	\begin{pmatrix}
-		\frac{\partial m_1}{\partial x_1} & \frac{\partial m_1}{\partial x_2} & \cdots & \frac{\partial m_1}{\partial x_n} & \frac{\partial m_1}{\partial m_1} & \frac{\partial m_1}{\partial m_2} & \cdots & \frac{\partial m_1}{\partial m_n} \\
-		\frac{\partial m_2}{\partial x_1} & \frac{\partial m_2}{\partial x_2} & \cdots & \frac{\partial m_2}{\partial x_n} & \frac{\partial m_2}{\partial m_1} & \frac{\partial m_2}{\partial m_2} & \cdots & \frac{\partial m_2}{\partial m_n} \\
+		\frac{\partial M_1}{\partial x_1} & \frac{\partial M_1}{\partial x_2} & \cdots & \frac{\partial M_1}{\partial x_n} & \frac{\partial M_1}{\partial m_1} & \frac{\partial M_1}{\partial m_2} & \cdots & \frac{\partial M_1}{\partial m_n} \\
+		\frac{\partial M_2}{\partial x_1} & \frac{\partial M_2}{\partial x_2} & \cdots & \frac{\partial M_2}{\partial x_n} & \frac{\partial M_2}{\partial m_1} & \frac{\partial M_2}{\partial m_2} & \cdots & \frac{\partial M_2}{\partial m_n} \\
 		\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\
-		\frac{\partial m_n}{\partial x_1} & \frac{\partial m_n}{\partial x_2} & \cdots & \frac{\partial m_n}{\partial x_n} & \frac{\partial m_n}{\partial m_1} & \frac{\partial m_n}{\partial m_2} & \cdots & \frac{\partial m_n}{\partial m_n}
+		\frac{\partial M_m}{\partial x_1} & \frac{\partial M_m}{\partial x_2} & \cdots & \frac{\partial M_m}{\partial x_n} & \frac{\partial M_m}{\partial m_1} & \frac{\partial M_m}{\partial m_2} & \cdots & \frac{\partial M_m}{\partial m_n}
 	\end{pmatrix}
 \end{equation}
 
@@ -918,7 +1012,7 @@ Each row of the Jacobian matrix is the gradient of one of the constants of motio
 
 \subsection*{N = 2}
 
-The notation for all constants of motion will be $M_{ab}$ where $a$ is the degree of $m_k$ and $b$ is the degree of $x_k$. The algorithm has found the following four conserved quantities for $N = 2$:
+The algorithm has found the following four conserved quantities for $N = 2$:
 
 \begin{align}
 	M_{21A} &= m_1 m_2 (x_2 - x_1), \\
@@ -961,12 +1055,12 @@ These conserved quantities aren't functionally independent. The Jacobian method 
 
 \subsection*{N = 4}
 
-For $N = 4$ six conserved quantities have been found. The first two follow the same pattern as for $N = 3$
+For $N = 4$, six conserved quantities have been found. The first two follow the same pattern as for $N = 3$:
 \begin{align}
 	M_{21} = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
 	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
 \end{align}
-For the next three let's define define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as
+For the next three, let's define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as:
 \begin{align}
 	A &= m_1^2(M_{21} + 2W_1), \\
 	B &= m_2^2(M_{21} + 2W_2), \\
@@ -990,7 +1084,7 @@ Interestingly, it follows very close to the pattern of the $N = 3$ case. The onl
 		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
 		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
 		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
-		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_2) \\
+		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_3) \\
 		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
 		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
 		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
@@ -1091,7 +1185,8 @@ that satisfy the zero curvature condition
 \begin{equation}
 	\partial_t U - \partial_x V + [U, V] = 0,
 \end{equation}
-where $U$ and $V$ are often are square matrices. The condition comes from equating the mixed partials $\partial_t \partial_x \psi = \partial_x \partial_t \psi$. The existence of a Lax pair for a nonlinear PDE is a strong indicator of the equation's integrability. It allows the application of powerful analytical methods to find exact solutions and conservation laws.
+where $U$ and $V$ are often square matrices. The condition comes from equating the mixed partials $\partial_t \partial_x \psi = \partial_x \partial_t \psi$. The existence of a Lax pair for a nonlinear PDE is a strong indicator of the equation's integrability. It allows the application of powerful analytical methods to find exact solutions and conservation laws.
+
 \begin{example}
 The KdV equation
 \begin{equation}
@@ -1391,31 +1486,24 @@ So we almost have that $V(-\infty) = V(\infty)$. If
 %
 we can write $V(a) = DV(-a)D$. This means that 
 \begin{equation}
-	\partial_t T_a(t) = DV(-a;t)DT_a(t) - T_a(t)V(-a;t).
+	\partial_t M(t) = DV(-a;t)DM(t) - M(t)V(-a;t).
 \end{equation}
-Multiplying by $D$ from the left, it can be seen that the trace of $DT_a(t)$ will be constant in time
+Multiplying by $D$ from the left, it can be seen that the trace of $DM(t)$ will be constant in time
 \begin{equation}
 \begin{aligned}
-	\partial_t \tr(D T_a(t))
-	&= \tr(D \partial_t T_a(t)) \\
-	&= \tr(DDV(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
-	&= \tr(V(-a;t)DT_a(t) - DT_a(t)V(-a;t)) \\
-	&= \tr([V(-a;t), DT_a(t)]) \\
+	\partial_t \tr(D M(t))
+	&= \tr(D \partial_t M(t)) \\
+	&= \tr(DDV(-a;t)DM(t) - DM(t)V(-a;t)) \\
+	&= \tr(V(-a;t)DM(t) - DM(t)V(-a;t)) \\
+	&= \tr([V(-a;t), DM(t)]) \\
 	&= 0.
 \end{aligned}
 \end{equation}
-Thus the sum $M(t;\lambda)[1,1] - M(t;\lambda)[2,2] + M(t;\lambda)[3,3]$ forms a polynomial in $\lambda$, where every coefficient is a constant of motion. It seems like this method will yield $N-1$ independent constant of motion for each $N$. Were the coefficient of the lowest and highest term of $\lambda$ respectively yield the following constants of motion
-\begin{equation}
-	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
-\end{equation}
-\begin{equation}
-	\prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
-\end{equation}
-
-The trace of $DT_a$ will be a polynomial in $\lambda$ with the following form
+Thus the sum $M(t;\lambda)[1,1] - M(t;\lambda)[2,2] + M(t;\lambda)[3,3]$ forms a polynomial in $\lambda$ on the form
 \begin{equation}
 	C_0 + C_1 \lambda + C_2 \lambda^2 + \cdots + C_{n} \lambda^{n}.
 \end{equation}
+where every coefficient $C_i$ is a constant of motion.
 
 The jump matrix can be written as
 \begin{equation}
@@ -1427,50 +1515,420 @@ The jump matrix can be written as
 		-2 \lambda m_k x_k & 2 & 2 m_k
 	\end{pmatrix}.
 \end{equation}
-Then the $T_a$ matrix will be
+Then the Monodromy matrix will be
 \begin{equation}
-	T_a = (D + \hat{S}_n)\cdots(D + \hat{S}_2)(D + \hat{S}_1).
+	M = (D + \hat{S}_n)\cdots(D + \hat{S}_2)(D + \hat{S}_1).
 \end{equation}
-The $T_a^{(1,1)}$ and $T_a^{(3,3)}$ elements will always be a polynomial of one higher order than the $T_a^{(2,2)}$ element. $C_0$ is always independent of $x_k$ and $m_k$ and will thus not give any information about the system. $C_n$ is the coefficient of the highest order in $\lambda$. The higest order terms of the $T_a$ matrix comes from multiplying all the $\hat{S}_k$'s together
-\begin{equation}
-\begin{aligned}
-	\hat{S}_{\text{tot}} = \hat{S}_n \cdots \hat{S}_2 \hat{S}_1 &=
-	\prod_{k=1}^{n-1} L_k
-	\begin{pmatrix}
-		m_n \\ 1 \\ \lambda m_n x_n
-	\end{pmatrix}
-	\begin{pmatrix}
-		-2\lambda m_1x_1 & 2 & 2 m_1
-	\end{pmatrix} \\
-	&= \prod_{k=1}^{n-1} L_k
-	\begin{pmatrix}
-		-2\lambda m_n m_1 x_1 & 2m_n & 2m_n m_1 \\
-		-2\lambda m_1 x_1 & 2 & 2m_1 \\
-		-2\lambda^2 m_n m_1 x_n x_1 & 2\lambda m_n x_n & 2\lambda m_n m_1 x_n
-	\end{pmatrix}
-\end{aligned}
-\end{equation}
-where $L_k$ is the dot product that comes from multiplying $S_k$ and $S_{k+1}$. So $L_k$ is
+The product of all $(D + \hat{S}_k)$ matrices will be a sum of $2^n$ terms, where each term is a product involving combinations of $D$ and $\hat{S}_k$.
+To establish notation, we introduce the following
+\begin{itemize}
+    \item \( P = \{p_1, \dots, p_k\} \), an ordered subset of \( \{1, \dots, N\} \) with \( p_1 < p_2 < \cdots < p_k \).
+    \item \( A_{ij} = \lambda m_i m_j (x_j - x_i) \).
+    \item \( S_{ij}^\pm = 2\big(\pm1 + \lambda m_i m_j (x_j - x_i)\big)
+		= 2(\pm1 + A_{ij})\).
+\end{itemize}
+The product of any two $\hat{S}_k$ matrices will result in a dot product between the inner two vectors
 \begin{equation}
 \begin{aligned}
-	L_k &= 
+	\hat{S}_i \hat{S}_{j} &=
 	\begin{pmatrix}
-		m_{k+1} \\ 1 \\ \lambda m_{k+1} x_{k+1}
+		m_i \\ 1 \\ \lambda m_i x_i
 	\end{pmatrix}
 	\begin{pmatrix}
-		-2\lambda m_kx_k & 2 & 2 m_k
+		-2\lambda m_i x_i & 2 & 2 m_i
+	\end{pmatrix}
+	\begin{pmatrix}
+		m_j \\ 1 \\ \lambda m_j x_j
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_j x_j & 2 & 2 m_j
 	\end{pmatrix} \\
-	&= 2\lambda m_k m_{k+1} (x_{k+1} - x_k) + 2.
+	&=
+	2(1 + \lambda m_i m_j (x_j - x_i))
+	\begin{pmatrix}
+		m_i \\ 1 \\ \lambda m_i x_i
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_j x_j & 2 & 2 m_j
+	\end{pmatrix} \\
+	&= 2(1 + A_{ij})
+	\begin{pmatrix}
+		m_i \\ 1 \\ \lambda m_i x_i
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_j x_j & 2 & 2 m_j
+	\end{pmatrix} \\
 \end{aligned}
 \end{equation}
-The $C_n$ coefficient will then be the sum of the first and third diagonal element of $S_{\text{tot}}$
+Any $D$ matrices that appear between the $S^k$ matrices will just flip the sign of the constant term like this:
 \begin{equation}
-	2\lambda m_n m_1 (x_n - x_1) \prod_{k=1}^{n-1} L_k
-	= \prod_{i=1}^{N} m_i^2 (x_{i+1} - x_i),
+	\hat{S}_i D^n \hat{S}_j
+	% 2((-1)^n - \lambda m_i m_j (x_i - x_j))
+	% \begin{pmatrix}
+	% 	m_i \\ 1 \\ \lambda m_i x_i
+	% \end{pmatrix}
+	% \begin{pmatrix}
+	% 	-2\lambda m_j x_j & 2 & 2 m_j
+	% \end{pmatrix}. \\
+	= 2((-1)^n + A_{ij})
+	\begin{pmatrix}
+		m_i \\ 1 \\ \lambda m_i x_i
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_j x_j & 2 & 2 m_j
+	\end{pmatrix} \\
 \end{equation}
-were in this case $x_{n+1} = x_1$.
+The last outer product that remains will also become a dot product after taking the trace.
+\begin{equation}
+	\tr \Big(
+	D
+	\begin{pmatrix}
+		m_i \\ 1 \\ \lambda m_i x_i
+	\end{pmatrix}
+	\begin{pmatrix}
+		-2\lambda m_j x_j & 2 & 2 m_j
+	\end{pmatrix}
+	\Big)
+	% = 2(-1 - \lambda m_i m_j (x_i - x_j)).
+	= -2(1 + A_{ij}).
+\end{equation}
+It's important to note that the order of the indices in the $A_{ij}$ is always the same.
+This means that after taking the trace of $DM$ we will get a sum of products of $2(\pm1 + A_{ij})$ factors.
+% \todo{
+% The term of $DM$ that involves only the $S_k$ matrices with $k \in P$ will be
+% \begin{equation}
+% \begin{aligned}
+% 	&\prod_{i = 1}^{k - 1} A_{p_i p_{i+1}}^\pm
+% 	\begin{pmatrix}
+% 		m_{p_1} \\ \pm 1 \\ \lambda m_{p_1} x_{p_1}
+% 	\end{pmatrix}
+% 	\begin{pmatrix}
+% 		-2\lambda m_{p_{k}} x_{p_{k}} & \pm 2 & 2 m_{p_{k}}
+% 	\end{pmatrix}
+% 	\\
+% 	=
+% 	&\prod_{i = 1}^{k - 1} A_{p_i p_{i+1}}^\pm
+% 	\begin{pmatrix}
+% 		-2 \lambda m_{p_1} m_{p_k} x_{p_k} & \pm 2 m_{p_1} & 2 m_{p_1} m_{p_k} \\
+% 		\pm 2 \lambda m_{p_k} x_{p_k} & \pm 2 & \pm 2 m_{p_k} \\
+% 		-2 \lambda^2 m_{p_1} m_{p_k} x_{p_1} x_{p_k} & \pm 2 \lambda m_{p_1} x_{p_1} & 2 \lambda m_{p_1} m_{p_k} x_{p_1}
+% 	\end{pmatrix}.
+% \end{aligned}
+% \end{equation}}
+\todo{
+Thus the trace of the term in $DM$ involving only the $S_k$ matrices with $k \in P$ will be
+\begin{equation}
+	\prod_{i = 1}^{k} A_{p_i p_{i+1}}^\pm.
+\end{equation}
+}
+Next we will focus on the ways to get a term involving only a specific $A_{ij}$ factors.
 
-\subsection*{Discussion of the constants of motion}
+The terms involving the $A_{ij}$ factors can be visualized as a noncrossing path in a complete planar graph where the nodes are the $S_k$ and the edges are the $S_{ij}$ factors. The path has to start and end at the same node. Here is an example of the ways to get the term involving only $A_{13}A_{35}$ times a constant with $N = 9$:
+\begin{center}
+\begin{tikzpicture}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2.5cm}
+    \def\n{9}
+
+    % Draw 9 dots in a circle using the macro
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a line from dot 1 to dot 3 to dot 5 using the macro
+    \draw[thick] 
+        \dotposition{1} -- 
+        \dotposition{3} node[midway, fill=white] {$A_{13}$} -- 
+        \dotposition{5} node[midway, fill=white] {$A_{35}$};
+
+    % Draw grey, more visible dotted lines between dots 5, 6, 7, 8, 9, 1 using the macro
+    \foreach \i in {5,6,7,8,9,1}{
+        \foreach \j in {5,6,7,8,9,1}{
+            \ifnum\i<\j
+            \draw[gray, very thick, loosely dashed] \dotposition{\i} -- \dotposition{\j};
+            \fi
+        }
+    }
+
+\end{tikzpicture}
+\end{center}
+
+The term can only come form a matrix product involving $\hat{S}_1D\hat{S}_3D\hat{S}_5$. The $D$ matrices between the $S_1$, $S_3$, and $S_5$ doesn't contribute anything to the final product since we only focus on the $A_{ij}$ factors and the $D$ matrices will only flip the sign of the constant term.
+
+% \todo{
+% Let's first look at the case with $A_{ij} A_{jl}$. Here is an example of the term ways to get the term $A_{13} A_{35}$ with $N = 9$:
+% The term can only come from a matrix product involving $\hat{S}_5 D \hat{S}_3 D \hat{S}_1$. }
+
+To determine the constant term we get from the other factors, we will first consider if there were no nodes between $S_5$ and $S_1$. Then the only factor would be $S_{51} = (2 + A_{51})$ which would result in a constant term of 2, since we don't want to add more $A_{ij}$ factors.
+
+Adding another node between any nodes will result in a multiplication with a term on the form $D + (2 + A_{ij})$. In the case were we only care about the constant terms we can see the we will be left with $-1 + 2 = 1$, where the $-1$ comes from that the $D$ matrix will flip the sign of the constant term. So the constant factor we get whenever there is a gap between two any $A_{ij}$ and $A_{kl}$ factors is always $2$.
+
+% If we add node between $S_5$ and $S_1$ we would get the factor $(D + \hat{S}_6)$. This would result in two terms, one with $A^{-}_{51}$ and one with $A_{56}A_{16}$, which would result in the constants $-2$ and $4$ respectively. The sum of the terms would then be $2$. This is true for any number of nodes between $S_5$ and $S_1$. Adding a new node will just restult in adding 
+
+% Then there is a choice of the other four matrices that can be either $D$ or $\hat{S}_k$, which will result in a term on the a 
+
+% Since we are only interested in the term with $B_{13}B_{35}$ here we will choose the constant term in the $A_{ij} = 2(\pm1 - B_{ij})$ factors.
+
+% Choosing only $D$ matrices will result in a multiplication with $A_{51}$ to get back to the starting node.
+
+% For every node between $5$ and $1$ we have a choice between a $D$ matrix and a $\hat{S}_k$ matrix. If we choose a $D$ matrix it will flip the sign of the next $2$ term. If we choose a $\hat{S}_k$ matrix it will result in another $A_{ij}$ factor in the product and since we don't want to add more $B_{ij}$ factors we only care about the multiplication with the $2$. So the choice will result in either flipping the sign of the constant or multiplying it with $2$.
+
+% Each choice of 
+
+% Choosing a $\hat{S}_k$ matrix will result in a multiplication with a term on the form
+% \begin{equation}
+% 	2\lambda A_{ij} + 2.
+% \end{equation}
+% Since we don't want to add more $A_{ij}$ factors we only care about the multiplication with the $2$. If we choose a $D$ matrix it will flip the sign of the next $2$ term.
+
+
+% \begin{center}
+% \begin{forest}
+%   for tree={
+%     circle, draw, minimum size=1.5em, % Style for nodes
+%     edge={->}, % Arrow for edges
+%     l sep=20pt, % Space between levels
+%     s sep=20pt, % Space between siblings
+%     anchor=center, % Alignment of the tree
+%   }
+%   [2
+%     [4,edge label={node[midway,above] {2}}
+%       [8 ,edge label={node[midway,above] {2}}
+%         [16, edge label={node[midway,left] {2}}]
+%         [-8, edge label={node[midway,right] {-1}}]
+% 	  ]
+%       [-4,edge label={node[midway,above] {-1}}
+%         [-8, edge label={node[midway,left] {2}}]
+%         [4, edge label={node[midway,right] {-1}}]
+%       ,edge label={node[midway,above] {-1}}]
+%     ,edge label={node[midway,above] {2}}]
+%     [-2,edge label={node[midway,above] {-1}}
+%       [-4,edge label={node[midway,above] {2}}
+%         [-8, edge label={node[midway,left] {2}}]
+%         [4, edge label={node[midway,right] {-1}}]
+%       ,edge label={node[midway,above] {2}}]
+%       [2,edge label={node[midway,above] {-1}}
+%         [4, edge label={node[midway,left] {2}}]
+%         [-2, edge label={node[midway,right] {-1}}]
+%       ,edge label={node[midway,above] {-1}}]
+%     ,edge label={node[midway,above] {-1}}]
+%   ]
+% \end{forest}
+% \end{center}
+% The number of times each coefficient appears is will be given by the Pascal triangle. Taking the sum of the terms results in
+% \begin{equation}
+% 	\sum_{i=1}^{n} \binom{n}{n-i} 2^{n-k} (-1)^k = 2.
+% \end{equation}
+% Thus the coefficient we end up with no matter the number of $S_k$ matrices between two $B_{ij}$ factors is $2$. From that we can see that the only difference in coefficient between $B_{ij}$ factors is the number of spaces between them.
+
+
+
+% We will take a look at the term that involves only a specific subset of the $\hat{S}_k$ matrices.
+
+
+% The $M^{(1,1)}$ and $M^{(3,3)}$ elements will always be a polynomial of one higher order than the $M^{(2,2)}$ element.
+
+
+
+% $C_0$ is always independent of $x_k$ and $m_k$ and will thus not give any information about the system. $C_n$ is the coefficient of the highest order in $\lambda$. The higest order terms of the $M$ matrix comes from multiplying all the $\hat{S}_k$'s together
+
+% It seems like this method will yield $N-1$ independent constant of motion for each $N$. Were the coefficient of the lowest and highest term of $\lambda$ respectively yield the following constants of motion
+% \begin{equation}
+% 	\sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
+% \end{equation}
+% \begin{equation}
+% 	\prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
+% \end{equation}
+
+% \begin{equation}
+% \begin{aligned}
+% 	\hat{S}_{\text{tot}} = \hat{S}_n \cdots \hat{S}_2 \hat{S}_1 &=
+% 	\prod_{k=1}^{n-1} L_k
+% 	\begin{pmatrix}
+% 		m_n \\ 1 \\ \lambda m_n x_n
+% 	\end{pmatrix}
+% 	\begin{pmatrix}
+% 		-2\lambda m_1x_1 & 2 & 2 m_1
+% 	\end{pmatrix} \\
+% 	&= \prod_{k=1}^{n-1} L_k
+% 	\begin{pmatrix}
+% 		-2\lambda m_n m_1 x_1 & 2m_n & 2m_n m_1 \\
+% 		-2\lambda m_1 x_1 & 2 & 2m_1 \\
+% 		-2\lambda^2 m_n m_1 x_n x_1 & 2\lambda m_n x_n & 2\lambda m_n m_1 x_n
+% 	\end{pmatrix}
+% \end{aligned}
+% \end{equation}
+% where $L_k$ is the dot product that comes from multiplying $S_k$ and $S_{k+1}$. So $L_k$ is
+% \begin{equation}
+% \begin{aligned}
+% 	L_k &= 
+% 	\begin{pmatrix}
+% 		m_{k+1} \\ 1 \\ \lambda m_{k+1} x_{k+1}
+% 	\end{pmatrix}
+% 	\begin{pmatrix}
+% 		-2\lambda m_kx_k & 2 & 2 m_k
+% 	\end{pmatrix} \\
+% 	&= 2\lambda m_k m_{k+1} (x_{k+1} - x_k) + 2.
+% \end{aligned}
+% \end{equation}
+% The $C_n$ coefficient will then be the sum of the first and third diagonal element of $S_{\text{tot}}$
+% \begin{equation}
+% 	2\lambda m_n m_1 (x_n - x_1) \prod_{k=1}^{n-1} L_k
+% 	= \prod_{i=1}^{N} m_i^2 (x_{i+1} - x_i),
+% \end{equation}
+% were in this case $x_{n+1} = x_1$.
+
+\subsection{Discussion of the constants of motion}
+Here we will discuss the constants of motion we get from the monodromy matrix. We will see that we seem to get $N-1$ independent constants of motion for each $N$ and that the coefficient of the lowest and highest term of $\lambda$ yield the constants of motion
+\begin{equation}
+	C_1 = \sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
+	\quad \text{and} \quad
+	C_N = \prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
+\end{equation}
+We will also see that the coefficient of the second highest term is equal to the square of the coefficient of the lowest term
+\begin{equation}
+	C_2 = \sum_{i=1}^{N}\sum_{j=1}^N (m_i m_j (x_i - x_j))^2 = C_1^2.
+\end{equation}
+The rest of the terms seem to be functionally independent. We will now derive these constants of motion from the monodromy matrix.
+
+Remember that the terms involving the $A_{ij}$ factors can be visualized as a noncrossing path in a complete planar graph where the nodes are the $S_k$ and the edges are the $A_{ij}$ factors.
+
+The terms with only one $A_{ij}$ factor will come from the paths
+\begin{center}
+\begin{tikzpicture}
+	\tikzset{>={Stealth[scale=1.5]}}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2cm}
+    \def\n{5}
+
+    % Draw 5 dots in a circle
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a bendy line from dot 3 to dot 1 using bend right
+    \draw[thick, bend left, ->]
+        ({-360/\n * (1 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (3 - 1) + 90}:\radius);
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+	\tikzset{>={Stealth[scale=1.5]}}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2cm}
+    \def\n{5}
+
+    % Draw 5 dots in a circle
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a bendy line from dot 3 to dot 1 using bend right
+    \draw[thick, bend left, ->]
+        ({-360/\n * (3 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (1 - 1) + 90}:\radius);
+\end{tikzpicture}
+\end{center}
+This results in the following terms
+\begin{equation}
+	\sum_{i=1}^{N} \sum_{j=i+1}^N -8 A_{ij} = -8 C_1
+\end{equation}
+The $C_N$ coefficient comes from the product of all the $A_{ij}$ factors
+\begin{equation}
+	-\prod_{i=1}^{N} 2^N A_{i,i+1} = -2^N C_N
+\end{equation}
+
+Now let's prove that $C_2 = C_1^2$. The $C_2$ coefficient will be the sum of all the terms involving two $A_{ij}$ factors. The different configurations of factors $A_{ij}$ is $A_{ij}^2$, $A_{ij}A_{jk}$, and $A_{ij}A_{kl}$, where $i < j < k < l$.
+\begin{center}
+\begin{tikzpicture}
+	\tikzset{>={Stealth[scale=1.5]}}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2cm}
+    \def\n{5}
+
+    % Draw 5 dots in a circle
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a bendy line from dot 3 to dot 1 using bend right
+    \draw[thick, bend left, ->]
+        ({-360/\n * (1 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (3 - 1) + 90}:\radius);
+    \draw[thick, bend left, ->]
+        ({-360/\n * (3 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (1 - 1) + 90}:\radius);
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tikzset{>={Stealth[scale=1.5]}}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2cm}
+    \def\n{5}
+
+    % Draw 5 dots in a circle
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a bendy line from dot 3 to dot 1 using bend right
+    \draw[thick, bend left, ->]
+        ({-360/\n * (1 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (3 - 1) + 90}:\radius);
+    \draw[thick, bend left, ->]
+        ({-360/\n * (3 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{jk}$} % Label at the midpoint
+        ({-360/\n * (4 - 1) + 90}:\radius);
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tikzset{>={Stealth[scale=1.5]}}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2cm}
+    \def\n{5}
+
+    % Draw 5 dots in a circle
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a bendy line from dot 3 to dot 1 using bend right
+    \draw[thick, bend left, ->]
+        ({-360/\n * (1 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
+        ({-360/\n * (3 - 1) + 90}:\radius);
+    \draw[thick, bend left, ->]
+        ({-360/\n * (4 - 1) + 90}:\radius) to 
+        node[midway, fill=white] {$A_{kl}$} % Label at the midpoint
+        ({-360/\n * (5 - 1) + 90}:\radius);
+\end{tikzpicture}
+\end{center}
+Each combination will have different factors of $2$ depending on the number of gaps between the paths. The terms will have the following form
+\begin{equation}
+	4 A_{ij}^2, \quad
+	8 A_{ij} A_{jk}, \quad
+	16 A_{ij} A_{kl}
+\end{equation}
+Taking the square of $C_1$ we get
+\begin{equation}
+	C_1^2 = \left(\sum_{i<j} A_{ij}\right)^2
+	= \sum_{i<j} A_{ij}^2 + \sum_{i<j<k} 2 A_{ij} A_{jk} + \sum_{i<j<k<l} 2(A_{ij} A_{kl} + A_{ik} A_{jl}).
+\end{equation}
+The $A_{ik} A_{jl}$ configuration can't be directly from the graph since we can't have crossing paths. But using the following identity
+\begin{equation}
+	2 (A_{ij} A_{kl} + A_{il} A_{jk}) = A_{ij} A_{kl} + A_{il} A_{jk} + A_{ik} A_{jl} + A_{il} A_{jk}
+\end{equation}
+
+
 
 \begin{equation}
 	S_k = D + \hat{S}_k = D + 
@@ -1548,16 +2006,62 @@ Let's first look at the case with $A_{ij} A_{jl}$. Here is an example of the ter
         \dotposition{5} node[midway, fill=white] {$A_{35}$};
 
     % Draw grey, more visible dotted lines between dots 5, 6, 7, 8, 9, 1 using the macro
-    \foreach \i in {5,6,7,8,9,1}{
-        \foreach \j in {5,6,7,8,9,1}{
-            \ifnum\i<\j
-            \draw[gray, very thick, loosely dashed] \dotposition{\i} -- \dotposition{\j};
-            \fi
-        }
-    }
-
+	\alllines{5,6,7,8,9,1}
 \end{tikzpicture}
 \end{center}
+
+\begin{center}
+\begin{tikzpicture}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2.5cm}
+    \def\n{9}
+
+    % Draw 9 dots in a circle using the macro
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a line from dot 1 to dot 3 to dot 5 using the macro
+    \draw[thick] 
+        \dotposition{1} -- 
+        \dotposition{3} node[midway, fill=white] {$A_{13}$};
+
+    \draw[thick] 
+        \dotposition{5} -- 
+        \dotposition{6} node[midway, fill=white] {$A_{67}$};
+
+	\alllines{6,7,8,9,1}
+	\alllines{3,4,5}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+
+    % Define the radius of the circle and number of dots
+    \def\radius{2.5cm}
+    \def\n{9}
+
+    % Draw 9 dots in a circle using the macro
+    \foreach \i in {1,...,\n}{
+        \node[circle,fill,inner sep=1.5pt] at \dotposition{\i} {};
+    }
+
+    % Draw a line from dot 1 to dot 3 to dot 5 using the macro
+    \draw[thick] 
+        \dotposition{1} -- 
+        \dotposition{4} node[midway, fill=white] {$A_{13}$};
+
+    \draw[thick] 
+        \dotposition{3} -- 
+        \dotposition{6} node[midway, fill=white] {$A_{67}$};
+\end{tikzpicture}
+\end{center}
+
+Then you have the case that will not be a direct term from the $S_k$ matrices from the way we are writing them. That is the case where you have $B_{ik}B_{jl}$ which would give crossing paths in the graph.
+
+We can however rewrite any $2B_{ij}B{kl} + 2B_{li}B_{jk}$ as $B_{ij}B_{kl} + B_{li}B_{jk} + B_{ik}B_{jl}$.
 
 The term can only come from a matrix product involving $\hat{S}_5 D \hat{S}_3 D \hat{S}_1$. Then there is a choice of the other four matrices that can be either $D$ or $\hat{S}_k$.
 

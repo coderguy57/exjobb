@@ -1,0 +1,59 @@
+\begin{thebibliography}{10}
+
+\bibitem{Avendano2008}
+{M}isael {A}vendaño {C}amacho.
+\newblock The concept of monodromy for linear problems and its applications.
+\newblock Master's thesis, {U}niversidad de {S}onora, 2008.
+
+\bibitem{Camassa_1993}
+Roberto {Camassa} and Darryl~D. {Holm}.
+\newblock {An integrable shallow water equation with peaked solitons}.
+\newblock 71(11):1661--1664, September 1993.
+
+\bibitem{Degasperis_1999}
+A~Degasperis and G~Gaeta.
+\newblock {\em Symmetry and Perturbation Theory}.
+\newblock WORLD SCIENTIFIC, 1999.
+
+\bibitem{Hone2008}
+Andrew N~W Hone and Jing~Ping Wang.
+\newblock Integrable peakon equations with cubic nonlinearity.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  42(37):372002, aug 2008.
+
+\bibitem{Kohlenberg_2007}
+Jennifer {Kohlenberg}, Hans {Lundmark}, and Jacek {Szmigielski}.
+\newblock {The inverse spectral problem for the discrete cubic string}.
+\newblock {\em Inverse Problems}, 23(1):99--121, February 2007.
+
+\bibitem{Krishnaswami_2021}
+Govind Krishnaswami and Vishnu T~R.
+\newblock {The Idea of a Lax Pair-Part II: Continuum Wave Equations}.
+\newblock {\em Resonance}, 26:257--274, 02 2021.
+
+\bibitem{Lundmark_2008}
+Hans {Lundmark} and Jacek {Szmigielski}.
+\newblock {Continuous and Discontinuous Piecewise Linear Solutions of the
+  Linearly Forced Inviscid Burgers Equation}.
+\newblock {\em Journal of Nonlinear Mathematical Physics}, 15:264, January
+  2008.
+
+\bibitem{Lundmark_2022}
+Hans {Lundmark} and Jacek {Szmigielski}.
+\newblock {A view of the peakon world through the lens of approximation
+  theory}.
+\newblock {\em Physica D Nonlinear Phenomena}, 440:133446, November 2022.
+
+\bibitem{Novikov_2009}
+Vladimir Novikov.
+\newblock {Generalizations of the Camassa–Holm equation}.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  42(34):342002, Aug 2009.
+
+\bibitem{Zabusky1965}
+N.~J. {Zabusky} and M.~D. {Kruskal}.
+\newblock {Interaction of ``Solitons'' in a Collisionless Plasma and the
+  Recurrence of Initial States}.
+\newblock 15(6):240--243, August 1965.
+
+\end{thebibliography}
