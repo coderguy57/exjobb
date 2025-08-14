@@ -23,6 +23,8 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{url}
+\usepackage{hyperref}
 \pgfplotsset{compat=1.17}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
@@ -44,6 +46,7 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \newcommand\smalldots{\hbox to 1em{.\hss.\hss.}}
+\renewcommand{\arraystretch}{1.2}
 
 % Define a macro for the position calculation
 \newcommand{\dotposition}[1]{
@@ -173,7 +176,7 @@ Diederik Johannes Korteweg and Gustav de Vries conducted further studies of soli
 \end{equation}
 that describes solitary waves in shallow water.
 
-It was not until much later in 1965 that Zabusky and Kruskal \cite{Zabusky1965} discovered numerically that the KdV equation has solutions of solitary travelling waves that can interact with each other without changing shape. They called these solitary waves solitons. Solitons have since been studied in many fields such as fluid dynamics, optics, and quantum mechanics.
+It was not until much later in 1965 that Zabusky and Kruskal \cite{Zabusky_1965} discovered numerically that the KdV equation has solutions of solitary travelling waves that can interact with each other without changing shape. They called these solitary waves solitons. Solitons have since been studied in many fields such as fluid dynamics, optics, and quantum mechanics.
 
 In 1993\cite{Camassa_1993}, while working on an integrable model of one-dimensional dispersive waves in shallow water Camassa and Holm discovered the first PDE which admit peakon (peaked soliton) solutions. The Camassa--Holm (CH) equation
 \begin{equation} \label{eq:CH}
@@ -194,7 +197,7 @@ This brings us back to the Novikov equation
 \begin{equation} \label{eq:Novikov_high_freq}
 	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u - u_{xx}.
 \end{equation}
-It was discovered by Vladimir Novikov in a classification of cubically nonlinear PDEs admitting infinitely many symmetries \cite{Novikov_2009}, with Hone and Wang \cite{Hone2008} later providing a Lax pair for it. Lax pairs will be discussed in more detail later in the thesis.
+It was discovered by Vladimir Novikov in a classification of cubically nonlinear PDEs admitting infinitely many symmetries \cite{Novikov_2009}, with Hone and Wang \cite{Hone_2008} later providing a Lax pair for it. Lax pairs will be discussed in more detail later in the thesis.
 
 \subsection{High-frequency limit}
 
@@ -869,39 +872,29 @@ Here we will show the Hamiltonian structure for the CH, DP, and Novikov peakon O
 \end{alignat}
 %
 with the paramters and Hamilton function given in the table below:
+\newcolumntype{R}{>{$}r<{$}}
+\newcolumntype{L}{>{$}l<{$}}
+
 \begin{center}
-  \begin{tabular}{l|c|c|c}
-    & $b$ & $H$ & $G$ \\
+  \begin{tabular}{l|c|l|l}
+    & $b$ & \multicolumn{1}{c|}{$H$} & \multicolumn{1}{c}{$G$} \\
     \hline
     Camassa--Holm
-	& $2$ & $\sum m_i$ & $\sgn(x)(1 - e^{-|x|})$ \\
+	& $2$ & $\sum m_i$ & $\phantom{(1/2)}\sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Degasperis--Procesi
-	& $3$ & $\sum m_i$ & $1/2 \sgn(x)(1 - e^{-|x|})$ \\
+	& $3$ & $\sum m_i$ & $(1/2) \sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Novikov
-	& $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ & $\phantom{(1/2)}\sgn(x)(1 - e^{-2|x|})$ \\
     \hline
 	Hunter Saxton
-	& $2$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $2$ & $\sum m_i $ & $(1/2) \sgn(x) |x|^2$ \\
     \hline
     Derivative Burgers
-	& $3$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $3$ & $\sum m_i $ & $(1/4) \sgn(x) |x|^2$ \\
   \end{tabular}
 \end{center}
-%
-The Hunter Saxton's Hamiltonian structure is given by the canonical Poisson matrix
-\begin{equation}
-	\{m_i, x_i\} = \delta_{ij} \quad \{m_i, m_j\} = 0 = \{x_i, x_j\}
-\end{equation}
-and the Hamiltonian
-\begin{equation}
-	H = \frac{1}{2} \sum m_i m_j |x_i - x_j|,
-\end{equation}
-which can be related to another similar Hamiltonian structure of Camassa--Holm that also has the canonical Poisson matrix but with the Hamiltonian 
-\begin{equation}
-	H = \frac{1}{2} \sum m_i m_j e^{-|x_i - x_j|}.
-\end{equation}
 %
 We wanted to find a Hamiltonian structure for the HF Novikov peakon ODEs but it was harder than expected. The search for a Hamiltonian structure was done by trying to start from the Novikov Hamiltonian structure and try to modify it to fit the HF Novikov peakon ODEs. If the search is continued in the future, a more structured approach should be taken. Finding a Hamiltonian for the Novikov PDE could be a good starting point and has been the method used to find the other Hamiltonians for the peakon ODEs.
 
@@ -1025,7 +1018,7 @@ We observe that $M_{20}$ and $M_{21A}$ are equal the constants $M$ and $K$ from 
 %
 The system of ODEs for $N = 2$ only has four variables so the system should have at most three functionally independent constants of motion. It can be seen that
 \begin{equation}
-	M_{21A}^2 = M_{20}M_{22} - M_{21B}^2.
+	M_{20}M_{22} - M_{21B}^2 - M_{21A}^2 = 0.
 \end{equation}
 
 \subsection*{N = 3}
@@ -1033,7 +1026,7 @@ The system of ODEs for $N = 2$ only has four variables so the system should have
 The algorithm has found the following five conserved quantities for $N = 3$.  The first two are
 \begin{align}
 	M_{21} &= m_1m_2(x_2 - x_1) + m_1m_3(x_3 - x_1) + m_2m_3(x_3 - x_2), \\
-	M_{63} &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_1).
+	M_{63} &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2).
 \end{align}
 Let
 \begin{align}
@@ -1049,16 +1042,25 @@ then the three other conserved quantities can be written as
 \end{align}
 These conserved quantities aren't functionally independent. The Jacobian method shows that there are only four functionally independent conserved quantities. The first constant can be written as
 \begin{equation}
-	M_{21}^4 = M_{41}M_{43} - M_{42}^2 + 2M_{21}M_{63}.
+	M_{41}M_{43} - M_{42}^2 - M_{21}^4 + 2M_{21}M_{63} = 0.
 \end{equation}
 
 
 \subsection*{N = 4}
 
-For $N = 4$, six conserved quantities have been found. The first two follow the same pattern as for $N = 3$:
+For $N = 4$, six conserved quantities have been found. The first three are:
 \begin{align}
 	M_{21} = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
-	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
+	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1),\\
+	M_{63} =
+		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
+		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
+		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
+		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_3) \\
+		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
+		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
+		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
+		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
 \end{align}
 For the next three, let's define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as:
 \begin{align}
@@ -1077,21 +1079,10 @@ The next  three conserved quantities can then be written as
 	&+ 6m_1m_2m_3m_4 (x_1x_2x_3 - x_1x_2x_4 + x_1x_3x_4 - x_2x_3x_4)
 \end{align}
 %
-Interestingly, it follows very close to the pattern of the $N = 3$ case. The only difference is that there is some extra terms that all contain $m_1m_2m_3m_4$. The last found conserved quantity is
+They are dependent in the following way
 \begin{equation}
-\begin{aligned}
-	M_{63} =
-		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
-		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
-		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
-		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_3) \\
-		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
-		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
-		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
-		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
-\end{aligned}
+	M_{41}M_{43} - M_{42}^2 - M_{21}^4 + 2M_{21}M_{63} + 4M_{84}=0.
 \end{equation}
-Here we also find that all the conserved quantities aren't functionally independent. The Jacobian method showed that there are only five functionally independent conserved quantities, but the relation between them is still unknown.
 
 \section{Constants of motion for a generalized system of ODEs}
 
@@ -1248,7 +1239,7 @@ which is only satisfied if the KdV equation is satisfied.
 
 
 \subsection*{Monodromy Matrix}
-The Lax pair can be used to construct the monodromy matrix \cite{Avendano2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the fundamental solution to the linear system
+The Lax pair can be used to construct the monodromy matrix \cite{Avendano_2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the fundamental solution to the linear system
 \begin{equation}
 	\partial_x T(x,a,t) = U(x,t) T(x,a,t), \quad T(a,a,t) = I,
 \end{equation}
@@ -1405,13 +1396,13 @@ it means that $m$ will be
 \begin{equation}
 	m = u_{xx} = \sum_{k=1}^n 2 m_k \delta(x - x_k),
 \end{equation}
-since the sign function have a jump discontinuity at $x_k$ of size 2 and the derivative of the sign function is the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+since the sign function has a jump discontinuity at $x_k$ of size 2 and the derivative of the sign function is two times the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
 \begin{equation}
 \begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
 \begin{pmatrix} A_i \\ B_i \\ -\lambda A_i x + C_i \end{pmatrix} 
 \text{for } x_k < x < x_{k+1}.
 \end{equation}
-We can also see from the Lax pair that $\varphi_3$ is going to be continuous, while $\varphi_1$ and $\varphi_2$ is constant in the intervals with jump discontinuities at $x_k$. Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
+We can also see from the Lax pair that $\varphi_3$ is going to be continuous, while $\varphi_1$ and $\varphi_2$ are constant in the intervals with jump discontinuities at $x_k$. Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
 \begin{subequations}
   \begin{equation}
     \frac{\partial}{\partial x}
@@ -2378,14 +2369,7 @@ If we choose to assign $\psi_2(x_k) = \langle \psi_2(x_k) \rangle$ then it's cle
 %
 %=========================================================================%
 \newpage
-\bibliographystyle{plain}
+\bibliographystyle{plainurl.bst}
 \bibliography{references.bib}
-
-
-
-
-
-
-
 
 \end{document}
