@@ -23,6 +23,8 @@
 \usepackage{bm}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{url}
+\usepackage{hyperref}
 \pgfplotsset{compat=1.17}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
@@ -44,6 +46,7 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \newcommand\smalldots{\hbox to 1em{.\hss.\hss.}}
+\renewcommand{\arraystretch}{1.2}
 
 % Define a macro for the position calculation
 \newcommand{\dotposition}[1]{
@@ -173,7 +176,7 @@ Diederik Johannes Korteweg and Gustav de Vries conducted further studies of soli
 \end{equation}
 that describes solitary waves in shallow water.
 
-It was not until much later in 1965 that Zabusky and Kruskal \cite{Zabusky1965} discovered numerically that the KdV equation has solutions of solitary travelling waves that can interact with each other without changing shape. They called these solitary waves solitons. Solitons have since been studied in many fields such as fluid dynamics, optics, and quantum mechanics.
+It was not until much later in 1965 that Zabusky and Kruskal \cite{Zabusky_1965} discovered numerically that the KdV equation has solutions of solitary travelling waves that can interact with each other without changing shape. They called these solitary waves solitons. Solitons have since been studied in many fields such as fluid dynamics, optics, and quantum mechanics.
 
 In 1993\cite{Camassa_1993}, while working on an integrable model of one-dimensional dispersive waves in shallow water Camassa and Holm discovered the first PDE which admit peakon (peaked soliton) solutions. The Camassa--Holm (CH) equation
 \begin{equation} \label{eq:CH}
@@ -194,7 +197,7 @@ This brings us back to the Novikov equation
 \begin{equation} \label{eq:Novikov_high_freq}
 	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u - u_{xx}.
 \end{equation}
-It was discovered by Vladimir Novikov in a classification of cubically nonlinear PDEs admitting infinitely many symmetries \cite{Novikov_2009}, with Hone and Wang \cite{Hone2008} later providing a Lax pair for it. Lax pairs will be discussed in more detail later in the thesis.
+It was discovered by Vladimir Novikov in a classification of cubically nonlinear PDEs admitting infinitely many symmetries \cite{Novikov_2009}, with Hone and Wang \cite{Hone_2008} later providing a Lax pair for it. Lax pairs will be discussed in more detail later in the thesis.
 
 \subsection{High-frequency limit}
 
@@ -869,39 +872,29 @@ Here we will show the Hamiltonian structure for the CH, DP, and Novikov peakon O
 \end{alignat}
 %
 with the paramters and Hamilton function given in the table below:
+\newcolumntype{R}{>{$}r<{$}}
+\newcolumntype{L}{>{$}l<{$}}
+
 \begin{center}
-  \begin{tabular}{l|c|c|c}
-    & $b$ & $H$ & $G$ \\
+  \begin{tabular}{l|c|l|l}
+    & $b$ & \multicolumn{1}{c|}{$H$} & \multicolumn{1}{c}{$G$} \\
     \hline
     Camassa--Holm
-	& $2$ & $\sum m_i$ & $\sgn(x)(1 - e^{-|x|})$ \\
+	& $2$ & $\sum m_i$ & $\phantom{(1/2)}\sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Degasperis--Procesi
-	& $3$ & $\sum m_i$ & $1/2 \sgn(x)(1 - e^{-|x|})$ \\
+	& $3$ & $\sum m_i$ & $(1/2) \sgn(x)(1 - e^{-|x|})$ \\
     \hline
     Novikov
-	& $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $3/2$ & $\sum m_i m_j e^{-|x_i - x_j|}$ & $\phantom{(1/2)}\sgn(x)(1 - e^{-2|x|})$ \\
     \hline
 	Hunter Saxton
-	& $2$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $2$ & $\sum m_i $ & $(1/2) \sgn(x) |x|^2$ \\
     \hline
     Derivative Burgers
-	& $3$ & $\sum m_i $ & $\sgn(x)(1 - e^{-2|x|})$ \\
+	& $3$ & $\sum m_i $ & $(1/4) \sgn(x) |x|^2$ \\
   \end{tabular}
 \end{center}
-%
-The Hunter Saxton's Hamiltonian structure is given by the canonical Poisson matrix
-\begin{equation}
-	\{m_i, x_i\} = \delta_{ij} \quad \{m_i, m_j\} = 0 = \{x_i, x_j\}
-\end{equation}
-and the Hamiltonian
-\begin{equation}
-	H = \frac{1}{2} \sum m_i m_j |x_i - x_j|,
-\end{equation}
-which can be related to another similar Hamiltonian structure of Camassa--Holm that also has the canonical Poisson matrix but with the Hamiltonian 
-\begin{equation}
-	H = \frac{1}{2} \sum m_i m_j e^{-|x_i - x_j|}.
-\end{equation}
 %
 We wanted to find a Hamiltonian structure for the HF Novikov peakon ODEs but it was harder than expected. The search for a Hamiltonian structure was done by trying to start from the Novikov Hamiltonian structure and try to modify it to fit the HF Novikov peakon ODEs. If the search is continued in the future, a more structured approach should be taken. Finding a Hamiltonian for the Novikov PDE could be a good starting point and has been the method used to find the other Hamiltonians for the peakon ODEs.
 
@@ -1025,7 +1018,7 @@ We observe that $M_{20}$ and $M_{21A}$ are equal the constants $M$ and $K$ from 
 %
 The system of ODEs for $N = 2$ only has four variables so the system should have at most three functionally independent constants of motion. It can be seen that
 \begin{equation}
-	M_{21A}^2 = M_{20}M_{22} - M_{21B}^2.
+	M_{20}M_{22} - M_{21B}^2 - M_{21A}^2 = 0.
 \end{equation}
 
 \subsection*{N = 3}
@@ -1033,7 +1026,7 @@ The system of ODEs for $N = 2$ only has four variables so the system should have
 The algorithm has found the following five conserved quantities for $N = 3$.  The first two are
 \begin{align}
 	M_{21} &= m_1m_2(x_2 - x_1) + m_1m_3(x_3 - x_1) + m_2m_3(x_3 - x_2), \\
-	M_{63} &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_1).
+	M_{63} &= m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2).
 \end{align}
 Let
 \begin{align}
@@ -1049,16 +1042,25 @@ then the three other conserved quantities can be written as
 \end{align}
 These conserved quantities aren't functionally independent. The Jacobian method shows that there are only four functionally independent conserved quantities. The first constant can be written as
 \begin{equation}
-	M_{21}^4 = M_{41}M_{43} - M_{42}^2 + 2M_{21}M_{63}.
+	M_{41}M_{43} - M_{42}^2 - M_{21}^4 + 2M_{21}M_{63} = 0.
 \end{equation}
 
 
 \subsection*{N = 4}
 
-For $N = 4$, six conserved quantities have been found. The first two follow the same pattern as for $N = 3$:
+For $N = 4$, six conserved quantities have been found. The first three are:
 \begin{align}
 	M_{21} = &m_1 m_2 (x_2 - x_1) + m_1 m_3 (x_3 - x_1) + m_1 m_4 (x_4 - x_1) \\ +  &m_2 m_3 (x_3 - x_2) + m_2 m_4 (x_4 - x_2) + m_3 m_4 (x_4 - x_3),\\
-	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1).
+	M_{84} = &m_1^2m_2^2m_3^2m_4^2(x_2 - x_1)(x_3 - x_2)(x_4 - x_3)(x_4 - x_1),\\
+	M_{63} =
+		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
+		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
+		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
+		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_3) \\
+		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
+		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
+		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
+		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
 \end{align}
 For the next three, let's define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as:
 \begin{align}
@@ -1077,21 +1079,10 @@ The next  three conserved quantities can then be written as
 	&+ 6m_1m_2m_3m_4 (x_1x_2x_3 - x_1x_2x_4 + x_1x_3x_4 - x_2x_3x_4)
 \end{align}
 %
-Interestingly, it follows very close to the pattern of the $N = 3$ case. The only difference is that there is some extra terms that all contain $m_1m_2m_3m_4$. The last found conserved quantity is
+They are dependent in the following way
 \begin{equation}
-\begin{aligned}
-	M_{63} =
-		 &m_1^2m_2^2m_3^2(x_2 - x_1)(x_3 - x_1)(x_3 - x_2) \\
-		+&m_1^2m_2^2m_4^2(x_2 - x_1)(x_4 - x_1)(x_4 - x_2) \\
-		+&m_1^2m_3^2m_4^2(x_3 - x_1)(x_4 - x_1)(x_4 - x_3) \\
-		+&m_2^2m_3^2m_4^2(x_3 - x_2)(x_4 - x_2)(x_4 - x_3) \\
-		+&2m_1^2m_2^2m_3m_4(x_4 - x_1)(x_2 - x_1)(x_3 - x_2) \\
-		+&2m_1m_2^2m_3^2m_4(x_2 - x_1)(x_3 - x_2)(x_4 - x_3) \\
-		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \\
-		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
-\end{aligned}
+	M_{41}M_{43} - M_{42}^2 - M_{21}^4 + 2M_{21}M_{63} + 4M_{84}=0.
 \end{equation}
-Here we also find that all the conserved quantities aren't functionally independent. The Jacobian method showed that there are only five functionally independent conserved quantities, but the relation between them is still unknown.
 
 \section{Constants of motion for a generalized system of ODEs}
 
@@ -1248,7 +1239,7 @@ which is only satisfied if the KdV equation is satisfied.
 
 
 \subsection*{Monodromy Matrix}
-The Lax pair can be used to construct the monodromy matrix \cite{Avendano2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the fundamental solution to the linear system
+The Lax pair can be used to construct the monodromy matrix \cite{Avendano_2008,Krishnaswami_2021}, which is a matrix that encodes the dynamics of the system. We first need to construct the transition matrix $T$. It is defined as the fundamental solution to the linear system
 \begin{equation}
 	\partial_x T(x,a,t) = U(x,t) T(x,a,t), \quad T(a,a,t) = I,
 \end{equation}
@@ -1405,13 +1396,13 @@ it means that $m$ will be
 \begin{equation}
 	m = u_{xx} = \sum_{k=1}^n 2 m_k \delta(x - x_k),
 \end{equation}
-since the sign function have a jump discontinuity at $x_k$ of size 2 and the derivative of the sign function is the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+since the sign function has a jump discontinuity at $x_k$ of size 2 and the derivative of the sign function is two times the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
 \begin{equation}
 \begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
 \begin{pmatrix} A_i \\ B_i \\ -\lambda A_i x + C_i \end{pmatrix} 
 \text{for } x_k < x < x_{k+1}.
 \end{equation}
-We can also see from the Lax pair that $\varphi_3$ is going to be continuous, while $\varphi_1$ and $\varphi_2$ is constant in the intervals with jump discontinuities at $x_k$. Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
+We can also see from the Lax pair that $\varphi_3$ is going to be continuous, while $\varphi_1$ and $\varphi_2$ are constant in the intervals with jump discontinuities at $x_k$. Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
 \begin{subequations}
   \begin{equation}
     \frac{\partial}{\partial x}
@@ -1520,6 +1511,7 @@ Then the Monodromy matrix will be
 	M = (D + \hat{S}_n)\cdots(D + \hat{S}_2)(D + \hat{S}_1).
 \end{equation}
 The product of all $(D + \hat{S}_k)$ matrices will be a sum of $2^n$ terms, where each term is a product involving combinations of $D$ and $\hat{S}_k$.
+\begin{comment}
 To establish notation, we introduce the following
 \begin{itemize}
     \item \( P = \{p_1, \dots, p_k\} \), an ordered subset of \( \{1, \dots, N\} \) with \( p_1 < p_2 < \cdots < p_k \).
@@ -1527,6 +1519,7 @@ To establish notation, we introduce the following
     \item \( S_{ij}^\pm = 2\big(\pm1 + \lambda m_i m_j (x_j - x_i)\big)
 		= 2(\pm1 + A_{ij})\).
 \end{itemize}
+\end{comment}
 The product of any two $\hat{S}_k$ matrices will result in a dot product between the inner two vectors
 \begin{equation}
 \begin{aligned}
@@ -1559,6 +1552,11 @@ The product of any two $\hat{S}_k$ matrices will result in a dot product between
 		-2\lambda m_j x_j & 2 & 2 m_j
 	\end{pmatrix} \\
 \end{aligned}
+\end{equation}
+Let
+\begin{equation}
+	2(1 + \lambda m_i m_j (x_j - x_i)) = S_{ij} \\
+	\lambda m_i m_j (x_j - x_i) = A_{ij}
 \end{equation}
 Any $D$ matrices that appear between the $S^k$ matrices will just flip the sign of the constant term like this:
 \begin{equation}
@@ -1621,9 +1619,9 @@ Thus the trace of the term in $DM$ involving only the $S_k$ matrices with $k \in
 	\prod_{i = 1}^{k} A_{p_i p_{i+1}}^\pm.
 \end{equation}
 }
-Next we will focus on the ways to get a term involving only a specific $A_{ij}$ factors.
+Next we will focus on the ways to get a term involving only a specific set of $A_{ij}$ factors.
 
-The terms involving the $A_{ij}$ factors can be visualized as a noncrossing path in a complete planar graph where the nodes are the $S_k$ and the edges are the $S_{ij}$ factors. The path has to start and end at the same node. Here is an example of the ways to get the term involving only $A_{13}A_{35}$ times a constant with $N = 9$:
+The terms involving the $A_{ij}$ factors can be visualized as a noncrossing cycle in a complete planar graph where the nodes are the $S_k$ and the edges are the $S_{ij}$ factors. Here is an example of the ways to get the term involving only $A_{13}A_{35}$ times a constant with $N = 9$:
 \begin{center}
 \begin{tikzpicture}
 
@@ -1813,6 +1811,20 @@ The terms with only one $A_{ij}$ factor will come from the paths
         ({-360/\n * (1 - 1) + 90}:\radius) to 
         node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
         ({-360/\n * (3 - 1) + 90}:\radius);
+
+    % Draw a line from dot 1 to dot 3 to dot 5 using the macro
+    \draw[thick] 
+        \dotposition{1} -- 
+        \dotposition{3} node[midway, fill=white] {$A_{13}$};
+
+    % Draw grey, more visible dotted lines between dots 3, 4, 5, 1
+    \foreach \i in {3,4,5,1}{
+        \foreach \j in {3,4,5,1}{
+            \ifnum\i<\j
+            \draw[gray, very thick, loosely dashed] \dotposition{\i} -- \dotposition{\j};
+            \fi
+        }
+    }
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}
@@ -1832,6 +1844,20 @@ The terms with only one $A_{ij}$ factor will come from the paths
         ({-360/\n * (3 - 1) + 90}:\radius) to 
         node[midway, fill=white] {$A_{ij}$} % Label at the midpoint
         ({-360/\n * (1 - 1) + 90}:\radius);
+
+    % Draw a line from dot 1 to dot 3 to dot 5 using the macro
+    \draw[thick] 
+        \dotposition{1} -- 
+        \dotposition{3} node[midway, fill=white] {$A_{13}$};
+
+    % Draw grey, more visible dotted lines between dots 1, 2, 3
+    \foreach \i in {1,2,3}{
+        \foreach \j in {1,2,3}{
+            \ifnum\i<\j
+            \draw[gray, very thick, loosely dashed] \dotposition{\i} -- \dotposition{\j};
+            \fi
+        }
+    }
 \end{tikzpicture}
 \end{center}
 This results in the following terms
@@ -1843,7 +1869,9 @@ The $C_N$ coefficient comes from the product of all the $A_{ij}$ factors
 	-\prod_{i=1}^{N} 2^N A_{i,i+1} = -2^N C_N
 \end{equation}
 
-Now let's prove that $C_2 = C_1^2$. The $C_2$ coefficient will be the sum of all the terms involving two $A_{ij}$ factors. The different configurations of factors $A_{ij}$ is $A_{ij}^2$, $A_{ij}A_{jk}$, and $A_{ij}A_{kl}$, where $i < j < k < l$.
+Now let's prove that $C_2 = C_1^2$. The $C_2$ coefficient will be the sum of all the terms involving two $A_{ij}$ factors. All of them will have two edges in the graph. There are three possible configurations of two edges: they may share two vertices, share one vertex, or share none. This will determine their coefficient. Each edge will contribute a factor 2, and the spaces between two edges also contributes a factor of two.
+
+The different configurations of factors $A_{ij}$ is $A_{ij}^2$, $A_{ij}A_{jk}$, and $A_{ij}A_{kl}$, where $i < j < k < l$.
 \begin{center}
 \begin{tikzpicture}
 	\tikzset{>={Stealth[scale=1.5]}}
@@ -1923,13 +1951,30 @@ Taking the square of $C_1$ we get
 	C_1^2 = \left(\sum_{i<j} A_{ij}\right)^2
 	= \sum_{i<j} A_{ij}^2 + \sum_{i<j<k} 2 A_{ij} A_{jk} + \sum_{i<j<k<l} 2(A_{ij} A_{kl} + A_{ik} A_{jl}).
 \end{equation}
-The $A_{ik} A_{jl}$ configuration can't be directly from the graph since we can't have crossing paths. But using the following identity
+The $A_{ik} A_{jl}$ configuration can't be directly from the graph since we can't have crossing paths. But by using the following identity
 \begin{equation}
 	2 (A_{ij} A_{kl} + A_{il} A_{jk}) = A_{ij} A_{kl} + A_{il} A_{jk} + A_{ik} A_{jl} + A_{il} A_{jk}
 \end{equation}
+%
+we can rewrite 
+
+
+Taking the square of $C_1$ we get the sums of two edges where they share two edges, one edge and no edges.
+\begin{equation}
+	\sum_{i \neq j, k \neq l, \lvert \{i,j\} \cap \{k,l\} \rvert = 2} A_{ij} A_{kl} \\
+	+ \sum_{i \neq j, k \neq l, \lvert \{i,j\} \cap \{k,l\} \rvert = 1} 2 A_{ij} A_{kl} \\
+	+ \sum_{i \neq j, k \neq l, \lvert \{i,j\} \cap \{k,l\} \rvert = 0} 2 A_{ij} A_{kl}.
+\end{equation}
+
+The case were $A_{ij}$ and $A_{kl}$ edges crosses eachother was not possible in the construction of the constants $C_i$. But it can be rewritten as a sum of the two non crossing non connected edges from the vertices $i$, $j$, $k$, and $l$.
+
+For example $A_{13}A_{24}$ is equal to $A_{12}A_{34} + A_{14}A_{23}$.
+
+Thus the 
 
 
 
+\begin{comment}
 \begin{equation}
 	S_k = D + \hat{S}_k = D + 
 	\begin{pmatrix}
@@ -2135,6 +2180,7 @@ If we look at all the ways to generate terms on that form we see that it can be 
 	2\lambda m_i m_j (x_j - x_i) + 2.
 \end{equation}
 To get the required factors of $A_{ij}$ only the 
+\end{comment}
 
 %=========================================================================%
 %
@@ -2378,14 +2424,7 @@ If we choose to assign $\psi_2(x_k) = \langle \psi_2(x_k) \rangle$ then it's cle
 %
 %=========================================================================%
 \newpage
-\bibliographystyle{plain}
+\bibliographystyle{plainurl.bst}
 \bibliography{references.bib}
-
-
-
-
-
-
-
 
 \end{document}
