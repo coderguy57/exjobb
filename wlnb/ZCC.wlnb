@@ -1,0 +1,181 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"];\nu = U[x, t]; m = M[x, t]; ux = D[U[x, t], x]; uxx = D[U[x,t], {x, 2}];\nFix[expr_] := (\n  Clear[u, m, ux];\n  temp = expr /. {\n     U[x, t] -> u, M[x, t] -> m,\n     D[U[x, t], {x, 1}] -> ux, D[M[x, t], x] -> mx,\n     D[U[x, t], {x, 2}] -> uxx, D[M[x, t], t] -> mt,\n     D[U[x, t], {x, 3}] -> uxxx, D[U[x, t], t] -> ut};\n  temp = temp /. {m -> u - uxx};\n  Simplify[temp])\n\nB = {{0, 1}, {u - l, 0}};\nV = {{-ux, 2u+4l}, {2u^2 - uxx + 2u l - 4l^2, ux}};\n\nFix[V] // MatrixForm\nFix[B] // MatrixForm\n\nFix[D[V,x]] // MatrixForm\nFix[D[B,t]] // MatrixForm\n\nPrint[\"VU\"]\nFix[V.B] // MatrixForm\nPrint[\"UV\"]\nFix[B.V] // MatrixForm\n\nFix[D[B, t] - D[V, x] + B.V - V.B] // MatrixForm\n",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><wrow><w></w><w>-</w><w>ux</w></wrow></w><w><wrow><w></w><w>2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l</w></wrow><w>+</w><w>u</w></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wsup><w></w><w>l</w><w><w>2</w></w></wsup></wrow><w>+</w><wrow><w></w><w>l</w><w></w><w>u</w></wrow><w>+</w><wsup><w></w><w>u</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><wsup><w></w><w>U</w><w><wrow><w></w><wb>(</wb><wrow><w></w><w>2</w><w>,</w><w>0</w></wrow><wb>)</wb></wrow></w></wsup><wrow><w></w><wb>[</wb><wrow><w></w><w>x</w><w>,</w><w>t</w></wrow><wb>]</wb></wrow></wrow></wrow></w><w><w>ux</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{-ux, 2*(2*l + u)}, {2*(-2*l^2 + l*u + u^2) - Derivative[2, 0][U][x, t], ux}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "90c4ac08-1f27-4515-9aa7-0f6e98c660b4",
+     "metadata": {
+      "cellLabel": "Out[203]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><w>0</w></w><w><w>1</w></w><w><wrow><w></w><wrow><w></w><w>-</w><w>l</w></wrow><w>+</w><w>u</w></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, 1}, {-l + u, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "50ccd10f-c41a-4e87-9eae-6a5e8c0f361a",
+     "metadata": {
+      "cellLabel": "Out[204]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><wrow><w></w><w>-</w><wrow><w></w><wsup><w></w><w>U</w><w><wrow><w></w><wb>(</wb><wrow><w></w><w>2</w><w>,</w><w>0</w></wrow><wb>)</wb></wrow></w></wsup><wrow><w></w><wb>[</wb><wrow><w></w><w>x</w><w>,</w><w>t</w></wrow><wb>]</wb></wrow></wrow></wrow></w><w><wrow><w></w><w>2</w><w></w><w>ux</w></wrow></w><w><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l</w><w></w><w>ux</w></wrow><w>+</w><wrow><w></w><w>4</w><w></w><w>u</w><w></w><w>ux</w></wrow><w>-</w><w>uxxx</w></wrow></w><w><wrow><w></w><wsup><w></w><w>U</w><w><wrow><w></w><wb>(</wb><wrow><w></w><w>2</w><w>,</w><w>0</w></wrow><wb>)</wb></wrow></w></wsup><wrow><w></w><wb>[</wb><wrow><w></w><w>x</w><w>,</w><w>t</w></wrow><wb>]</wb></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{-Derivative[2, 0][U][x, t], 2*ux}, {2*l*ux + 4*u*ux - uxxx, Derivative[2, 0][U][x, t]}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "0378ed07-1f62-4358-b3bc-4bdb8993ec64",
+     "metadata": {
+      "cellLabel": "Out[205]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><w>0</w></w><w><w>0</w></w><w><w>ut</w></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, 0}, {ut, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "e9dda4fb-3378-49b3-b49f-6e40ef7e3212",
+     "metadata": {
+      "cellLabel": "Out[206]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<pre>VU\n</pre>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "\"VU\\n\"",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "f1dd1864-a2a8-4e04-85b9-ad5791ce8cdf",
+     "metadata": {
+      "cellLabel": "",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l</w><w>-</w><w>u</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l</w></wrow><w>+</w><w>u</w></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><w>-</w><w>ux</w></wrow></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>l</w></wrow><w>+</w><w>u</w></wrow><wb>)</wb></wrow><w></w><w>ux</w></wrow></w><w><wrow><w></w><wrow><w></w><w>2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wsup><w></w><w>l</w><w><w>2</w></w></wsup></wrow><w>+</w><wrow><w></w><w>l</w><w></w><w>u</w></wrow><w>+</w><wsup><w></w><w>u</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><wsup><w></w><w>U</w><w><wrow><w></w><wb>(</wb><wrow><w></w><w>2</w><w>,</w><w>0</w></wrow><wb>)</wb></wrow></w></wsup><wrow><w></w><wb>[</wb><wrow><w></w><w>x</w><w>,</w><w>t</w></wrow><wb>]</wb></wrow></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{-2*(l - u)*(2*l + u), -ux}, {(-l + u)*ux, 2*(-2*l^2 + l*u + u^2) - Derivative[2, 0][U][x, t]}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "4d40cb2c-9433-4c25-853a-fcd34fa35855",
+     "metadata": {
+      "cellLabel": "Out[208]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<pre>UV\n</pre>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "\"UV\\n\"",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "6980bccb-57f4-45d3-8a79-8e9612ea443d",
+     "metadata": {
+      "cellLabel": "",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><wrow><w></w><wrow><w></w><w>2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wsup><w></w><w>l</w><w><w>2</w></w></wsup></wrow><w>+</w><wrow><w></w><w>l</w><w></w><w>u</w></wrow><w>+</w><wsup><w></w><w>u</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><wsup><w></w><w>U</w><w><wrow><w></w><wb>(</wb><wrow><w></w><w>2</w><w>,</w><w>0</w></wrow><wb>)</wb></wrow></w></wsup><wrow><w></w><wb>[</wb><wrow><w></w><w>x</w><w>,</w><w>t</w></wrow><wb>]</wb></wrow></wrow></wrow></w><w><w>ux</w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l</w><w>-</w><w>u</w></wrow><wb>)</wb></wrow><w></w><w>ux</w></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l</w><w>-</w><w>u</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l</w></wrow><w>+</w><w>u</w></wrow><wb>)</wb></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{2*(-2*l^2 + l*u + u^2) - Derivative[2, 0][U][x, t], ux}, {(l - u)*ux, -2*(l - u)*(2*l + u)}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "7a9160ac-76d7-4c08-8b64-af226a207782",
+     "metadata": {
+      "cellLabel": "Out[210]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(2,max-content);\"><w><w>0</w></w><w><w>0</w></w><w><wrow><w></w><w>ut</w><w>-</w><wrow><w></w><w>6</w><w></w><w>u</w><w></w><w>ux</w></wrow><w>+</w><w>uxxx</w></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, 0}, {ut - 6*u*ux + uxxx, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "54d078d8-ae67-4f0b-8f95-b71d9265998d",
+     "metadata": {
+      "cellLabel": "Out[211]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1771670139008,
+     "endTime": 1771670140227
+    },
+    "executionOrder": 198,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}

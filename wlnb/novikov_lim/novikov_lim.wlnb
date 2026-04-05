@@ -1,0 +1,283 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"]\nZ1 = a1^2/l1 + a2^2/l2 + 4a1 a2/(l1 + l2)\nZ2 = (l1-l2)^4/((l1+l2)^2l1 l2)a1^2 a2^2 \nW0 = 1\nW1 = l1 a1^2 + l2 a2^2 + a1 a2(4 l1 l2)/(l1 + l2)\nU0 = 1\nU1 = a1 + a2\nU2 = ((l1 - l2)^2 a1 a2)/(l1 + l2)\nx[1] = (1/2)Log[Z2/W1]\nx[2] = (1/2)Log[Z1/W0]\nm[1] = Sqrt[Z2 W1]/(U2 U1)\nm[2] = Sqrt[Z1 W0]/(U1 U0)\n\nax = {a1 -> Exp[t / l1], a2 -> Exp[t / l2]}\n\nFix[expr_] := Simplify[expr /. ax,\n  Assumptions -> {l1 > 0, l2 > 0, l1 != l2, t ∈ Reals}\n];\n\n(* Taylor series around t=0 to order n *)\nn = 1;\nNormal[Series[Fix[m[1]], {t, 0, n}]]\nNormal[Series[Fix[Exp[x - x[1]]], {t, 0, n}]]\nSimplify[Normal[Series[Fix[m[1]Exp[x - x[1]]], {t, 0, n}]]]",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wfrac><w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l1</w></w></w></wfrac><w>+</w><wfrac><w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l2</w></w></w></wfrac><w>+</w><wfrac><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "a1^2/l1 + a2^2/l2 + (4*a1*a2)/(l1 + l2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "ec0c2db5-1ca3-4fcd-a999-b7aaf5a202eb",
+     "metadata": {
+      "cellLabel": "Out[290]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>4</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "(a1^2*a2^2*(l1 - l2)^4)/(l1*l2*(l1 + l2)^2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "12d6a300-9288-4a4c-9def-38fe0e87b163",
+     "metadata": {
+      "cellLabel": "Out[291]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>1</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "1",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "c5fab32d-6a5f-4f1e-94d8-a925931a8be4",
+     "metadata": {
+      "cellLabel": "Out[292]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><w>l1</w></wrow><w>+</w><wrow><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><w>l2</w></wrow><w>+</w><wfrac><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w><w></w><w>l1</w><w></w><w>l2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "a1^2*l1 + a2^2*l2 + (4*a1*a2*l1*l2)/(l1 + l2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "4401a9aa-6950-4fdd-9afc-5f40e28a2811",
+     "metadata": {
+      "cellLabel": "Out[293]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><w>1</w></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "1",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "6e0ba891-94d4-4462-ae02-1c550d277d11",
+     "metadata": {
+      "cellLabel": "Out[294]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "a1 + a2",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "81e9e0b2-0e72-452d-968b-6a07f4d89b67",
+     "metadata": {
+      "cellLabel": "Out[295]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><w>a1</w><w></w><w>a2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "(a1*a2*(l1 - l2)^2)/(l1 + l2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "11b89276-8540-4501-ac2e-460f0716b793",
+     "metadata": {
+      "cellLabel": "Out[296]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wfrac><w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>4</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><w>l1</w></wrow><w>+</w><wrow><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><w>l2</w></wrow><w>+</w><wfrac class=\"script\"><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w><w></w><w>l1</w><w></w><w>l2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w></w></wfrac><wb>]</wb></wrow></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "Log[(a1^2*a2^2*(l1 - l2)^4)/(l1*l2*(l1 + l2)^2*(a1^2*l1 + a2^2*l2 + (4*a1*a2*l1*l2)/(l1 + l2)))]/2",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "d4199fe8-535b-4b47-8d61-e9f477cd0ddc",
+     "metadata": {
+      "cellLabel": "Out[297]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><w>Log</w><wrow><w></w><wb>[</wb><wrow><w></w><wfrac><w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l1</w></w></w></wfrac><w>+</w><wfrac><w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l2</w></w></w></wfrac><w>+</w><wfrac><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow><wb>]</wb></wrow></wrow></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "Log[a1^2/l1 + a2^2/l2 + (4*a1*a2)/(l1 + l2)]/2",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "a350e54d-61b1-4896-9661-00654bf68ed1",
+     "metadata": {
+      "cellLabel": "Out[298]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w></w><wsqrt><w><w>\\</w></w><w></w><w><wfrac class=\"script\"><w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>4</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup><w></w><w>l1</w></wrow><w>+</w><wrow><w></w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup><w></w><w>l2</w></wrow><w>+</w><wfrac class=\"script\"><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w><w></w><w>l1</w><w></w><w>l2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w></w></wfrac></w></wsqrt></wrow></w><w><w></w><w><wrow><w></w><w>a1</w><w></w><w>a2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "((l1 + l2)*Sqrt[(a1^2*a2^2*(l1 - l2)^4*(a1^2*l1 + a2^2*l2 + (4*a1*a2*l1*l2)/(l1 + l2)))/(l1*l2*(l1 + l2)^2)])/(a1*a2*(a1 + a2)*(l1 - l2)^2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "fb9ca006-12f2-453b-8793-204b7b389896",
+     "metadata": {
+      "cellLabel": "Out[299]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wsqrt><w><w>\\</w></w><w></w><w><wrow><w></w><wfrac class=\"script\"><w><wsup><w></w><w>a1</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l1</w></w></w></wfrac><w>+</w><wfrac class=\"script\"><w><wsup><w></w><w>a2</w><w><w>2</w></w></wsup></w><w><w></w><w><w>l2</w></w></w></wfrac><w>+</w><wfrac class=\"script\"><w><wrow><w></w><w>4</w><w></w><w>a1</w><w></w><w>a2</w></wrow></w><w><w></w><w><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow></w></w></wfrac></wrow></w></wsqrt></w><w><w></w><w><wrow><w></w><w>a1</w><w>+</w><w>a2</w></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "Sqrt[a1^2/l1 + a2^2/l2 + (4*a1*a2)/(l1 + l2)]/(a1 + a2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "35c153d1-142d-48b7-9031-f9e5d1ba0bee",
+     "metadata": {
+      "cellLabel": "Out[300]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>{</wb><wrow><w></w><wrow><w></w><w>a1</w><w class=\"symbol\"></w><wsup><w></w><w>𝕖</w><w><wfrac><w><w>t</w></w><w><w></w><w><w>l1</w></w></w></wfrac></w></wsup></wrow><w>,</w><wrow><w></w><w>a2</w><w class=\"symbol\"></w><wsup><w></w><w>𝕖</w><w><wfrac><w><w>t</w></w><w><w></w><w><w>l2</w></w></w></wfrac></w></wsup></wrow></wrow><wb>}</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "{a1 -> E^(t/l1), a2 -> E^(t/l2)}",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "0ddb7ba3-18af-4268-820d-bc8354f4ce6c",
+     "metadata": {
+      "cellLabel": "Out[301]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsqrt><w><w>\\</w></w><w></w><w><wfrac class=\"script\"><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w>+</w><wrow><w></w><w>6</w><w></w><w>l1</w><w></w><w>l2</w></wrow><w>+</w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w></wsqrt></wrow></w></w></wfrac><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsqrt><w><w>\\</w></w><w></w><w><wfrac class=\"script\"><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w>+</w><wrow><w></w><w>6</w><w></w><w>l1</w><w></w><w>l2</w></wrow><w>+</w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w></wsqrt><w></w><w>t</w></wrow></w><w><w></w><w><wrow><w></w><w>4</w><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "1/(2*Sqrt[(l1*l2*(l1 + l2))/(l1^2 + 6*l1*l2 + l2^2)]) - ((l1 - l2)^2*Sqrt[(l1*l2*(l1 + l2))/(l1^2 + 6*l1*l2 + l2^2)]*t)/(4*l1^2*l2^2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "1183357d-b8b5-4b14-b7e9-beddc11fa5f3",
+     "metadata": {
+      "cellLabel": "Out[304]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wsqrt><w><w>\\</w></w><w></w><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w>+</w><wrow><w></w><w>6</w><w></w><w>l1</w><w></w><w>l2</w></wrow><w>+</w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow></w></wsqrt></wrow></w><w><w></w><w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></w></w></wfrac><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>+</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>4</w></w></wsup><w></w><w>t</w></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsqrt><w><w>\\</w></w><w></w><w><wrow><w></w><w>l1</w><w></w><w>l2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wsup><w></w><w>l1</w><w><w>3</w></w></wsup><w>+</w><wrow><w></w><w>7</w><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w></w><w>l2</w></wrow><w>+</w><wrow><w></w><w>7</w><w></w><w>l1</w><w></w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup></wrow><w>+</w><wsup><w></w><w>l2</w><w><w>3</w></w></wsup></wrow><wb>)</wb></wrow></wrow></w></wsqrt></wrow></w></w></wfrac></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "(E^x*Sqrt[l1*l2*(l1 + l2)*(l1^2 + 6*l1*l2 + l2^2)])/(l1 - l2)^2 - (E^x*(l1 + l2)^4*t)/((l1 - l2)^2*Sqrt[l1*l2*(l1^3 + 7*l1^2*l2 + 7*l1*l2^2 + l2^3)])",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "965c3277-1c89-4944-b7b1-16e63510c63b",
+     "metadata": {
+      "cellLabel": "Out[305]= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>l1</w><w></w><wsup><w></w><w>l2</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l2</w></wrow><w>-</w><wrow><w></w><w>5</w><w></w><w>t</w></wrow></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wsup><w></w><w>l1</w><w><w>2</w></w></wsup><w></w><w>l2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>12</w><w></w><w>l2</w></wrow><w>-</w><wrow><w></w><w>5</w><w></w><w>t</w></wrow></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wsup><w></w><w>l1</w><w><w>3</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>2</w><w></w><w>l2</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>t</w></wrow></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><w>3</w><w></w><wsup><w></w><w>l2</w><w><w>3</w></w></wsup><w></w><w>t</w></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>4</w><w></w><w>l1</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>l1</w><w>-</w><w>l2</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><w>l2</w></wrow></w></w></wfrac></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "(E^x*(l1*l2^2*(2*l2 - 5*t) + l1^2*l2*(12*l2 - 5*t) + l1^3*(2*l2 - 3*t) - 3*l2^3*t))/(4*l1*(l1 - l2)^2*l2)",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "4c7ccf97-8d91-408e-9967-5b999d564018",
+     "metadata": {
+      "cellLabel": "Out[306]= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1772744910889,
+     "endTime": 1772744913302
+    },
+    "executionOrder": 289,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}

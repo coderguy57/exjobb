@@ -147,7 +147,7 @@
 \newif\ifliumaiex@langswe
 % English is default since \newif sets new bools to false
 % If both options are selected, a warning is given and English is used
-\DeclareOption{swedish}{\liumaiex@langswetrue}
+% \DeclareOption{swedish}{\liumaiex@langswetrue}
 \DeclareOption{english}
 	{\ifliumaiex@langswe
 		\ClassWarningNoLine{liumaiex}
@@ -197,7 +197,8 @@
 	\RequirePackage{fontspec}
 \else
 	\RequirePackage[T1]{fontenc}
-	\RequirePackage[swedish,english]{babel}
+	\RequirePackage[english]{babel}
+	% \RequirePackage[swedish,english]{babel}
 	\RequirePackage[utf8]{inputenc}
 \fi
 \RequirePackage{graphics}
@@ -265,22 +266,22 @@
 
 % liumaiex@langswe set in options
 % Swedish and English loaded by Babel/Polyglossia in packages
-\ifliumaiex@langswe
-	\renewcommand{\liu}{Linköpings universitet}
-	\renewcommand{\mai}{Matematiska institutionen, \liu}
-	\renewcommand{\liumaiex@creditslabel}{Högskolepoäng}
-	\renewcommand{\liumaiex@levellabel}{Nivå}
-	\renewcommand{\liumaiex@supervisorlabel}{Handledare}
-	\renewcommand{\liumaiex@multisupervisorlabel}{Handledare}
-	\renewcommand{\liumaiex@examinerlabel}{Examinator}
-	\renewcommand{\liumaiex@metadatakeywords}{\liumaiex@svkeywords}
-	\ifliumaiex@xeorlua
-		\setmainlanguage{swedish}
-		\setotherlanguage{english}
-	\else
-		\AtBeginDocument{\selectlanguage{swedish}}
-	\fi
-\else
+% \ifliumaiex@langswe
+% 	\renewcommand{\liu}{Linköpings universitet}
+% 	\renewcommand{\mai}{Matematiska institutionen, \liu}
+% 	\renewcommand{\liumaiex@creditslabel}{Högskolepoäng}
+% 	\renewcommand{\liumaiex@levellabel}{Nivå}
+% 	\renewcommand{\liumaiex@supervisorlabel}{Handledare}
+% 	\renewcommand{\liumaiex@multisupervisorlabel}{Handledare}
+% 	\renewcommand{\liumaiex@examinerlabel}{Examinator}
+% 	\renewcommand{\liumaiex@metadatakeywords}{\liumaiex@svkeywords}
+% 	\ifliumaiex@xeorlua
+% 		\setmainlanguage{swedish}
+% 		\setotherlanguage{english}
+% 	\else
+% 		\AtBeginDocument{\selectlanguage{swedish}}
+% 	\fi
+% \else
 	\renewcommand{\liu}{Linköping University}
 	\renewcommand{\mai}{Department of Mathematics, \liu}
 	\renewcommand{\liumaiex@creditslabel}{Credits}
@@ -295,7 +296,7 @@
 	\else
 		\AtBeginDocument{\selectlanguage{english}}
 	\fi
-\fi
+% \fi
 
 
 %---------------------------------------
@@ -543,17 +544,17 @@
 % 	\liumaiex@swedishcopyrighttext
 % \fi}
 
-\newcommand{\liumaiex@swedishcopyrighttext}{%
-\begin{otherlanguage*}{swedish}
-\subsection*{Upphovsrätt}
-Detta dokument hålls tillgängligt på Internet – eller dess framtida ersättare – från publiceringsdatum under förutsättning att inga extraordinära omständigheter uppstår.
+% \newcommand{\liumaiex@swedishcopyrighttext}{%
+% \begin{otherlanguage*}{swedish}
+% \subsection*{Upphovsrätt}
+% Detta dokument hålls tillgängligt på Internet – eller dess framtida ersättare – från publiceringsdatum under förutsättning att inga extraordinära omständigheter uppstår.
 
-Tillgång till dokumentet innebär tillstånd för var och en att läsa, ladda ner, skriva ut enstaka kopior för enskilt bruk och att använda det oförändrat för ickekommersiell forskning och för undervisning. Överföring av upphovsrätten vid en senare tidpunkt kan inte upphäva detta tillstånd. All annan användning av dokumentet kräver upphovsmannens medgivande. För att garantera äktheten, säkerheten och tillgängligheten finns lösningar av teknisk och administrativ art.
+% Tillgång till dokumentet innebär tillstånd för var och en att läsa, ladda ner, skriva ut enstaka kopior för enskilt bruk och att använda det oförändrat för ickekommersiell forskning och för undervisning. Överföring av upphovsrätten vid en senare tidpunkt kan inte upphäva detta tillstånd. All annan användning av dokumentet kräver upphovsmannens medgivande. För att garantera äktheten, säkerheten och tillgängligheten finns lösningar av teknisk och administrativ art.
 
-Upphovsmannens ideella rätt innefattar rätt att bli nämnd som upphovsman i den omfattning som god sed kräver vid användning av dokumentet på ovan beskrivna sätt samt skydd mot att dokumentet ändras eller presenteras i sådan form eller i sådant sammanhang som är kränkande för upphovsmannens litterära eller konstnärliga anseende eller egenart.
+% Upphovsmannens ideella rätt innefattar rätt att bli nämnd som upphovsman i den omfattning som god sed kräver vid användning av dokumentet på ovan beskrivna sätt samt skydd mot att dokumentet ändras eller presenteras i sådan form eller i sådant sammanhang som är kränkande för upphovsmannens litterära eller konstnärliga anseende eller egenart.
 
-För ytterligare information om Linköping University Electronic Press se förlagets hemsida \url{http://www.ep.liu.se/}.
-\end{otherlanguage*}}
+% För ytterligare information om Linköping University Electronic Press se förlagets hemsida \url{http://www.ep.liu.se/}.
+% \end{otherlanguage*}}
 
 \newcommand{\liumaiex@englishcopyrighttext}{%
 \begin{otherlanguage*}{english}

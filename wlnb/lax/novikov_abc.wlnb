@@ -1,0 +1,248 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "u = U[x, t]; m = M[x, t]; ux = D[U[x, t], x];\nFix[expr_] := (\n  Clear[u, m, ux];\n  temp = expr /. {\n     U[x, t] -> u, M[x, t] -> m,\n     D[U[x, t], {x, 1}] -> ux, D[M[x, t], x] -> mx,\n     D[U[x, t], {x, 2}] -> uxx, D[M[x, t], t] -> mt};\n  temp = temp /. {m -> u - uxx};\n  Simplify[temp])\n\nA = {\n    {-u ux, ux/z - u^2 m z, ux^2},\n    {u/z, -1/z^2, -ux/z - u^2 m z},\n    {-u^2, u/z, u ux}\n};\nL = {{0, z m, 1}, {0, 0, z m}, {1, 0, 0}};\n\nFix[A].{a Exp[x] + z^2 c Exp[-x], 2 b z, a Exp[x] - z^2 c Exp[-x]} // MatrixForm\n\nF = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};\nF = {{Exp[x], 0, z^2 Exp[-x]}, {0, 2 z, 0}, {Exp[x], 0, -z^2 Exp[-x]}};\nF = Inverse[F];\nF // MatrixForm\nA = Simplify[(D[F, t] + F . A) . Inverse[F]];\nFix[A] // MatrixForm\nL = Simplify[(D[F, x] + F . L) . Inverse[F]];\nFix[L] // MatrixForm\n\nzcc = L . A - A . L + D[L, t] - D[A, x];\nFix[zcc] // MatrixForm",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(1,max-content);\"><w><wrow><w></w><wrow><w></w><w>2</w><w></w><w>b</w><w></w><w>z</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wfrac><w><w>ux</w></w><w><w></w><w><w>z</w></w></w></wfrac><w>+</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><w>z</w></wrow></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wsup><w></w><w>ux</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>-</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><w>u</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>+</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><w>2</w><w></w><w>b</w></wrow></w><w><w></w><w><w>z</w></w></w></wfrac></wrow><w>+</w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>ux</w></w><w><w></w><w><w>z</w></w></w></wfrac></wrow><w>+</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><w>z</w></wrow></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>-</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow><w>+</w><wfrac><w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>+</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><w>z</w></w></w></wfrac></wrow></w><w><wrow><w></w><wrow><w></w><w>2</w><w></w><w>b</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>u</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>-</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow><w>-</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>a</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></wrow><w>+</w><wrow><w></w><w>c</w><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{2*b*z*(ux/z + u^2*(-u + uxx)*z) + ux^2*(a*E^x - (c*z^2)/E^x) - u*ux*(a*E^x + (c*z^2)/E^x), (-2*b)/z + (-(ux/z) + u^2*(-u + uxx)*z)*(a*E^x - (c*z^2)/E^x) + (u*(a*E^x + (c*z^2)/E^x))/z, 2*b*u + u*ux*(a*E^x - (c*z^2)/E^x) - u^2*(a*E^x + (c*z^2)/E^x)}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "4388d19b-a037-4fd2-b5f5-1715295e3fe2",
+     "metadata": {
+      "cellLabel": "Out[5768]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><wfrac><w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup></w><w><w></w><w><w>2</w></w></w></wfrac></w><w><w>0</w></w><w><wfrac><w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup></w><w><w></w><w><w>2</w></w></w></wfrac></w><w><w>0</w></w><w><wfrac><w><w>1</w></w><w><w></w><w><wrow><w></w><w>2</w><w></w><w>z</w></wrow></w></w></wfrac></w><w><w>0</w></w><w><wfrac><w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{1/(2*E^x), 0, 1/(2*E^x)}, {0, 1/(2*z), 0}, {E^x/(2*z^2), 0, -1/2*E^x/z^2}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "a37c71de-4fc4-41f8-b6ff-555a9ff32b13",
+     "metadata": {
+      "cellLabel": "Out[5772]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><wsup><w></w><w>u</w><w><w>2</w></w></wsup></wrow><w>+</w><wsup><w></w><w>ux</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w><w>-</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w><w>+</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w><w>+</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w><w>+</w><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w>-</w><wsup><w></w><w>ux</w><w><w>2</w></w></wsup></wrow><wb>)</wb></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{(-u^2 + ux^2)/2, (u + ux - u^2*(u - uxx)*z^2)/E^x, -1/2*((u + ux)^2*z^2)/E^(2*x)}, {-1/2*(E^x*(-u + ux + u^2*(u - uxx)*z^2))/z^2, -z^(-2), (u + ux + u^2*(u - uxx)*z^2)/(2*E^x)}, {(E^(2*x)*(u - ux)^2)/(2*z^2), -((E^x*(u - ux + u^2*(u - uxx)*z^2))/z^2), (u^2 - ux^2)/2}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "eb2fdc26-79db-4725-b192-9ab061078e74",
+     "metadata": {
+      "cellLabel": "Out[5774]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></w><w><w>0</w></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, ((u - uxx)*z^2)/E^x, 0}, {(E^x*(u - uxx))/2, 0, -1/2*((u - uxx)*z^2)/E^x}, {0, E^x*(u - uxx), 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "6c6bf0de-333a-4a3b-ae0d-958929372d78",
+     "metadata": {
+      "cellLabel": "Out[5776]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w>0</w></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, ((mt + u*(mx*u + 3*ux*(u - uxx)))*z^2)/E^x, 0}, {(E^x*(mt + u*(mx*u + 3*ux*(u - uxx))))/2, 0, -1/2*((mt + u*(mx*u + 3*ux*(u - uxx)))*z^2)/E^x}, {0, E^x*(mt + u*(mx*u + 3*ux*(u - uxx))), 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "c234644d-b345-493d-80c2-9ca664f981d9",
+     "metadata": {
+      "cellLabel": "Out[5778]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1772237411580,
+     "endTime": 1772237412801
+    },
+    "executionOrder": 5764,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"];\n\nA = {\n   {-u ux,      ux/z - u^2 m z,       ux^2},\n   { u/z,      -1/z^2,               -ux/z - u^2 m z},\n   {-u^2,       u/z,                  u ux}\n};\n\nv = {a Exp[x] + z^2 c Exp[-x],\n     2 b z,\n     a Exp[x] - z^2 c Exp[-x]};\n\nr = Simplify[A.v];\n\nAssuming[z != 0,\n  atExpr = Simplify[Exp[-x] (r[[1]] + r[[3]])/2];\n  btExpr = Simplify[r[[2]]/(2 z)];\n  ctExpr = Simplify[Exp[x] (r[[1]] - r[[3]])/(2 z^2)];\n\n  M = Normal @ CoefficientArrays[{atExpr, btExpr, ctExpr}, {a, b, c}][[2]];\n];\n\nJ = {{0, 0, 1}, {0, 1, 0}, {0, 0, 0}}; \nP = {{0, 0, -1/z^4}, {0, 1/z^2, 0}, {1, 0, 0}};\nP = {{0, -z^4/(2g), 0}, {-g z^2/4, 0, z^2 / (2g)}, {0, -g, 1}} /. {g -> Exp[-x]/(u-ux)};\nP = {{0, -z^4/(2g), 0}, {-g z^2/4, 0, z^2 / (2g)}, {0, -g, 1}} /. {g -> m};\nA = {\n    {0, 1/m, -(z^2)/(2m^2)},\n    {0, -1/z^2, 1/(2m)},\n    {0, 0, 0}\n};\n\nB = {\n    {0, 0, 0},\n    {m/(2z^2), -1/z^2, 0},\n    {m^2/(2z^2), -m/z^2, 0}\n};\n\nA=A/.{m->Exp[x]/(u+ux)};\nP=P/.{m->Exp[x]/(u+ux)};\n\nM//MatrixForm\nA//MatrixForm\nInverse[P].A.P//MatrixForm\n\nP // MatrixForm\nG = J.M.J /. {m -> 0};\nG // MatrixForm\nSimplify[Inverse[P].G.P] // MatrixForm\nM // MatrixForm",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>-</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{-1/2*((u - ux)*(u + ux)), -((-u - ux + m*u^2*z^2)/E^x), -1/2*((u + ux)^2*z^2)/E^(2*x)}, {-1/2*(E^x*(-u + ux + m*u^2*z^2))/z^2, -z^(-2), (u + ux + m*u^2*z^2)/(2*E^x)}, {(E^(2*x)*(u - ux)^2)/(2*z^2), -((E^x*(u - ux + m*u^2*z^2))/z^2), ((u - ux)*(u + ux))/2}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "de50bf12-c491-48f0-80ef-4fb990f0e5d3",
+     "metadata": {
+      "cellLabel": "Out[6704]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, (u + ux)/E^x, -1/2*((u + ux)^2*z^2)/E^(2*x)}, {0, -z^(-2), (u + ux)/(2*E^x)}, {0, 0, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "1f92823d-7379-4a51-919d-0a90cfc8c435",
+     "metadata": {
+      "cellLabel": "Out[6705]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w><w><wfrac><w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><w>0</w></w><w><wfrac><w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><wrow><w></w><w>-</w><wfrac><w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></w><w><w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, 0, 0}, {E^x/(2*(u + ux)*z^2), -z^(-2), 0}, {E^(2*x)/(2*(u + ux)^2*z^2), -(E^x/((u + ux)*z^2)), 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "29c4aee8-aef5-40e4-a453-73e3f1b678e1",
+     "metadata": {
+      "cellLabel": "Out[6706]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>4</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>4</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w></w></wfrac></wrow></w><w><w>0</w></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup></w><w><w></w><w><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow></w></w></wfrac></wrow></w><w><w>1</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, -1/2*((u + ux)*z^4)/E^x, 0}, {-1/4*(E^x*z^2)/(u + ux), 0, ((u + ux)*z^2)/(2*E^x)}, {0, -(E^x/(u + ux)), 1}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "3e607fb4-23a7-4045-848f-783fbc43bfd4",
+     "metadata": {
+      "cellLabel": "Out[6707]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><w>0</w></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, -((E^x*(u - ux))/z^2), (E^(2*x)*(u - ux)^2)/(2*z^2)}, {0, -z^(-2), -1/2*(E^x*(-u + ux))/z^2}, {0, 0, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "072f7485-4976-4eb1-86a4-b2435771ae12",
+     "metadata": {
+      "cellLabel": "Out[6709]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><wrow><w></w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>4</w></w></wsup></wrow></w></w></wfrac><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wfrac><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>4</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow><w>+</w><wrow><w></w><w>2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>4</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>3</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>4</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>4</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>4</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>3</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>4</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>5</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>3</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></wrow></w></w></wfrac></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow><w>+</w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>6</w></w></wsup></wrow></w></w></wfrac></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{(E^(2*x)*(-u + ux))/((u + ux)*z^4) - z^(-2), (2*E^x*(u - ux)*(E^(2*x)*(u - ux) + (u + ux)*z^2))/((u + ux)*z^6), (-2*E^(4*x)*(u - ux)^2 + 2*(u + ux)^2*z^4)/(E^(2*x)*z^6)}, {(E^(3*x)*(-u + ux))/(2*(u + ux)^2*z^4), (E^(4*x)*(u - ux)^2)/((u + ux)^2*z^6), (E^x*(u - ux)*(E^(2*x)*(-u + ux) + (u + ux)*z^2))/((u + ux)*z^6)}, {(E^(4*x)*(-u + ux))/(2*(u + ux)^3*z^4), (E^(5*x)*(u - ux)^2)/((u + ux)^3*z^6), (E^(2*x)*(u - ux)*(E^(2*x)*(-u + ux) + (u + ux)*z^2))/((u + ux)^2*z^6)}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "08b58c2e-5c70-4b1e-833e-418cce1800f0",
+     "metadata": {
+      "cellLabel": "Out[6710]//MatrixForm= ",
+      "isBoxData": false
+     }
+    },
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>-</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wrow><w></w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac></wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><wrow><w></w><w>-</w><w>2</w></wrow><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>-</w><w>u</w></wrow><w>+</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></wrow></w><w><wrow><w></w><w>-</w><wfrac><w><w>1</w></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>-</w><w>x</w></wrow></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><wrow><w></w><w>2</w><w></w><w>x</w></wrow></w></wsup><w></w><wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w><w>2</w></w></wsup></wrow></w><w><w></w><w><wrow><w></w><w>2</w><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></w></w></wfrac></w><w><wrow><w></w><w>-</w><wfrac><w><wrow><w></w><wsup><w></w><w>𝕖</w><w><w>x</w></w></wsup><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w><w>+</w><wrow><w></w><w>m</w><w></w><wsup><w></w><w>u</w><w><w>2</w></w></wsup><w></w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></wrow></wrow><wb>)</wb></wrow></wrow></w><w><w></w><w><wsup><w></w><w>z</w><w><w>2</w></w></wsup></w></w></wfrac></wrow></w><w><wrow><w></w><wfrac><w><w>1</w></w><w><w></w><w><w>2</w></w></w></wfrac><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>ux</w></wrow><wb>)</wb></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>+</w><w>ux</w></wrow><wb>)</wb></wrow></wrow></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{-1/2*((u - ux)*(u + ux)), -((-u - ux + m*u^2*z^2)/E^x), -1/2*((u + ux)^2*z^2)/E^(2*x)}, {-1/2*(E^x*(-u + ux + m*u^2*z^2))/z^2, -z^(-2), (u + ux + m*u^2*z^2)/(2*E^x)}, {(E^(2*x)*(u - ux)^2)/(2*z^2), -((E^x*(u - ux + m*u^2*z^2))/z^2), ((u - ux)*(u + ux))/2}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "7c96866c-429e-4bf4-8965-aa36960bf830",
+     "metadata": {
+      "cellLabel": "Out[6711]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1772242226557,
+     "endTime": 1772242228722
+    },
+    "executionOrder": 6691,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}

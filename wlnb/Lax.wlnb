@@ -1,0 +1,111 @@
+{
+ "cells": [
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"];\nu = U[x, t]; m = M[x, t]; ux = D[U[x, t], x];\nFix[expr_] := (\n  Clear[u, m, ux];\n  temp = expr /. {\n     U[x, t] -> u, M[x, t] -> m,\n     D[U[x, t], {x, 1}] -> ux, D[M[x, t], x] -> mx,\n     D[U[x, t], {x, 2}] -> uxx, D[M[x, t], t] -> mt};\n  temp = temp /. {m -> u - uxx};\n  Simplify[temp])\n\nA = {\n    {-u ux, ux/z - u^2 m z, ux^2},\n    {u/z, -1/z^2, -ux/z - u^2 m z},\n    {-u^2, u/z, u ux}\n};\nL = {{0, z m, 1}, {0, 0, z m}, {1, 0, 0}};\nzcc = L . A - A . L + D[L, t] - D[A, x];\nFix[zcc] // MatrixForm",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><w>z</w></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w><w><wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>+</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>u</w><w>-</w><w>uxx</w></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><w>z</w></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, (mt + u*(mx*u + 3*ux*(u - uxx)))*z, 0}, {0, 0, (mt + u*(mx*u + 3*ux*(u - uxx)))*z}, {0, 0, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "c9d67f37-ff65-46fe-9997-3f2679339617",
+     "metadata": {
+      "cellLabel": "Out[153]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1771767506344,
+     "endTime": 1771767506837
+    },
+    "executionOrder": 147,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"];\nu = U[x, t]; m = M[x, t]; ux = D[U[x, t], x];\nFix[expr_] := (\n  Clear[u, m, ux];\n  temp = expr /. {\n     U[x, t] -> u, M[x, t] -> m,\n     D[U[x, t], {x, 1}] -> ux, D[M[x, t], x] -> mx,\n     D[U[x, t], {x, 2}] -> uxx, D[M[x, t], t] -> mt};\n  temp = temp /. {m -> - uxx};\n  Simplify[temp])\n\nA = {\n    {-u ux, -ux/l - u^2 m, -ux^2/l},\n    {u, 1/l, ux/l - u^2 m},\n    {u^2 l, u, u ux}\n};\nL = {{0, m, 0}, {0, 0, m}, {-l, 0, 0}};\nzcc = L . A - A . L + D[L, t] - D[A, x];\nFix[zcc] // MatrixForm",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w><w><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w><w><w>0</w></w><w><w>0</w></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, mt + u*(mx*u - 3*ux*uxx), 0}, {0, 0, mt + u*(mx*u - 3*ux*uxx)}, {0, 0, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "a849f0dc-301a-491b-ab1a-430709904a3b",
+     "metadata": {
+      "cellLabel": "Out[96]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1771707132067,
+     "endTime": 1771707132558
+    },
+    "executionOrder": 90,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "ClearAll[\"Global`*\"];\nu = U[x, t]; m = M[x, t]; ux = D[U[x, t], x]; X = (ux x - u);\nFix[expr_] := (\n  Clear[u, m, ux];\n  temp = expr /. {\n     U[x, t] -> u, M[x, t] -> m,\n     D[U[x, t], {x, 1}] -> ux, D[M[x, t], x] -> mx,\n     D[U[x, t], {x, 2}] -> uxx, D[M[x, t], t] -> mt};\n  temp = temp /. {m -> - uxx};\n  Simplify[temp])\n\nA = {\n    {ux X, -ux/l - u^2 m, -ux^2/l},\n    {-X + l u^2 m x, 1/l, ux/l - u^2 m},\n    {l X^2, -X - l u^2 m x, -ux X}\n};\nL = {{0, m, 0}, {-l m x, 0, m}, {0, l m x, 0}};\nzcc = L . A - A . L + D[L, t] - D[A, x];\nFix[zcc] // MatrixForm",
+   "languageId": "wolfram",
+   "outputs": [
+    {
+     "items": [
+      {
+       "data": "<div class=\"wexpr\"><wrow><w></w><wb>(</wb><w>⁠</w><wgrid style=\"grid-template-columns:repeat(3,max-content);\"><w><w>0</w></w><w><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w><w><w>0</w></w><w><wrow><w></w><wrow><w></w><w>-</w><w>l</w></wrow><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><w>x</w></wrow></w><w><w>0</w></w><w><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow></w><w><w>0</w></w><w><wrow><w></w><w>l</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><w>mt</w><w>+</w><wrow><w></w><w>u</w><w></w><wrow><w></w><wb>(</wb><wrow><w></w><wrow><w></w><w>mx</w><w></w><w>u</w></wrow><w>-</w><wrow><w></w><w>3</w><w></w><w>ux</w><w></w><w>uxx</w></wrow></wrow><wb>)</wb></wrow></wrow></wrow><wb>)</wb></wrow><w></w><w>x</w></wrow></w><w><w>0</w></w></wgrid><w>⁠</w><wb>)</wb></wrow></div>",
+       "mime": "x-application/wolfram-language-html"
+      },
+      {
+       "data": "MatrixForm[{{0, mt + u*(mx*u - 3*ux*uxx), 0}, {-(l*(mt + u*(mx*u - 3*ux*uxx))*x), 0, mt + u*(mx*u - 3*ux*uxx)}, {0, l*(mt + u*(mx*u - 3*ux*uxx))*x, 0}}]",
+       "mime": "text/plain"
+      }
+     ],
+     "id": "144b84f5-d2db-47ae-bd41-92f5d968f47e",
+     "metadata": {
+      "cellLabel": "Out[132]//MatrixForm= ",
+      "isBoxData": false
+     }
+    }
+   ],
+   "metadata": {},
+   "executionSummary": {
+    "timing": {
+     "startTime": 1771766838477,
+     "endTime": 1771766838965
+    },
+    "executionOrder": 126,
+    "success": true
+   }
+  },
+  {
+   "kind": 2,
+   "value": "",
+   "languageId": "wolfram",
+   "outputs": [],
+   "metadata": {},
+   "executionSummary": {}
+  }
+ ]
+}
