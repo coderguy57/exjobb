@@ -9,13 +9,12 @@
 %=========================================================================%
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage[dvips]{graphicx}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{amsthm}
 \usepackage{comment}
 \usepackage{parskip}
 \usepackage{tikz}
-\usepackage{lipsum}
 \usepackage{makecell}
 \usepackage{pgfplots}
 \usepackage{mathtools}
@@ -25,10 +24,8 @@
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage{hyperref}
-\usepackage[color]{changebar}
 \usepackage{microtype}
-\cbcolor{green}
-\hypersetup{hidelinks}
+\hypersetup{hidelinks,hypertexnames=false}
 \pgfplotsset{compat=1.17}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
@@ -53,6 +50,20 @@
 \newcommand\smalldots{\hbox to 1em{.\hss.\hss.}}
 \renewcommand{\arraystretch}{1.2}
 \numberwithin{equation}{section}
+
+\newcommand{\safeincludegraphics}[2][]{%
+	\IfFileExists{#2}{%
+		\includegraphics[#1]{#2}%
+	}{%
+		\fbox{%
+			\begin{minipage}[c][0.28\textheight][c]{0.9\linewidth}
+				\centering
+				Missing figure:\\[0.5em]
+				\tiny\path{#2}
+			\end{minipage}%
+		}%
+	}%
+}
 
 % Define a macro for the position calculation
 \newcommand{\dotangle}[1]{
@@ -93,10 +104,8 @@
 % \supervisor also accepts the star format
 %\level{G2} % Not needed when bachelor/master is set in options
 %\credits{16 hp} % Not needed when bachelor/master is set in options
-\regnumber{The number your thesis gets from administrators}
-\enkeywords{Keyword 1, keyword 2, etc.}
-\svkeywords{Nyckelord 1, nyckelord 2, etc.}
-\publishurl{The url to the thesis}
+\enkeywords{high-frequency limit, Novikov equation, peakons, constants of motion, Lax pair}
+% \svkeywords{h\"ogfrekvensgr\"ans, Novikovs ekvation, peakoner, r\"orelsekonstanter, Laxpar}
 %\pdfauthor{Name} % Needed if name is complex
 %\pdftitle{Title} % Needed if title is complex
 %\pdfkeywords{Keywords} % Needed if keywords are complex
@@ -116,7 +125,7 @@
 The Novikov equation is a nonlinear partial differential equation (PDE) that admits peakon solutions. This thesis focuses on the high-frequency limit of the Novikov equation, which results in a new PDE. We derive the corresponding system of ordinary differential equations (ODEs) for piecewise linear solutions and provide a detailed solution for the case when the number of peakons \(N = 2\). We also explore the periodic case for \(N = 2\) and perform numerical simulations for higher values of \(N\). Additionally, we investigate the Hamiltonian structure of the high-frequency Novikov equation and identify several constants of motion using both direct search and Lax pair methods.
 
 \placeenkeywords
-\placeenurl
+% \placeenurl
 
 \newpage
 
@@ -154,135 +163,6 @@ The Novikov equation is a nonlinear partial differential equation (PDE) that adm
 %=========================================================================%
 \pagenumbering{arabic}
 
-% \section{N = 3}
-
-% \todo{Såg när jag plottade att $m_im_j(x_j - x_i)$ betedde sig väldigt snällt så kollade lite nämre på det.}
-% \begin{figure}[H]
-% 	\includegraphics[width=\textwidth]{temp.pdf}
-% \end{figure}
-
-% \begin{align}
-% 	\dot{x}_1 & = (m_2 (x_2 - x_1) + m_3 (x_3 - x_1))^2, \\
-% 	\dot{x}_2 & = (m_1 (x_2 - x_1) + m_3 (x_3 - x_2))^2, \\
-% 	\dot{x}_3 & = (m_1 (x_3 - x_1) + m_2 (x_3 - x_2))^2, \\
-% 	\dot{m}_1 & = m_1 (+m_2 + m_3)(m_2 (x_2 - x_1) + m_3 (x_3 - x_1)),  \\
-% 	\dot{m}_2 & = m_2 (-m_1 + m_3)(m_1 (x_2 - x_1) + m_3 (x_3 - x_2)),  \\
-% 	\dot{m}_3 & = m_3 (-m_1 - m_2)(m_1 (x_3 - x_1) + m_2 (x_3 - x_2)).
-% \end{align}
-
-% We define
-% \begin{equation}
-% 	c_{ij} = m_i m_j (x_j - x_i).
-% \end{equation}
-% Taking the time derivate of $c_{12}$ we get,
-% \begin{equation}
-% \begin{aligned}
-% 	\dot{c}_{12}
-% 	&= m_1 m_2(x_2 - x_1)(m_1 m_3(x_3 - x_1) + m_2 m_3(x_3 - x_2)) \\
-% 	&= c_{12} (c_{13} + c_{23}).
-% \end{aligned}
-% \end{equation}
-% Doing the same for $c_{13}$ and $c_{23}$ gives us a system of ODEs,
-% \begin{equation}
-% \begin{aligned}
-% 	\dot{c}_{12} = c_{12} (c_{13} - c_{23}),\\
-% 	\dot{c}_{13} = c_{13} (c_{23} - c_{12}),\\
-% 	\dot{c}_{23} = c_{23} (c_{12} - c_{13}).
-% \end{aligned}
-% \end{equation}
-% This is a cyclic Lotka--Volterra system. This system is integrable, as can be seen by it having two first integrals,
-% \begin{equation}
-% \begin{aligned}
-% 	(c_{12} + c_{13} + c_{23})_t = 0, \\
-% 	(c_{12}c_{13}c_{23})_t = 0.
-% \end{aligned}
-% \end{equation}
-% There is no elementary closed form solution to the system. But we will just use that the system is solvable. Knowing $c_i$ we can now solve for $x_i$ and $m_i$.
-% \begin{equation}
-% 	(\dot{c}_{12})^2 = c_{12}^2(c_{13} - c_{23})^2.
-% \end{equation}
-% Let
-% \begin{align}
-% 	S &= (c_{12} + c_{13} + c_{23}) \\
-% 	P &= c_{12}c_{13}c_{23},
-% \end{align}
-% then
-% \begin{equation}
-% 	(c_{13} - c_{23})^2 - 4c_{13}c = (S - c_{12})^2 - \frac{4P}{c_{12}}.
-% \end{equation}
-% Then we can write
-% \begin{equation}
-% 	(\dot{c}_{12})^2 = c_{12}^4 - 2Sc_{12}^3 + S^2c_{12}^2 - 4Pc_{12}.
-% \end{equation}
-% % By letting
-% % \begin{equation}
-% % 	Q(a) = a^4 - 2Sa^3 + S^2a^2 - 4Pa
-% % \end{equation}
-% % and $Q(\alpha) = 0$, we can do the following substitutions
-% % \begin{align}
-% % 	u = \frac{1}{a - \alpha}, \\
-% % 	v = u + \frac{Q''(\alpha)}{6Q'(\alpha)}.
-% % \end{align}
-% \todo{Hoppas över de här jobbiga stegen för nu.}
-
-% After skipping some substitutions, $v(t) = f(c_{12}(t))$, the equation can be written as an equation on Weierstrass form
-% \begin{equation}
-% 	(\dot{v}(t))^2 = 4v(t)^3 - g_2v(t) - g_3,
-% \end{equation}
-% which means that $v$ is the Weierstrass elliptic function $\wp(t,g_2,g_3)$. 
-% We can then invert the substitutions to get
-% \begin{equation}
-% 	c_{12}(t) = C_1 + \frac{C_2}{\wp(t,g_2,g_3) - C_3}.
-% \end{equation}
-% The same can be done for $c_{13}$ and $c_{23}$ also. We can then write $x_i$ and $m_i$ in terms of $c_{ij}$ as
-% \begin{align}
-% 	\dot{m}_1 &= (\phantom{+}m_2 + m_3)(c_{12} + c_{13}), \\
-% 	\dot{m}_2 &= (-m_1 + m_3)(c_{12} + c_{23}), \\
-% 	\dot{m}_3 &= (-m_1 - m_2)(c_{13} + c_{23}), \\
-% 	\dot{x}_1 &= (c_{12} + c_{13})^2/m_1^2, \\
-% 	\dot{x}_2 &= (c_{12} + c_{23})^2/m_2^2, \\
-% 	\dot{x}_3 &= (c_{13} + c_{23})^2/m_3^2.
-% \end{align}
-% It's unlikely that they have closed form solutions, since the $x_i$ are elliptic. We will however get a nice solution for $c_{12} = c{13} = c_{23}$.
-
-% Assuming all $c_{ij} > 0$ at $t_0$ we can show that $0 < c_{ij} < S$ for all t. Take $c_{12}$ for example
-% \begin{align}
-% 	&\dot{c}_{12} = c_{12} (c_{13} - c_{23})\\ \iff
-% 	&\frac{\dot{c}_{12}}{c_{12}} = c_{13} - c_{23}\\ \iff
-% 	&(\ln(c_{12}))_t = c_{13} - c_{23}\\ \iff
-% 	&\ln(c_{12}(t)) - \ln(c_{12}(t_0)) = \int_{t_0}^t (c_{13}(s) - c_{23}(s)) ds \\ \iff
-% 	&c_{12}(t) = c_{12}(t_0) \exp \Big(\int_{t_0}^t (c_{13}(s) - c_{23}(s)) ds \Big),
-% \end{align}
-% thus $c_{12} > 0$ since the right hand side is greater than $0$, and it will also be bounded from above by the $S$ invariant.
-
-% We see here that it's quite a natural extension for original system of ODEs to continue after $x_i$ blows up, by flipping both the sign of $x_i$ and $m_i$ even for higher N.
-% \pagebreak
-
-% % \begin{equation}
-% % \begin{aligned}
-% % 	\dot{c}_{ij}
-% % 	&= (m_i m_j(x_j - x_i))_t \\
-% % 	&= \dot{m}_im_j(x_j - x_i) + m_i\dot{m}_j(x_j - x_i)
-% % 	- m_im_j\dot{x}_i + m_im_j\dot{x}_j \\
-% % 	&=\phantom{-} m_i(m_j)^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
-% % 	&\phantom{=}- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
-% % 	&=0. \\
-% % \end{aligned}
-% % \end{equation}
-% % \begin{equation}
-% % \begin{aligned}
-% % 	\dot{c}_{ij}
-% % 	&= (m_i m_j(x_j - x_i))_t \\
-% % 	&= \dot{m}_im_j(x_j - x_i) + m_i\dot{m}_j(x_j - x_i)
-% % 	- m_im_j\dot{x}_i + m_im_j\dot{x}_j \\
-% % 	&=\phantom{-} m_i(m_j)^3(x_2 - x_1)^2 - m_1^3m_2(x_2 - x_1)^2 \\
-% % 	&\phantom{=}- m_1m_2^3(x_2 - x_1)^2 + m_1^3m_2(x_2 - x_1)^2 \\
-% % 	&=0. \\
-% % \end{aligned}
-% % \end{equation}
-
-
-
 \section{Introduction}
 
 The objective of this thesis is to study the following nonlinear partial differential equation (PDE):
@@ -293,7 +173,7 @@ where $u = u(x, t)$. This equation is obtained by taking the high-frequency limi
 \begin{equation}
 	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u_{xx}.
 \end{equation}
-We will study solutions to this equation on the form,
+We study solutions to this equation of the form
 \begin{equation}
 	u(x, t) = \sum_{k = 1}^{N} m_k(t) |x - x_k(t)|.
 \end{equation}
@@ -339,23 +219,23 @@ It was discovered by Vladimir Novikov in a classification of cubically nonlinear
 
 \subsection{High-frequency limit}
 
-As mentioned at the start the focus of the thesis is on the high-frequency limit of the Novikov equation. The high-frequency limit is obtained by substitution of $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and letting $\epsilon \rightarrow 0$. We will show the steps to take the limit here by first expanding $m=u-u_{xx}$ in the Novikov equation \eqref{eq:Novikov_equation}
+As mentioned at the start, the focus of the thesis is on the high-frequency limit of the Novikov equation. The high-frequency limit is obtained by the substitution $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and letting $\epsilon \rightarrow 0$. We show the steps used to take the limit by first expanding $m=u-u_{xx}$ in the Novikov equation \eqref{eq:Novikov_equation}
 \begin{equation}
-	(u-u_{xx})_t + ((u(u-u_{xx}))_x + 2u_x(u-u_xx))u = 0.
+	(u-u_{xx})_t + ((u(u-u_{xx}))_x + 2u_x(u-u_{xx}))u = 0.
 \end{equation}
-By substituting $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, the derivatives with respect to $x$ and $t$ will get a factor of $\epsilon^{-1}$ since
+Under this substitution, the derivatives with respect to $x$ and $t$ acquire a factor of $\epsilon^{-1}$ since
 \begin{equation}
-	\frac{d}{dx} \mapsto \frac{d}{dx \epsilon} = \epsilon^{-1} \frac{d}{dx}
+	\frac{d}{dx} \mapsto \frac{d}{d(\epsilon x)} = \epsilon^{-1} \frac{d}{dx}.
 \end{equation}
-Substituting in that into the expanded equation gives
+Substituting this into the expanded equation gives
 \begin{equation}
-	(u-u_{xx}\epsilon^{-2})_t\epsilon^{-1} + ((u(u-u_{xx}\epsilon^{-2}))_x\epsilon^{-1} + 2u_x\epsilon^{-1}(u-u_xx\epsilon^{-2}))u = 0.
+	(u-u_{xx}\epsilon^{-2})_t\epsilon^{-1} + ((u(u-u_{xx}\epsilon^{-2}))_x\epsilon^{-1} + 2u_x\epsilon^{-1}(u-u_{xx}\epsilon^{-2}))u = 0.
 \end{equation}
 We then multiply the entire equation by $-\epsilon^3$
 \begin{equation}
-	(-u\epsilon^{2}+u_{xx})_t + ((u(-u\epsilon^{2}+u_{xx}))_x + 2u_x(-u\epsilon^{2}+u_xx))u = 0,
+	(-u\epsilon^{2}+u_{xx})_t + ((u(-u\epsilon^{2}+u_{xx}))_x + 2u_x(-u\epsilon^{2}+u_{xx}))u = 0,
 \end{equation}
-and by taking the limit $\epsilon \rightarrow 0$ we end up with the HF--Novikov equation
+and by taking the limit $\epsilon \rightarrow 0$, we obtain the HF-Novikov equation
 \begin{equation} \label{eq:HF-Novikov}
 	m_t + ((um)_x + 2u_xm) u = 0,\quad m = u_{xx}.
 \end{equation}
@@ -373,15 +253,15 @@ Both the CH and DP equations have been studied in the high-frequency limit.  The
 	& \multicolumn{1}{l|}{Degasperis--Procesi} & \multicolumn{1}{l}{Derivative Burgers} \\
     \hline
     $m_t + ((um)_x + 2u_xm)u = 0$ 
-	& \multicolumn{1}{l|}{Novikov} & \multicolumn{1}{l}{HF Novikov} \\
+	& \multicolumn{1}{l|}{Novikov} & \multicolumn{1}{l}{HF-Novikov} \\
   \end{tabular}
 \end{center}
 
-All three high-frequency limits also admit piecewise linear solutions on the following form
+All three high-frequency limits also admit piecewise linear solutions of the following form
 \begin{equation} \label{eq:linear_peakon}
 	u(x, t) = \sum_{k = 1}^{N} m_k(t) |x - x_k(t)|.
 \end{equation}
-For the HF Novikov equation the time derivative of $x_k$ and $m_k$ will be governed by the following ODEs
+For the HF-Novikov equation, the time derivative of $x_k$ and $m_k$ is governed by the following ODEs:
 \begin{equation} \label{eq:peakon_odes}
 \dot{x}_k = u(x_k)^2, \quad
 \dot{m}_k = -m_ku_x(x_k)u(x_k).
@@ -391,9 +271,9 @@ Dots denote $\frac{d}{dt}$ as usual. $u(x_k)$ and $u(x = x_k,t)$ is given by
 	u(x_k) &= \sum_{i = 1}^{N} m_i(t) |x_k - x_i(t)|, \\
 	u_x(x_k) &= \sum_{i = 1}^{N} m_i(t) \sgn(x_k - x_i).
 \end{align}
-The $u_x$ isn't defined at $x = x_i$ but we define it to be the average $\langle u_x(x_i) \rangle$ of the left and right limits and we will see that this is consistent with the PDE. See Appendix \ref{sec:DerivationODE} for the proof that the HF Novikov equation admits piecewise linear solutions on the form of equation \eqref{eq:linear_peakon} and that the ODE-system is compatible with the PDE.
+The quantity $u_x$ is not defined at $x = x_i$, but we define its value there to be the average $\langle u_x(x_i) \rangle$ of the left and right limits. Appendix \ref{sec:DerivationODE} proves that the HF-Novikov equation admits piecewise linear solutions of the form \eqref{eq:linear_peakon} and that the ODE system is compatible with the PDE.
 
-The peakon equations and their respective high-frequency limits share many similarities. The ODEs for both equations share the same form, but the $u(x_k)$ and $u_x(x_k)$ are different. Both the regular and HF Novikov equations only have $x_i$'s that increase due to the $u(x_k)^2$ term in the ODEs.
+The peakon equations and their respective high-frequency limits share many similarities. The ODEs for both equations share the same form, but the $u(x_k)$ and $u_x(x_k)$ are different. For both Novikov and HF-Novikov equations, the $x_i$ only increase due to the $u(x_k)^2$ term in the ODEs.
 \begin{center}
   \begin{tabular}{l|c|c}
     & $u=\sum_{i=1}^n m_i e^{-|x-x_i|}$ & $u=\sum_{i=1}^n m_i |x-x_i|$ \\[3pt]
@@ -417,32 +297,32 @@ The peakon equations and their respective high-frequency limits share many simil
 		\dot{x}_i &= u(x_k)^2,\\
 		\dot{m}_i &= -\phantom{2}m_i u_x(m_i) u(x_i)
 	\end{aligned}$}
-	& \multicolumn{1}{l|}{Novikov} & \multicolumn{1}{l}{HF Novikov} \\
+	& \multicolumn{1}{l|}{Novikov} & \multicolumn{1}{l}{HF-Novikov} \\
   \end{tabular}
 \end{center}
 
 \subsection{Constants of motion}
 
 The system admits several constants of motion, also referred to as invariants, by which we mean functions of the dynamical variables whose values are preserved under the time evolution of the ODE system.
-Constants of motion play a central role in our analysis of the ODE system obtained from the HF--Novikov equation.
+Constants of motion play a central role in our analysis of the ODE system obtained from the HF-Novikov equation.
 The identification of conserved quantities is closely tied to questions of integrability.
 By integrability we mean the possibility of solving the system exactly, in the sense that its solutions can be expressed in explicit form rather than obtained only through numerical or qualitative methods.
 In particular, the existence of sufficiently many independent invariants is a strong indicator of integrability.
 
 \subsection{Outline}
 
-The initial objective of this thesis was to solve the HF Novikov equation explicitly for any $N$. However, it was found that solving the equation presents significant challenges and the solutions method used for similar equations such as the derivative Burgers equation and the Novikov equation did not work. The thesis will instead focus on other aspects of the HF Novikov equation.
+The initial objective of this thesis was to solve the HF-Novikov equation explicitly for any $N$. However, solving the equation presents significant challenges, and the solution methods used for similar equations such as the derivative Burgers equation and the Novikov equation did not work. The thesis therefore focuses on other aspects of the HF-Novikov equation.
 
-In the next section of the thesis there will be a detailed solution for the case when $N = 2$. The solution will be given for two cases, both the regular and a periodic case which will be discussed in the next section. Then the Hamiltonian structure of the HF Novikov equation will be discussed in section four.
+The next section gives a detailed solution for the case $N = 2$. The solution is given both on the real line and in a periodic setting. The Hamiltonian structure of the HF-Novikov equation is then discussed in Section 3.
 
-After that in the sections that follow we will examine the constants of motion for the HF Novikov equation. First a short survey of the constants of motion discovered by direct search will be given. Then a more systematic approach will be taken to find the constants of motion for the HF Novikov equation. Next a short theorem of the constants of motion for a generalized system of ODEs will be given. It connects the constant of motion of the HF Novikov equation to the regular Novikov equation. After that the Lax pair will be discussed and the constants of motion derived from it. The last section will give an numerical analysis of the system, where we will take a look at the behavior for $N > 2$. The thesis will conclude with appendices that provide additional mathematical proofs and verifications.
+The following sections examine constants of motion for the HF-Novikov equation. First, a short survey is given of constants of motion discovered by direct search. Then a theorem for a generalized system of ODEs is used to connect one conserved quantity for the HF-Novikov equation to the corresponding quantity for the Novikov equation. After that, the Lax pair is discussed and constants of motion are derived from it. The final main section gives a numerical analysis of the system, with particular emphasis on the behavior for $N > 2$. The thesis concludes with appendices containing additional proofs and verifications.
 
 \section{Solution for N = 2}
 
-For $N = 1$, the solution to the HF Novikov equation is trivial since $u(x_k) = 0$, and therefore both $\dot{x}_k$ and $\dot{m}_k$ are equal to zero, resulting in a constant solution. For the more interesting case when $N = 2$, we will give a detailed solution to the system of ODEs for the HF Novikov equation.
+For $N = 1$, the solution to the HF-Novikov equation is trivial since $u(x_k) = 0$, and therefore both $\dot{x}_k$ and $\dot{m}_k$ are equal to zero, resulting in a constant solution. For the more interesting case $N = 2$, we give a detailed solution to the system of ODEs for the HF-Novikov equation.
 
-\subsection{HF Novikov equation on the line} \label{sec:N2SolLine}
-Here we will solve the system of ODEs explicitly for $N=2$ on the line. What we mean on the line is that we will take a look at the solution for the whole real axis. After this we will take a look at the system on a periodic boundary.
+\subsection{HF-Novikov equation on the line} \label{sec:N2SolLine}
+Here we solve the system of ODEs explicitly for $N=2$ on the line, meaning on the whole real axis. After this, we consider the system with periodic boundary conditions.
 
 The assumption that $x_1 < \cdots < x_N$ can be made without loss of generality. From equation \eqref{eq:peakon_odes}, when $N=2$, we obtain the following system of ODEs:
 %
@@ -463,7 +343,7 @@ To solve this system, we first identify two conserved quantities
 	K &= m_1m_2(x_2 - x_1).
 \end{align}
 %
-Note that neither $K$ or $M$ are equal to zero, since $m_1 > 0$, $m_2 > 0$ and, $x_1 < x_2$. We show that these quantities are conserved by making sure that their time derivatives are zero
+Note that $M$ is positive and $K$ is nonzero under the assumptions $m_1m_2\neq 0$ and $x_1 < x_2$. We show that these quantities are conserved by checking that their time derivatives vanish:
 \begin{equation}
 \begin{aligned}
 	(m_1^2 + m_2^2)_t 
@@ -530,7 +410,7 @@ The $K$ quantity implies that $D = -C$:
 \end{aligned}
 \end{equation}
 %
-Since it has to hold for all $t$, we get that $C + D = 0$. The constant $C$ is determined by the inital conditions
+Since it has to hold for all $t$, we get that $C + D = 0$. The constant $C$ is determined by the initial conditions
 \begin{equation} \label{eq:N2CInvariant}
 	C = \frac{m_2(0)^2 x_2(0) + m_1(0)^2 x_1(0)}{M}.
 \end{equation}
@@ -543,7 +423,7 @@ In conclusion the piecewise linear solution looks like this:
 	x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) + C.
 \end{align}
 %
-There are four constants $M$, $K$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. We made the assumption that $x_1 < x_2$, will be valid for all $t$.
+There are four constants $M$, $K$, $\phi$ and $C$, which is to be expected since there are four initial quantities, $m_1(0)$, $m_2(0)$, $x_1(0)$ and $x_2(0)$. The ordering assumption $x_1 < x_2$ is preserved on the interval where the solution is finite.
 \begin{equation}
 \begin{aligned}
 	x_2 - x_1 
@@ -588,11 +468,11 @@ Looking at the asymptotic behavior of the solution we see that $m_1$ always goes
 \end{tikzpicture}
 \end{center}
 %
-It is possible to create a new system from the old one that will conserve the constants of motion as well as keep $u_t(x, t)$ continuous. We will limit ourself to the continuation of the system where $m_i > 0$. We define the new system by continuing the solution past $T_1$. From here on we refer to this continued system as the compactified system. Since we now longer have that $x_1 < x_2$, we redefine the constant $K$ as
+It is possible to create a new system from the old one that conserves the constants of motion and keeps $u_t(x, t)$ continuous. We restrict ourselves to the continuation of the system where $m_i > 0$. We define the new system by continuing the solution past $T_1$. From here on, this continued system is called the compactified system. Since we no longer have $x_1 < x_2$, we redefine the constant $K$ as
 \begin{equation}
 	K = m_1m_2|x_2 - x_1|.
 \end{equation}
-The continuation is obtained by keeping $x_1$ and $m_1$ unchanged while letting $x_2$ start from $-\infty$ and and $m_2$ from $0$. The global solution of the compactified system would be:
+The continuation is obtained by keeping $x_1$ and $m_1$ unchanged while letting $x_2$ start from $-\infty$ and $m_2$ from $0$. The global solution of the compactified system is:
 \begin{align}
 	u(x, t) &= \lim_{s \to t} \big(m_1(s)|x - x_1(s)| + m_2(s)|x - x_2(s)|\big), \\
 	m_1 &= \phantom{-}\sqrt{M} |\sin(Kt + \phi)|, \\
@@ -600,11 +480,11 @@ The continuation is obtained by keeping $x_1$ and $m_1$ unchanged while letting 
 	x_1 &= -\frac{K}{M}\cot(Kt + \phi) + C, \\
 	x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) + C.
 \end{align}
-The absolute values ensures that $m_i \ge 0$. The quantities $x_i$ are undefined at times $T_i$. To define $u(x, t)$ at these times, we take the limit in the expression above.
+The absolute values ensure that $m_i \ge 0$. The quantities $x_i$ are undefined at times $T_i$. To define $u(x, t)$ at these times, we take the limit in the expression above.
 
 In this formulation the real axis can be thought of as a circle: when one of the $x_i$'s reaches $\infty$, it re-enters at $-\infty$. Thus it seems possible to create a weak solution for $u(x,t)$ that is valid for all time.
 
-For the $N=2$ in compactified system, the smaller $x_i$ approaches $C$ as the larger tends to infinity. Figure~\ref{fig:N2X} shows the evolution of $x_1$ and $x_2$ over time.
+For $N=2$ in the compactified system, the smaller $x_i$ approaches $C$ as the larger tends to infinity. Figure~\ref{fig:N2X} shows the evolution of $x_1$ and $x_2$ over time.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -629,13 +509,14 @@ For the $N=2$ in compactified system, the smaller $x_i$ approaches $C$ as the la
 \label{fig:N2X}
 \end{figure}
 
-\subsection{HF Novikov equation on the circle}
+\subsection{HF-Novikov equation on the circle}
 
-We will now study the HF Novikov equation on the circle. By this we mean that $u(x, t)$ will be periodic in $x$ with a given period $L$. The equation will thus have periodic boundary conditions
+We now study the HF-Novikov equation on the circle. By this we mean that $u(x, t)$ will be periodic in $x$ with a given period $2L$. The equation will thus have periodic boundary conditions
+In this section the circumference is taken to be $2L$, so $u(x, t)$ satisfies the periodic boundary condition
 \begin{equation}
-	u(x,t) = u(x + L, t), \qquad \forall x \in \mathbb{R}.
+	u(x,t) = u(x + 2L, t), \qquad \forall x \in \mathbb{R}.
 \end{equation}
-We define the distance between the two points on the circle as the minimal arc length between them. For $x$, $x_i$ we replace the Euclidean distance $|x - x_i|$ by
+We define the distance between two points on the circle as the minimal arc length between them. For $x$ and $x_i$, we replace the Euclidean distance $|x - x_i|$ by
 \begin{equation}
 	\min_{k \in \mathbb{Z}} |x - x_i + 2kL|.
 \end{equation}
@@ -643,7 +524,7 @@ This can be written as
 \begin{equation}
 	\frac{L}{\pi}\arccos(\cos(\frac{\pi}{L}(x - x_i))).
 \end{equation}
-To keep it simple we will let $L = \pi$. Thus both the distance and its distributional derivative can be written as
+To keep notation simple, we let $L = \pi$, so the period is $2\pi$. Thus the distance and its distributional derivative can be written as
 \begin{equation}
 	\arccos(\cos(x - x_i))
 \end{equation}
@@ -652,7 +533,7 @@ and
 	\sgn(\sin(x - x_i))
 \end{equation}
 
-The $u$ and $u_x$ functions have been adjusted to for the periodic boundary conditions
+The functions $u$ and $u_x$ are adjusted for the periodic boundary conditions as follows:
 \begin{equation} \label{eq:periodic_ansatz}
 \begin{aligned}
     u(x, t) &= \sum_{k = 1}^{N} m_k(t) \arccos(\cos(x-x_k)), \\
@@ -705,7 +586,7 @@ To solve this system, we first identify two conserved quantities
     K &= m_1m_2 d_{12}.
 \end{align}
 %
-We show that these quantities are conserved by making sure that their time derivatives are zero
+We show that these quantities are conserved by checking that their time derivatives vanish:
 \begin{equation}
 \begin{aligned}
     (m_1^2 + m_2^2)_t 
@@ -730,7 +611,7 @@ Leveraging these conserved quantities, we derive expressions for $\dot{m}_1$ and
 \end{aligned}
 \end{equation}
 %
-Then we can solve the ODEs for $m_1$ and $m_2$ around $t_0$
+Then we can solve the ODEs for $m_1$ and $m_2$ locally around $t_0$:
 \begin{equation}
 \begin{aligned}
     m_1 &= \sqrt{M} \sin(Ks_{21} t + \phi), \\
@@ -741,29 +622,29 @@ Then we can solve the ODEs for $m_1$ and $m_2$ around $t_0$
 %
 The solution functions for $m_1$ and $m_2$ are the same as for the non-periodic case when $s_{21} = 1$. The same is true for the $x_1$ and $x_2$ solution functions since
 \begin{align}
-	\dot{x}_1m_1^2 = m_1^2m_2^2d_{ij}^2 = K^2
+	\dot{x}_1m_1^2 = m_1^2m_2^2d_{12}^2 = K^2
 	\implies
 	\dot{x}_1 = \frac{K^2}{m_1^2} = \frac{K^2}{M\sin^2(Ks_{21}t + \phi)}, \\
-	\dot{x}_2m_2^2 = m_1^2m_2^2d_{ij}^2 = K^2
+	\dot{x}_2m_2^2 = m_1^2m_2^2d_{12}^2 = K^2
 	\implies
 	\dot{x}_2 = \frac{K^2}{m_2^2} = \frac{K^2}{M\cos^2(Ks_{21}t + \phi)}.
 \end{align}
 %
-And just as before we can integrate these equations to get the positions
+As before, we integrate these equations to get the positions
 \begin{equation}
 \begin{aligned}
     x_1 &= -\frac{K}{M}\cot(Ks_{21}t + \phi) + C,\\
     x_2 &= \phantom{-}\frac{K}{M}\tan(Ks_{21}t + \phi) - D,
 \end{aligned}
 \end{equation}
-which results in the same solution as for the non periodic case
+which results in the same form as in the non-periodic case:
 \begin{align}
     m_1 &= \sqrt{M} \sin(K s_{21}t + \phi), \\
     m_2 &= \sqrt{M} \cos(K s_{21}t + \phi), \\
     x_1 &= -\frac{K}{M}\cot(Ks_{21}t + \phi) + C,\\
     x_2 &= \phantom{-}\frac{K}{M}\tan(Ks_{21}t + \phi) + D,
 \end{align}
-with the only difference that $C$ and $D$ don't need to be equal. The constants $C$ and $D$ are determined by the initial conditions
+with the only difference that $C$ and $D$ do not need to be equal. The constants $C$ and $D$ are determined by the initial conditions
 \begin{equation}
 \begin{aligned}
     C &= x_1(0) + \frac{K}{M}\frac{m_2(0)}{m_1(0)}, \\
@@ -771,12 +652,11 @@ with the only difference that $C$ and $D$ don't need to be equal. The constants 
 \end{aligned}
 \end{equation}
 
-It's important to note that since we have $s_{21}$ in the solution, we only obtained a local solution. As soon as the $s_{21}$ changes the local solution becomes invalid. It's possible to continue the solution by creating a new solution with new values for $C$, $D$, and $\phi$. Both $M$ and $K$ will be conserved for the continuation of the solution. The non-periodic solution can be obtained by letting $L \rightarrow \infty$, since that will make the periodic boundary conditions irrelevant.
-
-For the case where $s_{21}(t_0) = 0$ we have that $m_1$ and $m_2$ are constant and from the ODEs for $x_1$ and $x_2$ we see that the time derivative of $x_1$ and $x_2$ will be the same only if $m_1 = m_2$. This means that if $s_{21}(t_0) = 0$ and $m_1(t_0) = m_2(t_0)$ is going to be constant and $x_1$ and $x_2$ will both travel with constant speed with a distance of $L$ between them. In the case where $s_{21}(t_0)$ and $m_1(t_0) \neq m_2(t_0)$, both $x_1$ and $x_2$ will be constant because $u(x, t) = 0, \forall x$.
+It is important to note that, since $s_{21}$ appears in the solution, this is only a local solution. As soon as $s_{21}$ changes, the local formula becomes invalid. The solution can be continued by restarting it with new values for $C$, $D$, and $\phi$. Both $M$ and $K$ are conserved under this continuation. The non-periodic solution is obtained by letting $L \rightarrow \infty$, since the periodic boundary conditions then become irrelevant.
+\todo{FIX}
+The case $s_{21}(t_0)=0$ is singular for this local description and must be treated separately. If the two points coincide modulo the period, then $d_{12}=0$, so $u(x_i,t)=0$ at the peakon locations and the solution is stationary. If the two points are antipodal, then $d_{12}=L$ and the continuation depends on the convention used at the nondifferentiable point of the distance function.
 % 55:00
 \section{Hamiltonian structure}
-\cbstart
 The Hamiltonian formalism is a fundamental framework that offers a powerful method for analyzing dynamical systems. The state of the system is described by a set of variables
 \begin{equation}
 	 z = (z_1,\dots,z_N),
@@ -791,7 +671,7 @@ where $H$ is the Hamiltonian and $\Pi(z)$ is a Poisson matrix, i.e. $\Pi(z)$ is 
 \end{equation}
 and satisfies the Jacobi identity \cite{Olver_1968}. The corresponding Poisson bracket is defined by
 \begin{equation}
-	\{f,g\} = (\nabla f)^T \Pi \nabla g.	
+	\{f,g\} = (\nabla f)^T \Pi \nabla g.
 \end{equation}
 In terms of this bracket, the Jacobi identity is written as
 \begin{equation}
@@ -833,7 +713,7 @@ Here $I$ denotes the $n\times n$ identity matrix.
 
 \subsection{Comparison to other soliton equations}
 
-Here we will show the Hamiltonian structure for the CH, DP, and Novikov peakon ODEs as well as the Hunter Saxton peakon ODE, which is the only HF peakon ODE that has a known Hamiltonian structure. The non HF peakon ODEs Hamiltonian structure can be written on the common form \cite{Degasperis_2002, Hone_2008}
+Here we show the Hamiltonian structure for the CH, DP, and Novikov peakon ODEs, as well as the Hunter--Saxton peakon ODE, which is the only high-frequency peakon ODE in this comparison with a known Hamiltonian structure. The Hamiltonian structures for the non-high-frequency peakon ODEs can be written in the common form \cite{Degasperis_2002, Hone_2008}
 \begin{alignat}{3}
 	\{&x_i, &x_j\} &= \phantom{-}G(x_i - x_j), \\
 	\{&x_i, &m_j\} &= \phantom{-}G'(x_i - x_j)m_j (b - 1), \\
@@ -864,12 +744,12 @@ The CH peakon equation admits a canonical Hamiltonian structure with the Hamilto
 	H_{CH} = \frac{1}{2}\sum_{ij} m_i m_j e^{-|x_i-x_j|}.
 \end{equation}
 %
-The Hunter Saxton equation also admits a canonical Hamiltonian structure with the Hamiltonian \cite{Beals_2001}
+The Hunter--Saxton equation also admits a canonical Hamiltonian structure with the Hamiltonian \cite{Beals_2001}
 \begin{equation}
 	H_{HS} = \frac{1}{2}\sum_{ij} m_i m_j |x_i-x_j|.
 \end{equation}
 %
-For the HF Novikov equation we have found a non-canonical Hamiltonian structure in the case $N=2$. Using the same Hamiltonian as in the HS case, the system can be written in Hamiltonian form with the following Poisson matrix:
+For the HF-Novikov equation we have found a non-canonical Hamiltonian structure in the case $N=2$. Using the same Hamiltonian as in the HS case, the system can be written in Hamiltonian form with the following Poisson matrix:
 \begin{equation}
 \Pi =
 \frac{x_2-x_1}{m_1^2+m_2^2}
@@ -889,28 +769,26 @@ The existence of a Hamiltonian formulation in the case $N=2$ is perhaps not too 
 
 The motivation for finding such a Hamiltonian structure is that the system has conserved quantities. If these conserved quantities could be shown to be in involution with respect to a suitable Poisson bracket, this would provide a route toward proving integrability.
 
-A more systematic approach, rather than a direct calculation, could be based on the work of Holm and Hone \cite{Holm_2005}. In that paper, the Hamiltonian operators for the Novikov equation are reduced to Poisson structures for the corresponding $N$ peakon system. A similar strategy may be useful for the HF Novikov equation.
-\cbend
-
+A more systematic approach, rather than a direct calculation, could be based on the work of Holm and Hone \cite{Holm_2005}. In that paper, the Hamiltonian operators for the Novikov equation are reduced to Poisson structures for the corresponding $N$ peakon system. A similar strategy may be useful for the HF-Novikov equation.
 \section{Constants of motion by direct search}
 
-Here we will outline the exhaustive search algorithm used to find constants of motion for the HF Novikov equation and present the results of the search. As mentioned in the introduction invariants play a central role in the analysis of dynamical systems. They provide information about the qualitative behavior of solutions, constrain the dynamics, and may indicate deeper underlying structures such as integrability.
+Here we outline the exhaustive search algorithm used to find constants of motion for the HF-Novikov equation and present the results of the search. As mentioned in the introduction, invariants play a central role in the analysis of dynamical systems. They provide information about the qualitative behavior of solutions, constrain the dynamics, and may indicate deeper underlying structures such as integrability.
 
 By computing such quantities for small values of $N$, we can identify patterns in their structure, which in turn provide insight into the possible form of conserved quantities for general $N$, as will be illustrated at the end of this section.
 
-Since the system's time evolution is governed by polynomial expressions of a certain degree, we restrict our search to polynomials functions of a certain degree in the variables $m_k$ and $x_k$. Each polynomial will be a sum of monomials of the form
+Since the system's time evolution is governed by polynomial expressions of a certain degree, we restrict our search to polynomial functions of a certain degree in the variables $m_k$ and $x_k$. Each polynomial is a sum of monomials of the form
 \begin{equation}
 	\prod_{i=1}^{N} m_i^{a_i} x_i^{b_i},
 \end{equation} 
-where the sum of $a_i$ is some constant $A$ and the sum of $b_i$ is some constant $B$. The notation for the constants of motion will be $M_{AB}$, where $A$ is the sum of the $a_i$ and $B$ is the sum of the $b_i$.
+where the sum of the $a_i$ is some constant $A$ and the sum of the $b_i$ is some constant $B$. We denote the corresponding constants of motion by $M_{AB}$.
 
 \subsection*{Example for $N = 2$ and $M_{20}$}
 
-To give an example of the algorithm, we will look at the case for $N = 2$. The algorithm will then list all monomials for a given $A$ and $B$, in this case $A = 2$ and $B = 0$. The monomials are then
+To give an example of the algorithm, consider the case $N = 2$. The algorithm lists all monomials for a given $A$ and $B$; here $A = 2$ and $B = 0$. The monomials are then
 \begin{equation}
 	m_1^2, m_2^2, m_1 m_2
 \end{equation}
-Then we will take the time derivative of the linear combination of the monomials
+We then take the time derivative of a linear combination of the monomials:
 \begin{equation}
 \begin{aligned}
 	&\partial_t (\alpha_1 m_1^2 + \alpha_2 m_2^2 + \alpha_3 m_1 m_2) \\
@@ -938,14 +816,14 @@ Writing the linear combination of the monomials as a matrix, we get that the con
 	0 & 0 & -1
 \end{pmatrix}
 \end{equation}
-Which is this case is $\alpha_1 = \alpha_2, \alpha_3 = 0$, which is the same as the known constant of motion $m_1^2 + m_2^2$.
+In this case, $\alpha_1 = \alpha_2$ and $\alpha_3 = 0$, which gives the known constant of motion $m_1^2 + m_2^2$.
 
-This is done repeatedly for growing $A$ and $B$. For multiples of known constants of motion the algorithm will need to take into account that the same constants of motion will be found again. For example, at $A = 4$ and $B = 0$ the algorithm will find $(m_1^2 + m_2^2)^2$.
+This is done repeatedly for growing $A$ and $B$. For multiples of known constants of motion, the algorithm must account for the fact that the same constants of motion are found again. For example, at $A = 4$ and $B = 0$ the algorithm finds $(m_1^2 + m_2^2)^2$.
 
-The solving of the null space has been done both symbolically in Mathematica and numerically in C++ using LU decomposition method from the Eigen library. The numerical methods broke down at $N > 4$ due to numerical precision. The symbolic method was able to find the constants of motion for $N = 5$ but took a long time.
+The null space was computed both symbolically in Mathematica and numerically in C++ using the LU decomposition method from the Eigen library. The numerical methods broke down at $N > 4$ due to numerical precision. The symbolic method was able to find the constants of motion for $N = 5$, but took a long time.
 
 \subsection*{Jacobian method}
-The methods described above have been been successful in finding constants of motion for the HF Novikov equation. However, it is not guaranteed that the constants of motion are independent. Two or more constants of motion are said to be functionally independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
+The methods described above have been successful in finding constants of motion for the HF-Novikov equation. However, it is not guaranteed that the constants of motion are independent. Two or more constants of motion are said to be functionally independent if none of them can be expressed as a function of the others. In other words, they provide unique information about the system.
 
 To determine if a set of constants of motion are independent, the Jacobian matrix is used. Suppose there are a set of $n$ constants of motion $M_1,M_2,\dots,M_m$. These constants are functions of the variables $x_1,x_2,\dots,x_n,m_1,m_2,\dots,m_n$.
 
@@ -961,7 +839,7 @@ The Jacobian matrix $J$ of the functions ${M_1,M_2,\dots,M_m}$ with respect to t
 	\end{pmatrix}
 \end{equation}
 
-Each row of the Jacobian matrix is the gradient of one of the constants of motion. If the gradients are linearly independent it means that none of the constants of motion can be expressed as a function of the others \cite{Olver_1968}. Thus if the rank of the Jacobian matrix is the number constants of motion they are all functionally independent.
+Each row of the Jacobian matrix is the gradient of one of the constants of motion. If the gradients are linearly independent, none of the constants of motion can be expressed as a function of the others \cite{Olver_1968}. Thus, if the rank of the Jacobian matrix is equal to the number of constants of motion, they are all functionally independent.
 
 \subsection*{N = 2}
 
@@ -1000,7 +878,7 @@ then the three other conserved quantities can be written as
 	M_{42} &= Ax_1 + Bx_2 + Cx_3 \\
 	M_{43} &= Ax_1^2 + Bx_2^2 + Cx_3^2
 \end{align}
-These conserved quantities aren't functionally independent. The Jacobian method shows that there are only four functionally independent conserved quantities. The constants of motions are related to each other as follows:
+These conserved quantities are not functionally independent. The Jacobian method shows that there are only four functionally independent conserved quantities. The constants of motion are related to each other as follows:
 \begin{equation}
 	M_{41}M_{43} - M_{42}^2 - M_{21}^4 + 2M_{21}M_{63} = 0.
 \end{equation}
@@ -1025,7 +903,7 @@ For $N = 4$, six conserved quantities have been found. The first three are:
 		+&2m_1m_2m_3^2m_4^2(x_3 - x_2)(x_4 - x_3)(x_4 - x_1) \notag\\
 		+&2m_1^2m_2m_3m_4^2(x_4 - x_3)(x_4 - x_1)(x_2 - x_1).
 \end{align}
-For the next three, let's define the expression $W_i$ to be the sum of all the terms in $M_{21}$ that don't contain $m_i$. Define $A, B, C, D$ as:
+For the next three, define $W_i$ to be the sum of all terms in $M_{21}$ that do not contain $m_i$. Define $A, B, C, D$ as:
 \begin{align}
 	A &= m_1^2(M_{21} + 2W_1), \\
 	B &= m_2^2(M_{21} + 2W_2), \\
@@ -1050,12 +928,12 @@ They are dependent in the following way
 \subsection*{N > 4}
 At this stage we have a good idea of the structure of the constants of motion for general $N$.
 The constants of motion introduced above can be divided into two categories.
-The first category consists of those of the form $M_{AB}$ with $A=2B$, excluding $M_{42}$. These will be discussed in Section~\ref{sec:ConstantsLaxPair}.
+The first category consists of those of the form $M_{AB}$ with $A=2B$, excluding $M_{42}$. These are discussed in Section~\ref{sec:ConstantsLaxPair}.
 The second category consists of the remaining three constants, $M_{41}$, $M_{42}$, and $M_{43}$, which we analyze here.
 
 For completeness, note that in the case $N=2$, there were three invariants that were not originally of this form. However, they can be brought into this form by multiplying them by $M_{21A}$.
 
-Here we will give the general form of the invariants:
+Here we give the general form of the invariants:
 \begin{align}
 	A_i &= m_i^2(M_{21} + 2W_i), \\
 	P_{ijkl} &= m_i m_j m_k m_l, \\
@@ -1066,11 +944,10 @@ Here we will give the general form of the invariants:
 	M_{42} &= E_2 + \sum A_i x_i, \\
 	M_{43} &= E_3 + \sum A_i x_i^2.
 \end{align}
-They seem to be invariant for all $N$, this have been verified for all $N \le 10$.
+They appear to be invariant for all $N$; this has been verified for all $N \le 10$.
 
 \section{Constants of motion for a generalized system of ODEs}
-\cbstart
-The $M_{21}$ constants in the previous section followed a pattern. Here we will show that the pattern is not unique to the HF Novikov equation and applies for all $N$.
+The $M_{21}$ constants in the previous section follow a pattern. Here we show that the pattern is not unique to the HF-Novikov equation and applies for all $N$.
 
 \begin{theorem}
 	For a general system of ODEs
@@ -1093,14 +970,14 @@ The $M_{21}$ constants in the previous section followed a pattern. Here we will 
 	\begin{equation}
 		u_x(x_i) = \sum_j m_j \sgn(i - j) g'(|x_i - x_j|).
 	\end{equation}
-	We will omit the bounds of the summation for clarity, and all bounds will be understood to be from $1$ to $N$. We introduce the following shorthands
+	We omit the bounds of the summation for clarity, and all bounds are understood to be from $1$ to $N$. We introduce the following shorthands
 	\begin{equation}
 	\begin{aligned}
 		g_{ij} = g(|x_i - x_j|), \quad
 		s_{ij} = \sgn(i - j) g'(|x_i - x_j|).
 	\end{aligned}
 	\end{equation}
-	using this,
+	Using this,
 	\begin{equation}
 		u(x_i) = \sum_{k=1}^{N} m_k g_{ik},
 	\end{equation}
@@ -1164,7 +1041,7 @@ which results in the invariant
 	\sum_{i=1}^{N}\sum_{j=1}^{N}
 	m_i m_j e^{-|x_i-x_j|}.
 \end{equation}
-Similarly, the HS equation corresponds to $p=0$, while the HF Novikov equation corresponds to $p=1$. For these equations, we have the kernel
+Similarly, the HS equation corresponds to $p=0$, while the HF-Novikov equation corresponds to $p=1$. For these equations, we have the kernel
 \begin{equation}
 	g(|x_i-x_j|)=|x_i-x_j|
 \end{equation}
@@ -1173,8 +1050,6 @@ which gives us the conserved quantity
 	\sum_{i=1}^{N}\sum_{j=1}^{N}
 	m_i m_j |x_i-x_j|.
 \end{equation}
-\cbend
-
 \section{Constants of motion from the Lax pair} \label{sec:ConstantsLaxPair}
 
 \subsection{Preliminaries}
@@ -1272,7 +1147,7 @@ if it satisfies the condition
 \begin{equation}
 	T(a,a) = I.
 \end{equation}
-Here U is the matrix occuring in spatial part of the Lax pair. The condition ensure uniqueness and implies that $T$ is invertible. The monodromy matrix is then defined as
+Here $U$ is the matrix occurring in the spatial part of the Lax pair. The condition ensures uniqueness and implies that $T$ is invertible. The monodromy matrix is then defined as
 \begin{equation}
 	M =
 		\lim_{a \rightarrow -\infty} \lim_{x \rightarrow \infty} T(x,a),
@@ -1281,7 +1156,7 @@ which exists under the assumption that
 \begin{equation}
 	\int_{-\infty}^{\infty} ||U(x,t)|| dx < \infty.
 \end{equation}
-where $||\cdot||$ is some matricial norm. The monodromy matrix is very useful for finding conserved quantities of the system.
+where $||\cdot||$ is some matrix norm. The monodromy matrix is useful for finding conserved quantities of the system.
 \begin{theorem}
 	\begin{equation} \label{eq:Transition-MatrixDeltaT}
 		\partial_t T(x,a,t) = V(x,t) T(x,a,t) - T(x,a,t) V(a,t).
@@ -1378,7 +1253,7 @@ Here the zero curvature condition
 \end{equation}
 only holds when the Novikov equation \eqref{eq:Novikov_equation} is satisfied.
 %
-Now we are interested in a Lax pair for the high-frequency limit of the Novikov equation. First of we will from here on out have $m = u_{xx}$, instead of $m = u - u_{xx}$ as for the regular Novikov equation. As before we will substitute $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and $m \mapsto \epsilon^{-2} m$. Substituting it in equation \eqref{eq:Novikov-lax-x} gives us
+We are interested in a Lax pair for the high-frequency limit of the Novikov equation. From here on, $m = u_{xx}$ instead of $m = u - u_{xx}$ as for the regular Novikov equation. As before, we substitute $x \mapsto \epsilon x$, $t \mapsto \epsilon t$, and $m \mapsto \epsilon^{-2} m$. Substituting this into equation \eqref{eq:Novikov-lax-x} gives
 \begin{equation} \label{eq:psi-equations}
 \left\{ \begin{aligned}
 	&\psi_1 \epsilon^{-1} = &zm \epsilon^{-2} \psi_2 + \psi_3, \\
@@ -1394,8 +1269,8 @@ With substitutions of $\psi_2$ and $\psi_3$ we can write an equation of just $\p
 \begin{equation}
 	\psi_1 = z^2m^2\epsilon^{-1} \psi_1 + \epsilon^2 \psi_1.
 \end{equation}
-Here we see that it would be a good ansatz to substite $z \mapsto \epsilon^{1/2}z$ when doing the high-frequency limit. Substituting that into equation \eqref{eq:psi-equations} we get
-\begin{equation} \label{eq:psi-equations}
+This suggests the ansatz $z \mapsto \epsilon^{1/2}z$ for the high-frequency limit. Substituting that into equation \eqref{eq:psi-equations} gives
+\begin{equation} \label{eq:psi-equations-scaled}
 \left\{ \begin{aligned}
 	&\psi_1 = &zm \epsilon^{-1/2} \psi_2 + \epsilon \psi_3, \\
 	&\psi_2 = &zm \epsilon^{-1/2} \psi_3, \\
@@ -1435,7 +1310,7 @@ We can get rid of the proportional relation by doing the following substitutions
     ,
   \end{equation}
 \end{subequations}
-Letting $\epsilon \to 0$ we get rid of the 1 in the $(1,3)$ entry in $U$ matrix of the Lax pair, while the $V$ matrix is left unchanged. This new Lax pair satisfies the zero curvature condition for the HF--Novikov equation \eqref{eq:HF-Novikov} (see appendix~\ref{sec:VerificationLax}). We can simplify the system even further with the following substitutions
+Letting $\epsilon \to 0$ removes the 1 in the $(1,3)$ entry of the $U$ matrix of the Lax pair, while the $V$ matrix is left unchanged. This new Lax pair satisfies the zero curvature condition for the HF-Novikov equation \eqref{eq:HF-Novikov} (see Appendix~\ref{sec:VerificationLax}). We can simplify the system further with the following substitutions:
 \begin{equation}
 \left\{ \begin{aligned}
 	&\varphi_1 = &\psi_1, \\
@@ -1474,17 +1349,17 @@ With
 \begin{equation}
 	u_x = \sum_{k=1}^n m_k \sgn(x - x_k),
 \end{equation}
-it means that $m$ will be
+we have
 \begin{equation}
 	m = u_{xx} = \sum_{k=1}^n 2 m_k \delta(x - x_k),
 \end{equation}
-since the sign function has a jump discontinuity at $x_k$ of size 2 so that the derivative of the sign function is two times the Dirac delta function. This means that $\varphi_1$ and $\varphi_2$ will have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivative. $\varphi_3$ doesn't have any Dirac delta function in its spatial derivative so it will be continuous. We will assume that $x_1 < \cdots < x_n$, which will stay true at least for a time after $t = 0$ if it's true at $t = 0$. We will also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\delta_x \varphi_1 = 0$, $\delta_x \varphi_2 = 0$, and $\delta_x \varphi_3 = \varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
+since the sign function has a jump discontinuity at $x_k$ of size 2, so its derivative is two times the Dirac delta function. Thus $\varphi_1$ and $\varphi_2$ have jump discontinuities at $x_k$ because of the Dirac delta function in their spatial derivatives. The component $\varphi_3$ has no Dirac delta function in its spatial derivative, so it is continuous. We assume that $x_1 < \cdots < x_n$, which remains true at least for a short time after $t = 0$ if it is true initially. We also use the convention that $x_0 = -\infty$ and $x_{n+1} = \infty$. Since $m = 0$ in the intervals $x_k < x < x_{k+1}$, the spatial Lax pair simplifies to $\partial_x \varphi_1 = 0$, $\partial_x \varphi_2 = 0$, and $\partial_x \varphi_3 = -\lambda\varphi_1$. This means that $\varphi_1$, $\varphi_2$ and $\varphi_3$ have to be
 \begin{equation}
 \begin{pmatrix} \varphi_1 \\ \varphi_2 \\ \varphi_3 \end{pmatrix} =
 \begin{pmatrix} A_k \\ B_k \\ -\lambda A_k x + C_k \end{pmatrix} 
 \text{for } x_k < x < x_{k+1}.
 \end{equation}
-We can also see from the Lax pair that $\varphi_3$ is going to be continuous, while $\varphi_1$ and $\varphi_2$ are constant in the intervals with jump discontinuities at $x_k$. We define $A$, $B$, and $C$ to be the constant functions on each interval $x_k < x < x_{k+1}$
+The Lax pair also shows that $\varphi_3$ is continuous, while $\varphi_1$ and $\varphi_2$ are constant on the intervals and have jump discontinuities at $x_k$. We define $A$, $B$, and $C$ to be the constant functions on each interval $x_k < x < x_{k+1}$:
 \begin{equation}
 \left\{ \begin{aligned}
 	&A(x) = A_k, \\
@@ -1493,7 +1368,7 @@ We can also see from the Lax pair that $\varphi_3$ is going to be continuous, wh
 \end{aligned} \right.
 \end{equation}
 %
-Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
+We rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_2, \varphi_3$:
 \begin{subequations}
   \begin{equation}
     \frac{\partial}{\partial x}
@@ -1520,19 +1395,19 @@ Let's rewrite the Lax pair in terms of $A, B, C$ instead of $\varphi_1, \varphi_
     ,
   \end{align}
 \end{subequations}
-where $X = u_x x - u$. This also satisfies the zero curvature condition for the HF--Novikov equation \eqref{eq:HF-Novikov}
+where $X = u_x x - u$. This also satisfies the zero curvature condition for the HF-Novikov equation \eqref{eq:HF-Novikov}
 \begin{equation}
 \begin{aligned}
 	&U_t - V_x + UV - VU = \\
     &\begin{psmallmatrix}
       0 & m_t + u((um)_x + 2u_x m) & 0 \\
-      -l(m_t + u((um)_x + 2u_x m))x & 0 & m_t + u((um)_x + 2u_x m) \\
-      0 & l(m_t + u((um)_x + 2u_x m))x & 0
+      -\lambda(m_t + u((um)_x + 2u_x m))x & 0 & m_t + u((um)_x + 2u_x m) \\
+      0 & \lambda(m_t + u((um)_x + 2u_x m))x & 0
     \end{psmallmatrix}.
 \end{aligned}
 \end{equation}
 %
-Call $F(x;t)$ the vector of $A, B, C$ and let $T$ be the transition matrix that takes us from $x$ to $y$ as $F(y;t) = T(y,x;t)F(x;t)$. $F$ is piecewise constant with jump discontinuities at $x_k$ so we can write the jump matrix $S_k$ at $x_k$ as
+Let $F(x;t)$ be the vector of $A, B, C$, and let $T$ be the transition matrix that takes us from $x$ to $y$ as $F(y;t) = T(y,x;t)F(x;t)$. Since $F$ is piecewise constant with jump discontinuities at $x_k$, we can write the jump matrix $S_k$ at $x_k$ as
 \begin{equation}
 \begin{aligned}
 \begin{pmatrix} A_k \\ B_k \\ C_k \end{pmatrix} &= 
@@ -1550,11 +1425,11 @@ Let $T_a(t) = T(a,-a;t)$. Then at large enough $a$ we can write
 \begin{equation}
 	T_a(t) = S_n(t)S_{n-1}(t) \cdots S_1(t).
 \end{equation}
-Since $U$ is bounded we can now write the monodromy matrix as
+The transition across each singular point is captured by the jump matrices, so the monodromy matrix can be written as
 \begin{equation}
 	M(t) = \lim_{a \rightarrow \infty} T_a(t) = S_n(t)S_{n-1}(t) \cdots S_1(t).
 \end{equation}
-From corollary \ref{cor:Monodromy} we know that the time derivative of $M$ is given by $[V_0, M]$ if $V(x;t)$ goes to the same thing at $\pm \infty$. This is useful because then the trace of the monodromy matrix is zero, which could give us constants of motion. If we limit ourself to the finite time where $x_N$ doesn't diverge we have that far enough from away $m$ will be zero during this time. So at the limits we will have that $m$ is zero. By setting $m$ to zero in $V$ we can then split $V$ into one even and one odd part
+From Corollary \ref{cor:Monodromy}, we know that the time derivative of $M$ is given by $[V_0, M]$ if $V(x;t)$ has the same limit at $\pm \infty$. This is useful because the trace of a commutator is zero, which can give constants of motion. If we restrict to finite times before $x_N$ diverges, then sufficiently far away $m$ is zero. Thus $m$ is zero in the limits. By setting $m$ to zero in $V$, we can split $V$ into one even and one odd part:
 \begin{equation}
 	V(x;t) =
 \begin{pmatrix}
@@ -1568,7 +1443,7 @@ From corollary \ref{cor:Monodromy} we know that the time derivative of $M$ is gi
 	0 & -X & 0
 \end{pmatrix}.
 \end{equation}
-So we almost have that $V(-\infty) = V(\infty)$, which is what needed to get an invariant trace of the monodromy matrix. If
+This almost gives $V(-\infty) = V(\infty)$, which is what is needed to obtain an invariant trace of the monodromy matrix. If
 \begin{equation}
 	D = 
 \begin{pmatrix}
@@ -1582,7 +1457,7 @@ we can write $V(a) = DV(-a)D$. This means that
 \begin{equation}
 	\partial_t M(t) = DV(-a;t)DM(t) - M(t)V(-a;t).
 \end{equation}
-Multiplying by $D$ from the left, it can be seen that the trace of $DM(t)$ will be constant in time
+Multiplying by $D$ from the left shows that the trace of $DM(t)$ is constant in time:
 \begin{equation}
 \begin{aligned}
 	\partial_t \tr(D M(t))
@@ -1610,13 +1485,13 @@ The jump matrix can be written as
 	\end{pmatrix}
 	= D + L_k R_k.
 \end{equation}
-Then the monodromy matrix will be
+Then the monodromy matrix is
 \begin{equation}
 	M = (D + \hat{S}_n)\cdots(D + \hat{S}_2)(D + \hat{S}_1).
 \end{equation}
-The product of all $(D + \hat{S}_k)$ matrices will be a sum of $2^n$ terms, where each term is a product involving combinations of $D$ and $\hat{S}_k$.
+The product of all $(D + \hat{S}_k)$ matrices is a sum of $2^n$ terms, where each term is a product involving combinations of $D$ and $\hat{S}_k$.
 %
-The product of any two $\hat{S}_k$ matrices will result in a dot product between the inner two vectors
+The product of any two $\hat{S}_k$ matrices results in a dot product between the inner two vectors:
 \begin{equation}
 \begin{aligned}
 	\hat{S}_i \hat{S}_{j} &= L_i R_i L_j R_j \\ 
@@ -1662,7 +1537,7 @@ Thus
 	\end{pmatrix} \\
 \end{aligned}
 \end{equation}
-Any $D$ matrices that appear between the $S^k$ matrices will just flip the sign of the constant term like this:
+Any $D$ matrices that appear between the $S^k$ matrices just flip the sign of the constant term:
 \begin{equation}
 	\hat{S}_i D^l \hat{S}_j
 	% 2((-1)^n - \lambda m_i m_j (x_i - x_j))
@@ -1680,7 +1555,7 @@ Any $D$ matrices that appear between the $S^k$ matrices will just flip the sign 
 		-2\lambda m_j x_j & 2 & 2 m_j
 	\end{pmatrix} \\
 \end{equation}
-The last outer product that remains will also become a dot product after taking the trace.
+The last outer product that remains also becomes a dot product after taking the trace.
 \begin{equation}
 	\tr \Big(
 	D
@@ -1694,13 +1569,13 @@ The last outer product that remains will also become a dot product after taking 
 	% = 2(-1 - \lambda m_i m_j (x_i - x_j)).
 	= -2(1 + A_{ij}).
 \end{equation}
-It's important to note that the order of the indices in the $A_{ij}$ is always the same.
-This means that after taking the trace of $DM$ we will get a sum of factors of the form $2(\pm1 + A_{ij})$, where $i > j$.
+It is important to note that the order of the indices in the $A_{ij}$ is always the same.
+Thus, after taking the trace of $DM$, we get a sum of factors of the form $2(\pm1 + A_{ij})$, where $i > j$.
 %
-Next we will focus on the ways to get a term involving only a specific set of factors.
+Next, we focus on the ways to get a term involving only a specific set of factors.
 %
 \begin{example}
-Let's look at all the factors of $\tr(DM)$ when $N=3$
+Consider all the factors of $\tr(DM)$ when $N=3$:
 \begin{align}
 	\tr(DM) &= \tr(D(D + \hat{S}_3)(D + \hat{S}_2)(D + \hat{S}_1)) \\
 	&= \tr(D^4) + \tr(D\hat{S}_3D^2 + D^2\hat{S}_2D^1 + D^3\hat{S}_1) \\
@@ -1732,7 +1607,7 @@ This quickly becomes complicated for larger $N$. For example we can see here tha
 			label={\dotangle{\i}:\i}] at \dotposition{\i} {};
     }
 
-    Draw a bendy line from dot 2 to dot 1 using bend right
+    % Draw a bendy line from dot 2 to dot 1 using bend right
     \draw[thick, bend left]
         ({-360/\n * (0) + 90}:\radius) to 
         node[midway, fill=white] {$A_{31}$} % Label at the midpoint
@@ -1747,11 +1622,11 @@ This quickly becomes complicated for larger $N$. For example we can see here tha
 
 \end{tikzpicture}
 \end{center}
-Here we have filled in the required path with a solid line from $3 \mapsto 2$. To complete the path and make it a cycle there are two options, either by going through $1$ or by going back to $3$ directly. These paths represents $\tr(D\hat{S}_3\hat{S}_2\hat{S}_1)$ and $\tr(D\hat{S}_3\hat{S}_2D)$ respectively. Both available paths are represented by the dashed lines. Each node on the graph represents a $S_k$. To choose between including a node or not when completing the cycle is to choose between the multiplying with $\hat{S}_k$ or $D$.
+Here we have filled in the required path with a solid line from $3 \mapsto 2$. To complete the path and make it a cycle, there are two options; either going through $1$ or going back to $3$ directly. These paths represent $\tr(D\hat{S}_3\hat{S}_2\hat{S}_1)$ and $\tr(D\hat{S}_3\hat{S}_2D)$, respectively. Both available paths are represented by the dashed lines. Each node on the graph represents an $S_k$. Choosing whether to include a node when completing the cycle corresponds to choosing whether to multiply by $\hat{S}_k$ or by $D$.
 \end{example}
 \medskip
 \begin{example}
-Let's look at larger example of the ways to get the term involving only $A_{13}A_{35}$ times a constant with $N = 9$:
+As a larger example, consider the ways to get the term involving only $A_{97}A_{75}$ times a constant with $N = 9$:
 \begin{center}
 \begin{tikzpicture}
 
@@ -1782,29 +1657,30 @@ Let's look at larger example of the ways to get the term involving only $A_{13}A
 \end{tikzpicture}
 \end{center}
 
-The term can only come form a matrix product involving $\hat{S}_9D\hat{S}_7D\hat{S}_5$. The $D$ matrices between the $S_9$, $S_7$, and $S_5$ don't contribute anything to the final product since we only focus on the $A_{ij}$ factors and the $D$ matrices will only flip the sign of the constant term.
+The term can only come from a matrix product involving $\hat{S}_9D\hat{S}_7D\hat{S}_5$. The $D$ matrices between $S_9$, $S_7$, and $S_5$ do not contribute any $A_{ij}$ factors; they only flip the sign of the constant term.
 
-To determine the constant term that we get from the other factors, we will first consider if there were no nodes between $S_5$ and $S_9$. Then the only factor would be $R_9L_5 = (2 + A_{95})$ which would result in a constant term of 2, since we don't want to add more $A_{ij}$ factors.
+To determine the constant term obtained from the other factors, first consider the case where there are no nodes between $S_5$ and $S_9$. Then the only factor is $R_9L_5 = (2 + A_{95})$, which contributes a constant term of 2, since no additional $A_{ij}$ factors should be added.
 \end{example}
 
-Adding another node between any nodes will result in a multiplication with a term on the form $D + (2 + A_{ij})$. In the case where we only care about the constant terms we can see the we will be left with $-1 + 2 = 1$, where the $-1$ comes from that the $D$ matrix will flip the sign of the constant term. So the constant factor we get whenever there is a gap between two any $A_{ij}$ and $A_{kl}$ factors is always $2$. Thus the final coefficient for a set of $A_{ij}$ will be twice the total number of edges and the gaps between them.
+Adding another node between two nodes results in multiplication by a term of the form $D + (2 + A_{ij})$. If we only track constant terms, this leaves $-1 + 2 = 1$, where the $-1$ comes from the sign flip caused by the $D$ matrix. Thus the constant factor obtained whenever there is a gap between two factors $A_{ij}$ and $A_{kl}$ is always $2$. Thus the final coefficient for a set of $A_{ij}$ factors is twice the total number of edges and gaps between them.
 
 \subsection{Discussion of the constants of motion}
-Here we will discuss the constants of motion we get from the monodromy matrix. We will see that we seem to get $N-1$ independent constants of motion for each $N$ and that the coefficient of the lowest and highest term of $\lambda$ yield the constants of motion
+Here we discuss the constants of motion obtained from the monodromy matrix. The evidence suggests that we get $N-1$ independent constants of motion for each $N$, and that the coefficients of the lowest and highest powers of $\lambda$ yield the constants of motion
 \begin{equation}
 	C_1 = \sum_{i=1}^{N}\sum_{j=1}^N m_i m_j |x_i - x_j|,
 	\quad \text{and} \quad
-	C_N = \prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}).
+	C_N = \prod_{i=1}^{N} m_i^2 (x_i - x_{i-1}),
+	\quad x_0 = x_N.
 \end{equation}
-We will also see that the coefficient of the second highest term is equal to the square of the coefficient of the lowest term
+The coefficient of the second highest term is equal, up to the normalization used here, to the square of the coefficient of the lowest term:
 \begin{equation}
-	C_2 = \sum_{i=1}^{N}\sum_{j=1}^N (m_i m_j (x_i - x_j))^2 = C_1^2.
+	C_2 \propto C_1^2.
 \end{equation}
-The rest of the terms seem to be functionally independent. We will now derive these constants of motion from the monodromy matrix.
+The rest of the terms appear to be functionally independent. We now derive these constants of motion from the monodromy matrix.
 
 Remember that the terms involving the $A_{ij}$ factors can be visualized as a noncrossing path in a complete planar graph where the nodes are the $S_k$ and the edges are the $A_{ij}$ factors.
 
-The $C_1$ invariant will come from all the terms with a $\lambda$ factor. This is the terms with only one $A_{ij}$ factor. The same edge can be used in both ``directions'' here. So there will be two cases that create $A_{ij}$, as seen in the example below:
+The $C_1$ invariant comes from all terms with a single factor of $\lambda$, namely the terms with only one $A_{ij}$ factor. The same edge can be used in both ``directions'' here, so there are two cases that create $A_{ij}$, as seen in the example below:
 \begin{center}
 \begin{tikzpicture}
 	\tikzset{>={Stealth[scale=1.5]}}
@@ -1862,19 +1738,19 @@ The $C_1$ invariant will come from all the terms with a $\lambda$ factor. This i
     }
 \end{tikzpicture}
 \end{center}
-The $A_{ij}$ edges will have a gap from $i$ to $j$, where both the edge and gap contribute a factor 2. And since there are two of them the final coefficient will be $-8$. This results in the following terms
+The $A_{ij}$ edges have a gap from $i$ to $j$, where both the edge and the gap contribute a factor 2. Since there are two such contributions, the final coefficient is $-8$. This results in the following terms:
 \begin{equation}
 	\sum_{i=1}^{N} \sum_{j=i+1}^N -8 A_{ij} = -8 C_1
 \end{equation}
 The $C_N$ invariant comes from the product of all the $A_{ij}$ factors
 \begin{equation}
-	-\prod_{i=1}^{N} 2^N A_{i,i+1} = -2^N C_N
+	-2^N A_{21}A_{32}\cdots A_{N,N-1}A_{N1} = -2^N C_N.
 \end{equation}
-Here we left out the constant factors from the definitions of the $C_i$ invariants.
+Here the constant factors are omitted from the definitions of the $C_i$ invariants.
 
-Now let's prove that $C_2 = C_1^2$. The $C_2$ coefficient will be the sum of all the terms involving two $A_{ij}$ factors. All of them will have two edges in the graph. There are three possible configurations of two edges: they may share two vertices, share one vertex, or share none. This will determine their coefficient.
+We now show that the quadratic coefficient is proportional to $C_1^2$. The $C_2$ coefficient is the sum of all terms involving two $A_{ij}$ factors. All of them have two edges in the graph. There are three possible configurations of two edges: they may share two vertices, share one vertex, or share none. This determines their coefficient.
 
-Here is an example of how the configurations could look like with $N = 5$.
+Here is an example of how the configurations can look for $N = 5$.
 \begin{center}
 \begin{tikzpicture} [scale=0.8, baseline=(current bounding box.north)]
 	\tikzset{>={Stealth[scale=1.5]}}
@@ -1973,7 +1849,7 @@ Here is an example of how the configurations could look like with $N = 5$.
     }
 \end{tikzpicture}
 \end{center}
-Each combination will have different factors of $2$ depending on the number of gaps between the paths. Their factor are thus 4, 8, and 16 respectively. They can be written as 
+Each combination has different factors of $2$ depending on the number of gaps between the paths. Their factors are therefore 4, 8, and 16, respectively. They can be written as
 \begin{align}
 \begin{aligned}
 	&4 A_{ij}^2, \\
@@ -1981,7 +1857,7 @@ Each combination will have different factors of $2$ depending on the number of g
 	&16 A_{ij} A_{kl}, \: \text{or} \: 16 A_{il} A_{jk},
 \end{aligned}
 \end{align}
-where $i>j>k>l$. Taking the square of $C_1$ we get the sums of two edges where they share two edges, one edge and no edges
+where $i>j>k>l$. Taking the square of $C_1$ gives the sums of two edges where they share two vertices, one vertex, or no vertices:
 \begin{equation} \label{eq:C2Sum}
 \begin{aligned}
 	\sum_{i > j} &A_{ij}^2 \\
@@ -1989,7 +1865,7 @@ where $i>j>k>l$. Taking the square of $C_1$ we get the sums of two edges where t
 	+ \sum_{i > j > k > l} &2 (A_{ij} A_{kl} + A_{il} A_{jk} + A_{ik} A_{jl}).
 \end{aligned}
 \end{equation}
-The case $A_{ik} A_{jl}$ is not in the expression for $C_2$. It would be the case where two edges cross each other. Like this for example:
+The case $A_{ik} A_{jl}$ is not in the expression for $C_2$. It corresponds to two edges crossing each other, as in the following example:
 \begin{center}
 \begin{tikzpicture} [scale=0.8, baseline=(current bounding box.north)]
 	\tikzset{>={Stealth[scale=1.5]}}
@@ -2014,7 +1890,7 @@ The case $A_{ik} A_{jl}$ is not in the expression for $C_2$. It would be the cas
         ({-360/\n * (5 - 1) + 90}:\radius);
 \end{tikzpicture}
 \end{center}
-which was not possible. The expression can be rewritten though,
+which is not possible in the noncrossing construction. However, this expression can be rewritten as
 \begin{equation}
 \begin{aligned}
 	A_{ik} A_{jl}
@@ -2030,12 +1906,11 @@ This means that the last sum in equation \eqref{eq:C2Sum} can be written as
 \begin{equation}
 	\sum_{i > j > k > l} 4 (A_{ij} A_{kl} + A_{il} A_{jk}).
 \end{equation}
-Thus we have proved that the terms you get by squaring $C_1$ is the same as the ones you get from the second order $\lambda$ terms from $\tr(DM)$ up to a constant factor.
+Thus the terms obtained by squaring $C_1$ agree, up to a constant factor, with the second-order $\lambda$ terms from $\tr(DM)$.
 
 \section{Numerical analysis} \label{sec:Numerical}
 
-\cbstart
-Both in the non periodic and periodic cases the numerical simulations are consistent with the analytical solution for $N = 2$ and the constants of motion for larger $N$.
+In both the non-periodic and periodic cases, the numerical simulations are consistent with the analytical solution for $N = 2$ and with the constants of motion for larger $N$.
 
 \subsection*{Solver setup}
 
@@ -2046,22 +1921,20 @@ The ODE system integrated is
 \end{equation}
 where $u_i = u(x_i, t)$ and $u_{x_i}$ denotes the spatial derivative of $u$ evaluated at $x_i$.
 
-For the periodic case, the domain is $[0, L]$ with $L = 10$. Periodicity is enforced via discrete jump events: whenever a particle exits the domain, it is instantaneously relocated to the opposite boundary using \texttt{WhenEvent}. Specifically, $x_i$ is reset to $\varepsilon$ when $x_i > L + \varepsilon$, and to $L - \varepsilon$ when $x_i < -\varepsilon$, with $\varepsilon = 10^{-4}$. This introduces a small discontinuity in the trajectory at each wrap-around, which is an approximation of smooth periodic boundary conditions.
+For the periodic case, the numerical domain is $[0, L]$ with $L = 10$, where $L$ denotes the full numerical period in this section. Periodicity is enforced via discrete jump events: whenever a particle exits the domain, it is instantaneously relocated to the opposite boundary using \texttt{WhenEvent}. Specifically, $x_i$ is reset to $\varepsilon$ when $x_i > L + \varepsilon$, and to $L - \varepsilon$ when $x_i < -\varepsilon$, with $\varepsilon = 10^{-4}$. This introduces a small discontinuity in the trajectory at each wrap-around, which is an approximation of smooth periodic boundary conditions.
 
 For the compactified (non-periodic) case on $\mathbb{R}$, a large threshold $R = 10^5$ is used: once $x_i$ exits the interval $(-R, R)$, it is reflected back via \texttt{WhenEvent}, allowing the simulation to continue past the formal blow-up time without restarting the integrator.
-\cbend
-
-\subsection{HF Novikov equation}
+\subsection{HF-Novikov equation}
 
 First, we examine the evolution of $x_i$ and $m_i$ for $N = 3$.
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3N/N3PlotX.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3N/N3PlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3N/N3PlotM.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3N/N3PlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$}
@@ -2071,58 +1944,58 @@ It follows the same pattern as the $N = 2$ case where it quickly diverges to inf
 If $m_k < 0$ and $N > 2$ we have that the peakons can collide. This can be seen in the following graph
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3NCollision/N3CollisionPlotX.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3NCollision/N3CollisionPlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3NCollision/N3CollisionPlotM.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3NCollision/N3CollisionPlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = -10$, $x_1 = 0$, $m_2 = 10$, $x_2 = 0.2$, $m_3 = 2$, $x_3 = 5$}
 \end{figure}
 %
-Next, we will take a look at compactified system from section \ref{sec:N2SolLine}.
+Next, we consider the compactified system from Section \ref{sec:N2SolLine}.
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3NInfinite/N3ContinuePlotX.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3NInfinite/N3ContinuePlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3NInfinite/N3ContinuePlotM.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3NInfinite/N3ContinuePlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$}
 	\label{fig:3N}
 \end{figure}
-Here, in figure \ref{fig:3N}, it can be observed that the $x_i$ and $m_i$ behaves very closely to the $N = 2$ case. The $x_i$ is still the same shape as $\tan(t)$ and $m_i$ is still the same shape as $|\sin(t)|$.
+Figure \ref{fig:3N} shows that the $x_i$ and $m_i$ behave very similarly to the $N = 2$ case. The $x_i$ still have the same qualitative shape as $\tan(t)$, and the $m_i$ have the same qualitative shape as $|\sin(t)|$.
 %
 \begin{figure}[H]
 \begin{center}
 	\begin{subfigure}[b]{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/3NInfinite/u3D.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/3NInfinite/u3D.pdf}
         \caption{$u(x,t)$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$}
 	\label{fig:u3N}
 \end{center}
 \end{figure}
-In figure \ref{fig:u3N} it can be observed that the function behaves like the absolute function with increasing fluctuations away from a center position. The fluctuations scale linearly with the distance from the center.
+Figure \ref{fig:u3N} shows that the function behaves like the absolute-value function, with increasing fluctuations away from a center position. The fluctuations scale linearly with the distance from the center.
 
-\subsection{Periodic HF Novikov equation}
+\subsection{Periodic HF-Novikov equation}
 
 For the periodic graphs the boundary conditions are that $u(x,t)$ is periodic with period $L$. $L$ is set to $10$ for all simulations.
 %
-First we will look at the graph of the function $u(x, t)$.
+First, we consider the graph of the function $u(x, t)$.
 \begin{figure}[H]
 	\begin{subfigure}[b]{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/per2N/u3D.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/per2N/u3D.pdf}
         \caption{u(x,t)}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/per2N/u2D.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/per2N/u2D.pdf}
         \caption{u(x,t)}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 3$}
@@ -2130,76 +2003,76 @@ First we will look at the graph of the function $u(x, t)$.
 \end{figure}
 \begin{figure}[H]
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotDistX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotDistX.pdf}
         \caption{Distance between the $x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotM.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/2NPeriodic/N2PeriodicPlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 3$}
 \end{figure}
 %
-In figure \ref{fig:u2N} it can be observed the function behaves like a wave of constant speed with internal fluctuations. This have been observed for all $N$ and all initial conditions where $m_k > 0$.
+Figure \ref{fig:u2N} shows that the function behaves like a wave of constant speed with internal fluctuations. This has been observed for all $N$ and all initial conditions where $m_k > 0$.
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/per4N/u3D.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/per4N/u3D.pdf}
         \caption{u(x,t)}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/per4N/u2D.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/per4N/u2D.pdf}
         \caption{u(x,t)}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 2, x_1 = 1, m_2 = 0.5, x_2 = 3, m_3 = 5, x_3 = 4, m_4 = 2, x_4 = 8.5$}
 \end{figure}
 \begin{figure}[H]
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotDistX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotDistX.pdf}
         \caption{Distance between the $x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotM.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/4NPeriodic/N4PeriodicPlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{At $t=0$: $m_1 = 2, x_1 = 1, m_2 = 0.5, x_2 = 3, m_3 = 5, x_3 = 4, m_4 = 2, x_4 = 8.5$}
 \end{figure}
 \begin{figure}[H]
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotX.pdf}
         \caption{$x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotDistX.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotDistX.pdf}
         \caption{Distance between the $x_i$}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotM.pdf}
+        \safeincludegraphics[width=\textwidth]{graphs/3NPeriodicCollision/N3PeriodicCollisionPlotM.pdf}
         \caption{$m_i$}
     \end{subfigure}
     \caption{$m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 2$, $m_3 = -2$, $x_3 = 4$}
 	\label{fig:periodic_collision}
 \end{figure}
 %
-Just as for the non periodic case when $m_k < 0$ and $N > 2$ the peakons can collide as can be seen in figure \ref{fig:periodic_collision}.
+Just as in the non-periodic case, when $m_k < 0$ and $N > 2$, the peakons can collide, as shown in Figure \ref{fig:periodic_collision}.
 
 \subsection{Invariants for the compactified system}
 
-All constants of motion have so far been defined only for $T_{-1} < t < T_1$, where $T_{-1}$ and $T_1$ denote the times at which the $x_i$ diverge. However, they can be rewritten in a straightforward way so that they remain invariant for the compactified system from from section \ref{sec:N2SolLine}.
+All constants of motion have so far been defined only for $T_{-1} < t < T_1$, where $T_{-1}$ and $T_1$ denote the times at which the $x_i$ diverge. However, they can be rewritten in a straightforward way so that they remain invariant for the compactified system from Section \ref{sec:N2SolLine}.
 
 This is achieved by replacing differences of $x_i$ with their absolute values:
 \begin{align}
@@ -2212,7 +2085,7 @@ The quantities $E_i$ are then used in the same way as before to construct the in
 
 \subsection{The barycenter}
 
-We will define the barycenter as
+We define the barycenter as
 \begin{equation}
 	x^* = \argmin_x u(x, t).
 \end{equation}
@@ -2225,46 +2098,45 @@ This relation has been verified numerically for several values of $N$ and for va
 	x_1 &= -\frac{K}{M}\cot(Kt + \phi) + C, \\
 	x_2 &= \phantom{-}\frac{K}{M}\tan(Kt + \phi) + C.
 \end{align} 
-As we saw in figure \ref{fig:u3N} the minimum of the $u(x, t)$ doesn't seem to be moving away from it's initial position. Even though the barycenter varies it fluctuates around $M_{42}/M_{41}$ as can be seen in the following figure:
+As shown in Figure \ref{fig:u3N}, the minimum of $u(x, t)$ does not seem to move away from its initial position. Even though the barycenter varies, it fluctuates around $M_{42}/M_{41}$, as shown in the following figure:
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/Barycenter1.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/Barycenter1.pdf}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/Barycenter20.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/Barycenter20.pdf}
     \end{subfigure}
-    \caption{Barycenter of HF--Novikov with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $x_4 = 4$, $x_4 = 3$ at $t = 0$}
+    \caption{Barycenter of HF-Novikov with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $m_4 = 4$, $x_4 = 3$ at $t = 0$}
 	\label{fig:minU}
 \end{figure}
-We now compare this behavior for the HF--Novikov equation with that of the CH and DB equations. For these systems, the ratio $M_{42}/M_{41}$ is no longer invariant. Nevertheless, it still provides a moving-average estimate of the barycenter. To illustrate this, we plot $x^*$ for the CH and DB equations.
+We now compare this behavior for the HF-Novikov equation with that of the CH and DB equations. For these systems, the ratio $M_{42}/M_{41}$ is no longer invariant. Nevertheless, it still provides a moving-average estimate of the barycenter. To illustrate this, we plot $x^*$ for the CH and DB equations.
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/BarycenterHS1.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/BarycenterHS1.pdf}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/BarycenterHS20.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/BarycenterHS20.pdf}
     \end{subfigure}
-    \caption{Barycenter of HS with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $x_4 = 4$, $x_4 = 3$ at $t=0$}
+    \caption{Barycenter of HS with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $m_4 = 4$, $x_4 = 3$ at $t=0$}
 \end{figure}
 \begin{figure}[H]
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/BarycenterDB1.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/BarycenterDB1.pdf}
     \end{subfigure}
 	\hfill
 	\begin{subfigure}{0.44\textwidth}
-		\includegraphics[width=\textwidth]{graphs/Barycenter/BarycenterDB20.pdf}
+		\safeincludegraphics[width=\textwidth]{graphs/Barycenter/BarycenterDB20.pdf}
     \end{subfigure}
-    \caption{Barycenter of DB with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $x_4 = 4$, $x_4 = 3$ at $t=0$}
+    \caption{Barycenter of DB with $m_1 = 1$, $x_1 = 0$, $m_2 = 2$, $x_2 = 1$, $m_3 = 3$, $x_3 = 2$, $m_4 = 4$, $x_4 = 3$ at $t=0$}
 \end{figure}
 
-\cbstart
 \section{Conclusion}
 
-This thesis has studied the high-frequency limit of the Novikov equation through its piecewise linear solutions. The main result is that the corresponding finite dimensional ODE system has a rich conserved structure: the case $N=2$ has be solved explicitly, and for larger $N$ several conserved quantities can be obtained both by direct search and from a Lax pair. These results indicate that the HF--Novikov equation retains important features of integrable peakon equations, even though a complete solution for general $N$ was not obtained.
+This thesis has studied the high-frequency limit of the Novikov equation through its piecewise linear solutions. The main result is that the corresponding finite-dimensional ODE system has a rich conserved structure: the case $N=2$ has been solved explicitly, and for larger $N$ several conserved quantities can be obtained both by direct search and from a Lax pair. These results indicate that the HF-Novikov equation retains important features of integrable peakon equations, even though a complete solution for general $N$ was not obtained.
 
-At the same time, the results also show where the analogy with better understood peakon equations remains incomplete. A non-canonical Hamiltonian formulation was found for $N=2$, but no corresponding structure was obtained for general $N$. Moreover, the conserved quantities found from the Lax pair appear to give $N-1$ functionally independent invariants. The direct search also produced three additional conserved quantities, which raise the total number of functionally independent constants to $N+1$. This is a substantial amount of conserved structure, but it is still not enough by itself to establish complete finite dimensional integrability for the $2N$ variables $(x_1,\dots,x_N,m_1,\dots,m_N)$. Without a general Poisson structure, and without a proof that a sufficient family of invariants is in involution, complete integrability remains open.
+At the same time, the results also show where the analogy with better understood peakon equations remains incomplete. A non-canonical Hamiltonian formulation was found for $N=2$, but no corresponding structure was obtained for general $N$. Moreover, the conserved quantities found from the Lax pair appear to give $N-1$ functionally independent invariants. The direct search also produced three additional conserved quantities, which raise the total number of functionally independent constants to $N+1$. This is a substantial amount of conserved structure, but it is still not enough by itself to establish complete finite-dimensional integrability for the $2N$ variables $(x_1,\dots,x_N,m_1,\dots,m_N)$. Without a general Poisson structure, and without a proof that a sufficient family of invariants is in involution, complete integrability remains open.
 
 The numerical simulations support the analytical results and suggest additional structure. For $N=2$ they agree with the explicit solutions, and for larger $N$ they preserve the observed constants of motion. They also suggest that positive momenta lead to compactified dynamics resembling the $N=2$ case, while negative momenta may lead to collisions. In the periodic case the solution often behaves like a travelling wave with internal oscillations. The observed barycenter relation,
 \begin{equation}
@@ -2272,15 +2144,13 @@ The numerical simulations support the analytical results and suggest additional 
 \end{equation}
 where $x^*=\argmin_x u(x,t)$, remains unproved but gives another indication that the conserved quantities have a meaningful dynamical interpretation.
 
-There are several natural directions for future work. The most important is to determine whether the HF--Novikov peakon system admits a Hamiltonian formulation for arbitrary $N$. Such a structure could clarify whether the conserved quantities obtained from the Lax pair are sufficient for integrability. Another direction is to make the compactified continuation rigorous, especially at the times when a position diverges and a momentum vanishes. It would also be useful to prove the observed barycenter relation and to understand collisions when some momenta are negative. Finally, the inverse spectral problem associated with the Lax pair remains to be developed, and solving it would be a major step toward explicit formulas for the general $N$ peakon dynamics.
+There are several natural directions for future work. The most important is to determine whether the HF-Novikov peakon system admits a Hamiltonian formulation for arbitrary $N$. Such a structure could clarify whether the conserved quantities obtained from the Lax pair are sufficient for integrability. Another direction is to make the compactified continuation rigorous, especially at the times when a position diverges and a momentum vanishes. It would also be useful to prove the observed barycenter relation and to understand collisions when some momenta are negative. Finally, the inverse spectral problem associated with the Lax pair remains to be developed, and solving it would be a major step toward explicit formulas for the general $N$ peakon dynamics.
 
 % Another possible direction is to replace the relation $m=u_{xx}$ by a more general relation $m=Lu$, where $L$ is a differential operator with Green's function $G$. This would lead to ansatzs of the form
 % \begin{equation}
 % 	u(x,t)=\sum_{k=1}^N m_k(t)G(x-x_k(t)).
 % \end{equation}
 % For example, $L=1-\partial_x^2$ gives the usual exponential peakon kernel, $L=\partial_x^2$ gives the piecewise linear kernel studied here, and $L=1+\partial_x^2$ corresponds formally to the oscillatory kernel $G(x)=\sin(|x|)$. It would be interesting to determine which parts of the conserved structure found in this thesis persist for such more general choices of $L$.
-
-\cbend
 
 %=========================================================================%
 %
@@ -2292,11 +2162,11 @@ There are several natural directions for future work. The most important is to d
 
 \section{Derivation of the ODE system} \label{sec:DerivationODE}
 
-This section provides proof of that the ODE-system \eqref{eq:peakon_odes} is obtained from the PDE by plugging in the ansatz $u = \sum m_k |x - x_k|$.
+This section proves that the ODE system \eqref{eq:peakon_odes} is obtained from the PDE by inserting the ansatz $u = \sum m_k |x - x_k|$.
 
 \subsubsection*{Preliminaries}
 
-The jump and the average of $f$ at $x_k$ will be defined as
+The jump and average of $f$ at $x_k$ are defined as
 \begin{equation}
 	[f(x_k)] := f(x_k^+) - f(x_k^-) \quad \text{and} \quad \langle f(x_k)\rangle := \frac{f(x_k^+) + f(x_k^-)}{2},
 \end{equation}
@@ -2309,11 +2179,11 @@ For a continuous function $f$ and a piecewise continuous function $g$ the produc
 \begin{equation}
 	[fg] = f[g].
 \end{equation}
-In the way the HF--Novikov equation is written here
+In the form of the HF-Novikov equation used here,
 \begin{equation}
 	u_{xxt} = -u^2u_{xxx} - 3uu_xu_{xx},
 \end{equation}
-there is an issue with term $3uu_xu_{xx}$, since $u_x$ isn't defined at $x_k$ and $u_{xx}$ is a Dirac delta function. One way to get around that is to write the HF--Novikov equation as
+there is an issue with the term $3uu_xu_{xx}$, since $u_x$ is not defined at $x_k$ and $u_{xx}$ is a Dirac delta function. One way to avoid this is to write the HF-Novikov equation as
 \begin{equation}
 	-\partial_x^2 u_t - \partial_x^2 (u^2 u_x) + \partial_x \Big(\frac{3}{2} u u_x^2 \Big) + \frac{1}{2}u_x^3 = 0.
 \end{equation}
@@ -2328,11 +2198,11 @@ The second term $-\partial_x^2 u^2 u_x$ will have the two singular terms
 	- \sum [(u^2 u_x)_x] \delta_{x_k} - \sum [u^2 u_x] \delta'_{x_k}.
 \end{equation}
 %
-Let's first look at the $\delta'$ term at $x_k$
+First consider the $\delta'$ term at $x_k$:
 \begin{equation}
 	- [u^2 u_x]_{x_k} = - u^2(x_k) \underbrace{[u_x(x_k)]}_{2m_k} = -2 m_k u^2(x_k).
 \end{equation}
-Next let's look at the $\delta$ term at $x_k$
+Next consider the $\delta$ term at $x_k$:
 \begin{equation}
 \begin{aligned}
 	- [(u^2 u_x)_x]_{x_k} &= -[2u u_x^2 + u^2 u_{xx}]_{x_k} \\
@@ -2345,7 +2215,7 @@ The third term $\partial_x \frac{3}{2}u u_x^2$ will have one singular term
 \begin{equation}
 	\sum [\frac{3}{2} u u_x^2] \delta_{x_k},
 \end{equation}
-which at $x_k$ will be
+which at $x_k$ is
 \begin{equation}
 	[\frac{3}{2}u u_x^2]_{x_k} = \frac{3}{2}u(x_k) \underbrace{[u_x^2(x_k)]}_{2\langle u_x \rangle [u_x]} = 3 \langle u_x(x_k) \rangle \underbrace{[u_x(x_k)]}_{2m_k} = 6m_k u(x_k) u_x(x_k).
 \end{equation}
@@ -2367,12 +2237,12 @@ The $\dot{m}_k$ equation can be written as
 \begin{equation}
 	\dot{m}_k = -m_ku_x(x_k)u(x_k).
 \end{equation}
-It can be assumed that $m_k \neq 0$ since $\dot{m}_k = m_k \cdot (\text{something})$ implies that either $m_k(t) = 0$ for all $t$ or $m_k(t) \neq 0$ for all $t$. If $m_k = 0$ it doesn't contribute anything to $u$ and can therefore be ignored. With $m_k \neq 0$ the expression can be divided by $m_k$ to get
+We can assume that $m_k \neq 0$ since $\dot{m}_k = m_k \cdot (\text{something})$ implies that either $m_k(t) = 0$ for all $t$ or $m_k(t) \neq 0$ for all $t$. If $m_k = 0$, it does not contribute to $u$ and can therefore be ignored. With $m_k \neq 0$, the expression can be divided by $m_k$ to get
 \begin{equation}
 	\dot{x}_k = u(x_k)^2.
 \end{equation}
 
-The time derivatives you get from periodic ansatz \eqref{eq:periodic_ansatz} are of the same form as above. The only difference is that the functions $u(x, t)$ and $u_x(x, t)$ will be the periodic versions of the functions. This is because
+The time derivatives obtained from the periodic ansatz \eqref{eq:periodic_ansatz} have the same form as above. The only difference is that $u(x, t)$ and $u_x(x, t)$ are replaced by their periodic versions. This is because
 \begin{equation}
 	u_{xx} = \sum 2 m_k (\delta_x - \delta_{[x_k + L]_{2L}}), 
 \end{equation}
@@ -2381,9 +2251,9 @@ so every singular term at $x_k$ will have a corresponding singular term at $[x_k
 \section{Verification of the Lax pair for the ansatz}
 \label{sec:VerificationLax}
 
-Our purpose here is to verify that the Lax pair formulation of the HF--Novikov equation really is valid for the class of distributional solutions that we are condidering. Most of the calculations and steps of the verification is taken with some adjustments from paper by Hone, Lundmark, and Szmigielski \cite{Hone_2009}.
+The purpose here is to verify that the Lax pair formulation of the HF-Novikov equation is valid for the class of distributional solutions considered in this thesis. Most of the calculations and steps of the verification are adapted from the paper by Hone, Lundmark, and Szmigielski \cite{Hone_2009}.
 
-Generally a function needs to be continuous for its multiplication with a Dirac delta function to be well defined, which creates a problem with the multiplication of $u_x \delta_{x_k}$ since $u_x$ is not continuous at $x_k$. Therefore we will define $u_x \delta_{x_k} := \langle u_x(x_k) \rangle \delta_{x_k}$. The Lax pair formulation is
+Generally, a function needs to be continuous for its multiplication with a Dirac delta function to be well defined. This creates a problem with the product $u_x \delta_{x_k}$ since $u_x$ is not continuous at $x_k$. Therefore we define $u_x \delta_{x_k} := \langle u_x(x_k) \rangle \delta_{x_k}$. The Lax pair formulation is
 \begin{equation}
 	\partial_x \Psi = \hat{U} \Psi, \qquad \partial_t \Psi = \hat{V} \Psi.
 \end{equation}
@@ -2423,7 +2293,7 @@ Next we do the mixed partials
 \begin{aligned}
 	\partial_t \partial_x \Psi &= \partial_t (U \Psi + zmN \Psi) \\ 
 	&= (\underbrace{U_t}_{=0} + U\hat{V}) \Psi + (zm N \Psi)_t \\
-	&= UV \Psi - 2zu^2mUN\Psi + 2zN\sum ((m_k \Psi(x_k))_t - m_k \dot{x}_k\Psi(x_k)\dot{x}_k\delta'_{x_k}), \\
+	&= UV \Psi - 2zu^2mUN\Psi + 2zN\sum ((m_k \Psi(x_k))_t - m_k \dot{x}_k\Psi(x_k)\delta'_{x_k}), \\
 	\partial_x \partial_t \Psi &= \partial_t (V \Psi + zu^2mN \Psi) \\
 	&= (V_x + VU) \Psi + \sum [ V \Psi ] \delta_{x_k} + 2zN \sum(u(x_k)^2 m_k \Psi(x_k) \delta'_{x_k}).
 \end{aligned}
@@ -2460,7 +2330,7 @@ Using the product rule \eqref{eq:dirac_product_rules} and that $[\Psi(x_k)] = 2z
 	\end{psmallmatrix}_{x_k} \langle \Psi(x_k) \rangle.
 \end{aligned}
 \end{equation}
-The $(3,2)$ element $u^2$ in the first term above is going to cancel out the first term in \eqref{eq:singular_mixed_partials} since the only non zero element of $UN$ is the $(3,2)$ element which is $1$. What's then left of the compatibility condition is
+The $(3,2)$ element $u^2$ in the first term above cancels the first term in \eqref{eq:singular_mixed_partials} since the only nonzero element of $UN$ is the $(3,2)$ element, which is $1$. What remains of the compatibility condition is
 \begin{equation}
 \begin{aligned}
 	&\dot{m}_k N \Psi(x_k) + m_k N \partial_t \Psi(x_k) \\
@@ -2479,7 +2349,7 @@ The $(3,2)$ element $u^2$ in the first term above is going to cancel out the fir
 \end{aligned}
 \end{equation}
 %
-Next let's compute $N \partial_t \langle \Psi(x_k) \rangle$
+Next compute $N \partial_t \langle \Psi(x_k) \rangle$:
 \begin{equation}
 \begin{aligned}
 	N \partial_t \langle \Psi(x_k) \rangle 
@@ -2512,7 +2382,7 @@ The third row is zero and the first two rows say that
 	(\dot{m}_k + m_ku(x_k) \langle u_x(x_k) \rangle) \psi_3(x_k) &= \frac{1}{z}m_k u(x_k) (\psi_2(x_k) - \langle \psi_2(x_k) \rangle).
 \end{aligned}
 \end{equation}
-If we choose to assign $\psi_2(x_k) = \langle \psi_2(x_k) \rangle$ then it's clear that the compatibility condition is satisfied only if
+If we choose to assign $\psi_2(x_k) = \langle \psi_2(x_k) \rangle$, then the compatibility condition is satisfied only if
 \begin{equation}
 	\dot{m}_k = -m_k u(x_k) \langle u_x(x_k) \rangle.
 \end{equation}
